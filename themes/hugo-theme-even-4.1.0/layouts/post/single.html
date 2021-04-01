@@ -42,13 +42,13 @@
     {{- partial "post/reward.html" . -}}
 
     <footer class="post-footer">
-      {{ with .Params.tags -}}
-        <div class="post-tags">
-          {{ range . -}}
-            <a href="{{ "tags" | relLangURL }}/{{ . | urlize }}/">{{ . }}</a>
-          {{ end -}}
-        </div>
-      {{- end -}}
+        <!--    {{ with .Params.tags -}}-->
+        <!--    <div class="post-tags">-->
+        <!--      {{ range . -}}-->
+        <!--      <a href="{{ " tags" | relLangURL }}/{{ . | urlize }}/">{{ . }}</a>-->
+        <!--      {{ end -}}-->
+        <!--    </div>-->
+        <!--    {{- end -}}-->
 
       <!-- Post Pagination -->
       <nav class="post-nav">
