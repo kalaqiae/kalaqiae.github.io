@@ -2,7 +2,7 @@
 title: "Activity的生命周期"
 date: 2021-03-31T22:34:15+08:00
 draft: false
-tags: ["Android","Activity","Lifrcycle"]
+tags: ["Android","Activity","Lifecycle"]
 categories: ["Android"]
 ---
 
@@ -10,7 +10,7 @@ categories: ["Android"]
 
 先上图
 
-![Lifrcycle](https://developer.android.google.cn/guide/components/images/activity_lifecycle.png)
+![Lifecycle](https://developer.android.google.cn/guide/components/images/activity_lifecycle.png)
 
 (1)onCreate:表示Activity正在被创建
 
