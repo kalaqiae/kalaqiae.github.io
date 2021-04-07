@@ -1,0 +1,51 @@
+---
+title: "常用镜像"
+date: 2021-04-07T20:59:09+08:00
+draft: false
+tags: ["Mirror"]
+categories: ["Mirror"]
+---
+
+## 常用镜像
+
+### Android
+
+按顺序写  
+maven { url 'https://maven.aliyun.com/repository/public/' }  
+maven { url 'https://maven.aliyun.com/repository/google' }  
+maven { url 'https://maven.aliyun.com/repositories/jcenter' }  
+google()  
+jcenter()
+
+### Flutter
+
+推荐用社区或清华的
+
+Flutter 社区  
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+上海交大 Linux 用户组  
+export PUB_HOSTED_URL=https://mirrors.sjtug.sjtu.edu.cn/dart-pub  
+export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
+
+清华大学 TUNA 协会  
+export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub  
+export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
+
+OpenTUNA  
+export PUB_HOSTED_URL=https://opentuna.cn/dart-pub  
+export FLUTTER_STORAGE_BASE_URL=https://opentuna.cn/flutter
+
+腾讯云开源镜像站  
+export PUB_HOSTED_URL=https://mirrors.cloud.tencent.com/dart-pub  
+export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
+
+CNNIC  
+export PUB_HOSTED_URL=http://mirrors.cnnic.cn/dart-pub  
+export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
+
+参考:  
+<https://developer.aliyun.com/article/754038>  
+<https://flutter.cn/community/china>  
+<https://segmentfault.com/a/1190000038458140>
