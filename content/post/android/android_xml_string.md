@@ -8,15 +8,17 @@ categories: ["Android"]
 
 ## strings.xml
 
-## 设置字符串格式
+### 设置字符串格式
 
-&lt;string name="welcome_messages">Hi, %1$s! You have %2$d new messages.&lt;/string>  
+>&lt;string name="welcome_messages">Hi, %1$s! You have %2$d new messages.&lt;/string>  
 var text = getString(R.string.welcome_messages, "kalaqiae", 10)  
+
 输出：Hi, kalaqiae! You have 10 new messages.  
+
 %d （表示整数）  
 %f （表示浮点数）  
 %s （表示字符串）
 
-参考：  
+<!-- 参考：  
 <https://developer.android.com/guide/topics/resources/string-resource>  
-<https://www.jianshu.com/p/ea5f8713c9a3>
+<https://www.jianshu.com/p/ea5f8713c9a3> -->
