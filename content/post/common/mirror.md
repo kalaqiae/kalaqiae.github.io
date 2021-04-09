@@ -6,9 +6,7 @@ tags: ["Mirror"]
 categories: ["Mirror"]
 ---
 
-## 常用镜像
-
-### Android
+## Android
 
 按顺序写  
 >maven { url 'https://maven.aliyun.com/repository/public/' }  
@@ -17,7 +15,9 @@ maven { url 'https://maven.aliyun.com/repositories/jcenter' }
 google()  
 jcenter()
 
-### Flutter
+<!--more-->
+
+## Flutter
 
 推荐用社区或清华的
 

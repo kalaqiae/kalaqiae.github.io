@@ -12,6 +12,8 @@ categories: ["Android"]
 
 ![Lifecycle](https://developer.android.google.cn/guide/components/images/activity_lifecycle.png)
 
+<!--more-->
+
 (1)onCreate:表示Activity正在被创建
 
 (2)onStart:表示Activity正在被启动

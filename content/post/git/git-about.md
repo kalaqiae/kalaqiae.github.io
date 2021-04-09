@@ -1,5 +1,5 @@
 ---
-title: "git常用命令"
+title: "git,svn使用"
 date: 2021-04-05T18:53:42+08:00
 draft: false
 tags: ["git"]
@@ -14,6 +14,8 @@ categories: ["git"]
 >git add .  
 git commit -s -m "message"  
 git push origin master
+
+<!--more-->
 
 ### 拉取
 

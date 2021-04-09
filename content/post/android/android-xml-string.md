@@ -6,9 +6,7 @@ tags: ["Android","xml"]
 categories: ["Android"]
 ---
 
-## strings.xml
-
-### 设置字符串格式
+## 设置字符串格式
 
 >&lt;string name="welcome_messages">Hi, %1$s! You have %2$d new messages.&lt;/string>  
 var text = getString(R.string.welcome_messages, "kalaqiae", 10)  
@@ -18,6 +16,8 @@ var text = getString(R.string.welcome_messages, "kalaqiae", 10)
 %d （表示整数）  
 %f （表示浮点数）  
 %s （表示字符串）
+
+<!--more-->
 
 <!-- 参考：  
 <https://developer.android.com/guide/topics/resources/string-resource>  
