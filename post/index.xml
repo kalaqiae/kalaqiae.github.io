@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on KALAQIAE</title><link>https://kalaqiae.com/post/</link><description>Recent content in Posts on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 09 Apr 2021 23:14:11 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Kotlin 协程</title><link>https://kalaqiae.com/post/kotlin/coroutines/</link><pubDate>Fri, 09 Apr 2021 23:14:11 +0800</pubDate><guid>https://kalaqiae.com/post/kotlin/coroutines/</guid><description>使用</description></item><item><title>常用镜像</title><link>https://kalaqiae.com/post/common/mirror/</link><pubDate>Wed, 07 Apr 2021 20:59:09 +0800</pubDate><guid>https://kalaqiae.com/post/common/mirror/</guid><description>&lt;h2 id="android">Android&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on KALAQIAE</title><link>https://kalaqiae.com/post/</link><description>Recent content in Posts on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 09 Apr 2021 23:14:11 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Kotlin 协程</title><link>https://kalaqiae.com/post/kotlin/coroutines/</link><pubDate>Fri, 09 Apr 2021 23:14:11 +0800</pubDate><guid>https://kalaqiae.com/post/kotlin/coroutines/</guid><description>&lt;h2 id="协程启动">协程启动&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="n">GlobalScope&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">launch&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="n">delay&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1000L&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Hi,coroutines!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>常用镜像</title><link>https://kalaqiae.com/post/common/mirror/</link><pubDate>Wed, 07 Apr 2021 20:59:09 +0800</pubDate><guid>https://kalaqiae.com/post/common/mirror/</guid><description>&lt;h2 id="android">Android&lt;/h2>
 &lt;p>按顺序写&lt;/p>
 &lt;blockquote>
 &lt;p>maven { url &amp;lsquo;&lt;a href="https://maven.aliyun.com/repository/public/'">https://maven.aliyun.com/repository/public/'&lt;/a> }&lt;br>
@@ -27,4 +42,5 @@ var text = getString(R.string.welcome_messages, &amp;ldquo;kalaqiae&amp;rdquo;, 
 %f （表示浮点数）&lt;br>
 %s （表示字符串）&lt;/p></description></item><item><title>Activity的生命周期</title><link>https://kalaqiae.com/post/android/android-activity-lifecycle/</link><pubDate>Wed, 31 Mar 2021 22:34:15 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-lifecycle/</guid><description>&lt;h2 id="生命周期简介">生命周期简介&lt;/h2>
 &lt;p>先上图&lt;/p>
-&lt;p>&lt;img src="https://developer.android.google.cn/guide/components/images/activity_lifecycle.png" alt="Lifecycle">&lt;/p></description></item><item><title>Go的Helloworld</title><link>https://kalaqiae.com/post/go/go-helloworld/</link><pubDate>Sun, 14 Mar 2021 15:50:03 +0800</pubDate><guid>https://kalaqiae.com/post/go/go-helloworld/</guid><description>下载Go 下载地址： https://golang.google.cn/dl/ 安装 安装完成后会自动配置环境GOPATH，在cmd中输入go version测试，显示版本号则安装成功 HelloWorld Demo 新建hello.</description></item></channel></rss>
+&lt;p>&lt;img src="https://developer.android.google.cn/guide/components/images/activity_lifecycle.png" alt="Lifecycle">&lt;/p></description></item><item><title>Go的Helloworld</title><link>https://kalaqiae.com/post/go/go-helloworld/</link><pubDate>Sun, 14 Mar 2021 15:50:03 +0800</pubDate><guid>https://kalaqiae.com/post/go/go-helloworld/</guid><description>&lt;h2 id="下载go">下载Go&lt;/h2>
+&lt;p>下载地址： &lt;a href="https://golang.google.cn/dl/">https://golang.google.cn/dl/&lt;/a>&lt;/p></description></item></channel></rss>

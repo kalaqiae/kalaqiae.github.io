@@ -1,4 +1,57 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Kotlin 协程 - KALAQIAE</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Kalaqiae"><meta name=description content="使用"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.82.0 with theme even"><link rel=canonical href=https://kalaqiae.com/post/kotlin/coroutines/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.8bb66a6c962ec1755867d3d5ce8e5267f80d5dc80d7d74f19be0b9686de4c75f.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Kotlin 协程"><meta property="og:description" content="使用"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/kotlin/coroutines/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-04-09T23:14:11+08:00"><meta property="article:modified_time" content="2021-04-09T23:14:11+08:00"><meta itemprop=name content="Kotlin 协程"><meta itemprop=description content="使用"><meta itemprop=datePublished content="2021-04-09T23:14:11+08:00"><meta itemprop=dateModified content="2021-04-09T23:14:11+08:00"><meta itemprop=wordCount content="2"><meta itemprop=keywords content="Kotlin,coroutines,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Kotlin 协程"><meta name=twitter:description content="使用"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Kotlin 协程</h1><div class=post-meta><span class=post-time>2021-04-09</span><div class=post-category><a href=/categories/kotlin/>Kotlin</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#使用>使用</a></li></ul></li></ul></nav></div></div><div class=post-content><h2 id=使用>使用</h2></div><footer class=post-footer><nav class=post-nav><a class=next href=/post/common/mirror/><span class="next-text nav-default">常用镜像</span>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Kotlin 协程 - KALAQIAE</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Kalaqiae"><meta name=description content="协程启动 1 2 3 4  GlobalScope.launch { delay(1000L) println(&amp;#34;Hi,coroutines!&amp;#34;) }   "><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.82.0 with theme even"><link rel=canonical href=https://kalaqiae.com/post/kotlin/coroutines/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.8bb66a6c962ec1755867d3d5ce8e5267f80d5dc80d7d74f19be0b9686de4c75f.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Kotlin 协程"><meta property="og:description" content="协程启动
+
+
+1
+2
+3
+4
+
+
+GlobalScope.launch {
+    delay(1000L)
+    println(&#34;Hi,coroutines!&#34;)
+}
+
+
+"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/kotlin/coroutines/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-04-09T23:14:11+08:00"><meta property="article:modified_time" content="2021-04-09T23:14:11+08:00"><meta itemprop=name content="Kotlin 协程"><meta itemprop=description content="协程启动
+
+
+1
+2
+3
+4
+
+
+GlobalScope.launch {
+    delay(1000L)
+    println(&#34;Hi,coroutines!&#34;)
+}
+
+
+"><meta itemprop=datePublished content="2021-04-09T23:14:11+08:00"><meta itemprop=dateModified content="2021-04-09T23:14:11+08:00"><meta itemprop=wordCount content="269"><meta itemprop=keywords content="Kotlin,coroutines,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Kotlin 协程"><meta name=twitter:description content="协程启动
+
+
+1
+2
+3
+4
+
+
+GlobalScope.launch {
+    delay(1000L)
+    println(&#34;Hi,coroutines!&#34;)
+}
+
+
+"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Kotlin 协程</h1><div class=post-meta><span class=post-time>2021-04-09</span><div class=post-category><a href=/categories/kotlin/>Kotlin</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#协程启动>协程启动</a></li><li><a href=#协程调度器>协程调度器</a></li></ul></li></ul></nav></div></div><div class=post-content><h2 id=协程启动>协程启动</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-kotlin data-lang=kotlin><span class=n>GlobalScope</span><span class=p>.</span><span class=n>launch</span> <span class=p>{</span>
+    <span class=n>delay</span><span class=p>(</span><span class=m>1000L</span><span class=p>)</span>
+    <span class=n>println</span><span class=p>(</span><span class=s2>&#34;Hi,coroutines!&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><table><thead><tr><th style=text-align:left>模式</th><th style=text-align:left>功能</th></tr></thead><tbody><tr><td style=text-align:left>DEFAULT</td><td style=text-align:left>立即执行协程体</td></tr><tr><td style=text-align:left>ATOMIC</td><td style=text-align:left>立即执行协程体，但在开始运行之前无法取消</td></tr><tr><td style=text-align:left>UNDISPATCHED</td><td style=text-align:left>立即在当前线程执行协程体，直到第一个 suspend 调用</td></tr><tr><td style=text-align:left>LAZY</td><td style=text-align:left>只有在需要的情况下运行</td></tr></tbody></table><h2 id=协程调度器>协程调度器</h2><p>确定了相关的协程在哪个线程或哪些线程上执行</p><ul><li>Dispatchers.Default<br>未指定时都是默认使用Dispatchers.Default，运行在父协程的上下文中</li><li>Dispatchers.Main<br>主线程</li><li>Dispatchers.Unconfined<br>直接执行（eg. 当前在主线程就在主线程执行，如果启动子线程导致切换线程，就在切换的那个线程执行），不被限制在任何特定的线程，一般不使用</li><li>Dispatchers.IO<br>基于 Default 调度器背后的线程池，并实现了独立的队列和限制，因此协程调度器从 Default 切换到 IO 并不会触发线程切换</li></ul></div><footer class=post-footer><nav class=post-nav><a class=next href=/post/common/mirror/><span class="next-text nav-default">常用镜像</span>
 <span class="next-text nav-mobile">下一篇</span>
 <i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links></div><div class=copyright><span class=power-by></span><span class=theme-info></span><span class=copyright-year>&copy;
 2021
