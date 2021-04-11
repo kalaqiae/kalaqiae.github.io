@@ -10,6 +10,8 @@ categories: ["go"]
 
 下载地址： <https://golang.google.cn/dl/>
 
+<!--more-->
+
 ## 安装
 
 安装完成后会自动配置环境GOPATH，在cmd中输入go version测试，显示版本号则安装成功

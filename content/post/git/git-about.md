@@ -78,12 +78,11 @@ merge操作会生成一个新的节点，之前提交分开显示。而rebase操
 
 在项目路径下右击tortoiseSVN->properties->new other,选global ignore填选项  
 
-可以添加以下内容
+可以添加类似以下内容
 >*.gradle  
 *.idea  
 *.iml  
 build  
-gradle
 
 <!-- <https://developer.aliyun.com/article/652579>  
 <https://www.zhihu.com/question/36509119> -->
