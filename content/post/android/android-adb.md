@@ -44,3 +44,23 @@ eg. adb push C:\Users\Administrator\Desktop\temp /sdcard/kalaqiae
 ## 查看Activity Task栈的情况
 
 >adb shell dumpsys activity | findstr Run
+
+## 开启服务
+
+>adb start-server
+
+## 关闭服务
+
+>adb kill-server
+
+## 查看连接设备列表
+
+>adb devices
+
+## 清数据
+
+>adb shell pm clear packagename
+
+## 重启
+
+>adb reboot
