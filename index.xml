@@ -33,7 +33,7 @@ jcenter()&lt;/p>
 &lt;p>git add .&lt;br>
 git commit -s -m &amp;ldquo;message&amp;rdquo;&lt;br>
 git push origin master&lt;/p>
-&lt;/blockquote></description></item><item><title>Android adb常用命令</title><link>https://kalaqiae.com/post/android/android-adb/</link><pubDate>Sun, 04 Apr 2021 21:06:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-adb/</guid><description>&lt;p>AS插件ADB IDEA&lt;/p>
+&lt;/blockquote></description></item><item><title>Android adb命令</title><link>https://kalaqiae.com/post/android/android-adb/</link><pubDate>Sun, 04 Apr 2021 21:06:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-adb/</guid><description>&lt;p>AS插件ADB IDEA&lt;/p>
 &lt;h2 id="连接设备">连接设备&lt;/h2>
 &lt;blockquote>
 &lt;p>adb connect ip&lt;/p>
