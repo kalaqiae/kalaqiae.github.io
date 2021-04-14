@@ -60,9 +60,11 @@ fun asyncTest() {
 }
 ```
 
-<!-- ### 用法 -->
+<!-- ### 用法
 
-<!-- ## 协程上下文(CoroutineContext )
+少用GlobalScope，用MainScope，使用kotlin委托写个基类
+
+## 协程上下文(CoroutineContext )
 
 协程总是运行在一些以 CoroutineContext 类型为代表的上下文中 -->
 
@@ -145,6 +147,40 @@ launch(newSingleThreadContext("MyOwnThread")) { // 将使它获得一个新的�
 * LifecycleScope  
 为每个 Lifecycle 对象定义了 LifecycleScope。在此范围内启动的协程会在 Lifecycle 被销毁时取消
 
+## 取消
+
+所有kotlinx.coroutines中的挂起函数都是可被取消的。它们检查协程的取消，并在取消时抛出 CancellationException。
+
+```kotlin
+val startTime = System.currentTimeMillis()
+val job = launch(Dispatchers.Default) {
+    var nextPrintTime = startTime
+    var i = 0
+    while (i < 5 && isActive) { // 可以被取消的计算循环
+        // 每秒打印消息两次
+        if (System.currentTimeMillis() >= nextPrintTime) {
+            println("job: I'm sleeping ${i++} ...")
+            nextPrintTime += 500L
+        }
+    }
+}
+delay(1300L) // 等待一段时间
+println("main: I'm tired of waiting!")
+job.cancelAndJoin() // 取消该作业并等待它结束
+println("main: Now I can quit.")
+```
+
+如果不加isActive条件输出结果如下，加了之后可以直接取消，不用等循环结束，就不会有sleeping 3，4
+>job: I'm sleeping 0 ...  
+job: I'm sleeping 1 ...  
+job: I'm sleeping 2 ...  
+main: I'm tired of waiting!  
+job: I'm sleeping 3 ...  
+job: I'm sleeping 4 ...  
+main: Now I can quit.  
+
+## 异常
+
 ## 其他
 
 * delay() 是一个特殊的 挂起函数 ，它不会造成线程阻塞，但是会 挂起 协程，并且只能在协程中使用  
@@ -166,7 +202,30 @@ runBlocking {
 
 如果注释掉repeat，得到结果Result is Done
 
-* delay()，await()被修饰为suspend，要放在 runBlocking {}，launch {} 或者 async {} 中执行
+* delay(),await(),withContext被修饰为suspend，要放在 runBlocking {}，launch {} 或者 async {} 中执行
+* isActive 是一个可以被使用在 CoroutineScope 中的扩展属性。用来判断是否完成和取消
+* withContext 使用指定的上下文挂起一个协程，直到完成返回结果。可以使用withContext(NonCancellable)运行不能取消的代码块
+
+```kotlin
+val job = launch {
+    try {
+        repeat(1000) { i ->
+            println("job: I'm sleeping $i ...")
+            delay(500L)
+        }
+    } finally {
+        withContext(NonCancellable) {
+            println("job: I'm running finally")
+            delay(1000L)
+            println("job: And I've just delayed for 1 sec because I'm non-cancellable")
+        }
+    }
+}
+delay(1300L) // 延迟一段时间
+println("main: I'm tired of waiting!")
+job.cancelAndJoin() // 取消该作业并等待它结束
+println("main: Now I can quit.")
+```
 
 英文官方文档  
 <https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/index.html>  
