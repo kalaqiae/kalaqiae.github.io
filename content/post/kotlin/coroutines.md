@@ -181,6 +181,41 @@ main: Now I can quit.
 
 ## 异常
 
+### 异常传播  
+
+当协程出现异常时，会根据当前作用域触发异常传递，查看上文的[协程作用域](#协程作用域coroutinescope)（主要关注coroutineScope，supervisorScope的传播）
+
+### 异常处理  
+
+* launch内部出现未捕获的异常时尝试触发对父协程的取消，能否取消要看作用域的定义，如果取消成功，那么异常传递给父协程，否则传递给启动时上下文中配置的CoroutineExceptionHandler中，如果没有配置，会查找全局（JVM上）的CoroutineExceptionHandler进行处理，如果仍然没有，那么就将异常交给当前线程的UncaughtExceptionHandler处理  
+* async在未捕获的异常出现时同样会尝试取消父协程，但不管是否能够取消成功都不会后其他后续的异常处理，直到用户主动调用await时将异常抛出
+
+### join和await  
+
+join只关心协程是否执行完，await则关心运行的结果。
+
+异常但是有输出结果Hello,
+
+```kotlin  
+runBlocking {
+    val job = launch {
+        val two = async { 1 / 0 } //故意异常
+    }
+    println("Hello,")
+    job.join()
+}
+```
+
+异常并且one.await()的值也得不到
+
+```kotlin
+runBlocking {
+    val one = async { 1 + 1 }
+    val two = async { 1 / 0 } //故意异常
+    println("one: " + one.await() + " two: " + two.await() + " answer: ${one.await() + two.await()}")
+}
+```
+
 ## 其他
 
 * delay() 是一个特殊的 挂起函数 ，它不会造成线程阻塞，但是会 挂起 协程，并且只能在协程中使用  
