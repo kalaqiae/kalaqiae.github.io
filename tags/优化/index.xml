@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>优化 on KALAQIAE</title><link>https://kalaqiae.com/tags/%E4%BC%98%E5%8C%96/</link><description>Recent content in 优化 on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 22 Apr 2021 21:48:37 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml"/><item><title>Android abiFilter相关</title><link>https://kalaqiae.com/post/android/android-abifilter-about/</link><pubDate>Thu, 22 Apr 2021 21:48:37 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-abifilter-about/</guid><description>为了优化apk的大小，一般会只选择支持一种ABI，可以在AS中双击apk，在lib路径下查看so文件占用大小 Android ABI概念 Application Binary Interface 官方文档 cpu</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>优化 on KALAQIAE</title><link>https://kalaqiae.com/tags/%E4%BC%98%E5%8C%96/</link><description>Recent content in 优化 on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 06 May 2021 21:35:21 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml"/><item><title>APK 瘦身</title><link>https://kalaqiae.com/post/android/android-optimization/</link><pubDate>Thu, 06 May 2021 21:35:21 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-optimization/</guid><description>&lt;h2 id="减少-res-资源大小">减少 res 资源大小&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>删除重复资源&lt;br>
+右击项目 refactor/remove unused resources ,或 lint 工具来搜索项目中不再使用的图片等资源&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>重复资源优化&lt;br>
+文件名不一样，但是内容一样的图片，可以通过比较 md5 值来判断是不是一样的资源，然后编辑 resources.arsc 来重定向&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Android abiFilter相关</title><link>https://kalaqiae.com/post/android/android-abifilter-about/</link><pubDate>Thu, 22 Apr 2021 21:48:37 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-abifilter-about/</guid><description>为了优化apk的大小，一般会只选择支持一种ABI，可以在AS中双击apk，在lib路径下查看so文件占用大小 Android ABI概念 Application Binary Interface 官方文档 cpu</description></item></channel></rss>
