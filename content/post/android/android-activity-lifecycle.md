@@ -28,7 +28,7 @@ categories: ["Android"]
 
 (7)onRestart:表示Activity正在重新启动，Activity从不可见重新变为可见状态时调用。
 
-## Activity状态
+<!-- ## Activity状态 -->
 
 <!-- ## 场景
 
