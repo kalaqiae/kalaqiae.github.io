@@ -1,0 +1,1662 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Glide 源码 - KALAQIAE</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Kalaqiae"><meta name=description content="Glide 4.12.0 Glide.with(this).load(url).apply(xxx).into(imageView);
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.83.1 with theme even"><link rel=canonical href=https://kalaqiae.com/post/android/android-glide/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.8bb66a6c962ec1755867d3d5ce8e5267f80d5dc80d7d74f19be0b9686de4c75f.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Glide 源码"><meta property="og:description" content="Glide 4.12.0
+Glide.with(this).load(url).apply(xxx).into(imageView);"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/android/android-glide/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-05-17T21:41:16+08:00"><meta property="article:modified_time" content="2021-05-17T21:41:16+08:00"><meta itemprop=name content="Glide 源码"><meta itemprop=description content="Glide 4.12.0
+Glide.with(this).load(url).apply(xxx).into(imageView);"><meta itemprop=datePublished content="2021-05-17T21:41:16+08:00"><meta itemprop=dateModified content="2021-05-17T21:41:16+08:00"><meta itemprop=wordCount content="4823"><meta itemprop=keywords content="Android,Glide,源码,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Glide 源码"><meta name=twitter:description content="Glide 4.12.0
+Glide.with(this).load(url).apply(xxx).into(imageView);"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Glide 源码</h1><div class=post-meta><span class=post-time>2021-05-17</span><div class=post-category><a href=/categories/android/>Android</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#glide-4120>Glide 4.12.0</a><ul><li><a href=#with>with()</a></li><li><a href=#load>load()</a></li><li><a href=#apply>apply()</a></li><li><a href=#into>into()</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h2 id=glide-4120>Glide 4.12.0</h2><p>Glide.with(this).load(url).apply(xxx).into(imageView);</p><h3 id=with>with()</h3><p>with() 方法是 Glide 类中的一组静态方法，可以传入 Activity Fragment Context View。每个 with()方法都是通过 getRetriever() 得到 RequestManagerRetriever 然后调用 RequestManagerRetriever 的 get() 方法获取 RequestManager 对象</p><p>RequestManagerRetriever 的 get() 和 with() 类似，有很多个方法，可以传入 Context Activity Fragment 等参数。这些可以分两种情况，即传入 Application 类型的参数，和非 Application 类型的参数。</p><p>传入 Application 参数的情况 :</p><ul><li>在传入 Context 参数的方法中，通过判断 context 是否是 Application 并且是否在主线程，符合条件则直接通过 getApplicationManager() 来获取一个 RequestManager 对象，否则判断 context 类型调用其他 get() 方法。</li><li>因为 Application 对象的生命周期即应用程序的生命周期，因此 Glide 并不需要做什么特殊的处理，它自动就是和应用程序的生命周期是同步的，如果应用程序关闭的话，Glide 的加载也会同时终止。</li></ul><p>传入非Application 参数的情况 :</p><ul><li>如果在非主线程当中使用的 Glide 都当成传入 Application 参数的情况来处理。</li><li>会向当前的 Activity 当中添加一个隐藏的 Fragment 。</li><li>Glide 通过添加隐藏 Fragment 监听生命周期。 例如 Activity 被销毁，Fragment 监听到，就可以停止图片加载。（或者有什么办法直接知道 Activity 的生命周期？）</li></ul><p>RequestManager 实现 LifecycleListener 接口去监听生命周期，作出相应的处理</p><p>简单的说就是为了得到一个 RequestManager 对象，然后 Glide 会根据传入 with() 方法的参数来确定图片加载的生命周期</p><p>Glide 中的 with() ，getRetriever()</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=kd>static</span> <span class=n>RequestManager</span> <span class=nf>with</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>Context</span> <span class=n>context</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>getRetriever</span><span class=o>(</span><span class=n>context</span><span class=o>).</span><span class=na>get</span><span class=o>(</span><span class=n>context</span><span class=o>);</span>
+  <span class=o>}</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=kd>static</span> <span class=n>RequestManager</span> <span class=nf>with</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>Activity</span> <span class=n>activity</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>getRetriever</span><span class=o>(</span><span class=n>activity</span><span class=o>).</span><span class=na>get</span><span class=o>(</span><span class=n>activity</span><span class=o>);</span>
+  <span class=o>}</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=kd>static</span> <span class=n>RequestManager</span> <span class=nf>with</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>FragmentActivity</span> <span class=n>activity</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>getRetriever</span><span class=o>(</span><span class=n>activity</span><span class=o>).</span><span class=na>get</span><span class=o>(</span><span class=n>activity</span><span class=o>);</span>
+  <span class=o>}</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=kd>static</span> <span class=n>RequestManager</span> <span class=nf>with</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>Fragment</span> <span class=n>fragment</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>getRetriever</span><span class=o>(</span><span class=n>fragment</span><span class=o>.</span><span class=na>getContext</span><span class=o>()).</span><span class=na>get</span><span class=o>(</span><span class=n>fragment</span><span class=o>);</span>
+  <span class=o>}</span>
+  <span class=nd>@SuppressWarnings</span><span class=o>(</span><span class=s>&#34;deprecation&#34;</span><span class=o>)</span>
+  <span class=nd>@Deprecated</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=kd>static</span> <span class=n>RequestManager</span> <span class=nf>with</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>android</span><span class=o>.</span><span class=na>app</span><span class=o>.</span><span class=na>Fragment</span> <span class=n>fragment</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>getRetriever</span><span class=o>(</span><span class=n>fragment</span><span class=o>.</span><span class=na>getActivity</span><span class=o>()).</span><span class=na>get</span><span class=o>(</span><span class=n>fragment</span><span class=o>);</span>
+  <span class=o>}</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=kd>static</span> <span class=n>RequestManager</span> <span class=nf>with</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>View</span> <span class=n>view</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>getRetriever</span><span class=o>(</span><span class=n>view</span><span class=o>.</span><span class=na>getContext</span><span class=o>()).</span><span class=na>get</span><span class=o>(</span><span class=n>view</span><span class=o>);</span>
+  <span class=o>}</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>private</span> <span class=kd>static</span> <span class=n>RequestManagerRetriever</span> <span class=nf>getRetriever</span><span class=o>(</span><span class=nd>@Nullable</span> <span class=n>Context</span> <span class=n>context</span><span class=o>)</span> <span class=o>{</span>
+    <span class=c1>// Context could be null for other reasons (ie the user passes in null), but in practice it will
+</span><span class=c1></span>    <span class=c1>// only occur due to errors with the Fragment lifecycle.
+</span><span class=c1></span>    <span class=n>Preconditions</span><span class=o>.</span><span class=na>checkNotNull</span><span class=o>(</span>
+        <span class=n>context</span><span class=o>,</span>
+        <span class=s>&#34;You cannot start a load on a not yet attached View or a Fragment where getActivity() &#34;</span>
+            <span class=o>+</span> <span class=s>&#34;returns null (which usually occurs when getActivity() is called before the Fragment &#34;</span>
+            <span class=o>+</span> <span class=s>&#34;is attached or after the Fragment is destroyed).&#34;</span><span class=o>);</span>
+    <span class=k>return</span> <span class=n>Glide</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>context</span><span class=o>).</span><span class=na>getRequestManagerRetriever</span><span class=o>();</span>
+  <span class=o>}</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=n>RequestManagerRetriever</span> <span class=nf>getRequestManagerRetriever</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>requestManagerRetriever</span><span class=o>;</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div><p>RequestManagerRetriever 的部分 get() 和添加 fragment 的地方</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span><span class=lnt>156
+</span><span class=lnt>157
+</span><span class=lnt>158
+</span><span class=lnt>159
+</span><span class=lnt>160
+</span><span class=lnt>161
+</span><span class=lnt>162
+</span><span class=lnt>163
+</span><span class=lnt>164
+</span><span class=lnt>165
+</span><span class=lnt>166
+</span><span class=lnt>167
+</span><span class=lnt>168
+</span><span class=lnt>169
+</span><span class=lnt>170
+</span><span class=lnt>171
+</span><span class=lnt>172
+</span><span class=lnt>173
+</span><span class=lnt>174
+</span><span class=lnt>175
+</span><span class=lnt>176
+</span><span class=lnt>177
+</span><span class=lnt>178
+</span><span class=lnt>179
+</span><span class=lnt>180
+</span><span class=lnt>181
+</span><span class=lnt>182
+</span><span class=lnt>183
+</span><span class=lnt>184
+</span><span class=lnt>185
+</span><span class=lnt>186
+</span><span class=lnt>187
+</span><span class=lnt>188
+</span><span class=lnt>189
+</span><span class=lnt>190
+</span><span class=lnt>191
+</span><span class=lnt>192
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=n>RequestManager</span> <span class=nf>get</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>Context</span> <span class=n>context</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>context</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=k>throw</span> <span class=k>new</span> <span class=n>IllegalArgumentException</span><span class=o>(</span><span class=s>&#34;You cannot start a load on a null Context&#34;</span><span class=o>);</span>
+      <span class=c1>//判断是否在主线程；是否是 Application 类型，如果是直接通过 getApplicationManager() 来获取一个 RequestManager 对象
+</span><span class=c1></span>    <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>Util</span><span class=o>.</span><span class=na>isOnMainThread</span><span class=o>()</span> <span class=o>&amp;&amp;</span> <span class=o>!(</span><span class=n>context</span> <span class=k>instanceof</span> <span class=n>Application</span><span class=o>))</span> <span class=o>{</span>
+      <span class=c1>//如果在非主线程当中使用的 Glide 都当成传入 Application 参数的情况来处理。否则才接着判断 context 类型
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(</span><span class=n>context</span> <span class=k>instanceof</span> <span class=n>FragmentActivity</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>get</span><span class=o>((</span><span class=n>FragmentActivity</span><span class=o>)</span> <span class=n>context</span><span class=o>);</span>
+      <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>context</span> <span class=k>instanceof</span> <span class=n>Activity</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>get</span><span class=o>((</span><span class=n>Activity</span><span class=o>)</span> <span class=n>context</span><span class=o>);</span>
+      <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>context</span> <span class=k>instanceof</span> <span class=n>ContextWrapper</span>
+          <span class=c1>// Only unwrap a ContextWrapper if the baseContext has a non-null application context.
+</span><span class=c1></span>          <span class=c1>// Context#createPackageContext may return a Context without an Application instance,
+</span><span class=c1></span>          <span class=c1>// in which case a ContextWrapper may be used to attach one.
+</span><span class=c1></span>          <span class=o>&amp;&amp;</span> <span class=o>((</span><span class=n>ContextWrapper</span><span class=o>)</span> <span class=n>context</span><span class=o>).</span><span class=na>getBaseContext</span><span class=o>().</span><span class=na>getApplicationContext</span><span class=o>()</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>get</span><span class=o>(((</span><span class=n>ContextWrapper</span><span class=o>)</span> <span class=n>context</span><span class=o>).</span><span class=na>getBaseContext</span><span class=o>());</span>
+      <span class=o>}</span>
+    <span class=o>}</span>
+
+    <span class=k>return</span> <span class=n>getApplicationManager</span><span class=o>(</span><span class=n>context</span><span class=o>);</span>
+  <span class=o>}</span>
+
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=n>RequestManager</span> <span class=nf>get</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>FragmentActivity</span> <span class=n>activity</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>Util</span><span class=o>.</span><span class=na>isOnBackgroundThread</span><span class=o>())</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>get</span><span class=o>(</span><span class=n>activity</span><span class=o>.</span><span class=na>getApplicationContext</span><span class=o>());</span>
+    <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+      <span class=n>assertNotDestroyed</span><span class=o>(</span><span class=n>activity</span><span class=o>);</span>
+      <span class=n>frameWaiter</span><span class=o>.</span><span class=na>registerSelf</span><span class=o>(</span><span class=n>activity</span><span class=o>);</span>
+      <span class=n>FragmentManager</span> <span class=n>fm</span> <span class=o>=</span> <span class=n>activity</span><span class=o>.</span><span class=na>getSupportFragmentManager</span><span class=o>();</span>
+      <span class=k>return</span> <span class=n>supportFragmentGet</span><span class=o>(</span><span class=n>activity</span><span class=o>,</span> <span class=n>fm</span><span class=o>,</span> <span class=cm>/*parentHint=*/</span> <span class=kc>null</span><span class=o>,</span> <span class=n>isActivityVisible</span><span class=o>(</span><span class=n>activity</span><span class=o>));</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=n>RequestManager</span> <span class=nf>get</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>Fragment</span> <span class=n>fragment</span><span class=o>)</span> <span class=o>{</span>
+    <span class=n>Preconditions</span><span class=o>.</span><span class=na>checkNotNull</span><span class=o>(</span>
+        <span class=n>fragment</span><span class=o>.</span><span class=na>getContext</span><span class=o>(),</span>
+        <span class=s>&#34;You cannot start a load on a fragment before it is attached or after it is destroyed&#34;</span><span class=o>);</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>Util</span><span class=o>.</span><span class=na>isOnBackgroundThread</span><span class=o>())</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>get</span><span class=o>(</span><span class=n>fragment</span><span class=o>.</span><span class=na>getContext</span><span class=o>().</span><span class=na>getApplicationContext</span><span class=o>());</span>
+    <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+      <span class=c1>// In some unusual cases, it&#39;s possible to have a Fragment not hosted by an activity. There&#39;s
+</span><span class=c1></span>      <span class=c1>// not all that much we can do here. Most apps will be started with a standard activity. If
+</span><span class=c1></span>      <span class=c1>// we manage not to register the first frame waiter for a while, the consequences are not
+</span><span class=c1></span>      <span class=c1>// catastrophic, we&#39;ll just use some extra memory.
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(</span><span class=n>fragment</span><span class=o>.</span><span class=na>getActivity</span><span class=o>()</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>frameWaiter</span><span class=o>.</span><span class=na>registerSelf</span><span class=o>(</span><span class=n>fragment</span><span class=o>.</span><span class=na>getActivity</span><span class=o>());</span>
+      <span class=o>}</span>
+      <span class=n>FragmentManager</span> <span class=n>fm</span> <span class=o>=</span> <span class=n>fragment</span><span class=o>.</span><span class=na>getChildFragmentManager</span><span class=o>();</span>
+      <span class=k>return</span> <span class=n>supportFragmentGet</span><span class=o>(</span><span class=n>fragment</span><span class=o>.</span><span class=na>getContext</span><span class=o>(),</span> <span class=n>fm</span><span class=o>,</span> <span class=n>fragment</span><span class=o>,</span> <span class=n>fragment</span><span class=o>.</span><span class=na>isVisible</span><span class=o>());</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+
+  <span class=nd>@SuppressWarnings</span><span class=o>(</span><span class=s>&#34;deprecation&#34;</span><span class=o>)</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=n>RequestManager</span> <span class=nf>get</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>Activity</span> <span class=n>activity</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>Util</span><span class=o>.</span><span class=na>isOnBackgroundThread</span><span class=o>())</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>get</span><span class=o>(</span><span class=n>activity</span><span class=o>.</span><span class=na>getApplicationContext</span><span class=o>());</span>
+    <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>activity</span> <span class=k>instanceof</span> <span class=n>FragmentActivity</span><span class=o>)</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>get</span><span class=o>((</span><span class=n>FragmentActivity</span><span class=o>)</span> <span class=n>activity</span><span class=o>);</span>
+    <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+      <span class=n>assertNotDestroyed</span><span class=o>(</span><span class=n>activity</span><span class=o>);</span>
+      <span class=n>frameWaiter</span><span class=o>.</span><span class=na>registerSelf</span><span class=o>(</span><span class=n>activity</span><span class=o>);</span>
+      <span class=n>android</span><span class=o>.</span><span class=na>app</span><span class=o>.</span><span class=na>FragmentManager</span> <span class=n>fm</span> <span class=o>=</span> <span class=n>activity</span><span class=o>.</span><span class=na>getFragmentManager</span><span class=o>();</span>
+      <span class=k>return</span> <span class=n>fragmentGet</span><span class=o>(</span><span class=n>activity</span><span class=o>,</span> <span class=n>fm</span><span class=o>,</span> <span class=cm>/*parentHint=*/</span> <span class=kc>null</span><span class=o>,</span> <span class=n>isActivityVisible</span><span class=o>(</span><span class=n>activity</span><span class=o>));</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+
+  <span class=nd>@SuppressWarnings</span><span class=o>(</span><span class=s>&#34;deprecation&#34;</span><span class=o>)</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=n>RequestManager</span> <span class=nf>get</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>View</span> <span class=n>view</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>Util</span><span class=o>.</span><span class=na>isOnBackgroundThread</span><span class=o>())</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>get</span><span class=o>(</span><span class=n>view</span><span class=o>.</span><span class=na>getContext</span><span class=o>().</span><span class=na>getApplicationContext</span><span class=o>());</span>
+    <span class=o>}</span>
+
+    <span class=n>Preconditions</span><span class=o>.</span><span class=na>checkNotNull</span><span class=o>(</span><span class=n>view</span><span class=o>);</span>
+    <span class=n>Preconditions</span><span class=o>.</span><span class=na>checkNotNull</span><span class=o>(</span>
+        <span class=n>view</span><span class=o>.</span><span class=na>getContext</span><span class=o>(),</span> <span class=s>&#34;Unable to obtain a request manager for a view without a Context&#34;</span><span class=o>);</span>
+    <span class=n>Activity</span> <span class=n>activity</span> <span class=o>=</span> <span class=n>findActivity</span><span class=o>(</span><span class=n>view</span><span class=o>.</span><span class=na>getContext</span><span class=o>());</span>
+    <span class=c1>// The view might be somewhere else, like a service.
+</span><span class=c1></span>    <span class=k>if</span> <span class=o>(</span><span class=n>activity</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>get</span><span class=o>(</span><span class=n>view</span><span class=o>.</span><span class=na>getContext</span><span class=o>().</span><span class=na>getApplicationContext</span><span class=o>());</span>
+    <span class=o>}</span>
+
+    <span class=c1>// Support Fragments.
+</span><span class=c1></span>    <span class=c1>// Although the user might have non-support Fragments attached to FragmentActivity, searching
+</span><span class=c1></span>    <span class=c1>// for non-support Fragments is so expensive pre O and that should be rare enough that we
+</span><span class=c1></span>    <span class=c1>// prefer to just fall back to the Activity directly.
+</span><span class=c1></span>    <span class=k>if</span> <span class=o>(</span><span class=n>activity</span> <span class=k>instanceof</span> <span class=n>FragmentActivity</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>Fragment</span> <span class=n>fragment</span> <span class=o>=</span> <span class=n>findSupportFragment</span><span class=o>(</span><span class=n>view</span><span class=o>,</span> <span class=o>(</span><span class=n>FragmentActivity</span><span class=o>)</span> <span class=n>activity</span><span class=o>);</span>
+      <span class=k>return</span> <span class=n>fragment</span> <span class=o>!=</span> <span class=kc>null</span> <span class=o>?</span> <span class=n>get</span><span class=o>(</span><span class=n>fragment</span><span class=o>)</span> <span class=o>:</span> <span class=n>get</span><span class=o>((</span><span class=n>FragmentActivity</span><span class=o>)</span> <span class=n>activity</span><span class=o>);</span>
+    <span class=o>}</span>
+
+    <span class=c1>// Standard Fragments.
+</span><span class=c1></span>    <span class=n>android</span><span class=o>.</span><span class=na>app</span><span class=o>.</span><span class=na>Fragment</span> <span class=n>fragment</span> <span class=o>=</span> <span class=n>findFragment</span><span class=o>(</span><span class=n>view</span><span class=o>,</span> <span class=n>activity</span><span class=o>);</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>fragment</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>get</span><span class=o>(</span><span class=n>activity</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=k>return</span> <span class=n>get</span><span class=o>(</span><span class=n>fragment</span><span class=o>);</span>
+  <span class=o>}</span>
+  <span class=c1>//activity 调用
+</span><span class=c1></span>  <span class=nd>@SuppressWarnings</span><span class=o>({</span><span class=s>&#34;deprecation&#34;</span><span class=o>,</span> <span class=s>&#34;DeprecatedIsStillUsed&#34;</span><span class=o>})</span>
+  <span class=nd>@Deprecated</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>private</span> <span class=n>RequestManager</span> <span class=nf>fragmentGet</span><span class=o>(</span>
+      <span class=nd>@NonNull</span> <span class=n>Context</span> <span class=n>context</span><span class=o>,</span>
+      <span class=nd>@NonNull</span> <span class=n>android</span><span class=o>.</span><span class=na>app</span><span class=o>.</span><span class=na>FragmentManager</span> <span class=n>fm</span><span class=o>,</span>
+      <span class=nd>@Nullable</span> <span class=n>android</span><span class=o>.</span><span class=na>app</span><span class=o>.</span><span class=na>Fragment</span> <span class=n>parentHint</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>isParentVisible</span><span class=o>)</span> <span class=o>{</span>
+        <span class=c1>//这个方法中添加 fragment 往下看
+</span><span class=c1></span>    <span class=n>RequestManagerFragment</span> <span class=n>current</span> <span class=o>=</span> <span class=n>getRequestManagerFragment</span><span class=o>(</span><span class=n>fm</span><span class=o>,</span> <span class=n>parentHint</span><span class=o>);</span>
+    <span class=n>RequestManager</span> <span class=n>requestManager</span> <span class=o>=</span> <span class=n>current</span><span class=o>.</span><span class=na>getRequestManager</span><span class=o>();</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>requestManager</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=c1>// TODO(b/27524013): Factor out this Glide.get() call.
+</span><span class=c1></span>      <span class=n>Glide</span> <span class=n>glide</span> <span class=o>=</span> <span class=n>Glide</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>context</span><span class=o>);</span>
+      <span class=n>requestManager</span> <span class=o>=</span>
+          <span class=n>factory</span><span class=o>.</span><span class=na>build</span><span class=o>(</span>
+              <span class=n>glide</span><span class=o>,</span> <span class=n>current</span><span class=o>.</span><span class=na>getGlideLifecycle</span><span class=o>(),</span> <span class=n>current</span><span class=o>.</span><span class=na>getRequestManagerTreeNode</span><span class=o>(),</span> <span class=n>context</span><span class=o>);</span>
+      <span class=c1>// This is a bit of hack, we&#39;re going to start the RequestManager, but not the
+</span><span class=c1></span>      <span class=c1>// corresponding Lifecycle. It&#39;s safe to start the RequestManager, but starting the
+</span><span class=c1></span>      <span class=c1>// Lifecycle might trigger memory leaks. See b/154405040
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(</span><span class=n>isParentVisible</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>requestManager</span><span class=o>.</span><span class=na>onStart</span><span class=o>();</span>
+      <span class=o>}</span>
+      <span class=n>current</span><span class=o>.</span><span class=na>setRequestManager</span><span class=o>(</span><span class=n>requestManager</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=k>return</span> <span class=n>requestManager</span><span class=o>;</span>
+  <span class=o>}</span>  
+  <span class=nd>@SuppressWarnings</span><span class=o>(</span><span class=s>&#34;deprecation&#34;</span><span class=o>)</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>private</span> <span class=n>RequestManagerFragment</span> <span class=nf>getRequestManagerFragment</span><span class=o>(</span>
+      <span class=nd>@NonNull</span> <span class=kd>final</span> <span class=n>android</span><span class=o>.</span><span class=na>app</span><span class=o>.</span><span class=na>FragmentManager</span> <span class=n>fm</span><span class=o>,</span> <span class=nd>@Nullable</span> <span class=n>android</span><span class=o>.</span><span class=na>app</span><span class=o>.</span><span class=na>Fragment</span> <span class=n>parentHint</span><span class=o>)</span> <span class=o>{</span>
+    <span class=n>RequestManagerFragment</span> <span class=n>current</span> <span class=o>=</span> <span class=o>(</span><span class=n>RequestManagerFragment</span><span class=o>)</span> <span class=n>fm</span><span class=o>.</span><span class=na>findFragmentByTag</span><span class=o>(</span><span class=n>FRAGMENT_TAG</span><span class=o>);</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>current</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>current</span> <span class=o>=</span> <span class=n>pendingRequestManagerFragments</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>fm</span><span class=o>);</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>current</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>current</span> <span class=o>=</span> <span class=k>new</span> <span class=n>RequestManagerFragment</span><span class=o>();</span>
+        <span class=n>current</span><span class=o>.</span><span class=na>setParentFragmentHint</span><span class=o>(</span><span class=n>parentHint</span><span class=o>);</span>
+        <span class=n>pendingRequestManagerFragments</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=n>fm</span><span class=o>,</span> <span class=n>current</span><span class=o>);</span>
+        <span class=c1>//添加 fragment
+</span><span class=c1></span>        <span class=n>fm</span><span class=o>.</span><span class=na>beginTransaction</span><span class=o>().</span><span class=na>add</span><span class=o>(</span><span class=n>current</span><span class=o>,</span> <span class=n>FRAGMENT_TAG</span><span class=o>).</span><span class=na>commitAllowingStateLoss</span><span class=o>();</span>
+        <span class=n>handler</span><span class=o>.</span><span class=na>obtainMessage</span><span class=o>(</span><span class=n>ID_REMOVE_FRAGMENT_MANAGER</span><span class=o>,</span> <span class=n>fm</span><span class=o>).</span><span class=na>sendToTarget</span><span class=o>();</span>
+      <span class=o>}</span>
+    <span class=o>}</span>
+    <span class=k>return</span> <span class=n>current</span><span class=o>;</span>
+  <span class=o>}</span>
+  <span class=c1>//Fragment 和 FragmentActivity 调用
+</span><span class=c1></span>  <span class=nd>@NonNull</span>
+  <span class=kd>private</span> <span class=n>RequestManager</span> <span class=nf>supportFragmentGet</span><span class=o>(</span>
+      <span class=nd>@NonNull</span> <span class=n>Context</span> <span class=n>context</span><span class=o>,</span>
+      <span class=nd>@NonNull</span> <span class=n>FragmentManager</span> <span class=n>fm</span><span class=o>,</span>
+      <span class=nd>@Nullable</span> <span class=n>Fragment</span> <span class=n>parentHint</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>isParentVisible</span><span class=o>)</span> <span class=o>{</span>
+        <span class=c1>//这个方法中添加 fragment 往下看
+</span><span class=c1></span>    <span class=n>SupportRequestManagerFragment</span> <span class=n>current</span> <span class=o>=</span> <span class=n>getSupportRequestManagerFragment</span><span class=o>(</span><span class=n>fm</span><span class=o>,</span> <span class=n>parentHint</span><span class=o>);</span>
+    <span class=n>RequestManager</span> <span class=n>requestManager</span> <span class=o>=</span> <span class=n>current</span><span class=o>.</span><span class=na>getRequestManager</span><span class=o>();</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>requestManager</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=c1>// TODO(b/27524013): Factor out this Glide.get() call.
+</span><span class=c1></span>      <span class=n>Glide</span> <span class=n>glide</span> <span class=o>=</span> <span class=n>Glide</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>context</span><span class=o>);</span>
+      <span class=n>requestManager</span> <span class=o>=</span>
+          <span class=n>factory</span><span class=o>.</span><span class=na>build</span><span class=o>(</span>
+              <span class=n>glide</span><span class=o>,</span> <span class=n>current</span><span class=o>.</span><span class=na>getGlideLifecycle</span><span class=o>(),</span> <span class=n>current</span><span class=o>.</span><span class=na>getRequestManagerTreeNode</span><span class=o>(),</span> <span class=n>context</span><span class=o>);</span>
+      <span class=c1>// This is a bit of hack, we&#39;re going to start the RequestManager, but not the
+</span><span class=c1></span>      <span class=c1>// corresponding Lifecycle. It&#39;s safe to start the RequestManager, but starting the
+</span><span class=c1></span>      <span class=c1>// Lifecycle might trigger memory leaks. See b/154405040
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(</span><span class=n>isParentVisible</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>requestManager</span><span class=o>.</span><span class=na>onStart</span><span class=o>();</span>
+      <span class=o>}</span>
+      <span class=n>current</span><span class=o>.</span><span class=na>setRequestManager</span><span class=o>(</span><span class=n>requestManager</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=k>return</span> <span class=n>requestManager</span><span class=o>;</span>
+  <span class=o>}</span>
+  <span class=nd>@NonNull</span>
+  <span class=kd>private</span> <span class=n>SupportRequestManagerFragment</span> <span class=nf>getSupportRequestManagerFragment</span><span class=o>(</span>
+      <span class=nd>@NonNull</span> <span class=kd>final</span> <span class=n>FragmentManager</span> <span class=n>fm</span><span class=o>,</span> <span class=nd>@Nullable</span> <span class=n>Fragment</span> <span class=n>parentHint</span><span class=o>)</span> <span class=o>{</span>
+    <span class=n>SupportRequestManagerFragment</span> <span class=n>current</span> <span class=o>=</span>
+        <span class=o>(</span><span class=n>SupportRequestManagerFragment</span><span class=o>)</span> <span class=n>fm</span><span class=o>.</span><span class=na>findFragmentByTag</span><span class=o>(</span><span class=n>FRAGMENT_TAG</span><span class=o>);</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>current</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>current</span> <span class=o>=</span> <span class=n>pendingSupportRequestManagerFragments</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>fm</span><span class=o>);</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>current</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>current</span> <span class=o>=</span> <span class=k>new</span> <span class=n>SupportRequestManagerFragment</span><span class=o>();</span>
+        <span class=n>current</span><span class=o>.</span><span class=na>setParentFragmentHint</span><span class=o>(</span><span class=n>parentHint</span><span class=o>);</span>
+        <span class=n>pendingSupportRequestManagerFragments</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=n>fm</span><span class=o>,</span> <span class=n>current</span><span class=o>);</span>
+        <span class=c1>//添加 fragment
+</span><span class=c1></span>        <span class=n>fm</span><span class=o>.</span><span class=na>beginTransaction</span><span class=o>().</span><span class=na>add</span><span class=o>(</span><span class=n>current</span><span class=o>,</span> <span class=n>FRAGMENT_TAG</span><span class=o>).</span><span class=na>commitAllowingStateLoss</span><span class=o>();</span>
+        <span class=n>handler</span><span class=o>.</span><span class=na>obtainMessage</span><span class=o>(</span><span class=n>ID_REMOVE_SUPPORT_FRAGMENT_MANAGER</span><span class=o>,</span> <span class=n>fm</span><span class=o>).</span><span class=na>sendToTarget</span><span class=o>();</span>
+      <span class=o>}</span>
+    <span class=o>}</span>
+    <span class=k>return</span> <span class=n>current</span><span class=o>;</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div><h3 id=load>load()</h3><p>with() 返回 RequestManager 调用 load()，load() 也有多个，都是调用 asDrawable().load(xxx) 返回 RequestBuilder&lt;Drawable>。</p><p>asDrawable() 返回 new RequestBuilder 并把 Drawable.class 作为参数传入 RequestBuilder 构造方法，最终在 RequestBuilder 执行 load() 方法。</p><p>RequestBuilder 中 load() 也有多个，都是根据上一步 asDrawable().load(xxx) 中的 xxx 参数类型，调用 loadGeneric(xxx)。</p><p>loadGeneric(xxx) 内容如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=nd>@NonNull</span>
+  <span class=kd>private</span> <span class=n>RequestBuilder</span><span class=o>&lt;</span><span class=n>TranscodeType</span><span class=o>&gt;</span> <span class=nf>loadGeneric</span><span class=o>(</span><span class=nd>@Nullable</span> <span class=n>Object</span> <span class=n>model</span><span class=o>)</span> <span class=o>{</span>
+    <span class=c1>//如果开启isAutoCloneEnabled调用，默认关
+</span><span class=c1></span>    <span class=k>if</span> <span class=o>(</span><span class=n>isAutoCloneEnabled</span><span class=o>())</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>clone</span><span class=o>().</span><span class=na>loadGeneric</span><span class=o>(</span><span class=n>model</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=c1>//赋值
+</span><span class=c1></span>    <span class=k>this</span><span class=o>.</span><span class=na>model</span> <span class=o>=</span> <span class=n>model</span><span class=o>;</span>
+    <span class=c1>//告诉 RequestBuilder model 已经赋值，可以进行下一步
+</span><span class=c1></span>    <span class=n>isModelSet</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+    <span class=c1>//如果没有 lock 就返回 BaseRequestOptions
+</span><span class=c1></span>    <span class=k>return</span> <span class=n>selfOrThrowIfLocked</span><span class=o>();</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div><h3 id=apply>apply()</h3><p>loadGeneric() 最终返回 BaseRequestOptions ，apply() 方法在 RequestBuilder 中如下，重写了父类 BaseRequestOptions 的 apply() ，在 BaseRequestOptions 的 apply() 中最后和 loadGeneric() 一样，返回了 selfOrThrowIfLocked() 。apply() 可以设置一些参数，如错误时加载图片，占位图等。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=nd>@NonNull</span>
+  <span class=nd>@CheckResult</span>
+  <span class=nd>@Override</span>
+  <span class=kd>public</span> <span class=n>RequestBuilder</span><span class=o>&lt;</span><span class=n>TranscodeType</span><span class=o>&gt;</span> <span class=nf>apply</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>BaseRequestOptions</span><span class=o>&lt;?&gt;</span> <span class=n>requestOptions</span><span class=o>)</span> <span class=o>{</span>
+    <span class=n>Preconditions</span><span class=o>.</span><span class=na>checkNotNull</span><span class=o>(</span><span class=n>requestOptions</span><span class=o>);</span>
+    <span class=k>return</span> <span class=kd>super</span><span class=o>.</span><span class=na>apply</span><span class=o>(</span><span class=n>requestOptions</span><span class=o>);</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div><h3 id=into>into()</h3><p>RequestBuilder 调用 into() 设置数据到 Imageview 。这块代码有点多，包括请求失败，占位图，图片长宽等，就不全贴出来了。RequestBuilder 经过 buildRequest 一系列的调用最终 obtainRequest 方法进入到 SingleRequest 。</p><p>可以根据状态看执行相关操作，在构造方法中是 status = Status.PENDING; 在 onSizeReady 方法中 status = Status.RUNNING;</p><p>可以选择看 model 被做了什么，在 onSizeReady 有个 engine.load 方法把 model 等数据传入 Engine 然后在 waitForExistingOrStartNewJob 中被放入 DecodeJob&ltR> ，再由 EngineJob 处理 DecodeJob。</p><p>DecodeJob 实现了 Runable ， FetcherReadyCallback 等接口。在 DecodeJob 中 model 被赋值给 currentData 变量， run 方法 和 重写的 onDataFetcherReady 都会调用到 decodeFromRetrievedData()，在 decodeFromRetrievedData() 中调用 decodeFromData(currentFetcher, currentData, currentDataSource) ，在 decodeFromData 中调用 decodeFromFetcher(data, dataSource) ，最后调用 runLoadPath(data, dataSource, path)。</p><p>有点晕，直接着用 debug 的方式看 runLoadPath 方法，data 先是会被处理成 rewinder ，最终在 decodeResourceWithList 方法中通过 decoder.decode 获取到 InputStream 然后转成 Bitmap</p><p>大致流程如下：</p><ol><li>RequestBuilder 中的 into 方法调用 buildRequest 由 obtainRequest 方法进入到 SingleRequest</li><li>SingleRequest 的 onSizeReady 中 engine.load 开始处理数据</li><li>Engine 运行 DecodeJob 做各种操作</li><li>完成后释放资源</li></ol><p>SingleRequest 有多个工作状态，按流程执行<br>DataSource 数据来源，有本地，远程，缓存等<br>DataFetcher 数据获取接口？<br>DataRewinder 像是用来把要显示的图片资源接收为流数据？<br>DataRewinderRegistry 可以获取 DataRewinder</p><p>以下源码按顺序阅读</p><p>RequestBuilder 的 into() 和 obtainRequest</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=nd>@NonNull</span>
+  <span class=kd>public</span> <span class=n>ViewTarget</span><span class=o>&lt;</span><span class=n>ImageView</span><span class=o>,</span> <span class=n>TranscodeType</span><span class=o>&gt;</span> <span class=nf>into</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>ImageView</span> <span class=n>view</span><span class=o>)</span> <span class=o>{</span>
+    <span class=n>Util</span><span class=o>.</span><span class=na>assertMainThread</span><span class=o>();</span>
+    <span class=n>Preconditions</span><span class=o>.</span><span class=na>checkNotNull</span><span class=o>(</span><span class=n>view</span><span class=o>);</span>
+
+    <span class=n>BaseRequestOptions</span><span class=o>&lt;?&gt;</span> <span class=n>requestOptions</span> <span class=o>=</span> <span class=k>this</span><span class=o>;</span>
+    <span class=k>if</span> <span class=o>(!</span><span class=n>requestOptions</span><span class=o>.</span><span class=na>isTransformationSet</span><span class=o>()</span>
+        <span class=o>&amp;&amp;</span> <span class=n>requestOptions</span><span class=o>.</span><span class=na>isTransformationAllowed</span><span class=o>()</span>
+        <span class=o>&amp;&amp;</span> <span class=n>view</span><span class=o>.</span><span class=na>getScaleType</span><span class=o>()</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=c1>// Clone in this method so that if we use this RequestBuilder to load into a View and then
+</span><span class=c1></span>      <span class=c1>// into a different target, we don&#39;t retain the transformation applied based on the previous
+</span><span class=c1></span>      <span class=c1>// View&#39;s scale type.
+</span><span class=c1></span>      <span class=k>switch</span> <span class=o>(</span><span class=n>view</span><span class=o>.</span><span class=na>getScaleType</span><span class=o>())</span> <span class=o>{</span>
+        <span class=k>case</span> <span class=n>CENTER_CROP</span><span class=o>:</span>
+          <span class=n>requestOptions</span> <span class=o>=</span> <span class=n>requestOptions</span><span class=o>.</span><span class=na>clone</span><span class=o>().</span><span class=na>optionalCenterCrop</span><span class=o>();</span>
+          <span class=k>break</span><span class=o>;</span>
+        <span class=k>case</span> <span class=n>CENTER_INSIDE</span><span class=o>:</span>
+          <span class=n>requestOptions</span> <span class=o>=</span> <span class=n>requestOptions</span><span class=o>.</span><span class=na>clone</span><span class=o>().</span><span class=na>optionalCenterInside</span><span class=o>();</span>
+          <span class=k>break</span><span class=o>;</span>
+        <span class=k>case</span> <span class=n>FIT_CENTER</span><span class=o>:</span>
+        <span class=k>case</span> <span class=n>FIT_START</span><span class=o>:</span>
+        <span class=k>case</span> <span class=n>FIT_END</span><span class=o>:</span>
+          <span class=n>requestOptions</span> <span class=o>=</span> <span class=n>requestOptions</span><span class=o>.</span><span class=na>clone</span><span class=o>().</span><span class=na>optionalFitCenter</span><span class=o>();</span>
+          <span class=k>break</span><span class=o>;</span>
+        <span class=k>case</span> <span class=n>FIT_XY</span><span class=o>:</span>
+          <span class=n>requestOptions</span> <span class=o>=</span> <span class=n>requestOptions</span><span class=o>.</span><span class=na>clone</span><span class=o>().</span><span class=na>optionalCenterInside</span><span class=o>();</span>
+          <span class=k>break</span><span class=o>;</span>
+        <span class=k>case</span> <span class=n>CENTER</span><span class=o>:</span>
+        <span class=k>case</span> <span class=n>MATRIX</span><span class=o>:</span>
+        <span class=k>default</span><span class=o>:</span>
+          <span class=c1>// Do nothing.
+</span><span class=c1></span>      <span class=o>}</span>
+    <span class=o>}</span>
+
+    <span class=k>return</span> <span class=n>into</span><span class=o>(</span>
+        <span class=n>glideContext</span><span class=o>.</span><span class=na>buildImageViewTarget</span><span class=o>(</span><span class=n>view</span><span class=o>,</span> <span class=n>transcodeClass</span><span class=o>),</span>
+        <span class=cm>/*targetListener=*/</span> <span class=kc>null</span><span class=o>,</span>
+        <span class=n>requestOptions</span><span class=o>,</span>
+        <span class=n>Executors</span><span class=o>.</span><span class=na>mainThreadExecutor</span><span class=o>());</span>
+  <span class=o>}</span>
+  <span class=c1>//上面 return into 进到下面这个 into
+</span><span class=c1></span>  <span class=kd>private</span> <span class=o>&lt;</span><span class=n>Y</span> <span class=kd>extends</span> <span class=n>Target</span><span class=o>&lt;</span><span class=n>TranscodeType</span><span class=o>&gt;&gt;</span> <span class=n>Y</span> <span class=nf>into</span><span class=o>(</span>
+      <span class=nd>@NonNull</span> <span class=n>Y</span> <span class=n>target</span><span class=o>,</span>
+      <span class=nd>@Nullable</span> <span class=n>RequestListener</span><span class=o>&lt;</span><span class=n>TranscodeType</span><span class=o>&gt;</span> <span class=n>targetListener</span><span class=o>,</span>
+      <span class=n>BaseRequestOptions</span><span class=o>&lt;?&gt;</span> <span class=n>options</span><span class=o>,</span>
+      <span class=n>Executor</span> <span class=n>callbackExecutor</span><span class=o>)</span> <span class=o>{</span>
+    <span class=n>Preconditions</span><span class=o>.</span><span class=na>checkNotNull</span><span class=o>(</span><span class=n>target</span><span class=o>);</span>
+    <span class=c1>//之前在 loadGeneric() 设置为 true
+</span><span class=c1></span>    <span class=k>if</span> <span class=o>(!</span><span class=n>isModelSet</span><span class=o>)</span> <span class=o>{</span>
+      <span class=k>throw</span> <span class=k>new</span> <span class=n>IllegalArgumentException</span><span class=o>(</span><span class=s>&#34;You must call #load() before calling #into()&#34;</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=c1>//  buildRequest 一系列的调用最终会调用到下面的 obtainRequest
+</span><span class=c1></span>    <span class=n>Request</span> <span class=n>request</span> <span class=o>=</span> <span class=n>buildRequest</span><span class=o>(</span><span class=n>target</span><span class=o>,</span> <span class=n>targetListener</span><span class=o>,</span> <span class=n>options</span><span class=o>,</span> <span class=n>callbackExecutor</span><span class=o>);</span>
+
+    <span class=n>Request</span> <span class=n>previous</span> <span class=o>=</span> <span class=n>target</span><span class=o>.</span><span class=na>getRequest</span><span class=o>();</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>request</span><span class=o>.</span><span class=na>isEquivalentTo</span><span class=o>(</span><span class=n>previous</span><span class=o>)</span>
+        <span class=o>&amp;&amp;</span> <span class=o>!</span><span class=n>isSkipMemoryCacheWithCompletePreviousRequest</span><span class=o>(</span><span class=n>options</span><span class=o>,</span> <span class=n>previous</span><span class=o>))</span> <span class=o>{</span>
+      <span class=c1>// If the request is completed, beginning again will ensure the result is re-delivered,
+</span><span class=c1></span>      <span class=c1>// triggering RequestListeners and Targets. If the request is failed, beginning again will
+</span><span class=c1></span>      <span class=c1>// restart the request, giving it another chance to complete. If the request is already
+</span><span class=c1></span>      <span class=c1>// running, we can let it continue running without interruption.
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(!</span><span class=n>Preconditions</span><span class=o>.</span><span class=na>checkNotNull</span><span class=o>(</span><span class=n>previous</span><span class=o>).</span><span class=na>isRunning</span><span class=o>())</span> <span class=o>{</span>
+        <span class=c1>// Use the previous request rather than the new one to allow for optimizations like skipping
+</span><span class=c1></span>        <span class=c1>// setting placeholders, tracking and un-tracking Targets, and obtaining View dimensions
+</span><span class=c1></span>        <span class=c1>// that are done in the individual Request.
+</span><span class=c1></span>        <span class=n>previous</span><span class=o>.</span><span class=na>begin</span><span class=o>();</span>
+      <span class=o>}</span>
+      <span class=k>return</span> <span class=n>target</span><span class=o>;</span>
+    <span class=o>}</span>
+
+    <span class=n>requestManager</span><span class=o>.</span><span class=na>clear</span><span class=o>(</span><span class=n>target</span><span class=o>);</span>
+    <span class=n>target</span><span class=o>.</span><span class=na>setRequest</span><span class=o>(</span><span class=n>request</span><span class=o>);</span>
+    <span class=n>requestManager</span><span class=o>.</span><span class=na>track</span><span class=o>(</span><span class=n>target</span><span class=o>,</span> <span class=n>request</span><span class=o>);</span>
+
+    <span class=k>return</span> <span class=n>target</span><span class=o>;</span>
+  <span class=o>}</span>
+  
+  <span class=kd>private</span> <span class=n>Request</span> <span class=nf>obtainRequest</span><span class=o>(</span>
+      <span class=n>Object</span> <span class=n>requestLock</span><span class=o>,</span>
+      <span class=n>Target</span><span class=o>&lt;</span><span class=n>TranscodeType</span><span class=o>&gt;</span> <span class=n>target</span><span class=o>,</span>
+      <span class=n>RequestListener</span><span class=o>&lt;</span><span class=n>TranscodeType</span><span class=o>&gt;</span> <span class=n>targetListener</span><span class=o>,</span>
+      <span class=n>BaseRequestOptions</span><span class=o>&lt;?&gt;</span> <span class=n>requestOptions</span><span class=o>,</span>
+      <span class=n>RequestCoordinator</span> <span class=n>requestCoordinator</span><span class=o>,</span>
+      <span class=n>TransitionOptions</span><span class=o>&lt;?,</span> <span class=o>?</span> <span class=kd>super</span> <span class=n>TranscodeType</span><span class=o>&gt;</span> <span class=n>transitionOptions</span><span class=o>,</span>
+      <span class=n>Priority</span> <span class=n>priority</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>overrideWidth</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>overrideHeight</span><span class=o>,</span>
+      <span class=n>Executor</span> <span class=n>callbackExecutor</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>SingleRequest</span><span class=o>.</span><span class=na>obtain</span><span class=o>(</span>
+        <span class=n>context</span><span class=o>,</span>
+        <span class=n>glideContext</span><span class=o>,</span>
+        <span class=n>requestLock</span><span class=o>,</span>
+        <span class=n>model</span><span class=o>,</span>
+        <span class=n>transcodeClass</span><span class=o>,</span>
+        <span class=n>requestOptions</span><span class=o>,</span>
+        <span class=n>overrideWidth</span><span class=o>,</span>
+        <span class=n>overrideHeight</span><span class=o>,</span>
+        <span class=n>priority</span><span class=o>,</span>
+        <span class=n>target</span><span class=o>,</span>
+        <span class=n>targetListener</span><span class=o>,</span>
+        <span class=n>requestListeners</span><span class=o>,</span>
+        <span class=n>requestCoordinator</span><span class=o>,</span>
+        <span class=n>glideContext</span><span class=o>.</span><span class=na>getEngine</span><span class=o>(),</span>
+        <span class=n>transitionOptions</span><span class=o>.</span><span class=na>getTransitionFactory</span><span class=o>(),</span>
+        <span class=n>callbackExecutor</span><span class=o>);</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div><p>SingleRequest 部分代码，由 obtainRequest 方法进入到 SingleRequest</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>  <span class=kd>public</span> <span class=kd>static</span> <span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>SingleRequest</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=nf>obtain</span><span class=o>(</span>
+      <span class=n>Context</span> <span class=n>context</span><span class=o>,</span>
+      <span class=n>GlideContext</span> <span class=n>glideContext</span><span class=o>,</span>
+      <span class=n>Object</span> <span class=n>requestLock</span><span class=o>,</span>
+      <span class=n>Object</span> <span class=n>model</span><span class=o>,</span>
+      <span class=n>Class</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>transcodeClass</span><span class=o>,</span>
+      <span class=n>BaseRequestOptions</span><span class=o>&lt;?&gt;</span> <span class=n>requestOptions</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>overrideWidth</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>overrideHeight</span><span class=o>,</span>
+      <span class=n>Priority</span> <span class=n>priority</span><span class=o>,</span>
+      <span class=n>Target</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>target</span><span class=o>,</span>
+      <span class=n>RequestListener</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>targetListener</span><span class=o>,</span>
+      <span class=nd>@Nullable</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>RequestListener</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;&gt;</span> <span class=n>requestListeners</span><span class=o>,</span>
+      <span class=n>RequestCoordinator</span> <span class=n>requestCoordinator</span><span class=o>,</span>
+      <span class=n>Engine</span> <span class=n>engine</span><span class=o>,</span>
+      <span class=n>TransitionFactory</span><span class=o>&lt;?</span> <span class=kd>super</span> <span class=n>R</span><span class=o>&gt;</span> <span class=n>animationFactory</span><span class=o>,</span>
+      <span class=n>Executor</span> <span class=n>callbackExecutor</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=k>new</span> <span class=n>SingleRequest</span><span class=o>&lt;&gt;(</span>
+        <span class=n>context</span><span class=o>,</span>
+        <span class=n>glideContext</span><span class=o>,</span>
+        <span class=n>requestLock</span><span class=o>,</span>
+        <span class=n>model</span><span class=o>,</span>
+        <span class=n>transcodeClass</span><span class=o>,</span>
+        <span class=n>requestOptions</span><span class=o>,</span>
+        <span class=n>overrideWidth</span><span class=o>,</span>
+        <span class=n>overrideHeight</span><span class=o>,</span>
+        <span class=n>priority</span><span class=o>,</span>
+        <span class=n>target</span><span class=o>,</span>
+        <span class=n>targetListener</span><span class=o>,</span>
+        <span class=n>requestListeners</span><span class=o>,</span>
+        <span class=n>requestCoordinator</span><span class=o>,</span>
+        <span class=n>engine</span><span class=o>,</span>
+        <span class=n>animationFactory</span><span class=o>,</span>
+        <span class=n>callbackExecutor</span><span class=o>);</span>
+  <span class=o>}</span>
+
+<span class=nd>@Override</span>
+  <span class=kd>public</span> <span class=kt>void</span> <span class=nf>begin</span><span class=o>()</span> <span class=o>{</span>
+    <span class=kd>synchronized</span> <span class=o>(</span><span class=n>requestLock</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>assertNotCallingCallbacks</span><span class=o>();</span>
+      <span class=n>stateVerifier</span><span class=o>.</span><span class=na>throwIfRecycled</span><span class=o>();</span>
+      <span class=n>startTime</span> <span class=o>=</span> <span class=n>LogTime</span><span class=o>.</span><span class=na>getLogTime</span><span class=o>();</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>model</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>if</span> <span class=o>(</span><span class=n>Util</span><span class=o>.</span><span class=na>isValidDimensions</span><span class=o>(</span><span class=n>overrideWidth</span><span class=o>,</span> <span class=n>overrideHeight</span><span class=o>))</span> <span class=o>{</span>
+          <span class=n>width</span> <span class=o>=</span> <span class=n>overrideWidth</span><span class=o>;</span>
+          <span class=n>height</span> <span class=o>=</span> <span class=n>overrideHeight</span><span class=o>;</span>
+        <span class=o>}</span>
+        <span class=c1>// Only log at more verbose log levels if the user has set a fallback drawable, because
+</span><span class=c1></span>        <span class=c1>// fallback Drawables indicate the user expects null models occasionally.
+</span><span class=c1></span>        <span class=kt>int</span> <span class=n>logLevel</span> <span class=o>=</span> <span class=n>getFallbackDrawable</span><span class=o>()</span> <span class=o>==</span> <span class=kc>null</span> <span class=o>?</span> <span class=n>Log</span><span class=o>.</span><span class=na>WARN</span> <span class=o>:</span> <span class=n>Log</span><span class=o>.</span><span class=na>DEBUG</span><span class=o>;</span>
+        <span class=n>onLoadFailed</span><span class=o>(</span><span class=k>new</span> <span class=n>GlideException</span><span class=o>(</span><span class=s>&#34;Received null model&#34;</span><span class=o>),</span> <span class=n>logLevel</span><span class=o>);</span>
+        <span class=k>return</span><span class=o>;</span>
+      <span class=o>}</span>
+
+      <span class=k>if</span> <span class=o>(</span><span class=n>status</span> <span class=o>==</span> <span class=n>Status</span><span class=o>.</span><span class=na>RUNNING</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>throw</span> <span class=k>new</span> <span class=n>IllegalArgumentException</span><span class=o>(</span><span class=s>&#34;Cannot restart a running request&#34;</span><span class=o>);</span>
+      <span class=o>}</span>
+
+      <span class=c1>// If we&#39;re restarted after we&#39;re complete (usually via something like a notifyDataSetChanged
+</span><span class=c1></span>      <span class=c1>// that starts an identical request into the same Target or View), we can simply use the
+</span><span class=c1></span>      <span class=c1>// resource and size we retrieved the last time around and skip obtaining a new size, starting
+</span><span class=c1></span>      <span class=c1>// a new load etc. This does mean that users who want to restart a load because they expect
+</span><span class=c1></span>      <span class=c1>// that the view size has changed will need to explicitly clear the View or Target before
+</span><span class=c1></span>      <span class=c1>// starting the new load.
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(</span><span class=n>status</span> <span class=o>==</span> <span class=n>Status</span><span class=o>.</span><span class=na>COMPLETE</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>onResourceReady</span><span class=o>(</span>
+            <span class=n>resource</span><span class=o>,</span> <span class=n>DataSource</span><span class=o>.</span><span class=na>MEMORY_CACHE</span><span class=o>,</span> <span class=cm>/* isLoadedFromAlternateCacheKey= */</span> <span class=kc>false</span><span class=o>);</span>
+        <span class=k>return</span><span class=o>;</span>
+      <span class=o>}</span>
+
+      <span class=c1>// Restarts for requests that are neither complete nor running can be treated as new requests
+</span><span class=c1></span>      <span class=c1>// and can run again from the beginning.
+</span><span class=c1></span>
+      <span class=n>status</span> <span class=o>=</span> <span class=n>Status</span><span class=o>.</span><span class=na>WAITING_FOR_SIZE</span><span class=o>;</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>Util</span><span class=o>.</span><span class=na>isValidDimensions</span><span class=o>(</span><span class=n>overrideWidth</span><span class=o>,</span> <span class=n>overrideHeight</span><span class=o>))</span> <span class=o>{</span>
+        <span class=n>onSizeReady</span><span class=o>(</span><span class=n>overrideWidth</span><span class=o>,</span> <span class=n>overrideHeight</span><span class=o>);</span>
+      <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+        <span class=n>target</span><span class=o>.</span><span class=na>getSize</span><span class=o>(</span><span class=k>this</span><span class=o>);</span>
+      <span class=o>}</span>
+
+      <span class=k>if</span> <span class=o>((</span><span class=n>status</span> <span class=o>==</span> <span class=n>Status</span><span class=o>.</span><span class=na>RUNNING</span> <span class=o>||</span> <span class=n>status</span> <span class=o>==</span> <span class=n>Status</span><span class=o>.</span><span class=na>WAITING_FOR_SIZE</span><span class=o>)</span>
+          <span class=o>&amp;&amp;</span> <span class=n>canNotifyStatusChanged</span><span class=o>())</span> <span class=o>{</span>
+        <span class=n>target</span><span class=o>.</span><span class=na>onLoadStarted</span><span class=o>(</span><span class=n>getPlaceholderDrawable</span><span class=o>());</span>
+      <span class=o>}</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>IS_VERBOSE_LOGGABLE</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>logV</span><span class=o>(</span><span class=s>&#34;finished run method in &#34;</span> <span class=o>+</span> <span class=n>LogTime</span><span class=o>.</span><span class=na>getElapsedMillis</span><span class=o>(</span><span class=n>startTime</span><span class=o>));</span>
+      <span class=o>}</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+
+  <span class=nd>@Override</span>
+  <span class=kd>public</span> <span class=kt>void</span> <span class=nf>onSizeReady</span><span class=o>(</span><span class=kt>int</span> <span class=n>width</span><span class=o>,</span> <span class=kt>int</span> <span class=n>height</span><span class=o>)</span> <span class=o>{</span>
+    <span class=n>stateVerifier</span><span class=o>.</span><span class=na>throwIfRecycled</span><span class=o>();</span>
+    <span class=kd>synchronized</span> <span class=o>(</span><span class=n>requestLock</span><span class=o>)</span> <span class=o>{</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>IS_VERBOSE_LOGGABLE</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>logV</span><span class=o>(</span><span class=s>&#34;Got onSizeReady in &#34;</span> <span class=o>+</span> <span class=n>LogTime</span><span class=o>.</span><span class=na>getElapsedMillis</span><span class=o>(</span><span class=n>startTime</span><span class=o>));</span>
+      <span class=o>}</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>status</span> <span class=o>!=</span> <span class=n>Status</span><span class=o>.</span><span class=na>WAITING_FOR_SIZE</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span><span class=o>;</span>
+      <span class=o>}</span>
+      <span class=n>status</span> <span class=o>=</span> <span class=n>Status</span><span class=o>.</span><span class=na>RUNNING</span><span class=o>;</span>
+
+      <span class=kt>float</span> <span class=n>sizeMultiplier</span> <span class=o>=</span> <span class=n>requestOptions</span><span class=o>.</span><span class=na>getSizeMultiplier</span><span class=o>();</span>
+      <span class=k>this</span><span class=o>.</span><span class=na>width</span> <span class=o>=</span> <span class=n>maybeApplySizeMultiplier</span><span class=o>(</span><span class=n>width</span><span class=o>,</span> <span class=n>sizeMultiplier</span><span class=o>);</span>
+      <span class=k>this</span><span class=o>.</span><span class=na>height</span> <span class=o>=</span> <span class=n>maybeApplySizeMultiplier</span><span class=o>(</span><span class=n>height</span><span class=o>,</span> <span class=n>sizeMultiplier</span><span class=o>);</span>
+
+      <span class=k>if</span> <span class=o>(</span><span class=n>IS_VERBOSE_LOGGABLE</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>logV</span><span class=o>(</span><span class=s>&#34;finished setup for calling load in &#34;</span> <span class=o>+</span> <span class=n>LogTime</span><span class=o>.</span><span class=na>getElapsedMillis</span><span class=o>(</span><span class=n>startTime</span><span class=o>));</span>
+      <span class=o>}</span>
+      <span class=n>loadStatus</span> <span class=o>=</span>
+          <span class=n>engine</span><span class=o>.</span><span class=na>load</span><span class=o>(</span>
+              <span class=n>glideContext</span><span class=o>,</span>
+              <span class=n>model</span><span class=o>,</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>getSignature</span><span class=o>(),</span>
+              <span class=k>this</span><span class=o>.</span><span class=na>width</span><span class=o>,</span>
+              <span class=k>this</span><span class=o>.</span><span class=na>height</span><span class=o>,</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>getResourceClass</span><span class=o>(),</span>
+              <span class=n>transcodeClass</span><span class=o>,</span>
+              <span class=n>priority</span><span class=o>,</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>getDiskCacheStrategy</span><span class=o>(),</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>getTransformations</span><span class=o>(),</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>isTransformationRequired</span><span class=o>(),</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>isScaleOnlyOrNoTransform</span><span class=o>(),</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>getOptions</span><span class=o>(),</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>isMemoryCacheable</span><span class=o>(),</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>getUseUnlimitedSourceGeneratorsPool</span><span class=o>(),</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>getUseAnimationPool</span><span class=o>(),</span>
+              <span class=n>requestOptions</span><span class=o>.</span><span class=na>getOnlyRetrieveFromCache</span><span class=o>(),</span>
+              <span class=k>this</span><span class=o>,</span>
+              <span class=n>callbackExecutor</span><span class=o>);</span>
+
+      <span class=c1>// This is a hack that&#39;s only useful for testing right now where loads complete synchronously
+</span><span class=c1></span>      <span class=c1>// even though under any executor running on any thread but the main thread, the load would
+</span><span class=c1></span>      <span class=c1>// have completed asynchronously.
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(</span><span class=n>status</span> <span class=o>!=</span> <span class=n>Status</span><span class=o>.</span><span class=na>RUNNING</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>loadStatus</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>
+      <span class=o>}</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>IS_VERBOSE_LOGGABLE</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>logV</span><span class=o>(</span><span class=s>&#34;finished onSizeReady in &#34;</span> <span class=o>+</span> <span class=n>LogTime</span><span class=o>.</span><span class=na>getElapsedMillis</span><span class=o>(</span><span class=n>startTime</span><span class=o>));</span>
+      <span class=o>}</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div><p>Engine 部分代码 ，由 SingleRequest 的 onSizeReady 中 engine.load 进入</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>  <span class=kd>public</span> <span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>LoadStatus</span> <span class=nf>load</span><span class=o>(</span>
+      <span class=n>GlideContext</span> <span class=n>glideContext</span><span class=o>,</span>
+      <span class=n>Object</span> <span class=n>model</span><span class=o>,</span>
+      <span class=n>Key</span> <span class=n>signature</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>width</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>height</span><span class=o>,</span>
+      <span class=n>Class</span><span class=o>&lt;?&gt;</span> <span class=n>resourceClass</span><span class=o>,</span>
+      <span class=n>Class</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>transcodeClass</span><span class=o>,</span>
+      <span class=n>Priority</span> <span class=n>priority</span><span class=o>,</span>
+      <span class=n>DiskCacheStrategy</span> <span class=n>diskCacheStrategy</span><span class=o>,</span>
+      <span class=n>Map</span><span class=o>&lt;</span><span class=n>Class</span><span class=o>&lt;?&gt;,</span> <span class=n>Transformation</span><span class=o>&lt;?&gt;&gt;</span> <span class=n>transformations</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>isTransformationRequired</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>isScaleOnlyOrNoTransform</span><span class=o>,</span>
+      <span class=n>Options</span> <span class=n>options</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>isMemoryCacheable</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>useUnlimitedSourceExecutorPool</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>useAnimationPool</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>onlyRetrieveFromCache</span><span class=o>,</span>
+      <span class=n>ResourceCallback</span> <span class=n>cb</span><span class=o>,</span>
+      <span class=n>Executor</span> <span class=n>callbackExecutor</span><span class=o>)</span> <span class=o>{</span>
+    <span class=kt>long</span> <span class=n>startTime</span> <span class=o>=</span> <span class=n>VERBOSE_IS_LOGGABLE</span> <span class=o>?</span> <span class=n>LogTime</span><span class=o>.</span><span class=na>getLogTime</span><span class=o>()</span> <span class=o>:</span> <span class=n>0</span><span class=o>;</span>
+
+    <span class=n>EngineKey</span> <span class=n>key</span> <span class=o>=</span>
+        <span class=n>keyFactory</span><span class=o>.</span><span class=na>buildKey</span><span class=o>(</span>
+            <span class=n>model</span><span class=o>,</span>
+            <span class=n>signature</span><span class=o>,</span>
+            <span class=n>width</span><span class=o>,</span>
+            <span class=n>height</span><span class=o>,</span>
+            <span class=n>transformations</span><span class=o>,</span>
+            <span class=n>resourceClass</span><span class=o>,</span>
+            <span class=n>transcodeClass</span><span class=o>,</span>
+            <span class=n>options</span><span class=o>);</span>
+
+    <span class=n>EngineResource</span><span class=o>&lt;?&gt;</span> <span class=n>memoryResource</span><span class=o>;</span>
+    <span class=kd>synchronized</span> <span class=o>(</span><span class=k>this</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>memoryResource</span> <span class=o>=</span> <span class=n>loadFromMemory</span><span class=o>(</span><span class=n>key</span><span class=o>,</span> <span class=n>isMemoryCacheable</span><span class=o>,</span> <span class=n>startTime</span><span class=o>);</span>
+
+      <span class=k>if</span> <span class=o>(</span><span class=n>memoryResource</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>waitForExistingOrStartNewJob</span><span class=o>(</span>
+            <span class=n>glideContext</span><span class=o>,</span>
+            <span class=n>model</span><span class=o>,</span>
+            <span class=n>signature</span><span class=o>,</span>
+            <span class=n>width</span><span class=o>,</span>
+            <span class=n>height</span><span class=o>,</span>
+            <span class=n>resourceClass</span><span class=o>,</span>
+            <span class=n>transcodeClass</span><span class=o>,</span>
+            <span class=n>priority</span><span class=o>,</span>
+            <span class=n>diskCacheStrategy</span><span class=o>,</span>
+            <span class=n>transformations</span><span class=o>,</span>
+            <span class=n>isTransformationRequired</span><span class=o>,</span>
+            <span class=n>isScaleOnlyOrNoTransform</span><span class=o>,</span>
+            <span class=n>options</span><span class=o>,</span>
+            <span class=n>isMemoryCacheable</span><span class=o>,</span>
+            <span class=n>useUnlimitedSourceExecutorPool</span><span class=o>,</span>
+            <span class=n>useAnimationPool</span><span class=o>,</span>
+            <span class=n>onlyRetrieveFromCache</span><span class=o>,</span>
+            <span class=n>cb</span><span class=o>,</span>
+            <span class=n>callbackExecutor</span><span class=o>,</span>
+            <span class=n>key</span><span class=o>,</span>
+            <span class=n>startTime</span><span class=o>);</span>
+      <span class=o>}</span>
+    <span class=o>}</span>
+
+    <span class=c1>// Avoid calling back while holding the engine lock, doing so makes it easier for callers to
+</span><span class=c1></span>    <span class=c1>// deadlock.
+</span><span class=c1></span>    <span class=n>cb</span><span class=o>.</span><span class=na>onResourceReady</span><span class=o>(</span>
+        <span class=n>memoryResource</span><span class=o>,</span> <span class=n>DataSource</span><span class=o>.</span><span class=na>MEMORY_CACHE</span><span class=o>,</span> <span class=cm>/* isLoadedFromAlternateCacheKey= */</span> <span class=kc>false</span><span class=o>);</span>
+    <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
+  <span class=o>}</span>
+
+  <span class=kd>private</span> <span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>LoadStatus</span> <span class=nf>waitForExistingOrStartNewJob</span><span class=o>(</span>
+      <span class=n>GlideContext</span> <span class=n>glideContext</span><span class=o>,</span>
+      <span class=n>Object</span> <span class=n>model</span><span class=o>,</span>
+      <span class=n>Key</span> <span class=n>signature</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>width</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>height</span><span class=o>,</span>
+      <span class=n>Class</span><span class=o>&lt;?&gt;</span> <span class=n>resourceClass</span><span class=o>,</span>
+      <span class=n>Class</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>transcodeClass</span><span class=o>,</span>
+      <span class=n>Priority</span> <span class=n>priority</span><span class=o>,</span>
+      <span class=n>DiskCacheStrategy</span> <span class=n>diskCacheStrategy</span><span class=o>,</span>
+      <span class=n>Map</span><span class=o>&lt;</span><span class=n>Class</span><span class=o>&lt;?&gt;,</span> <span class=n>Transformation</span><span class=o>&lt;?&gt;&gt;</span> <span class=n>transformations</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>isTransformationRequired</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>isScaleOnlyOrNoTransform</span><span class=o>,</span>
+      <span class=n>Options</span> <span class=n>options</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>isMemoryCacheable</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>useUnlimitedSourceExecutorPool</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>useAnimationPool</span><span class=o>,</span>
+      <span class=kt>boolean</span> <span class=n>onlyRetrieveFromCache</span><span class=o>,</span>
+      <span class=n>ResourceCallback</span> <span class=n>cb</span><span class=o>,</span>
+      <span class=n>Executor</span> <span class=n>callbackExecutor</span><span class=o>,</span>
+      <span class=n>EngineKey</span> <span class=n>key</span><span class=o>,</span>
+      <span class=kt>long</span> <span class=n>startTime</span><span class=o>)</span> <span class=o>{</span>
+
+    <span class=n>EngineJob</span><span class=o>&lt;?&gt;</span> <span class=n>current</span> <span class=o>=</span> <span class=n>jobs</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>key</span><span class=o>,</span> <span class=n>onlyRetrieveFromCache</span><span class=o>);</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>current</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>current</span><span class=o>.</span><span class=na>addCallback</span><span class=o>(</span><span class=n>cb</span><span class=o>,</span> <span class=n>callbackExecutor</span><span class=o>);</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>VERBOSE_IS_LOGGABLE</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>logWithTimeAndKey</span><span class=o>(</span><span class=s>&#34;Added to existing load&#34;</span><span class=o>,</span> <span class=n>startTime</span><span class=o>,</span> <span class=n>key</span><span class=o>);</span>
+      <span class=o>}</span>
+      <span class=k>return</span> <span class=k>new</span> <span class=n>LoadStatus</span><span class=o>(</span><span class=n>cb</span><span class=o>,</span> <span class=n>current</span><span class=o>);</span>
+    <span class=o>}</span>
+
+    <span class=n>EngineJob</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>engineJob</span> <span class=o>=</span>
+        <span class=n>engineJobFactory</span><span class=o>.</span><span class=na>build</span><span class=o>(</span>
+            <span class=n>key</span><span class=o>,</span>
+            <span class=n>isMemoryCacheable</span><span class=o>,</span>
+            <span class=n>useUnlimitedSourceExecutorPool</span><span class=o>,</span>
+            <span class=n>useAnimationPool</span><span class=o>,</span>
+            <span class=n>onlyRetrieveFromCache</span><span class=o>);</span>
+
+    <span class=n>DecodeJob</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>decodeJob</span> <span class=o>=</span>
+        <span class=n>decodeJobFactory</span><span class=o>.</span><span class=na>build</span><span class=o>(</span>
+            <span class=n>glideContext</span><span class=o>,</span>
+            <span class=n>model</span><span class=o>,</span>
+            <span class=n>key</span><span class=o>,</span>
+            <span class=n>signature</span><span class=o>,</span>
+            <span class=n>width</span><span class=o>,</span>
+            <span class=n>height</span><span class=o>,</span>
+            <span class=n>resourceClass</span><span class=o>,</span>
+            <span class=n>transcodeClass</span><span class=o>,</span>
+            <span class=n>priority</span><span class=o>,</span>
+            <span class=n>diskCacheStrategy</span><span class=o>,</span>
+            <span class=n>transformations</span><span class=o>,</span>
+            <span class=n>isTransformationRequired</span><span class=o>,</span>
+            <span class=n>isScaleOnlyOrNoTransform</span><span class=o>,</span>
+            <span class=n>onlyRetrieveFromCache</span><span class=o>,</span>
+            <span class=n>options</span><span class=o>,</span>
+            <span class=n>engineJob</span><span class=o>);</span>
+
+    <span class=n>jobs</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=n>key</span><span class=o>,</span> <span class=n>engineJob</span><span class=o>);</span>
+
+    <span class=n>engineJob</span><span class=o>.</span><span class=na>addCallback</span><span class=o>(</span><span class=n>cb</span><span class=o>,</span> <span class=n>callbackExecutor</span><span class=o>);</span>
+    <span class=n>engineJob</span><span class=o>.</span><span class=na>start</span><span class=o>(</span><span class=n>decodeJob</span><span class=o>);</span>
+
+    <span class=k>if</span> <span class=o>(</span><span class=n>VERBOSE_IS_LOGGABLE</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>logWithTimeAndKey</span><span class=o>(</span><span class=s>&#34;Started new load&#34;</span><span class=o>,</span> <span class=n>startTime</span><span class=o>,</span> <span class=n>key</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=k>return</span> <span class=k>new</span> <span class=n>LoadStatus</span><span class=o>(</span><span class=n>cb</span><span class=o>,</span> <span class=n>engineJob</span><span class=o>);</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div><p>DecodeJob 部分代码，由 engineJob.start(decodeJob) 进入</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>  <span class=c1>//实现 Runnable 的 run 方法
+</span><span class=c1></span>  <span class=nd>@Override</span>
+  <span class=kd>public</span> <span class=kt>void</span> <span class=nf>run</span><span class=o>()</span> <span class=o>{</span>
+    <span class=c1>// This should be much more fine grained, but since Java&#39;s thread pool implementation silently
+</span><span class=c1></span>    <span class=c1>// swallows all otherwise fatal exceptions, this will at least make it obvious to developers
+</span><span class=c1></span>    <span class=c1>// that something is failing.
+</span><span class=c1></span>    <span class=n>GlideTrace</span><span class=o>.</span><span class=na>beginSectionFormat</span><span class=o>(</span><span class=s>&#34;DecodeJob#run(model=%s)&#34;</span><span class=o>,</span> <span class=n>model</span><span class=o>);</span>
+    <span class=c1>// Methods in the try statement can invalidate currentFetcher, so set a local variable here to
+</span><span class=c1></span>    <span class=c1>// ensure that the fetcher is cleaned up either way.
+</span><span class=c1></span>    <span class=n>DataFetcher</span><span class=o>&lt;?&gt;</span> <span class=n>localFetcher</span> <span class=o>=</span> <span class=n>currentFetcher</span><span class=o>;</span>
+    <span class=k>try</span> <span class=o>{</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>isCancelled</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>notifyFailed</span><span class=o>();</span>
+        <span class=k>return</span><span class=o>;</span>
+      <span class=o>}</span>
+      <span class=n>runWrapped</span><span class=o>();</span>
+    <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>CallbackException</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+      <span class=c1>// If a callback not controlled by Glide throws an exception, we should avoid the Glide
+</span><span class=c1></span>      <span class=c1>// specific debug logic below.
+</span><span class=c1></span>      <span class=k>throw</span> <span class=n>e</span><span class=o>;</span>
+    <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Throwable</span> <span class=n>t</span><span class=o>)</span> <span class=o>{</span>
+      <span class=c1>// Catch Throwable and not Exception to handle OOMs. Throwables are swallowed by our
+</span><span class=c1></span>      <span class=c1>// usage of .submit() in GlideExecutor so we&#39;re not silently hiding crashes by doing this. We
+</span><span class=c1></span>      <span class=c1>// are however ensuring that our callbacks are always notified when a load fails. Without this
+</span><span class=c1></span>      <span class=c1>// notification, uncaught throwables never notify the corresponding callbacks, which can cause
+</span><span class=c1></span>      <span class=c1>// loads to silently hang forever, a case that&#39;s especially bad for users using Futures on
+</span><span class=c1></span>      <span class=c1>// background threads.
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(</span><span class=n>Log</span><span class=o>.</span><span class=na>isLoggable</span><span class=o>(</span><span class=n>TAG</span><span class=o>,</span> <span class=n>Log</span><span class=o>.</span><span class=na>DEBUG</span><span class=o>))</span> <span class=o>{</span>
+        <span class=n>Log</span><span class=o>.</span><span class=na>d</span><span class=o>(</span>
+            <span class=n>TAG</span><span class=o>,</span>
+            <span class=s>&#34;DecodeJob threw unexpectedly&#34;</span> <span class=o>+</span> <span class=s>&#34;, isCancelled: &#34;</span> <span class=o>+</span> <span class=n>isCancelled</span> <span class=o>+</span> <span class=s>&#34;, stage: &#34;</span> <span class=o>+</span> <span class=n>stage</span><span class=o>,</span>
+            <span class=n>t</span><span class=o>);</span>
+      <span class=o>}</span>
+      <span class=c1>// When we&#39;re encoding we&#39;ve already notified our callback and it isn&#39;t safe to do so again.
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(</span><span class=n>stage</span> <span class=o>!=</span> <span class=n>Stage</span><span class=o>.</span><span class=na>ENCODE</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>throwables</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>t</span><span class=o>);</span>
+        <span class=n>notifyFailed</span><span class=o>();</span>
+      <span class=o>}</span>
+      <span class=k>if</span> <span class=o>(!</span><span class=n>isCancelled</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>throw</span> <span class=n>t</span><span class=o>;</span>
+      <span class=o>}</span>
+      <span class=k>throw</span> <span class=n>t</span><span class=o>;</span>
+    <span class=o>}</span> <span class=k>finally</span> <span class=o>{</span>
+      <span class=c1>// Keeping track of the fetcher here and calling cleanup is excessively paranoid, we call
+</span><span class=c1></span>      <span class=c1>// close in all cases anyway.
+</span><span class=c1></span>      <span class=k>if</span> <span class=o>(</span><span class=n>localFetcher</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>localFetcher</span><span class=o>.</span><span class=na>cleanup</span><span class=o>();</span>
+      <span class=o>}</span>
+      <span class=n>GlideTrace</span><span class=o>.</span><span class=na>endSection</span><span class=o>();</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+
+  <span class=kd>private</span> <span class=kt>void</span> <span class=nf>runWrapped</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>switch</span> <span class=o>(</span><span class=n>runReason</span><span class=o>)</span> <span class=o>{</span>
+      <span class=k>case</span> <span class=n>INITIALIZE</span><span class=o>:</span>
+        <span class=n>stage</span> <span class=o>=</span> <span class=n>getNextStage</span><span class=o>(</span><span class=n>Stage</span><span class=o>.</span><span class=na>INITIALIZE</span><span class=o>);</span>
+        <span class=n>currentGenerator</span> <span class=o>=</span> <span class=n>getNextGenerator</span><span class=o>();</span>
+        <span class=n>runGenerators</span><span class=o>();</span>
+        <span class=k>break</span><span class=o>;</span>
+      <span class=k>case</span> <span class=n>SWITCH_TO_SOURCE_SERVICE</span><span class=o>:</span>
+        <span class=n>runGenerators</span><span class=o>();</span>
+        <span class=k>break</span><span class=o>;</span>
+      <span class=k>case</span> <span class=n>DECODE_DATA</span><span class=o>:</span>
+        <span class=n>decodeFromRetrievedData</span><span class=o>();</span>
+        <span class=k>break</span><span class=o>;</span>
+      <span class=k>default</span><span class=o>:</span>
+        <span class=k>throw</span> <span class=k>new</span> <span class=n>IllegalStateException</span><span class=o>(</span><span class=s>&#34;Unrecognized run reason: &#34;</span> <span class=o>+</span> <span class=n>runReason</span><span class=o>);</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+
+  <span class=kd>private</span> <span class=kt>void</span> <span class=nf>decodeFromRetrievedData</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>Log</span><span class=o>.</span><span class=na>isLoggable</span><span class=o>(</span><span class=n>TAG</span><span class=o>,</span> <span class=n>Log</span><span class=o>.</span><span class=na>VERBOSE</span><span class=o>))</span> <span class=o>{</span>
+      <span class=n>logWithTimeAndKey</span><span class=o>(</span>
+          <span class=s>&#34;Retrieved data&#34;</span><span class=o>,</span>
+          <span class=n>startFetchTime</span><span class=o>,</span>
+          <span class=s>&#34;data: &#34;</span>
+              <span class=o>+</span> <span class=n>currentData</span>
+              <span class=o>+</span> <span class=s>&#34;, cache key: &#34;</span>
+              <span class=o>+</span> <span class=n>currentSourceKey</span>
+              <span class=o>+</span> <span class=s>&#34;, fetcher: &#34;</span>
+              <span class=o>+</span> <span class=n>currentFetcher</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=n>Resource</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>resource</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>
+    <span class=k>try</span> <span class=o>{</span>
+      <span class=n>resource</span> <span class=o>=</span> <span class=n>decodeFromData</span><span class=o>(</span><span class=n>currentFetcher</span><span class=o>,</span> <span class=n>currentData</span><span class=o>,</span> <span class=n>currentDataSource</span><span class=o>);</span>
+    <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>GlideException</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>e</span><span class=o>.</span><span class=na>setLoggingDetails</span><span class=o>(</span><span class=n>currentAttemptingKey</span><span class=o>,</span> <span class=n>currentDataSource</span><span class=o>);</span>
+      <span class=n>throwables</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>e</span><span class=o>);</span>
+    <span class=o>}</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>resource</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>notifyEncodeAndRelease</span><span class=o>(</span><span class=n>resource</span><span class=o>,</span> <span class=n>currentDataSource</span><span class=o>,</span> <span class=n>isLoadingFromAlternateCacheKey</span><span class=o>);</span>
+    <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+      <span class=n>runGenerators</span><span class=o>();</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+
+  <span class=kd>private</span> <span class=o>&lt;</span><span class=n>Data</span><span class=o>&gt;</span> <span class=n>Resource</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=nf>decodeFromData</span><span class=o>(</span>
+      <span class=n>DataFetcher</span><span class=o>&lt;?&gt;</span> <span class=n>fetcher</span><span class=o>,</span> <span class=n>Data</span> <span class=n>data</span><span class=o>,</span> <span class=n>DataSource</span> <span class=n>dataSource</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>GlideException</span> <span class=o>{</span>
+    <span class=k>try</span> <span class=o>{</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>data</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
+      <span class=o>}</span>
+      <span class=kt>long</span> <span class=n>startTime</span> <span class=o>=</span> <span class=n>LogTime</span><span class=o>.</span><span class=na>getLogTime</span><span class=o>();</span>
+      <span class=n>Resource</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>result</span> <span class=o>=</span> <span class=n>decodeFromFetcher</span><span class=o>(</span><span class=n>data</span><span class=o>,</span> <span class=n>dataSource</span><span class=o>);</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>Log</span><span class=o>.</span><span class=na>isLoggable</span><span class=o>(</span><span class=n>TAG</span><span class=o>,</span> <span class=n>Log</span><span class=o>.</span><span class=na>VERBOSE</span><span class=o>))</span> <span class=o>{</span>
+        <span class=n>logWithTimeAndKey</span><span class=o>(</span><span class=s>&#34;Decoded result &#34;</span> <span class=o>+</span> <span class=n>result</span><span class=o>,</span> <span class=n>startTime</span><span class=o>);</span>
+      <span class=o>}</span>
+      <span class=k>return</span> <span class=n>result</span><span class=o>;</span>
+    <span class=o>}</span> <span class=k>finally</span> <span class=o>{</span>
+      <span class=n>fetcher</span><span class=o>.</span><span class=na>cleanup</span><span class=o>();</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+
+  <span class=kd>private</span> <span class=o>&lt;</span><span class=n>Data</span><span class=o>&gt;</span> <span class=n>Resource</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=nf>decodeFromFetcher</span><span class=o>(</span><span class=n>Data</span> <span class=n>data</span><span class=o>,</span> <span class=n>DataSource</span> <span class=n>dataSource</span><span class=o>)</span>
+      <span class=kd>throws</span> <span class=n>GlideException</span> <span class=o>{</span>
+    <span class=n>LoadPath</span><span class=o>&lt;</span><span class=n>Data</span><span class=o>,</span> <span class=o>?,</span> <span class=n>R</span><span class=o>&gt;</span> <span class=n>path</span> <span class=o>=</span> <span class=n>decodeHelper</span><span class=o>.</span><span class=na>getLoadPath</span><span class=o>((</span><span class=n>Class</span><span class=o>&lt;</span><span class=n>Data</span><span class=o>&gt;)</span> <span class=n>data</span><span class=o>.</span><span class=na>getClass</span><span class=o>());</span>
+    <span class=k>return</span> <span class=n>runLoadPath</span><span class=o>(</span><span class=n>data</span><span class=o>,</span> <span class=n>dataSource</span><span class=o>,</span> <span class=n>path</span><span class=o>);</span>
+  <span class=o>}</span>
+
+  <span class=kd>private</span> <span class=o>&lt;</span><span class=n>Data</span><span class=o>,</span> <span class=n>ResourceType</span><span class=o>&gt;</span> <span class=n>Resource</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=nf>runLoadPath</span><span class=o>(</span>
+      <span class=n>Data</span> <span class=n>data</span><span class=o>,</span> <span class=n>DataSource</span> <span class=n>dataSource</span><span class=o>,</span> <span class=n>LoadPath</span><span class=o>&lt;</span><span class=n>Data</span><span class=o>,</span> <span class=n>ResourceType</span><span class=o>,</span> <span class=n>R</span><span class=o>&gt;</span> <span class=n>path</span><span class=o>)</span>
+      <span class=kd>throws</span> <span class=n>GlideException</span> <span class=o>{</span>
+    <span class=n>Options</span> <span class=n>options</span> <span class=o>=</span> <span class=n>getOptionsWithHardwareConfig</span><span class=o>(</span><span class=n>dataSource</span><span class=o>);</span>
+    <span class=n>DataRewinder</span><span class=o>&lt;</span><span class=n>Data</span><span class=o>&gt;</span> <span class=n>rewinder</span> <span class=o>=</span> <span class=n>glideContext</span><span class=o>.</span><span class=na>getRegistry</span><span class=o>().</span><span class=na>getRewinder</span><span class=o>(</span><span class=n>data</span><span class=o>);</span>
+    <span class=k>try</span> <span class=o>{</span>
+      <span class=c1>// ResourceType in DecodeCallback below is required for compilation to work with gradle.
+</span><span class=c1></span>      <span class=k>return</span> <span class=n>path</span><span class=o>.</span><span class=na>load</span><span class=o>(</span>
+          <span class=n>rewinder</span><span class=o>,</span> <span class=n>options</span><span class=o>,</span> <span class=n>width</span><span class=o>,</span> <span class=n>height</span><span class=o>,</span> <span class=k>new</span> <span class=n>DecodeCallback</span><span class=o>&lt;</span><span class=n>ResourceType</span><span class=o>&gt;(</span><span class=n>dataSource</span><span class=o>));</span>
+    <span class=o>}</span> <span class=k>finally</span> <span class=o>{</span>
+      <span class=n>rewinder</span><span class=o>.</span><span class=na>cleanup</span><span class=o>();</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div><p>LoadPath 部分代码</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>  <span class=kd>public</span> <span class=n>Resource</span><span class=o>&lt;</span><span class=n>Transcode</span><span class=o>&gt;</span> <span class=nf>load</span><span class=o>(</span>
+      <span class=n>DataRewinder</span><span class=o>&lt;</span><span class=n>Data</span><span class=o>&gt;</span> <span class=n>rewinder</span><span class=o>,</span>
+      <span class=nd>@NonNull</span> <span class=n>Options</span> <span class=n>options</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>width</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>height</span><span class=o>,</span>
+      <span class=n>DecodePath</span><span class=o>.</span><span class=na>DecodeCallback</span><span class=o>&lt;</span><span class=n>ResourceType</span><span class=o>&gt;</span> <span class=n>decodeCallback</span><span class=o>)</span>
+      <span class=kd>throws</span> <span class=n>GlideException</span> <span class=o>{</span>
+    <span class=n>List</span><span class=o>&lt;</span><span class=n>Throwable</span><span class=o>&gt;</span> <span class=n>throwables</span> <span class=o>=</span> <span class=n>Preconditions</span><span class=o>.</span><span class=na>checkNotNull</span><span class=o>(</span><span class=n>listPool</span><span class=o>.</span><span class=na>acquire</span><span class=o>());</span>
+    <span class=k>try</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>loadWithExceptionList</span><span class=o>(</span><span class=n>rewinder</span><span class=o>,</span> <span class=n>options</span><span class=o>,</span> <span class=n>width</span><span class=o>,</span> <span class=n>height</span><span class=o>,</span> <span class=n>decodeCallback</span><span class=o>,</span> <span class=n>throwables</span><span class=o>);</span>
+    <span class=o>}</span> <span class=k>finally</span> <span class=o>{</span>
+      <span class=n>listPool</span><span class=o>.</span><span class=na>release</span><span class=o>(</span><span class=n>throwables</span><span class=o>);</span>
+    <span class=o>}</span>
+  <span class=o>}</span>
+
+  <span class=kd>private</span> <span class=n>Resource</span><span class=o>&lt;</span><span class=n>Transcode</span><span class=o>&gt;</span> <span class=nf>loadWithExceptionList</span><span class=o>(</span>
+      <span class=n>DataRewinder</span><span class=o>&lt;</span><span class=n>Data</span><span class=o>&gt;</span> <span class=n>rewinder</span><span class=o>,</span>
+      <span class=nd>@NonNull</span> <span class=n>Options</span> <span class=n>options</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>width</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>height</span><span class=o>,</span>
+      <span class=n>DecodePath</span><span class=o>.</span><span class=na>DecodeCallback</span><span class=o>&lt;</span><span class=n>ResourceType</span><span class=o>&gt;</span> <span class=n>decodeCallback</span><span class=o>,</span>
+      <span class=n>List</span><span class=o>&lt;</span><span class=n>Throwable</span><span class=o>&gt;</span> <span class=n>exceptions</span><span class=o>)</span>
+      <span class=kd>throws</span> <span class=n>GlideException</span> <span class=o>{</span>
+    <span class=n>Resource</span><span class=o>&lt;</span><span class=n>Transcode</span><span class=o>&gt;</span> <span class=n>result</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>
+    <span class=c1>//noinspection ForLoopReplaceableByForEach to improve perf
+</span><span class=c1></span>    <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>,</span> <span class=n>size</span> <span class=o>=</span> <span class=n>decodePaths</span><span class=o>.</span><span class=na>size</span><span class=o>();</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>size</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+      <span class=n>DecodePath</span><span class=o>&lt;</span><span class=n>Data</span><span class=o>,</span> <span class=n>ResourceType</span><span class=o>,</span> <span class=n>Transcode</span><span class=o>&gt;</span> <span class=n>path</span> <span class=o>=</span> <span class=n>decodePaths</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>i</span><span class=o>);</span>
+      <span class=k>try</span> <span class=o>{</span>
+        <span class=n>result</span> <span class=o>=</span> <span class=n>path</span><span class=o>.</span><span class=na>decode</span><span class=o>(</span><span class=n>rewinder</span><span class=o>,</span> <span class=n>width</span><span class=o>,</span> <span class=n>height</span><span class=o>,</span> <span class=n>options</span><span class=o>,</span> <span class=n>decodeCallback</span><span class=o>);</span>
+      <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>GlideException</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>exceptions</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>e</span><span class=o>);</span>
+      <span class=o>}</span>
+      <span class=k>if</span> <span class=o>(</span><span class=n>result</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>break</span><span class=o>;</span>
+      <span class=o>}</span>
+    <span class=o>}</span>
+
+    <span class=k>if</span> <span class=o>(</span><span class=n>result</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+      <span class=k>throw</span> <span class=k>new</span> <span class=n>GlideException</span><span class=o>(</span><span class=n>failureMessage</span><span class=o>,</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;(</span><span class=n>exceptions</span><span class=o>));</span>
+    <span class=o>}</span>
+
+    <span class=k>return</span> <span class=n>result</span><span class=o>;</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div><p>DecodePath 部分代码</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>  <span class=kd>public</span> <span class=n>Resource</span><span class=o>&lt;</span><span class=n>Transcode</span><span class=o>&gt;</span> <span class=nf>decode</span><span class=o>(</span>
+      <span class=n>DataRewinder</span><span class=o>&lt;</span><span class=n>DataType</span><span class=o>&gt;</span> <span class=n>rewinder</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>width</span><span class=o>,</span>
+      <span class=kt>int</span> <span class=n>height</span><span class=o>,</span>
+      <span class=nd>@NonNull</span> <span class=n>Options</span> <span class=n>options</span><span class=o>,</span>
+      <span class=n>DecodeCallback</span><span class=o>&lt;</span><span class=n>ResourceType</span><span class=o>&gt;</span> <span class=n>callback</span><span class=o>)</span>
+      <span class=kd>throws</span> <span class=n>GlideException</span> <span class=o>{</span>
+    <span class=n>Resource</span><span class=o>&lt;</span><span class=n>ResourceType</span><span class=o>&gt;</span> <span class=n>decoded</span> <span class=o>=</span> <span class=n>decodeResource</span><span class=o>(</span><span class=n>rewinder</span><span class=o>,</span> <span class=n>width</span><span class=o>,</span> <span class=n>height</span><span class=o>,</span> <span class=n>options</span><span class=o>);</span>
+    <span class=n>Resource</span><span class=o>&lt;</span><span class=n>ResourceType</span><span class=o>&gt;</span> <span class=n>transformed</span> <span class=o>=</span> <span class=n>callback</span><span class=o>.</span><span class=na>onResourceDecoded</span><span class=o>(</span><span class=n>decoded</span><span class=o>);</span>
+    <span class=k>return</span> <span class=n>transcoder</span><span class=o>.</span><span class=na>transcode</span><span class=o>(</span><span class=n>transformed</span><span class=o>,</span> <span class=n>options</span><span class=o>);</span>
+  <span class=o>}</span>
+</code></pre></td></tr></table></div></div></div><footer class=post-footer><nav class=post-nav><a class=next href=/post/android/android-touch/><span class="next-text nav-default">Android 事件分发</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links></div><div class=copyright><span class=power-by></span><span class=theme-info></span><span class=copyright-year>&copy;
+2021
+<span>|</span>
+<span>Kalaqiae</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script><script type=text/javascript src=https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js></script></body></html>
