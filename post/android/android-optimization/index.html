@@ -58,8 +58,8 @@
 <span class=o>}</span>
 </code></pre></td></tr></table></div></div><ul><li>自己编译的 so<br>release 包的 so 中移除调试符号。可以使用 Android NDK 中提供的 arm-eabi-strip 工具从原生库中移除不必要的调试符号。
 如果是 cmake 来编译的话，可以再编辑脚本添加如下代码</li></ul><blockquote><p>set(CMAKE_C_FLAGS_RELEASE &ldquo;${CMAKE_C_FLAGS_RELEASE} -s&rdquo;)<br>set(CMAKE_CXX_FLAGS_RELEASE &ldquo;${CMAKE_CXX_FLAGS_RELEASE} -s&rdquo;)</p></blockquote><ul><li>动态下发 so
-通过服务器下发 so , 下载完后再进入应用，但是体验不好，但是是一个思路</li></ul><h2 id=减少代码资源大小>减少代码资源大小</h2><ul><li><p>混淆<br>可以减少生成class的大小</p></li><li><p>R文件内联<br>通过把 R 文件里面的资源内联到代码中，从而减少 R 文件的大小<br>通过<a href=https://github.com/bytedance/ByteX/blob/master/shrink-r-plugin/README-zh.md>shrink-r-plugin</a>工具来做 R 文件的内联</p></li></ul></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/android/android-touch/><i class="iconfont icon-left"></i>
-<span class="prev-text nav-default">Android 事件分发</span>
+通过服务器下发 so , 下载完后再进入应用，但是体验不好，但是是一个思路</li></ul><h2 id=减少代码资源大小>减少代码资源大小</h2><ul><li><p>混淆<br>可以减少生成class的大小</p></li><li><p>R文件内联<br>通过把 R 文件里面的资源内联到代码中，从而减少 R 文件的大小<br>通过<a href=https://github.com/bytedance/ByteX/blob/master/shrink-r-plugin/README-zh.md>shrink-r-plugin</a>工具来做 R 文件的内联</p></li></ul></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/common/tools/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">Tools</span>
 <span class="prev-text nav-mobile">上一篇</span></a>
 <a class=next href=/post/android/android-handler/><span class="next-text nav-default">Android Handler</span>
 <span class="next-text nav-mobile">下一篇</span>

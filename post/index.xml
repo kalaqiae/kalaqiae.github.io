@@ -4,7 +4,17 @@
 &lt;p>注意看左下角方法所属&lt;/p>
 &lt;p>当一个点击事件（MotionEvent ）产生后，系统需把这个事件传递给一个具体的 View 去处理&lt;/p>
 &lt;p>一次完整的 MotionEvent 事件：ACTION_DOWN(1次) -&amp;gt; ACTION_MOVE(N次) -&amp;gt; ACTION_UP(1次)&lt;/p>
-&lt;p>顺序 Activity -&amp;gt; ViewGroup -&amp;gt; View&lt;/p></description></item><item><title>APK 瘦身</title><link>https://kalaqiae.com/post/android/android-optimization/</link><pubDate>Thu, 06 May 2021 21:35:21 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-optimization/</guid><description>&lt;h2 id="减少-res-资源大小">减少 res 资源大小&lt;/h2>
+&lt;p>顺序 Activity -&amp;gt; ViewGroup -&amp;gt; View&lt;/p></description></item><item><title>Tools</title><link>https://kalaqiae.com/post/common/tools/</link><pubDate>Thu, 06 May 2021 21:36:19 +0800</pubDate><guid>https://kalaqiae.com/post/common/tools/</guid><description>&lt;h2 id="网址记录">网址记录&lt;/h2>
+&lt;p>&lt;a href="https://developers.google.cn/">GDG&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://stackoverflow.com/questions/tagged/android">Stack Overflow&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://developer.android.google.cn">Android 开发者&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.kotlincn.net/docs/reference/">kotlin 文档&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://flutterchina.club/docs/">Flutter 文档&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://androidweekly.net/">androidweekly&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://juejin.cn/android">掘金-安卓&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://leetcode-cn.com/">leetcode&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.runoob.com/">菜鸟教程&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.w3school.com.cn/">W3C&lt;/a>&lt;/p></description></item><item><title>APK 瘦身</title><link>https://kalaqiae.com/post/android/android-optimization/</link><pubDate>Thu, 06 May 2021 21:35:21 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-optimization/</guid><description>&lt;h2 id="减少-res-资源大小">减少 res 资源大小&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>删除重复资源&lt;br>
