@@ -6,11 +6,11 @@ tags: ["Android","事件分发"]
 categories: ["Android"]
 ---
 
-## 概要
+### 概要
+
+先上图，注意看左下角方法所属
 
 ![touch](https://cdn.jsdelivr.net/gh/kalaqiae/picBank/img/touch.png)
-
- 注意看左下角方法所属
 
 当一个点击事件（MotionEvent ）产生后，系统需把这个事件传递给一个具体的 View 去处理
 
@@ -35,13 +35,13 @@ ViewGroup 的 dispatchTouchEvent 返回 true 则事件被消费，返回 false �
 | onInterceptTouchEvent() | 事件拦截，只有 ViewGroup 有 | 在 ViewGroup 的 dispatchTouchEvent() 内部调用  |
 | onTouchEvent()          | 处理点击事件               | 在 dispatchTouchEvent() 内部调用               |
 
-## ACTION_MOVE 和 ACTION_UP
+### ACTION_MOVE 和 ACTION_UP
 
 在 onTouchEvent 消费事件时：在哪个 View onTouchEvent 返回 true，ACTION_MOVE 和 ACTION_UP 的事件从上往下传到这个 View 后就不再往下传递了，直接传给那个 View 的 onTouchEvent 并结束本次事件传递过程。（包括拦截也是走到 onTouchEvent ）
 
 在 dispatchTouchEvent 消费事件时：和 ACTION_DOWN 一样
 
-## 其他
+### 其他
 
 * onTouch() 优先于 onTouchEvent 执行,若手动复写在 onTouch() 中返回 true（即 将事件消费掉），将不会再执行 onTouchEvent()
 

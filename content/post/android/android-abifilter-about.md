@@ -8,11 +8,11 @@ categories: ["Android"]
 
 为了优化apk的大小，一般会只选择支持一种ABI，可以在AS中双击apk，在lib路径下查看so文件占用大小
 
-## Android ABI概念
+### Android ABI概念
 
 Application Binary Interface [官方文档](https://developer.android.com/ndk/guides/abis?hl=zh-cn)
 
-## cpu架构选择
+### cpu架构选择
 
 * arm64-v8a 作为最新一代架构，应该是目前的主流  
 * 兼容性越好，则性能越差。兼容性：armeabi>armeabi-v7a>arm64-v8a  
@@ -31,7 +31,7 @@ android {
 }
 ```
 
-## 流程
+### 流程
 
 ![ABI流程](https://cdn.jsdelivr.net/gh/kalaqiae/picBank/img/find_abi.png)
 
@@ -39,7 +39,7 @@ android {
 
 如果有arm64-v8a文件夹，那么就去找特定名称的.so文件，注意：如果没有找到想要的.so文件，不会再往下（armeabi-v7a文件夹）找了，而是直接抛出异常。
 
-## 小孩才做选择，我全都要
+### 小孩才做选择，我全都要
 
 ABI 配置多个 APK，[官方文档](https://developer.android.com/studio/build/configure-apk-splits)  
 部分应用市场支持上传多个apk，比如谷歌
@@ -71,7 +71,7 @@ android {
 }
 ```
 
-## 其他
+### 其他
 
 * 如果仅保留armeabi-v7a，而有些第三方包未提供v7a的包，可以尝试将对应armeabi包拷贝到armeabi-v7a
 

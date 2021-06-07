@@ -6,7 +6,7 @@ tags: ["Kotlin","coroutines"]
 categories: ["Kotlin"]
 ---
 
-## 启动协程
+### 启动协程
 
 <!-- | 方式               | 说明                                                                             |
 | :------------------|:--------------------------------------------------------------------------------|
@@ -14,7 +14,7 @@ categories: ["Kotlin"]
 | runBlocking        | 创建新的协程，运行在当前线程上，所以会堵塞当前线程，直到协程体结束                    |
 | GlobalScope.asyn   | 启动一个新的线程，在新线程上创建运行协程，并且不堵塞当前线程，支持 通过await获取返回值 | -->
 
-### launch
+#### launch
 
 启动一个新的线程，在新线程上创建运行协程，不堵塞当前线程，返回一个Job类型的对象
 
@@ -25,7 +25,7 @@ launch {
 ```
 <!--more-->
 
-### runBlocking
+#### runBlocking
 
 创建新的协程，运行在当前线程上，所以会堵塞当前线程，直到协程体结束。它旨在将常规的阻塞代码桥接到以挂起方式编写的库中，以供在main函数和测试中使用，不推荐使用
 
@@ -35,7 +35,7 @@ runBlocking {
 }
 ```
 
-### async
+#### async
 
 类似launch {}，不同的是返回一个 Deferred&lt;T> 实例，并可以在协程体中自定义返回值，通过.await() 获得最终结果  
 Deferred也是一个Job
@@ -60,15 +60,15 @@ fun asyncTest() {
 }
 ```
 
-<!-- ### 用法
+<!-- #### 用法
 
 少用GlobalScope，用MainScope，使用kotlin委托写个基类
 
-## 协程上下文(CoroutineContext )
+### 协程上下文(CoroutineContext )
 
 协程总是运行在一些以 CoroutineContext 类型为代表的上下文中 -->
 
-## 协程启动模式
+### 协程启动模式
 
 | 模式         | 功能                                           |
 | :------------|:----------------------------------------------|
@@ -88,7 +88,7 @@ runBlocking {
 }
 ```
 
-## 协程调度器(CoroutineDispatcher)  
+### 协程调度器(CoroutineDispatcher)  
 
 确定了相关的协程在哪个线程或哪些线程上执行
 
@@ -112,7 +112,7 @@ launch(newSingleThreadContext("MyOwnThread")) { // 将使它获得一个新的�
 }
 ```
 
-## 协程作用域(CoroutineScope)
+### 协程作用域(CoroutineScope)
 
 定义协程作用范围  
 
@@ -131,7 +131,7 @@ launch(newSingleThreadContext("MyOwnThread")) { // 将使它获得一个新的�
 
 >public fun MainScope(): CoroutineScope = ContextScope(SupervisorJob() + Dispatchers.Main)
 
-### SupervisorJob
+#### SupervisorJob
 
 子协程的异常或取消不会导致父协程异常，也不会影响其他子协程，因此，父协程可以实施自定义策略来处理其子协程的异常：
 
@@ -140,14 +140,14 @@ launch(newSingleThreadContext("MyOwnThread")) { // 将使它获得一个新的�
 
 如果作用域指定了父协程，那么其父协程异常或取消时，该父协程的所有子协程也被取消。
 
-### 在安卓中使用
+#### 在安卓中使用
 
 * ViewModelScope  
 为应用中的每个 ViewModel 定义了 ViewModelScope。如果 ViewModel 已清除，则在此范围内启动的协程都会自动取消
 * LifecycleScope  
 为每个 Lifecycle 对象定义了 LifecycleScope。在此范围内启动的协程会在 Lifecycle 被销毁时取消
 
-## 取消
+### 取消
 
 所有kotlinx.coroutines中的挂起函数都是可被取消的。它们检查协程的取消，并在取消时抛出 CancellationException。
 
@@ -179,18 +179,18 @@ job: I'm sleeping 3 ...
 job: I'm sleeping 4 ...  
 main: Now I can quit.  
 
-## 异常
+### 异常
 
-### 异常传播  
+#### 异常传播  
 
 当协程出现异常时，会根据当前作用域触发异常传递，查看上文的[协程作用域](#协程作用域coroutinescope)（主要关注coroutineScope，supervisorScope的传播）
 
-### 异常处理  
+#### 异常处理  
 
 * launch内部出现未捕获的异常时尝试触发对父协程的取消，能否取消要看作用域的定义，如果取消成功，那么异常传递给父协程，否则传递给启动时上下文中配置的CoroutineExceptionHandler中，如果没有配置，会查找全局（JVM上）的CoroutineExceptionHandler进行处理，如果仍然没有，那么就将异常交给当前线程的UncaughtExceptionHandler处理  
 * async在未捕获的异常出现时同样会尝试取消父协程，但不管是否能够取消成功都不会后其他后续的异常处理，直到用户主动调用await时将异常抛出
 
-### join和await  
+#### join和await  
 
 join只关心协程是否执行完，await则关心运行的结果。
 
@@ -216,7 +216,7 @@ runBlocking {
 }
 ```
 
-## 其他
+### 其他
 
 * delay() 是一个特殊的 挂起函数 ，它不会造成线程阻塞，但是会 挂起 协程，并且只能在协程中使用  
 * cancelAndJoin 它合并了对 cancel 以及 join 的调用  

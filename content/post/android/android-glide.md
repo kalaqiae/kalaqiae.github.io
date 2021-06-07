@@ -1,12 +1,10 @@
 ---
-title: "Glide 源码"
+title: "Glide 源码 4.12.0"
 date: 2021-05-17T21:41:16+08:00
 draft: false
 tags: ["Android","Glide","源码"]
 categories: ["Android"]
 ---
-
-## Glide 4.12.0
 
 Glide.with(this).load(url).apply(xxx).into(imageView);
 

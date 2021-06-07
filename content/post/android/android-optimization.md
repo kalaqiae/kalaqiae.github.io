@@ -6,7 +6,7 @@ tags: ["Android","优化"]
 categories: ["Android"]
 ---
 
-## 减少 res 资源大小
+### 减少 res 资源大小
 
 * 删除重复资源  
 右击项目 refactor/remove unused resources ,或 lint 工具来搜索项目中不再使用的图片等资源
@@ -33,7 +33,7 @@ android {
 }
 ```
 
-## 减少 so 库资源大小
+### 减少 so 库资源大小
 
 * 只编译指定平台的 so  
 
@@ -57,7 +57,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
 * 动态下发 so
 通过服务器下发 so , 下载完后再进入应用，但是体验不好，但是是一个思路
 
-## 减少代码资源大小
+### 减少代码资源大小
 
 * 混淆  
 可以减少生成class的大小

@@ -1,12 +1,12 @@
 ---
-title: "Android Video Base"
+title: "Android Video 基础笔记"
 date: 2021-05-17T22:57:27+08:00
-draft: true
+draft: false
 tags: ["Android","Video"]
 categories: ["Android"]
 ---
 
-## 视频
+### 视频
 
 * 视频文件
   
@@ -104,7 +104,7 @@ RGB_565 代表 R 占5位， G 占6位， B 占5位，所以 w*h*2
 ARGB_8888 w*h*4
 比如 1280x720的RGBA_8888图像的大小，1280 * 720 * 4=3.516M
 
-## 直播
+### 直播
 
 RTMP 和 HTTP 都是应用层
 C 语言写的 LIBRTMP 类似 OKHTTP 封装 Socket 完成 http 数据收发，封装了 Socket 实现 RTMP 的数据收发

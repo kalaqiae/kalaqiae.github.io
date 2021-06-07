@@ -6,17 +6,17 @@ tags: ["hello world"]
 categories: ["go"]
 ---
 
-## 下载Go
+### 下载Go
 
 下载地址： <https://golang.google.cn/dl/>
 
 <!--more-->
 
-## 安装
+### 安装
 
 安装完成后会自动配置环境GOPATH，在cmd中输入go version测试，显示版本号则安装成功
 
-## HelloWorld Demo
+### HelloWorld Demo
 
 新建hello.go文件，复制保存以下代码到文件中，使用go run运行
 

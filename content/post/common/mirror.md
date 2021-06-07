@@ -6,7 +6,7 @@ tags: ["Mirror"]
 categories: ["Mirror"]
 ---
 
-## Android
+### Android
 
 按顺序写  
 >maven { url 'https://maven.aliyun.com/repository/public/' }  
@@ -17,7 +17,7 @@ jcenter()
 
 <!--more-->
 
-## Flutter
+### Flutter
 
 推荐用社区或清华的
 
@@ -45,28 +45,28 @@ CNNIC
 >export PUB_HOSTED_URL=http://mirrors.cnnic.cn/dart-pub  
 export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 
-## NPM
+### NPM
 
-### 临时使用
+#### 临时使用
 
 >npm --registry https://registry.npm.taobao.org install express
 
-### 持久使用
+#### 持久使用
 
 >npm config set registry https://registry.npm.taobao.org
 npm config list
 
-### 获取配置镜像地址
+#### 获取配置镜像地址
 
 >npm get registry
 
-### 还原默认
+#### 还原默认
 
 >npm config set registry https://registry.npmjs.org  
 或删除恢复默认镜像  
 npm config delete registry
 
-### 或通过cnpm使用
+#### 或通过cnpm使用
 
 >npm install -g cnpm --registry=https://registry.npm.taobao.org  
 使用cnpm代替npm

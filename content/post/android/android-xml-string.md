@@ -6,7 +6,7 @@ tags: ["Android","xml"]
 categories: ["Android"]
 ---
 
-## 设置字符串格式
+### 设置字符串格式
 
 ```xml
 <string name="welcome_messages">Hi, %1$s! You have %2$d new messages.</string>  
@@ -24,7 +24,7 @@ var text = getString(R.string.welcome_messages, "kalaqiae", 10)
 
 <!--more-->
 
-## 字符串数组
+### 字符串数组
 
 ```xml
 <string-array name="planets_array">  
@@ -39,7 +39,7 @@ var text = getString(R.string.welcome_messages, "kalaqiae", 10)
 val array: Array = resources.getStringArray(R.array.planets_array)
 ```
 
-## 复数
+### 复数
 
 支持以下完整集合：zero、one、two、few、many 和 other
 

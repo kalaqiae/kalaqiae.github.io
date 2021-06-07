@@ -6,7 +6,7 @@ tags: ["Android","handler"]
 categories: ["Android"]
 ---
 
-## Handler 概要
+### Handler 概要
 
 [官方文档](https://developer.android.google.cn/reference/android/os/Handler)
 
@@ -17,7 +17,7 @@ Handler 两个主要用途：在将来某个时刻执行消息和线程。在不
 发送方法有 post(Runnable) , postDelayed(Runnable, long), sendMessage(Message) 等
 默认通过 handleMessage(Message) 处理接收 Message
 
-## Handler、Message、MessageQueue以及Looper  
+### Handler、Message、MessageQueue以及Looper  
 
 * Handler 负责发送和处理消息（Handler发送消息给 MessageQueue 和接收 Looper 返回的消息并且处理消息）
 * Message 用来携带需要的数据
@@ -30,7 +30,7 @@ Handler 通过 sendMessage 发送 Message 到 MessageQueue 队列，Looper 通�
 
 ![handler](https://cdn.jsdelivr.net/gh/kalaqiae/picBank/img/handler.webp)
 
-## 发送消息
+### 发送消息
 
 发送消息最后都是调用到 sendMessageAtTime ，sendMessageAtTime 最后返回 enqueueMessage 方法
 
@@ -144,7 +144,7 @@ boolean enqueueMessage(Message msg, long when) {
     }
 ```
 
-## 处理消息
+### 处理消息
 
 Looper.loop() 方法中通过死循环调用 queue.next() 取出消息使用 dispatchMessage(msg) 处理将要执行的消息
 
@@ -219,13 +219,13 @@ public void dispatchMessage(@NonNull Message msg) {
 }
 ```
 
-## ThreadLocal
+### ThreadLocal
 
 线程内部的数据存储类，通过它存储的数据只有在它自己的线程才能获取到，其他线程是获取不到的
 
 Handler 主要利用了 ThreadLocal 在每个线程单独存储副本的特性
 
-## 其他  
+### 其他  
 
 * Looper 相关
 

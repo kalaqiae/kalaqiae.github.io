@@ -6,13 +6,15 @@ tags: ["Tools"]
 categories: ["Tools"]
 ---
 
-## 网址记录
+### 网址记录
 
 [GDG](https://developers.google.cn/)
 
 [Stack Overflow](https://stackoverflow.com/questions/tagged/android)
 
 [Android 开发者](https://developer.android.google.cn)
+
+<!--more-->
 
 [kotlin 文档](https://www.kotlincn.net/docs/reference/)
 
@@ -28,11 +30,9 @@ categories: ["Tools"]
 
 [W3C](https://www.w3school.com.cn/)
 
-<!--more-->
-
 <!-- [美团技术团队](https://tech.meituan.com/) -->
 
-## 工具记录
+### 工具记录
 
 在线图片压缩 [TinyPNG](https://tinypng.com/)
 
@@ -44,7 +44,7 @@ json测试数据 [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
 截图工具 [Snipaste](https://www.snipaste.com/)
 
-## Android Studio 插件
+### Android Studio 插件
 
 ADB Idea
 
@@ -64,7 +64,7 @@ JSON To Kotlin Class ​(JsonToKotlinClass)​
 
 Markdown
 
-## VSCode 插件
+### VSCode 插件
 
 Chinese (Simplified) Language Pack for Visual Studio Code
 

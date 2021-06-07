@@ -1,12 +1,12 @@
 ---
-title: "Interview"
+title: "Interview 随记"
 date: 2021-05-17T23:01:09+08:00
-draft: true
+draft: false
 tags: ["Interview"]
 categories: ["Interview"]
 ---
 
-## HashMap 的原理
+### HashMap 的原理
 
 HashMap 的内部可以看做数组+链表的复合结构。数组被分为一个个的桶(bucket)。哈希值决定了键值对在数组中的寻址。具有相同哈希值的键值对会组成链表。需要注意的是当链表长度超过阈值(默认是8)的时候会触发树化，链表会变成树形结构。
 
@@ -35,35 +35,35 @@ HashMap 的内部可以看做数组+链表的复合结构。数组被分为一�
    将原数组扩展为原来的 2 倍  
 重新计算 index 索引值，将原节点重新放到新的数组中。这一步可以将原先冲突的节点分散到新的桶中。
 
-## sleep 和 wait 的区别
+### sleep 和 wait 的区别
 
 sleep 方法是 Thread 类中的静态方法，wait 是 Object 类中的方法  
 sleep 并不会释放同步锁，而 wait 会释放同步锁  
 sleep 可以在任何地方使用，而 wait 只能在同步方法或者同步代码块中使用  
 sleep 中必须传入时间，而 wait 可以传，也可以不传，不传时间的话只有 notify 或者 notifyAll 才能唤醒，传时间的话在时间之后会自动唤醒
 
-## join 的用法
+### join 的用法
 
 join 方法通常是保证线程间顺序调度的一个方法，它是 Thread 类中的方法。比方说在线程 A 中执行线程 B.join()，这时线程 A 会进入等待状态，直到线程 B 执行完毕之后才会唤醒，继续执行A线程中的后续方法。
 
-## Java中引用类型的区别
+### Java中引用类型的区别
 
 * 强引用：强引用指的是通过 new 对象创建的引用，垃圾回收器即使是内存不足也不会回收强引用指向的对象。  
 * 软引用：软引用是通过 SoftRefrence 实现的，它的生命周期比强引用短，在内存不足，抛出 OOM 之前，垃圾回收器会回收软引用引用的对象。软引用常见的使用场景是存储一些内存敏感的缓存，当内存不足时会被回收。  
 * 弱引用： 弱引用是通过 WeakRefrence 实现的，它的生命周期比软引用还短，GC 只要扫描到弱引用的对象就会回收。弱引用常见的使用场景也是存储一些内存敏感的缓存。  
 * 虚引用： 虚引用是通过 FanttomRefrence 实现的，它的生命周期最短，随时可能被回收。如果一个对象只被虚引用引用，我们无法通过虚引用来访问这个对象的任何属性和方法。它的作用仅仅是保证对象在 finalize 后，做某些事情。虚引用常见的使用场景是跟踪对象被垃圾回收的活动，当一个虚引用关联的对象被垃圾回收器回收之前会收到一条系统通知。  
 
-## 服务
+### 服务
 
-## 广播
+### 广播
 
 现在要求最好都是动态注册
 
-## 动画
+### 动画
 
 帧动画，补间动画，属性动画。还可以考虑用 surfaceview 绘制，在 gpu 里运行比较不卡？
 
-## 内存泄漏
+### 内存泄漏
 
 单例模式导致的内存泄漏，比如不要使用 Activity 类型的 Context，使用 Application 类型的 Context 可以避免内存泄漏
 
@@ -79,7 +79,7 @@ WebView 导致的内存泄漏，WebView 比较特殊，即使是调用了它的 
 
 集合中对象没清理造成的内存泄漏
 
-## View的绘制流程
+### View的绘制流程
 
 视图绘制的起点在 ViewRootImpl 类的 performTraversals()方法，在这个方法内其实是按照顺序依次调用了 mView.measure()、mView.layout()、mView.draw()
 
@@ -101,7 +101,7 @@ View的绘制流程分为3步：测量、布局、绘制，分别对应3个方�
   * 绘制子View。 对应 dispatchDraw(Canvas)方法。
   * 绘制滑动相关和前景。 对应 onDrawForeground(Canvas)。
 
-## Bitmap OOM 问题
+### Bitmap OOM 问题
 
 等比缩小长宽。Options 中有一个属性 inSampleSize。通过修改 inSampleSize 可以缩小图片的长宽。inSampleSize 大小需要是 2 的幂次方，如果小于 1，代码会强制让 inSampleSize 为1。
 
@@ -112,7 +112,7 @@ ARGB_4444 每个像素占用2byte内存
 ARGB_8888 每个像素占用4byte内存（默认）
 RGB_565 每个像素占用2byte内存
 
-## launch mode
+### launch mode
 
 standard，创建一个新的Activity。
 
@@ -136,12 +136,12 @@ singleInstance应用场景：
 
 闹铃的响铃界面。 你以前设置了一个闹铃：上午6点。在上午5点58分，你启动了闹铃设置界面，并按 Home 键回桌面；在上午5点59分时，你在微信和朋友聊天；在6点时，闹铃响了，并且弹出了一个对话框形式的 Activity(名为 AlarmAlertActivity) 提示你到6点了(这个 Activity 就是以 SingleInstance 加载模式打开的)，你按返回键，回到的是微信的聊天界面，这是因为 AlarmAlertActivity 所在的 Task 的栈只有他一个元素， 因此退出之后这个 Task 的栈空了。如果是以 SingleTask 打开 AlarmAlertActivity，那么当闹铃响了的时候，按返回键应该进入闹铃设置界面。
 
-## ANR
+### ANR
 
 Application NotResponding ， Activity 是5秒， BroadCastReceiver 是10秒， Service 是20秒（均为前台）
 耗时线操作放子线程
 
-## 各版本特性
+### 各版本特性
 
 Android6.0新特性 动态权限管理
 
@@ -153,7 +153,7 @@ Android9.0（P）新特性 室内WIFI定位 “刘海”屏幕支持
 
 Android10.0（Q）
 
-## ActivityA跳转ActivityB然后B按back返回A，各自的生命周期顺序，A与B均不透明
+### ActivityA跳转ActivityB然后B按back返回A，各自的生命周期顺序，A与B均不透明
 
 * ActivityA跳转到ActivityB
 
@@ -172,30 +172,30 @@ Activity A：onResume
 Activity B：onStop
 Activity B：onDestroy
 
-## 各布局绘制效率
+### 各布局绘制效率
 
-## Merge、ViewStub
+### Merge、ViewStub
 
 Merge: 减少视图层级，可以删除多余的层级
 
 ViewStub: 按需加载，减少内存使用量、加快渲染速度、不支持 merge 标签。
 
-## Asset目录与res目录的区别
+### Asset目录与res目录的区别
 
 assets：不会在 R 文件中生成相应标记，存放到这里的资源在打包时会打包到程序安装包中。（通过 AssetManager 类访问这些文件）
 res：会在 R 文件中生成 id 标记，资源在打包时如果使用到则打包到安装包中，未用到不会打入安装包中。
 res/anim：存放动画资源。
 res/raw：和 asset 下文件一样，打包时直接打入程序安装包中（会映射到 R 文件中）。
 
-## 类的初始化顺序
+### 类的初始化顺序
 
 （静态变量、静态代码块）>（变量、代码块）> 构造方法
 
-## Android进程间通信的方式
+### Android进程间通信的方式
 
 AIDL 、广播、文件、socket、管道
 
-## Android与 js 交互
+### Android与 js 交互
 
 * Android调js
 

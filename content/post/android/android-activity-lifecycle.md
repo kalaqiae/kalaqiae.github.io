@@ -6,7 +6,7 @@ tags: ["Android","Activity","Lifecycle"]
 categories: ["Android"]
 ---
 
-## 生命周期简介
+### 生命周期简介
 
 先上图
 
