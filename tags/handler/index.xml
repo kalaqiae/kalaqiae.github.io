@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>handler on KALAQIAE</title><link>https://kalaqiae.com/tags/handler/</link><description>Recent content in handler on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 06 May 2021 21:34:42 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/handler/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Handler</title><link>https://kalaqiae.com/post/android/android-handler/</link><pubDate>Thu, 06 May 2021 21:34:42 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-handler/</guid><description>&lt;h2 id="handler-概要">Handler 概要&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>handler on KALAQIAE</title><link>https://kalaqiae.com/tags/handler/</link><description>Recent content in handler on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 06 May 2021 21:34:42 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/handler/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Handler</title><link>https://kalaqiae.com/post/android/android-handler/</link><pubDate>Thu, 06 May 2021 21:34:42 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-handler/</guid><description>&lt;h3 id="handler-概要">Handler 概要&lt;/h3>
 &lt;p>&lt;a href="https://developer.android.google.cn/reference/android/os/Handler">官方文档&lt;/a>&lt;/p>
 &lt;p>Handler 可以发送、处理 Message 和与线程关联的 Runnable 对象 MessageQueue ，每个 Handler 实例都与一个线程和该线程的消息队列关联。创建新的 Handler 时会绑定到 Looper。它将消息和线程传递到该 Looper 的消息队列，并在该 Looper 的线程上执行它们&lt;/p>
 &lt;p>Handler 两个主要用途：在将来某个时刻执行消息和线程。在不同线程（切换线程）按顺序执行操作&lt;/p>
 &lt;p>发送方法有 post(Runnable) , postDelayed(Runnable, long), sendMessage(Message) 等
 默认通过 handleMessage(Message) 处理接收 Message&lt;/p>
-&lt;h2 id="handlermessagemessagequeue以及looper">Handler、Message、MessageQueue以及Looper&lt;/h2>
+&lt;h3 id="handlermessagemessagequeue以及looper">Handler、Message、MessageQueue以及Looper&lt;/h3>
 &lt;ul>
 &lt;li>Handler 负责发送和处理消息（Handler发送消息给 MessageQueue 和接收 Looper 返回的消息并且处理消息）&lt;/li>
 &lt;li>Message 用来携带需要的数据&lt;/li>

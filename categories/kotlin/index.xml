@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kotlin on KALAQIAE</title><link>https://kalaqiae.com/categories/kotlin/</link><description>Recent content in Kotlin on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 09 Apr 2021 23:14:11 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/categories/kotlin/index.xml" rel="self" type="application/rss+xml"/><item><title>Kotlin 协程</title><link>https://kalaqiae.com/post/kotlin/coroutines/</link><pubDate>Fri, 09 Apr 2021 23:14:11 +0800</pubDate><guid>https://kalaqiae.com/post/kotlin/coroutines/</guid><description>&lt;h2 id="启动协程">启动协程&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kotlin on KALAQIAE</title><link>https://kalaqiae.com/categories/kotlin/</link><description>Recent content in Kotlin on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 09 Apr 2021 23:14:11 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/categories/kotlin/index.xml" rel="self" type="application/rss+xml"/><item><title>Kotlin 协程</title><link>https://kalaqiae.com/post/kotlin/coroutines/</link><pubDate>Fri, 09 Apr 2021 23:14:11 +0800</pubDate><guid>https://kalaqiae.com/post/kotlin/coroutines/</guid><description>&lt;h3 id="启动协程">启动协程&lt;/h3>
 &lt;!-- | 方式 | 说明 |
 | :------------------|:--------------------------------------------------------------------------------|
 | GlobalScope.launch | 启动一个新的线程，在新线程上创建运行协程，不堵塞当前线程 |
 | runBlocking | 创建新的协程，运行在当前线程上，所以会堵塞当前线程，直到协程体结束 |
 | GlobalScope.asyn | 启动一个新的线程，在新线程上创建运行协程，并且不堵塞当前线程，支持 通过await获取返回值 | -->
-&lt;h3 id="launch">launch&lt;/h3>
+&lt;h4 id="launch">launch&lt;/h4>
 &lt;p>启动一个新的线程，在新线程上创建运行协程，不堵塞当前线程，返回一个Job类型的对象&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
