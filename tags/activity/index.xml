@@ -1,3 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Activity on KALAQIAE</title><link>https://kalaqiae.com/tags/activity/</link><description>Recent content in Activity on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 31 Mar 2021 22:34:15 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/activity/index.xml" rel="self" type="application/rss+xml"/><item><title>Activity的生命周期</title><link>https://kalaqiae.com/post/android/android-activity-lifecycle/</link><pubDate>Wed, 31 Mar 2021 22:34:15 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-lifecycle/</guid><description>&lt;h3 id="生命周期简介">生命周期简介&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Activity on KALAQIAE</title><link>https://kalaqiae.com/tags/activity/</link><description>Recent content in Activity on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 10 Jul 2021 22:38:45 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/activity/index.xml" rel="self" type="application/rss+xml"/><item><title>activity 跳转</title><link>https://kalaqiae.com/post/android/android-activity-start/</link><pubDate>Sat, 10 Jul 2021 22:38:45 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-start/</guid><description>&lt;h3 id="用第三方跳转">用第三方跳转&lt;/h3>
+&lt;p>&lt;a href="https://github.com/alibaba/ARouter">ARouter&lt;/a>&lt;/p>
+&lt;h3 id="显式启动">显式启动&lt;/h3>
+&lt;h4 id="方法一">方法一&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">startActivity&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">Intent&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">TestActivity&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">class&lt;/span>&lt;span class="o">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Activity的生命周期</title><link>https://kalaqiae.com/post/android/android-activity-lifecycle/</link><pubDate>Wed, 31 Mar 2021 22:34:15 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-lifecycle/</guid><description>&lt;h3 id="生命周期简介">生命周期简介&lt;/h3>
 &lt;p>先上图&lt;/p>
 &lt;p>&lt;img src="https://developer.android.google.cn/guide/components/images/activity_lifecycle.png" alt="Lifecycle">&lt;/p></description></item></channel></rss>

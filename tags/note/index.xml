@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>note on KALAQIAE</title><link>https://kalaqiae.com/tags/note/</link><description>Recent content in note on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 10 Jul 2021 22:07:28 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/note/index.xml" rel="self" type="application/rss+xml"/><item><title>Note</title><link>https://kalaqiae.com/post/java/note/</link><pubDate>Sat, 10 Jul 2021 22:07:28 +0800</pubDate><guid>https://kalaqiae.com/post/java/note/</guid><description>&lt;h3 id="json解析">json解析&lt;/h3>
+&lt;h4 id="jsonobjectgetstring-vs-jsonobjectoptstring">jsonObject.getString() vs jsonObject.optString()&lt;/h4>
+&lt;p>optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。&lt;br>
+推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常&lt;/p></description></item></channel></rss>

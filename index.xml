@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>KALAQIAE</title><link>https://kalaqiae.com/</link><description>Recent content on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 17 May 2021 23:01:09 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://kalaqiae.com/about/</link><pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate><guid>https://kalaqiae.com/about/</guid><description>本站概况 使用Hugo博客框架搭建，even主题 联系方式 邮箱：352733536@qq.com</description></item><item><title>Interview 随记</title><link>https://kalaqiae.com/post/common/interview/</link><pubDate>Mon, 17 May 2021 23:01:09 +0800</pubDate><guid>https://kalaqiae.com/post/common/interview/</guid><description>&lt;h3 id="hashmap-的原理">HashMap 的原理&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>KALAQIAE</title><link>https://kalaqiae.com/</link><description>Recent content on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 10 Jul 2021 22:38:45 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://kalaqiae.com/about/</link><pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate><guid>https://kalaqiae.com/about/</guid><description>本站概况 使用Hugo博客框架搭建，even主题 联系方式 邮箱：352733536@qq.com</description></item><item><title>activity 跳转</title><link>https://kalaqiae.com/post/android/android-activity-start/</link><pubDate>Sat, 10 Jul 2021 22:38:45 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-start/</guid><description>&lt;h3 id="用第三方跳转">用第三方跳转&lt;/h3>
+&lt;p>&lt;a href="https://github.com/alibaba/ARouter">ARouter&lt;/a>&lt;/p>
+&lt;h3 id="显式启动">显式启动&lt;/h3>
+&lt;h4 id="方法一">方法一&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="n">startActivity&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="n">Intent&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">TestActivity&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">class&lt;/span>&lt;span class="o">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Note</title><link>https://kalaqiae.com/post/java/note/</link><pubDate>Sat, 10 Jul 2021 22:07:28 +0800</pubDate><guid>https://kalaqiae.com/post/java/note/</guid><description>&lt;h3 id="json解析">json解析&lt;/h3>
+&lt;h4 id="jsonobjectgetstring-vs-jsonobjectoptstring">jsonObject.getString() vs jsonObject.optString()&lt;/h4>
+&lt;p>optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。&lt;br>
+推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常&lt;/p></description></item><item><title>Interview 随记</title><link>https://kalaqiae.com/post/common/interview/</link><pubDate>Mon, 17 May 2021 23:01:09 +0800</pubDate><guid>https://kalaqiae.com/post/common/interview/</guid><description>&lt;h3 id="hashmap-的原理">HashMap 的原理&lt;/h3>
 &lt;p>HashMap 的内部可以看做数组+链表的复合结构。数组被分为一个个的桶(bucket)。哈希值决定了键值对在数组中的寻址。具有相同哈希值的键值对会组成链表。需要注意的是当链表长度超过阈值(默认是8)的时候会触发树化，链表会变成树形结构。&lt;/p></description></item><item><title>Android Video 基础笔记</title><link>https://kalaqiae.com/post/android/android-video-base/</link><pubDate>Mon, 17 May 2021 22:57:27 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-video-base/</guid><description>&lt;h3 id="视频">视频&lt;/h3>
 &lt;ul>
 &lt;li>视频文件&lt;/li>
