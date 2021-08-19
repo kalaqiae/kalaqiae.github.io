@@ -43,6 +43,39 @@
   </div>
   {{ partial "scripts.html" . }}
 
+<!--  网页背景动画，加在最后减少影响网页加载速度-->
   <script type= "text/javascript"  src= "https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js" ></script>
+<!--  看板娘-->
+<!--  参考 https://i847.cn/article/63837.html https://blog.csdn.net/wang_123_zy/article/details/87181892-->
+  <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+  <script>
+    var jsonModel = [
+    "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",// 萌娘
+<!--    "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",// 小可爱（女）-->
+<!--    "https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json",// 小可爱（男）-->
+<!--    "https://unpkg.com/live2d-widget-model-tsumiki@1.0.5/assets/haruto.model.json",// 小可爱（男）-->
+    "https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json",//黑猫
+<!--    "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",//白猫-->
+<!--    "https://unpkg.com/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json",//女1-->
+<!--    "https://unpkg.com/live2d-widget-model-izumi@1.0.5/assets/izumi.model.json",//女2-->
+<!--    "https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json",//狗-->
+    ];
+    L2Dwidget.init({
+        "model": {
+            "jsonPath": jsonModel[Math.floor(Math.random()*(jsonModel.length))],
+            "scale": 1
+        },
+        "display": {
+            "position": "left", // 位置left、right
+            "width": 66, // 宽度
+            "height": 90, // 高度
+            "hOffset": 10, // 横向边距
+            "vOffset": 0 // 众向边距
+        },
+        "mobile": {
+            "show": false // 手机是否显示
+        },
+    });
+</script>
 </body>
 </html>
