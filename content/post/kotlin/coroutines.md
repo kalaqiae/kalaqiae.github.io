@@ -97,7 +97,7 @@ runBlocking {
 * Dispatchers.Main  
 主线程
 * Dispatchers.Unconfined  
-直接执行（eg. 当前在主线程就在主线程执行，如果启动子线程导致切换线程，就在切换的那个线程执行），不被限制在任何特定的线程，一般不使用
+当前在主线程就在主线程执行，如果启动子线程导致切换线程，就在切换的那个线程执行，不被限制在任何特定的线程，一般不使用
 * Dispatchers.IO  
 基于 Default 调度器背后的线程池，并实现了独立的队列和限制，因此协程调度器从 Default 切换到 IO 并不会触发线程切换
 * newSingleThreadContext,newFixedThreadPoolContext  

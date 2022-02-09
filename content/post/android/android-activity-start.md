@@ -199,3 +199,28 @@ startActivity(new Intent(this, clz));
 ### 其他
 
 隐式跳转不用导入 activity 引用，所以可用于跨 module 跳转。腾讯推送用的是 Scheme 方式跳转。个人觉得 Scheme 比 action 好用一些，可以带参数，如果同时集成了极光和腾讯推送，用 Scheme 的方式跳转兼容两种推送点击消息跳转。
+
+腾讯推送的文档
+
+```xml
+<activity
+    android:name="com.qq.xg.AboutActivity"
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+
+    <!-- 其他 intent-filter -->
+    <!-- <intent-filter> ... </intent-filter> -->
+
+    <!-- AndroidManifest 支持为一个安卓组件配置多个 intent-filter，请将自定义跳转配置添加在单独 intent-filter 内 -->
+    <intent-filter >
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT"/>
+        <!-- 自定义 data 块内容以指定您的完整 scheme -->
+        <!-- 按照您的配置，将会组成形如"语义名://主机名/路径名"的 url 标识 -->
+        <!-- 建议使用带有 app 名称、包名等可以唯一标记应用的字段进行配置，防止和其他应用的跳转目标页面冲突 -->
+        <data
+              android:scheme="语义名"
+              android:host="主机名"
+              android:path="/路径名" />
+    </intent-filter>
+</activity>
+```

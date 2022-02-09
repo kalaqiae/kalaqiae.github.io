@@ -55,6 +55,12 @@ val count = getNumberOfSongsAvailable()
 val songsFound = resources.getQuantityString(R.plurals.numberOfSongsAvailable, count, count)
 ```
 
+### 特殊字符
+
+* @号 &#064;
+* :号 &#058;
+* 空格 &#160;
+
 <!-- 参考：  
 <https://developer.android.com/guide/topics/resources/string-resource>  
 <https://www.jianshu.com/p/ea5f8713c9a3> -->
