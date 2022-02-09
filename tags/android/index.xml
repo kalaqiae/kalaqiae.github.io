@@ -43,9 +43,17 @@
 &lt;li>Looper 负责不停的从 MessageQueue 中取 Message 交给 Handler 处理&lt;/li>
 &lt;/ul>
 &lt;p>Handler 通过 sendMessage 发送 Message 到 MessageQueue 队列，Looper 通过 loop() 从 MessageQueue 取出 Message，再经过 msg.target.dispatchMessage 交给 Handler 的 handleMessage() 进行处理&lt;/p></description></item><item><title>Android abiFilter相关</title><link>https://kalaqiae.com/post/android/android-abifilter-about/</link><pubDate>Thu, 22 Apr 2021 21:48:37 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-abifilter-about/</guid><description>为了优化apk的大小，一般会只选择支持一种ABI，可以在AS中双击apk，在lib路径下查看so文件占用大小 Android ABI概念 Application Binary Interface 官方文档 cpu</description></item><item><title>Android adb命令</title><link>https://kalaqiae.com/post/android/android-adb/</link><pubDate>Sun, 04 Apr 2021 21:06:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-adb/</guid><description>&lt;p>AS插件ADB IDEA&lt;/p>
-&lt;h3 id="连接设备">连接设备&lt;/h3>
+&lt;h3 id="查看activity-task栈的情况">查看Activity Task栈的情况&lt;/h3>
 &lt;blockquote>
-&lt;p>adb connect ip&lt;/p>
+&lt;p>adb shell dumpsys activity&lt;/p>
+&lt;/blockquote>
+&lt;p>当前显示的 activity ，用 findstr 或 grep 过滤&lt;/p>
+&lt;blockquote>
+&lt;p>adb shell dumpsys activity | findstr &amp;ldquo;mFocusedActivity&amp;rdquo;
+效果等同
+adb shell &amp;ldquo;dumpsys activity | grep mFocusedActivity&amp;rdquo;
+8.0以上用
+adb shell dumpsys activity | findstr &amp;ldquo;mResumedActivity&amp;rdquo;&lt;/p>
 &lt;/blockquote></description></item><item><title>Android strings.xml使用</title><link>https://kalaqiae.com/post/android/android-xml-string/</link><pubDate>Thu, 01 Apr 2021 10:30:04 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-xml-string/</guid><description>&lt;h3 id="设置字符串格式">设置字符串格式&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">

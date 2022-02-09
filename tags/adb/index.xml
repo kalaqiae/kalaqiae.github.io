@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>adb on KALAQIAE</title><link>https://kalaqiae.com/tags/adb/</link><description>Recent content in adb on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 04 Apr 2021 21:06:02 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/adb/index.xml" rel="self" type="application/rss+xml"/><item><title>Android adb命令</title><link>https://kalaqiae.com/post/android/android-adb/</link><pubDate>Sun, 04 Apr 2021 21:06:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-adb/</guid><description>&lt;p>AS插件ADB IDEA&lt;/p>
-&lt;h3 id="连接设备">连接设备&lt;/h3>
+&lt;h3 id="查看activity-task栈的情况">查看Activity Task栈的情况&lt;/h3>
 &lt;blockquote>
-&lt;p>adb connect ip&lt;/p>
+&lt;p>adb shell dumpsys activity&lt;/p>
+&lt;/blockquote>
+&lt;p>当前显示的 activity ，用 findstr 或 grep 过滤&lt;/p>
+&lt;blockquote>
+&lt;p>adb shell dumpsys activity | findstr &amp;ldquo;mFocusedActivity&amp;rdquo;
+效果等同
+adb shell &amp;ldquo;dumpsys activity | grep mFocusedActivity&amp;rdquo;
+8.0以上用
+adb shell dumpsys activity | findstr &amp;ldquo;mResumedActivity&amp;rdquo;&lt;/p>
 &lt;/blockquote></description></item></channel></rss>

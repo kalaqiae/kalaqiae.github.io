@@ -13,7 +13,7 @@
 <meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
 <meta name=author content="Kalaqiae"><meta name=description content="启动协程 launch 启动一个新的线程，在新线程上创建运行协程，不堵塞当前线程，返回一个Job类型的对象
 1 2 3  launch { //do sth. }   "><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.88.1 with theme even">
+<meta name=generator content="Hugo 0.92.1 with theme even">
 <link rel=canonical href=https://kalaqiae.com/post/kotlin/coroutines/>
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
@@ -64,7 +64,7 @@ launch {
 
 "><meta itemprop=datePublished content="2021-04-09T23:14:11+08:00">
 <meta itemprop=dateModified content="2021-04-09T23:14:11+08:00">
-<meta itemprop=wordCount content="2537">
+<meta itemprop=wordCount content="2528">
 <meta itemprop=keywords content="Kotlin,coroutines,"><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Kotlin 协程">
 <meta name=twitter:description content="启动协程
@@ -303,7 +303,7 @@ Deferred也是一个Job</p>
 <li>Dispatchers.Main<br>
 主线程</li>
 <li>Dispatchers.Unconfined<br>
-直接执行（eg. 当前在主线程就在主线程执行，如果启动子线程导致切换线程，就在切换的那个线程执行），不被限制在任何特定的线程，一般不使用</li>
+当前在主线程就在主线程执行，如果启动子线程导致切换线程，就在切换的那个线程执行，不被限制在任何特定的线程，一般不使用</li>
 <li>Dispatchers.IO<br>
 基于 Default 调度器背后的线程池，并实现了独立的队列和限制，因此协程调度器从 Default 切换到 IO 并不会触发线程切换</li>
 <li>newSingleThreadContext,newFixedThreadPoolContext<br>
@@ -579,7 +579,7 @@ main: Now I can quit.</p>
 </div>
 <span class=copyright-year>
 &copy;
-2021
+2022
 <span>|</span>
 <span>Kalaqiae</span>
 </span>

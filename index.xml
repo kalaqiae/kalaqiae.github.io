@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>KALAQIAE</title><link>https://kalaqiae.com/</link><description>Recent content on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 10 Jul 2021 22:38:45 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://kalaqiae.com/about/</link><pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate><guid>https://kalaqiae.com/about/</guid><description>本站概况 使用Hugo博客框架搭建，even主题 联系方式 邮箱：352733536@qq.com</description></item><item><title>activity 跳转</title><link>https://kalaqiae.com/post/android/android-activity-start/</link><pubDate>Sat, 10 Jul 2021 22:38:45 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-start/</guid><description>&lt;h3 id="用第三方跳转">用第三方跳转&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>KALAQIAE</title><link>https://kalaqiae.com/</link><description>Recent content on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 10 Jul 2021 22:38:45 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://kalaqiae.com/about/</link><pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate><guid>https://kalaqiae.com/about/</guid><description>本站概况 kalaqiae 要什么自行车。使用 Hugo 博客框架搭建，even 主题 联系方式 邮箱：352733536@qq.com</description></item><item><title>activity 跳转</title><link>https://kalaqiae.com/post/android/android-activity-start/</link><pubDate>Sat, 10 Jul 2021 22:38:45 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-start/</guid><description>&lt;h3 id="用第三方跳转">用第三方跳转&lt;/h3>
 &lt;p>&lt;a href="https://github.com/alibaba/ARouter">ARouter&lt;/a>&lt;/p>
 &lt;h3 id="显式启动">显式启动&lt;/h3>
 &lt;h4 id="方法一">方法一&lt;/h4>
@@ -85,9 +85,17 @@ jcenter()&lt;/p>
 git commit -s -m &amp;ldquo;message&amp;rdquo;&lt;br>
 git push origin master&lt;/p>
 &lt;/blockquote></description></item><item><title>Android adb命令</title><link>https://kalaqiae.com/post/android/android-adb/</link><pubDate>Sun, 04 Apr 2021 21:06:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-adb/</guid><description>&lt;p>AS插件ADB IDEA&lt;/p>
-&lt;h3 id="连接设备">连接设备&lt;/h3>
+&lt;h3 id="查看activity-task栈的情况">查看Activity Task栈的情况&lt;/h3>
 &lt;blockquote>
-&lt;p>adb connect ip&lt;/p>
+&lt;p>adb shell dumpsys activity&lt;/p>
+&lt;/blockquote>
+&lt;p>当前显示的 activity ，用 findstr 或 grep 过滤&lt;/p>
+&lt;blockquote>
+&lt;p>adb shell dumpsys activity | findstr &amp;ldquo;mFocusedActivity&amp;rdquo;
+效果等同
+adb shell &amp;ldquo;dumpsys activity | grep mFocusedActivity&amp;rdquo;
+8.0以上用
+adb shell dumpsys activity | findstr &amp;ldquo;mResumedActivity&amp;rdquo;&lt;/p>
 &lt;/blockquote></description></item><item><title>Android strings.xml使用</title><link>https://kalaqiae.com/post/android/android-xml-string/</link><pubDate>Thu, 01 Apr 2021 10:30:04 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-xml-string/</guid><description>&lt;h3 id="设置字符串格式">设置字符串格式&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">

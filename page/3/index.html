@@ -12,7 +12,7 @@
 <meta name=apple-mobile-web-app-capable content="yes">
 <meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
 <meta name=author content="Kalaqiae"><meta name=description content="Hugo theme even example site."><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.88.1 with theme even">
+<meta name=generator content="Hugo 0.92.1 with theme even">
 <link rel=canonical href=https://kalaqiae.com/>
 <link href=https://kalaqiae.com/index.xml rel=alternate type=application/rss+xml title=KALAQIAE>
 <link href=https://kalaqiae.com/index.xml rel=feed type=application/rss+xml title=KALAQIAE>
@@ -186,9 +186,17 @@ git push origin master</p>
 <div class=post-content>
 <div class=post-summary>
 <p>AS插件ADB IDEA</p>
-<h3 id=连接设备>连接设备</h3>
+<h3 id=查看activity-task栈的情况>查看Activity Task栈的情况</h3>
 <blockquote>
-<p>adb connect ip</p>
+<p>adb shell dumpsys activity</p>
+</blockquote>
+<p>当前显示的 activity ，用 findstr 或 grep 过滤</p>
+<blockquote>
+<p>adb shell dumpsys activity | findstr &ldquo;mFocusedActivity&rdquo;
+效果等同
+adb shell &ldquo;dumpsys activity | grep mFocusedActivity&rdquo;
+8.0以上用
+adb shell dumpsys activity | findstr &ldquo;mResumedActivity&rdquo;</p>
 </blockquote>
 </div>
 <div class=read-more>
@@ -261,7 +269,7 @@ git push origin master</p>
 </div>
 <span class=copyright-year>
 &copy;
-2021
+2022
 <span>|</span>
 <span>Kalaqiae</span>
 </span>

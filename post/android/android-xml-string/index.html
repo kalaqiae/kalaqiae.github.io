@@ -16,7 +16,7 @@
 %f （表示浮点数）
 %s （表示字符串）
 "><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.88.1 with theme even">
+<meta name=generator content="Hugo 0.92.1 with theme even">
 <link rel=canonical href=https://kalaqiae.com/post/android/android-xml-string/>
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
@@ -75,7 +75,7 @@ var text = getString(R.string.welcome_messages, &#34;kalaqiae&#34;, 10)
 %f （表示浮点数）
 %s （表示字符串）"><meta itemprop=datePublished content="2021-04-01T10:30:04+08:00">
 <meta itemprop=dateModified content="2021-04-01T10:30:04+08:00">
-<meta itemprop=wordCount content="144">
+<meta itemprop=wordCount content="156">
 <meta itemprop=keywords content="Android,xml,"><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Android strings.xml使用">
 <meta name=twitter:description content="设置字符串格式
@@ -175,6 +175,7 @@ var text = getString(R.string.welcome_messages, &#34;kalaqiae&#34;, 10)
 <li><a href=#设置字符串格式>设置字符串格式</a></li>
 <li><a href=#字符串数组>字符串数组</a></li>
 <li><a href=#复数>复数</a></li>
+<li><a href=#特殊字符>特殊字符</a></li>
 </ul>
 </li>
 </ul>
@@ -258,7 +259,12 @@ var text = getString(R.string.welcome_messages, &#34;kalaqiae&#34;, 10)
 <span class=k>val</span> <span class=py>songsFound</span> <span class=p>=</span> <span class=n>resources</span><span class=p>.</span><span class=n>getQuantityString</span><span class=p>(</span><span class=n>R</span><span class=p>.</span><span class=n>plurals</span><span class=p>.</span><span class=n>numberOfSongsAvailable</span><span class=p>,</span> <span class=n>count</span><span class=p>,</span> <span class=n>count</span><span class=p>)</span>
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><h3 id=特殊字符>特殊字符</h3>
+<ul>
+<li>@号 @</li>
+<li>:号 :</li>
+<li>空格  </li>
+</ul>
 </div>
 <footer class=post-footer>
 <nav class=post-nav>
@@ -292,7 +298,7 @@ var text = getString(R.string.welcome_messages, &#34;kalaqiae&#34;, 10)
 </div>
 <span class=copyright-year>
 &copy;
-2021
+2022
 <span>|</span>
 <span>Kalaqiae</span>
 </span>

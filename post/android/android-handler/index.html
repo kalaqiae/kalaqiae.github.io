@@ -17,7 +17,7 @@ Handler 两个主要用途：在将来某个时刻执行消息和线程。在不
 发送方法有 post(Runnable) , postDelayed(Runnable, long), sendMessage(Message) 等 默认通过 handleMessage(Message) 处理接收 Message
 Handler、Message、MessageQueue以及Looper  Handler 负责发送和处理消息（Handler发送消息给 MessageQueue 和接收 Looper 返回的消息并且处理消息） Message 用来携带需要的数据 MessageQueue 消息队列（实际用链表实现的），负责存放 Handler 发送过来 Message Looper 负责不停的从 MessageQueue 中取 Message 交给 Handler 处理  Handler 通过 sendMessage 发送 Message 到 MessageQueue 队列，Looper 通过 loop() 从 MessageQueue 取出 Message，再经过 msg.target.dispatchMessage 交给 Handler 的 handleMessage() 进行处理
 "><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.88.1 with theme even">
+<meta name=generator content="Hugo 0.92.1 with theme even">
 <link rel=canonical href=https://kalaqiae.com/post/android/android-handler/>
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
@@ -580,7 +580,7 @@ Handler 通过 sendMessage 发送 Message 到 MessageQueue 队列，Looper 通�
 </div>
 <span class=copyright-year>
 &copy;
-2021
+2022
 <span>|</span>
 <span>Kalaqiae</span>
 </span>
