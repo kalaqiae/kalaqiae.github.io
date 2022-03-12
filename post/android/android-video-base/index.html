@@ -1,263 +1,58 @@
-<!doctype html><html lang=zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Android Video 基础笔记 - KALAQIAE</title>
-<meta name=renderer content="webkit">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=cache-control content="no-transform">
-<meta http-equiv=cache-control content="no-siteapp">
-<meta name=theme-color content="#f8f5ec">
-<meta name=msapplication-navbutton-color content="#f8f5ec">
-<meta name=apple-mobile-web-app-capable content="yes">
-<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
-<meta name=author content="Kalaqiae"><meta name=description content="视频  视频文件  视频文件 .mp4 .avi 就像一个容器，类似 ArrayList 存放数据，一个视频文件可以存放多个视频，音频
-"><meta name=keywords content="Hugo,theme,even">
-<meta name=generator content="Hugo 0.92.1 with theme even">
-<link rel=canonical href=https://kalaqiae.com/post/android/android-video-base/>
-<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
-<link rel=manifest href=/manifest.json>
-<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<link href=/sass/main.min.8bb66a6c962ec1755867d3d5ce8e5267f80d5dc80d7d74f19be0b9686de4c75f.css rel=stylesheet>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
-<meta property="og:title" content="Android Video 基础笔记">
-<meta property="og:description" content="视频
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Android Video 基础笔记 - KALAQIAE</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Kalaqiae"><meta name=description content="视频  视频文件  视频文件 .mp4 .avi 就像一个容器，类似 ArrayList 存放数据，一个视频文件可以存放多个视频，音频
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.94.1 with theme even"><link rel=canonical href=https://kalaqiae.com/post/android/android-video-base/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/sass/main.min.8bb66a6c962ec1755867d3d5ce8e5267f80d5dc80d7d74f19be0b9686de4c75f.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Android Video 基础笔记"><meta property="og:description" content="视频
 
 视频文件
 
-视频文件 .mp4 .avi 就像一个容器，类似 ArrayList 存放数据，一个视频文件可以存放多个视频，音频">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://kalaqiae.com/post/android/android-video-base/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2021-05-17T22:57:27+08:00">
-<meta property="article:modified_time" content="2021-05-17T22:57:27+08:00">
-<meta itemprop=name content="Android Video 基础笔记">
-<meta itemprop=description content="视频
+视频文件 .mp4 .avi 就像一个容器，类似 ArrayList 存放数据，一个视频文件可以存放多个视频，音频"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/android/android-video-base/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-05-17T22:57:27+08:00"><meta property="article:modified_time" content="2021-05-17T22:57:27+08:00"><meta itemprop=name content="Android Video 基础笔记"><meta itemprop=description content="视频
 
 视频文件
 
-视频文件 .mp4 .avi 就像一个容器，类似 ArrayList 存放数据，一个视频文件可以存放多个视频，音频"><meta itemprop=datePublished content="2021-05-17T22:57:27+08:00">
-<meta itemprop=dateModified content="2021-05-17T22:57:27+08:00">
-<meta itemprop=wordCount content="2037">
-<meta itemprop=keywords content="Android,Video,"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Android Video 基础笔记">
-<meta name=twitter:description content="视频
+视频文件 .mp4 .avi 就像一个容器，类似 ArrayList 存放数据，一个视频文件可以存放多个视频，音频"><meta itemprop=datePublished content="2021-05-17T22:57:27+08:00"><meta itemprop=dateModified content="2021-05-17T22:57:27+08:00"><meta itemprop=wordCount content="2037"><meta itemprop=keywords content="Android,Video,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Android Video 基础笔记"><meta name=twitter:description content="视频
 
 视频文件
 
 视频文件 .mp4 .avi 就像一个容器，类似 ArrayList 存放数据，一个视频文件可以存放多个视频，音频"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
-<script data-ad-client=ca-pub-6216241935841265 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
-</head>
-<body>
-<div id=mobile-navbar class=mobile-navbar>
-<div class=mobile-header-logo>
-<a href=/ class=logo>Kalaqiae</a>
-</div>
-<div class=mobile-navbar-icon>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script data-ad-client=ca-pub-6216241935841265 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-<nav id=mobile-menu class="mobile-menu slideout-menu">
-<ul class=mobile-menu-list>
-<a href=/>
-<li class=mobile-menu-item>首页</li>
-</a><a href=/post/>
-<li class=mobile-menu-item>归档</li>
-</a><a href=/tags/>
-<li class=mobile-menu-item>标签</li>
-</a><a href=/categories/>
-<li class=mobile-menu-item>分类</li>
-</a><a href=/about/>
-<li class=mobile-menu-item>关于</li>
-</a>
-</ul>
-</nav>
-<div class=container id=mobile-panel>
-<header id=header class=header>
-<div class=logo-wrapper>
-<a href=/ class=logo>Kalaqiae</a>
-</div>
-<nav class=site-navbar>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a class=menu-item-link href=/>首页</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/post/>归档</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/tags/>标签</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/categories/>分类</a>
-</li><li class=menu-item>
-<a class=menu-item-link href=/about/>关于</a>
-</li>
-</ul>
-</nav>
-</header>
-<main id=main class=main>
-<div class=content-wrapper>
-<div id=content class=content>
-<article class=post>
-<header class=post-header>
-<h1 class=post-title>Android Video 基础笔记</h1>
-<div class=post-meta>
-<span class=post-time> 2021-05-17 </span>
-<div class=post-category>
-<a href=/categories/android/> Android </a>
-</div>
-<span id=busuanzi_container_page_pv class=more-meta> <span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读 </span>
-</div>
-</header>
-<div class=post-toc id=post-toc>
-<h2 class=post-toc-title>文章目录</h2>
-<div class="post-toc-content always-active">
-<nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href=#视频>视频</a></li>
-<li><a href=#直播>直播</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-<div class=post-content>
-<h3 id=视频>视频</h3>
-<ul>
-<li>视频文件</li>
-</ul>
-<p>视频文件 .mp4 .avi 就像一个容器，类似 ArrayList 存放数据，一个视频文件可以存放多个视频，音频</p>
-<p>ffmpeg 可以在官网下载编译好的当工具用，配置一下环境就能在 cmd 中使用</p>
-<p>在 bin 目录下， ffmpeg.exe 编解码，视频转换； ffplay 播放器，像 ijkplayer 源码里好像是基于 ffplay 二次开发的; ffprobe 多媒体分析工具，查看文件信息。</p>
-<p>播放视频： ffplay -i 文件路径 (-i input的意思)</p>
-<p>播放操作可以查看时长(duration)，流(stream) 等信息，播放界面左上角显示播放的是哪个流</p>
-<p>可以选择播放哪个流： ffplay -i 文件路径 -vst 0</p>
-<p>多个流，就类似多个视频，一个视频文件可以存放多个视频</p>
-<ul>
-<li>编码解码</li>
-</ul>
-<p>编码的目的就是为了压缩大小。
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Android Video 基础笔记</h1><div class=post-meta><span class=post-time>2021-05-17</span><div class=post-category><a href=/categories/android/>Android</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#视频>视频</a></li><li><a href=#直播>直播</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=视频>视频</h3><ul><li>视频文件</li></ul><p>视频文件 .mp4 .avi 就像一个容器，类似 ArrayList 存放数据，一个视频文件可以存放多个视频，音频</p><p>ffmpeg 可以在官网下载编译好的当工具用，配置一下环境就能在 cmd 中使用</p><p>在 bin 目录下， ffmpeg.exe 编解码，视频转换； ffplay 播放器，像 ijkplayer 源码里好像是基于 ffplay 二次开发的; ffprobe 多媒体分析工具，查看文件信息。</p><p>播放视频： ffplay -i 文件路径 (-i input的意思)</p><p>播放操作可以查看时长(duration)，流(stream) 等信息，播放界面左上角显示播放的是哪个流</p><p>可以选择播放哪个流： ffplay -i 文件路径 -vst 0</p><p>多个流，就类似多个视频，一个视频文件可以存放多个视频</p><ul><li>编码解码</li></ul><p>编码的目的就是为了压缩大小。
 有空间冗余（图像内部相邻像素存在较强相关性造成的冗余），
 时间冗余（视频图像序列中不同帧之间的相关性造成的冗余），
 视觉冗余（人眼感知不到或不敏感的部分），
 信息熵冗余，知识冗余等。
 信息熵编码也叫统计编码包括有哈夫曼编码，香农编码，行程编码等
-比如 11112222 经过行程编码得到 4142</p>
-<p>一般视频文件存的是编码后的数据(比如第二帧只存了和第一帧不同部分的数据，来达到压缩大小的目的)，所以要解码后才能播放。</p>
-<p>视频中每帧编码方式不同
+比如 11112222 经过行程编码得到 4142</p><p>一般视频文件存的是编码后的数据(比如第二帧只存了和第一帧不同部分的数据，来达到压缩大小的目的)，所以要解码后才能播放。</p><p>视频中每帧编码方式不同
 I帧(ISR)：帧内编码帧，关键帧，可以单独解码出一个完整的图像
 P帧：前向预测编码帧，记录本帧和前一帧（关键帧或P帧）的区别，需要用之前缓存的画面叠加本帧定义的差别，才能生成最终画面
-B帧：双向预测编码帧，记录本帧和前后帧的差别。（这种压缩率最高）</p>
-<p>视频编码
+B帧：双向预测编码帧，记录本帧和前后帧的差别。（这种压缩率最高）</p><p>视频编码
 avc = h264。hevc = h265 。叫法不一样
 Mediacodex 安卓编解码API
-MediaRecoder 编码并生成视频，但是无法操作图像数据</p>
-<p>H.264码流文件分为两层。</p>
-<ol>
-<li>VCL（Video Coding Layer，视频编码层）：负责高效的视频内容表示，VCL数据即编码处理的输出，它表示被压缩编码后的视频数据序列。VCL只关心编码部分，重点在于编码算法以及在特定硬件平台的实现，VCL输出的是编码后纯视频流信息，没有任何冗余头信息。</li>
-<li>NAL（Network Abstraction Layer，网络提取层）：负责以网络所要求的恰当的方式对数据进行打包和传送，是传输层。不管在本地播放还是网络播放，都要通过这一层来传输。NAL关心的是VCL输出纯视频流如何被表达和封包利于网络传输。</li>
-</ol>
-<p>VCL就是编码后的原始数据，在VCL数据封装到NAL单元中之后，才可以用于传输或存储。类似 javabean 序列化 json 数据</p>
-<p>一般H.264编码器的默认输出为：起始码+NALU（Nal单元），这种格式为：Annexb格式。H.264 编码中，在每个 NAL 前添加起始码 0x00000001（4bytes）或0x000001（3bytes）</p>
-<p>一帧图片经过 H.264 编码器之后，就被编码为一个或多个片（slice）, 每片包含整数个宏块（至少一个宏块，最多包含整个图像宏块），而装载着这些片（slice）的载体，就是 NAL单元。H264中宏块的大小只有 16x16</p>
-<p>Nal Header 有8位，转成2进制，可以用与运算一个11111，取低5位获取类型
+MediaRecoder 编码并生成视频，但是无法操作图像数据</p><p>H.264码流文件分为两层。</p><ol><li>VCL（Video Coding Layer，视频编码层）：负责高效的视频内容表示，VCL数据即编码处理的输出，它表示被压缩编码后的视频数据序列。VCL只关心编码部分，重点在于编码算法以及在特定硬件平台的实现，VCL输出的是编码后纯视频流信息，没有任何冗余头信息。</li><li>NAL（Network Abstraction Layer，网络提取层）：负责以网络所要求的恰当的方式对数据进行打包和传送，是传输层。不管在本地播放还是网络播放，都要通过这一层来传输。NAL关心的是VCL输出纯视频流如何被表达和封包利于网络传输。</li></ol><p>VCL就是编码后的原始数据，在VCL数据封装到NAL单元中之后，才可以用于传输或存储。类似 javabean 序列化 json 数据</p><p>一般H.264编码器的默认输出为：起始码+NALU（Nal单元），这种格式为：Annexb格式。H.264 编码中，在每个 NAL 前添加起始码 0x00000001（4bytes）或0x000001（3bytes）</p><p>一帧图片经过 H.264 编码器之后，就被编码为一个或多个片（slice）, 每片包含整数个宏块（至少一个宏块，最多包含整个图像宏块），而装载着这些片（slice）的载体，就是 NAL单元。H264中宏块的大小只有 16x16</p><p>Nal Header 有8位，转成2进制，可以用与运算一个11111，取低5位获取类型
 比如起始码后第一个数据67，转成1100111，取00111，得到结果类型为7，序列参数集(sps)
 第1位禁止位，值为1表示语法出错
 第2~3位为参考级别
 4~8为是nal单元类型
-然后有文档看是什么类型</p>
-<p>H.264的SPS（序列参数集）和PPS(图像参数集)串,包含了初始化H.264解码器所需要的信息参数,包括编码所用的profile,level,图像的宽和高等。H.264码流第一个 NALU是 SPS ，第二个就是PPS，解码器需要先获取SPS与PPS才能够解码图像，然后第一个是I帧。</p>
-<p>查看 h264 工具：010 editor 或者 搜雷神h264</p>
-<ul>
-<li>格式
-安卓采集摄像头数据可以用 Camera1，Camera2，CameraX，NDKCamera</li>
-</ul>
-<p>摄像头默认 NV21 格式 编码器多数是 I420</p>
-<p>YUV , RGB ,灰度图有公式可以互转</p>
-<p>例如 gray = R<em>0.30 + G</em>0.59 + B*0.11</p>
-<p>NV21 与I420 格式都是属于 YUV420。但是 NV21 属于 YUV420SP，而 I420 属于 YUV420P</p>
-<p>nv21 先存 y 然后 v u 交替存储，I420 先存 y 然后存 u 最后存 v</p>
-<p>yuv大小计算
-y：w * h</p>
-<p>u: w/2 * h/2</p>
-<p>v: w/2 * h/2</p>
-<ul>
-<li>YUV 与 RGB
+然后有文档看是什么类型</p><p>H.264的SPS（序列参数集）和PPS(图像参数集)串,包含了初始化H.264解码器所需要的信息参数,包括编码所用的profile,level,图像的宽和高等。H.264码流第一个 NALU是 SPS ，第二个就是PPS，解码器需要先获取SPS与PPS才能够解码图像，然后第一个是I帧。</p><p>查看 h264 工具：010 editor 或者 搜雷神h264</p><ul><li>格式
+安卓采集摄像头数据可以用 Camera1，Camera2，CameraX，NDKCamera</li></ul><p>摄像头默认 NV21 格式 编码器多数是 I420</p><p>YUV , RGB ,灰度图有公式可以互转</p><p>例如 gray = R<em>0.30 + G</em>0.59 + B*0.11</p><p>NV21 与I420 格式都是属于 YUV420。但是 NV21 属于 YUV420SP，而 I420 属于 YUV420P</p><p>nv21 先存 y 然后 v u 交替存储，I420 先存 y 然后存 u 最后存 v</p><p>yuv大小计算
+y：w * h</p><p>u: w/2 * h/2</p><p>v: w/2 * h/2</p><ul><li>YUV 与 RGB
 对于视频帧的裸数据，其实更多的是YUV数据格式的表示，YUV主要应用于优化彩色视频信号的传输，且能兼容老式黑白电视。与RGB相比，YUV只需要占用极少的频宽（RGB需要三个独立的视频信号同时传输）。YUV中Y代表明亮度，也称灰阶值；U与V表示的则是色度（色调和饱和度）也可以记作：YCbCr。如果只有Y数据，那么表示的图像就是黑白的。
-人眼对色度不敏感，对亮度敏感，可以少压缩亮度(Y)，多压缩色调和饱和度(UV),所以YUV 能比 RGB 压缩更多信息。</li>
-</ul>
-<p>MediaCodec 用于访问 Android 底层的多媒体编解码器。只能编码不能生成文件，要用mediamuxer（混合器）输出媒体文件</p>
-<p>硬编码基于硬件，软编码基于代码</p>
-<ul>
-<li>根据图像数据编码格式计算占用内存大小
+人眼对色度不敏感，对亮度敏感，可以少压缩亮度(Y)，多压缩色调和饱和度(UV),所以YUV 能比 RGB 压缩更多信息。</li></ul><p>MediaCodec 用于访问 Android 底层的多媒体编解码器。只能编码不能生成文件，要用mediamuxer（混合器）输出媒体文件</p><p>硬编码基于硬件，软编码基于代码</p><ul><li>根据图像数据编码格式计算占用内存大小
 8 bit = 1 byte
 RGB_565 代表 R 占5位， G 占6位， B 占5位，所以 w<em>h</em>2
 ARGB_8888 w<em>h</em>4
-比如 1280x720的RGBA_8888图像的大小，1280 * 720 * 4=3.516M</li>
-</ul>
-<h3 id=直播>直播</h3>
-<p>RTMP 和 HTTP 都是应用层
-C 语言写的 LIBRTMP 类似 OKHTTP 封装 Socket 完成 http 数据收发，封装了 Socket 实现 RTMP 的数据收发</p>
-<p>其他 domain socket 和平常说的 socket 不一样 是用来做 ipc 进程间通信</p>
-</div>
-<footer class=post-footer>
-<nav class=post-nav>
-<a class=prev href=/post/common/interview/>
-<i class="iconfont icon-left"></i>
+比如 1280x720的RGBA_8888图像的大小，1280 * 720 * 4=3.516M</li></ul><h3 id=直播>直播</h3><p>RTMP 和 HTTP 都是应用层
+C 语言写的 LIBRTMP 类似 OKHTTP 封装 Socket 完成 http 数据收发，封装了 Socket 实现 RTMP 的数据收发</p><p>其他 domain socket 和平常说的 socket 不一样 是用来做 ipc 进程间通信</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/common/interview/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">Interview 随记</span>
-<span class="prev-text nav-mobile">上一篇</span>
-</a>
-<a class=next href=/post/android/android-glide/>
-<span class="next-text nav-default">Glide 源码 4.12.0</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/post/android/android-glide/><span class="next-text nav-default">Glide 源码 4.12.0</span>
 <span class="next-text nav-mobile">下一篇</span>
-<i class="iconfont icon-right"></i>
-</a>
-</nav>
-</footer>
-</article>
-</div>
-<script src=https://utteranc.es/client.js repo=kalaqiae/kalaqiae.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script>
-<noscript>Please enable JavaScript to view the <a href=https://github.com/utterance>comments powered by utterances.</a></noscript>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=social-links>
-</div>
-<div class=copyright>
-<span class=power-by>
-</span>
-<span class=theme-info>
-</span>
-<div class=busuanzi-footer>
-</div>
-<span class=copyright-year>
-&copy;
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><script src=https://utteranc.es/client.js repo=kalaqiae/kalaqiae.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script><noscript>Please enable JavaScript to view the <a href=https://github.com/utterance>comments powered by utterances.</a></noscript></div></main><footer id=footer class=footer><div class=social-links></div><div class=copyright><span class=power-by></span><span class=theme-info></span><div class=busuanzi-footer></div><span class=copyright-year>&copy;
 2022
 <span>|</span>
-<span>Kalaqiae</span>
-</span>
-</div>
-</footer>
-<div class=back-to-top id=back-to-top>
-<i class="iconfont icon-up"></i>
-</div>
-</div>
-<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<span>Kalaqiae</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
-<script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
+<script type=text/javascript src=/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js></script>
 <script type=text/javascript src=https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js></script>
 <script src=https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js></script>
-<script>var jsonModel=["https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json"];L2Dwidget.init({model:{jsonPath:jsonModel[Math.floor(Math.random()*jsonModel.length)],scale:1},display:{position:"left",width:66,height:90,hOffset:10,vOffset:0},mobile:{show:!1}})</script>
-</body>
-</html>
+<script>var jsonModel=["https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json"];L2Dwidget.init({model:{jsonPath:jsonModel[Math.floor(Math.random()*jsonModel.length)],scale:1},display:{position:"left",width:66,height:90,hOffset:10,vOffset:0},mobile:{show:!1}})</script></body></html>

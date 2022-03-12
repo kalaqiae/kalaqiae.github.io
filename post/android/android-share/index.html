@@ -1,0 +1,219 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Android 原生分享 - KALAQIAE</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Kalaqiae"><meta name=description content="核心代码 1 2 3 4 5 6  Intent sharingIntent = new Intent(Intent.ACTION_SEND); // &amp;#34;text/plain&amp;#34; 和 &amp;#34;text/html&amp;#34; 区别：html 类型 可以识别加粗等标签 // 当需要分享图文时可以使用 &amp;#34;image/*&amp;#34; sharingIntent.setType(&amp;#34;text/html&amp;#34;); sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml(&amp;#34;&amp;lt;b&amp;gt;This is the text shared.&amp;lt;/b&amp;gt;&amp;#34;)); startActivity(Intent.createChooser(sharingIntent, &amp;#34;Share using&amp;#34;));   "><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.94.1 with theme even"><link rel=canonical href=https://kalaqiae.com/post/android/android-share/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/sass/main.min.8bb66a6c962ec1755867d3d5ce8e5267f80d5dc80d7d74f19be0b9686de4c75f.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Android 原生分享"><meta property="og:description" content="核心代码
+
+
+1
+2
+3
+4
+5
+6
+
+
+Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+// &#34;text/plain&#34; 和 &#34;text/html&#34; 区别：html 类型 可以识别加粗等标签
+// 当需要分享图文时可以使用 &#34;image/*&#34;
+sharingIntent.setType(&#34;text/html&#34;);
+sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml(&#34;<b>This is the text shared.</b>&#34;));
+startActivity(Intent.createChooser(sharingIntent, &#34;Share using&#34;));
+
+
+"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/android/android-share/"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-03-12T16:47:58+08:00"><meta property="article:modified_time" content="2022-03-12T16:47:58+08:00"><meta itemprop=name content="Android 原生分享"><meta itemprop=description content="核心代码
+
+
+1
+2
+3
+4
+5
+6
+
+
+Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+// &#34;text/plain&#34; 和 &#34;text/html&#34; 区别：html 类型 可以识别加粗等标签
+// 当需要分享图文时可以使用 &#34;image/*&#34;
+sharingIntent.setType(&#34;text/html&#34;);
+sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml(&#34;<b>This is the text shared.</b>&#34;));
+startActivity(Intent.createChooser(sharingIntent, &#34;Share using&#34;));
+
+
+"><meta itemprop=datePublished content="2022-03-12T16:47:58+08:00"><meta itemprop=dateModified content="2022-03-12T16:47:58+08:00"><meta itemprop=wordCount content="538"><meta itemprop=keywords content="Android,Share,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Android 原生分享"><meta name=twitter:description content="核心代码
+
+
+1
+2
+3
+4
+5
+6
+
+
+Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+// &#34;text/plain&#34; 和 &#34;text/html&#34; 区别：html 类型 可以识别加粗等标签
+// 当需要分享图文时可以使用 &#34;image/*&#34;
+sharingIntent.setType(&#34;text/html&#34;);
+sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml(&#34;<b>This is the text shared.</b>&#34;));
+startActivity(Intent.createChooser(sharingIntent, &#34;Share using&#34;));
+
+
+"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script data-ad-client=ca-pub-6216241935841265 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Android 原生分享</h1><div class=post-meta><span class=post-time>2022-03-12</span><div class=post-category><a href=/categories/android/>Android</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#核心代码>核心代码</a></li><li><a href=#封装使用>封装使用</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=核心代码>核心代码</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Intent</span> <span class=n>sharingIntent</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Intent</span><span class=o>(</span><span class=n>Intent</span><span class=o>.</span><span class=na>ACTION_SEND</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// &#34;text/plain&#34; 和 &#34;text/html&#34; 区别：html 类型 可以识别加粗等标签
+</span></span></span><span class=line><span class=cl><span class=c1>// 当需要分享图文时可以使用 &#34;image/*&#34;
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>sharingIntent</span><span class=o>.</span><span class=na>setType</span><span class=o>(</span><span class=s>&#34;text/html&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=n>sharingIntent</span><span class=o>.</span><span class=na>putExtra</span><span class=o>(</span><span class=n>android</span><span class=o>.</span><span class=na>content</span><span class=o>.</span><span class=na>Intent</span><span class=o>.</span><span class=na>EXTRA_TEXT</span><span class=o>,</span> <span class=n>Html</span><span class=o>.</span><span class=na>fromHtml</span><span class=o>(</span><span class=s>&#34;&lt;b&gt;This is the text shared.&lt;/b&gt;&#34;</span><span class=o>));</span>
+</span></span><span class=line><span class=cl><span class=n>startActivity</span><span class=o>(</span><span class=n>Intent</span><span class=o>.</span><span class=na>createChooser</span><span class=o>(</span><span class=n>sharingIntent</span><span class=o>,</span> <span class=s>&#34;Share using&#34;</span><span class=o>));</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=封装使用>封装使用</h3><p>比如分享链接到 Facebook</p><p>ResolveInfo 可以获取包名， icon 和 Label ,通过包名限制分享的应用。可以通过 label 进一步筛选分享到应用中的选项</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>AppUtils</span><span class=o>.</span><span class=na>shareUrl</span><span class=o>(</span><span class=k>this</span><span class=o>,</span> <span class=n>bean</span><span class=o>.</span><span class=na>share_link</span><span class=o>,</span> <span class=kc>null</span><span class=o>,</span> <span class=s>&#34;facebook&#34;</span><span class=o>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>分享图片流程：使用 Glide 把图片转为 Bitmap 再插入到相册中 最后转为 uri 来进行分享，如果想让插入的图片显示还需要发送广播，这里不需要</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>shareUrl</span><span class=o>(</span><span class=n>Context</span> <span class=n>context</span><span class=o>,</span> <span class=n>String</span> <span class=n>content</span><span class=o>,</span> <span class=n>Object</span> <span class=n>img</span><span class=o>,</span> <span class=n>String</span> <span class=n>packageName</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kt>boolean</span> <span class=n>appFound</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>Intent</span> <span class=n>sharingIntent</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Intent</span><span class=o>(</span><span class=n>Intent</span><span class=o>.</span><span class=na>ACTION_SEND</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>sharingIntent</span><span class=o>.</span><span class=na>putExtra</span><span class=o>(</span><span class=n>Intent</span><span class=o>.</span><span class=na>EXTRA_TEXT</span><span class=o>,</span> <span class=n>content</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>sharingIntent</span><span class=o>.</span><span class=na>setType</span><span class=o>(</span><span class=s>&#34;text/plain&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>List</span><span class=o>&lt;</span><span class=n>ResolveInfo</span><span class=o>&gt;</span> <span class=n>matches</span> <span class=o>=</span> <span class=n>context</span><span class=o>.</span><span class=na>getPackageManager</span><span class=o>().</span><span class=na>queryIntentActivities</span><span class=o>(</span><span class=n>sharingIntent</span><span class=o>,</span> <span class=n>PackageManager</span><span class=o>.</span><span class=na>MATCH_DEFAULT_ONLY</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=n>ResolveInfo</span> <span class=n>info</span> <span class=o>:</span> <span class=n>matches</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>info</span><span class=o>.</span><span class=na>activityInfo</span><span class=o>.</span><span class=na>packageName</span><span class=o>.</span><span class=na>contains</span><span class=o>(</span><span class=n>packageName</span><span class=o>))</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>sharingIntent</span><span class=o>.</span><span class=na>setPackage</span><span class=o>(</span><span class=n>info</span><span class=o>.</span><span class=na>activityInfo</span><span class=o>.</span><span class=na>packageName</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                <span class=n>appFound</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=k>break</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(!</span><span class=n>appFound</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>ToastUtils</span><span class=o>.</span><span class=na>show</span><span class=o>(</span><span class=n>context</span><span class=o>.</span><span class=na>getString</span><span class=o>(</span><span class=n>R</span><span class=o>.</span><span class=na>string</span><span class=o>.</span><span class=na>app_not_found</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>img</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>context</span><span class=o>.</span><span class=na>startActivity</span><span class=o>(</span><span class=n>sharingIntent</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>Build</span><span class=o>.</span><span class=na>VERSION</span><span class=o>.</span><span class=na>SDK_INT</span> <span class=o>&gt;=</span> <span class=n>Build</span><span class=o>.</span><span class=na>VERSION_CODES</span><span class=o>.</span><span class=na>LOLLIPOP</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=c1>// glide 的 CustomTarget 回调中可以获取图片宽高
+</span></span></span><span class=line><span class=cl><span class=c1></span>                    <span class=n>Glide</span><span class=o>.</span><span class=na>with</span><span class=o>(</span><span class=n>context</span><span class=o>).</span><span class=na>asBitmap</span><span class=o>()</span>
+</span></span><span class=line><span class=cl>                            <span class=o>.</span><span class=na>load</span><span class=o>(</span><span class=n>img</span><span class=o>).</span><span class=na>into</span><span class=o>(</span><span class=k>new</span> <span class=n>CustomTarget</span><span class=o>&lt;</span><span class=n>Bitmap</span><span class=o>&gt;()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                        <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>                        <span class=kd>public</span> <span class=kt>void</span> <span class=nf>onResourceReady</span><span class=o>(</span><span class=nd>@NonNull</span> <span class=n>Bitmap</span> <span class=n>resource</span><span class=o>,</span> <span class=nd>@Nullable</span> <span class=n>Transition</span><span class=o>&lt;?</span> <span class=kd>super</span> <span class=n>Bitmap</span><span class=o>&gt;</span> <span class=n>transition</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                            <span class=n>ByteArrayOutputStream</span> <span class=n>bytes</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ByteArrayOutputStream</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                            <span class=c1>//0-100 100则没有压缩 压缩格式为 PNG 则无效，因为 PNG 是无损压缩
+</span></span></span><span class=line><span class=cl><span class=c1></span>                            <span class=n>resource</span><span class=o>.</span><span class=na>compress</span><span class=o>(</span><span class=n>Bitmap</span><span class=o>.</span><span class=na>CompressFormat</span><span class=o>.</span><span class=na>JPEG</span><span class=o>,</span> <span class=n>100</span><span class=o>,</span> <span class=n>bytes</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                            <span class=k>try</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                                <span class=n>bytes</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                            <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>IOException</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                                <span class=n>e</span><span class=o>.</span><span class=na>printStackTrace</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                            <span class=o>}</span>
+</span></span><span class=line><span class=cl>                            <span class=n>String</span> <span class=n>path</span> <span class=o>=</span> <span class=n>MediaStore</span><span class=o>.</span><span class=na>Images</span><span class=o>.</span><span class=na>Media</span><span class=o>.</span><span class=na>insertImage</span><span class=o>(</span><span class=n>context</span><span class=o>.</span><span class=na>getContentResolver</span><span class=o>(),</span> <span class=n>resource</span><span class=o>,</span> <span class=s>&#34;Title&#34;</span><span class=o>,</span> <span class=kc>null</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                            <span class=n>Uri</span> <span class=n>imageUri</span> <span class=o>=</span> <span class=n>Uri</span><span class=o>.</span><span class=na>parse</span><span class=o>(</span><span class=n>path</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                            <span class=n>sharingIntent</span><span class=o>.</span><span class=na>putExtra</span><span class=o>(</span><span class=n>Intent</span><span class=o>.</span><span class=na>EXTRA_STREAM</span><span class=o>,</span> <span class=n>imageUri</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                            <span class=n>sharingIntent</span><span class=o>.</span><span class=na>setType</span><span class=o>(</span><span class=s>&#34;image/*&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                            <span class=n>context</span><span class=o>.</span><span class=na>startActivity</span><span class=o>(</span><span class=n>sharingIntent</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                        <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                        <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>                        <span class=kd>public</span> <span class=kt>void</span> <span class=nf>onLoadCleared</span><span class=o>(</span><span class=nd>@Nullable</span> <span class=n>Drawable</span> <span class=n>placeholder</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                        <span class=o>}</span>
+</span></span><span class=line><span class=cl>                    <span class=o>});</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>ToastUtils</span><span class=o>.</span><span class=na>show</span><span class=o>(</span><span class=n>context</span><span class=o>.</span><span class=na>getString</span><span class=o>(</span><span class=n>R</span><span class=o>.</span><span class=na>string</span><span class=o>.</span><span class=na>app_not_found</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>            <span class=n>Log</span><span class=o>.</span><span class=na>e</span><span class=o>(</span><span class=s>&#34;shareUrl&#34;</span><span class=o>,</span> <span class=n>e</span><span class=o>.</span><span class=na>getMessage</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>AndroidManifest 增加如下代码，兼容 Android 11 的隐私软件包可见性</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;queries&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;intent&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;action</span> <span class=na>android:name=</span><span class=s>&#34;android.intent.action.SEND&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;data</span> <span class=na>android:mimeType=</span><span class=s>&#34;image/jpeg&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/intent&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/queries&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--如果要查全部应用，如根据包名查询是否安装应用加QUERY_ALL_PACKAGES权限--&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;uses-permission</span> <span class=na>android:name=</span><span class=s>&#34;android.permission.QUERY_ALL_PACKAGES&#34;</span> <span class=nt>/&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>参考
+<a href=https://developer.android.com/training/sharing/send>官方文档</a>
+<a href=https://guides.codepath.com/android/Sharing-Content-with-Intents>多种分享类型参考</a>
+<a href=https://www.jianshu.com/p/88f166dd43b7>https://www.jianshu.com/p/88f166dd43b7</a>
+<a href=https://juejin.cn/post/6844903950991228942>压缩可以随便看看这个</a></p></div><footer class=post-footer><nav class=post-nav><a class=next href=/post/android/android-glide-tutorial/><span class="next-text nav-default">Android Glide Tutorial</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><script src=https://utteranc.es/client.js repo=kalaqiae/kalaqiae.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script><noscript>Please enable JavaScript to view the <a href=https://github.com/utterance>comments powered by utterances.</a></noscript></div></main><footer id=footer class=footer><div class=social-links></div><div class=copyright><span class=power-by></span><span class=theme-info></span><div class=busuanzi-footer></div><span class=copyright-year>&copy;
+2022
+<span>|</span>
+<span>Kalaqiae</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js></script>
+<script type=text/javascript src=https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js></script>
+<script src=https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js></script>
+<script>var jsonModel=["https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json"];L2Dwidget.init({model:{jsonPath:jsonModel[Math.floor(Math.random()*jsonModel.length)],scale:1},display:{position:"left",width:66,height:90,hOffset:10,vOffset:0},mobile:{show:!1}})</script></body></html>
