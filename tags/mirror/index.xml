@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mirror on KALAQIAE</title><link>https://kalaqiae.com/tags/mirror/</link><description>Recent content in Mirror on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 07 Apr 2021 20:59:09 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/mirror/index.xml" rel="self" type="application/rss+xml"/><item><title>常用镜像</title><link>https://kalaqiae.com/post/common/mirror/</link><pubDate>Wed, 07 Apr 2021 20:59:09 +0800</pubDate><guid>https://kalaqiae.com/post/common/mirror/</guid><description>&lt;h3 id="android">Android&lt;/h3>
-&lt;p>按顺序写&lt;/p>
+&lt;p>按顺序写 public包含central和jcenter&lt;/p>
 &lt;blockquote>
-&lt;p>maven { url &amp;lsquo;&lt;a href="https://maven.aliyun.com/repository/public/'">https://maven.aliyun.com/repository/public/'&lt;/a> }&lt;br>
+&lt;p>maven { url &amp;lsquo;&lt;a href="https://maven.aliyun.com/repository/public'">https://maven.aliyun.com/repository/public'&lt;/a> }&lt;br>
 maven { url &amp;lsquo;&lt;a href="https://maven.aliyun.com/repository/google'">https://maven.aliyun.com/repository/google'&lt;/a> }&lt;br>
 maven { url &amp;lsquo;&lt;a href="https://maven.aliyun.com/repositories/jcenter'">https://maven.aliyun.com/repositories/jcenter'&lt;/a> }&lt;br>
+maven{ url &amp;lsquo;&lt;a href="https://maven.aliyun.com/repository/gradle-plugin'%7D">https://maven.aliyun.com/repository/gradle-plugin'}&lt;/a>
 google()&lt;br>
 jcenter()&lt;/p>
-&lt;/blockquote></description></item></channel></rss>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://developer.aliyun.com/mvn/guide">阿里云云效 Maven&lt;/a>&lt;/p></description></item></channel></rss>

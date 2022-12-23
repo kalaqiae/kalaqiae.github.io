@@ -1,20 +1,20 @@
 <!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Android Textview - KALAQIAE</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Kalaqiae"><meta name=description content="TextView ellipsize 配合 maxLines 使用，超出部分省略号表示，跑马灯等效果
-marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true);
+marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true); 需要注意不要抢了其他控件的焦点
 marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1
-"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.94.1 with theme even"><link rel=canonical href=https://kalaqiae.com/post/android/android-textview/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.108.0 with theme even"><link rel=canonical href=https://kalaqiae.com/post/android/android-textview/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <link href=/sass/main.min.8bb66a6c962ec1755867d3d5ce8e5267f80d5dc80d7d74f19be0b9686de4c75f.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Android Textview"><meta property="og:description" content="TextView ellipsize
 配合 maxLines 使用，超出部分省略号表示，跑马灯等效果
-marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true);
+marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true); 需要注意不要抢了其他控件的焦点
 marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/android/android-textview/"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-03-12T16:27:58+08:00"><meta property="article:modified_time" content="2022-03-12T16:27:58+08:00"><meta itemprop=name content="Android Textview"><meta itemprop=description content="TextView ellipsize
 配合 maxLines 使用，超出部分省略号表示，跑马灯等效果
-marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true);
-marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1"><meta itemprop=datePublished content="2022-03-12T16:27:58+08:00"><meta itemprop=dateModified content="2022-03-12T16:27:58+08:00"><meta itemprop=wordCount content="517"><meta itemprop=keywords content="Android,Textview,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Android Textview"><meta name=twitter:description content="TextView ellipsize
+marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true); 需要注意不要抢了其他控件的焦点
+marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1"><meta itemprop=datePublished content="2022-03-12T16:27:58+08:00"><meta itemprop=dateModified content="2022-03-12T16:27:58+08:00"><meta itemprop=wordCount content="809"><meta itemprop=keywords content="Android,Textview,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Android Textview"><meta name=twitter:description content="TextView ellipsize
 配合 maxLines 使用，超出部分省略号表示，跑马灯等效果
-marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true);
+marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true); 需要注意不要抢了其他控件的焦点
 marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script data-ad-client=ca-pub-6216241935841265 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Android Textview</h1><div class=post-meta><span class=post-time>2022-03-12</span><div class=post-category><a href=/categories/android/>Android</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#textview-ellipsize>TextView ellipsize</a></li><li><a href=#textview-maxems>TextView maxEms</a></li><li><a href=#textview-setmargins>TextView setMargins</a></li><li><a href=#textview-drawables>TextView Drawables</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=textview-ellipsize>TextView ellipsize</h3><p>配合 maxLines 使用，超出部分省略号表示，跑马灯等效果</p><p>marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true);</p><p>marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1</p><p>Combining ellipsize=marquee and maxLines=1 can lead to crashes. Use singleLine=true instead</p><p>Combining ellipsize and maxLines=1 can lead to crashes on some devices. Earlier versions of lint recommended replacing singleLine=true with maxLines=1 but that should not be done when using ellipsize.</p><p>译：将 ellipsize和maxLines = 1组合在一起会导致某些设备崩溃。 早期版本的lint建议用maxLines = 1替换singleLine = true，但在使用ellipsize时不应该这样做。</p><h3 id=textview-maxems>TextView maxEms</h3><p>em 是一个印刷排版的单位，表示字宽的单位。 em 字面意思为：equal M（和 M 字符一致的宽度为一个单位）简称 em。ems 是 em 的复数表达。</p><p>使用 ellipsize 时，想要限制宽度不能用 maxLength 用 maxEms</p><h3 id=textview-setmargins>TextView setMargins</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Android Textview</h1><div class=post-meta><span class=post-time>2022-03-12</span><div class=post-category><a href=/categories/android/>Android</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#textview-ellipsize>TextView ellipsize</a></li><li><a href=#textview-maxems>TextView maxEms</a></li><li><a href=#textview-setmargins>TextView setMargins</a></li><li><a href=#textview-drawables>TextView Drawables</a></li><li><a href=#textview-html-标签>TextView Html 标签</a></li><li><a href=#阴影>阴影</a></li><li><a href=#行间距>行间距</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=textview-ellipsize>TextView ellipsize</h3><p>配合 maxLines 使用，超出部分省略号表示，跑马灯等效果</p><p>marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true); 需要注意不要抢了其他控件的焦点</p><p>marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1</p><p>Combining ellipsize=marquee and maxLines=1 can lead to crashes. Use singleLine=true instead</p><p>Combining ellipsize and maxLines=1 can lead to crashes on some devices. Earlier versions of lint recommended replacing singleLine=true with maxLines=1 but that should not be done when using ellipsize.</p><p>译：将 ellipsize和maxLines = 1组合在一起会导致某些设备崩溃。 早期版本的lint建议用maxLines = 1替换singleLine = true，但在使用ellipsize时不应该这样做。</p><h3 id=textview-maxems>TextView maxEms</h3><p>em 是一个印刷排版的单位，表示字宽的单位。 em 字面意思为：equal M（和 M 字符一致的宽度为一个单位）简称 em。ems 是 em 的复数表达。</p><p>使用 ellipsize 时，想要限制宽度不能用 maxLength 用 maxEms</p><h3 id=textview-setmargins>TextView setMargins</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -24,7 +24,7 @@ marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1"><!--[if
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>RelativeLayout</span><span class=o>.</span><span class=na>LayoutParams</span> <span class=n>layoutParams</span> <span class=o>=</span> <span class=o>(</span><span class=n>RelativeLayout</span><span class=o>.</span><span class=na>LayoutParams</span><span class=o>)</span> <span class=n>child</span><span class=o>.</span><span class=na>getLayoutParams</span><span class=o>();</span>
 </span></span><span class=line><span class=cl>    <span class=n>RelativeLayout</span><span class=o>.</span><span class=na>LayoutParams</span> <span class=n>layoutParams</span> <span class=o>=</span> <span class=k>new</span> <span class=n>RelativeLayout</span><span class=o>.</span><span class=na>LayoutParams</span><span class=o>(</span><span class=n>ViewGroup</span><span class=o>.</span><span class=na>LayoutParams</span><span class=o>.</span><span class=na>MATCH_PARENT</span><span class=o>,</span> <span class=n>ViewGroup</span><span class=o>.</span><span class=na>LayoutParams</span><span class=o>.</span><span class=na>WRAP_CONTENT</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>    <span class=c1>//设置的值是 px ，有需要可以 dp 转 px
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>layoutParams</span><span class=o>.</span><span class=na>setMargins</span><span class=o>(</span><span class=n>DisplayUtils</span><span class=o>.</span><span class=na>dp2px</span><span class=o>(</span><span class=n>mContext</span><span class=o>,</span> <span class=n>15</span><span class=o>),</span> <span class=n>0</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>0</span><span class=o>);</span>
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>layoutParams</span><span class=o>.</span><span class=na>setMargins</span><span class=o>(</span><span class=n>DisplayUtils</span><span class=o>.</span><span class=na>dp2px</span><span class=o>(</span><span class=n>mContext</span><span class=o>,</span> <span class=mi>15</span><span class=o>),</span> <span class=mi>0</span><span class=o>,</span> <span class=mi>0</span><span class=o>,</span> <span class=mi>0</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>    <span class=n>child</span><span class=o>.</span><span class=na>setLayoutParams</span><span class=o>(</span><span class=n>layoutParams</span><span class=o>);</span>
 </span></span></code></pre></td></tr></table></div></div><p>使用 MarginLayoutParams 设置</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -45,7 +45,7 @@ marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1"><!--[if
 </span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>            <span class=n>marginParams</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ViewGroup</span><span class=o>.</span><span class=na>MarginLayoutParams</span><span class=o>(</span><span class=n>params</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span><span class=line><span class=cl>        <span class=n>marginParams</span><span class=o>.</span><span class=na>setMargins</span><span class=o>(</span><span class=n>0</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>0</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>marginParams</span><span class=o>.</span><span class=na>setMargins</span><span class=o>(</span><span class=mi>0</span><span class=o>,</span> <span class=mi>0</span><span class=o>,</span> <span class=mi>0</span><span class=o>,</span> <span class=mi>0</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>        <span class=n>child</span><span class=o>.</span><span class=na>setLayoutParams</span><span class=o>(</span><span class=n>marginParams</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=textview-drawables>TextView Drawables</h3><p>可以用 setCompoundDrawables 或 setCompoundDrawablesWithIntrinsicBounds</p><p>setCompoundDrawables 画的 drawable 的宽高是按 drawable.setBound() 设置的宽高，所以必须先设置 drawable 的宽高，在调用该方法，才会显示</p><p>setCompoundDrawablesWithIntrinsicBounds 是画的 drawable 的宽高是按 drawable 固定的宽高，即：用 getIntrinsicWidth() 与 getIntrinsicHeight() 获得</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -56,8 +56,86 @@ marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1"><!--[if
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl>    <span class=n>Drawable</span> <span class=n>drawable</span> <span class=o>=</span> <span class=n>ContextCompat</span><span class=o>.</span><span class=na>getDrawable</span><span class=o>(</span><span class=n>context</span><span class=o>,</span> <span class=n>R</span><span class=o>.</span><span class=na>drawable</span><span class=o>.***);</span>
-</span></span><span class=line><span class=cl>    <span class=n>rightDrawable</span><span class=o>.</span><span class=na>setBounds</span><span class=o>(</span><span class=n>0</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>drawable</span><span class=o>.</span><span class=na>getMinimumWidth</span><span class=o>(),</span> <span class=n>drawable</span><span class=o>.</span><span class=na>getMinimumHeight</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>    <span class=n>rightDrawable</span><span class=o>.</span><span class=na>setBounds</span><span class=o>(</span><span class=mi>0</span><span class=o>,</span> <span class=mi>0</span><span class=o>,</span> <span class=n>drawable</span><span class=o>.</span><span class=na>getMinimumWidth</span><span class=o>(),</span> <span class=n>drawable</span><span class=o>.</span><span class=na>getMinimumHeight</span><span class=o>());</span>
 </span></span><span class=line><span class=cl>    <span class=n>textview</span><span class=o>.</span><span class=na>setCompoundDrawables</span><span class=o>(</span><span class=kc>null</span><span class=o>,</span> <span class=kc>null</span><span class=o>,</span> <span class=n>drawable</span><span class=o>,</span> <span class=kc>null</span><span class=o>);</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=textview-html-标签>TextView Html 标签</h3><p>可以修改个别文字样式</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Spanned</span> <span class=n>message</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>(</span><span class=n>android</span><span class=o>.</span><span class=na>os</span><span class=o>.</span><span class=na>Build</span><span class=o>.</span><span class=na>VERSION</span><span class=o>.</span><span class=na>SDK_INT</span> <span class=o>&gt;=</span> <span class=n>android</span><span class=o>.</span><span class=na>os</span><span class=o>.</span><span class=na>Build</span><span class=o>.</span><span class=na>VERSION_CODES</span><span class=o>.</span><span class=na>N</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>message</span> <span class=o>=</span> <span class=n>Html</span><span class=o>.</span><span class=na>fromHtml</span><span class=o>(</span><span class=n>getString</span><span class=o>(</span><span class=n>R</span><span class=o>.</span><span class=na>string</span><span class=o>.</span><span class=na>cdata_text</span><span class=o>),</span><span class=n>Html</span><span class=o>.</span><span class=na>FROM_HTML_MODE_LEGACY</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=o>}</span><span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>message</span> <span class=o>=</span> <span class=n>Html</span><span class=o>.</span><span class=na>fromHtml</span><span class=o>(</span><span class=n>getString</span><span class=o>(</span><span class=n>R</span><span class=o>.</span><span class=na>string</span><span class=o>.</span><span class=na>cdata_text</span><span class=o>));</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=n>text</span><span class=o>.</span><span class=na>setText</span><span class=o>(</span><span class=n>message</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=c1>//设置 a 标签点击跳转
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>text</span><span class=o>.</span><span class=na>setMovementMethod</span><span class=o>(</span><span class=n>LinkMovementMethod</span><span class=o>.</span><span class=na>getInstance</span><span class=o>());</span>
+</span></span></code></pre></td></tr></table></div></div><p>在 string.xml 用 <![CDATA[]]> 或者直接转义 Html 标签</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;string</span> <span class=na>name=</span><span class=s>&#34;cdata_text&#34;</span><span class=nt>&gt;</span><span class=cp>&lt;![CDATA[1.&lt;a href=&#34;https://kalaqiae.com/&#34;&gt;kalaqiae&lt;a&gt;&lt;br/&gt;2.&lt;b&gt;bold&lt;/b&gt; 3.&lt;font color = &#34;#FF0000&#34;&gt;color text&lt;/font&gt;]]&gt;</span><span class=nt>&lt;/string&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>如果要获取到 a 标签的点击事件（比如想自定义跳转页面） textview 需要设置 android:autoLink=&ldquo;web&rdquo; 然后用另外写事件</p><h3 id=阴影>阴影</h3><p>android:shadowColor 阴影颜色 android:shadowDx 阴影的水平偏移量 android:shadowDy 阴影的垂直偏移量 android:shadowRadius 阴影的范围</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;TextView</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_width=</span><span class=s>&#34;wrap_content&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_height=</span><span class=s>&#34;wrap_content&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_marginTop=</span><span class=s>&#34;30dp&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:shadowColor=</span><span class=s>&#34;#FF000000&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:shadowDx=</span><span class=s>&#34;5&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:shadowDy=</span><span class=s>&#34;5&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:shadowRadius=</span><span class=s>&#34;3&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:text=</span><span class=s>&#34;阴影效果&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:textColor=</span><span class=s>&#34;#FFF&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:textSize=</span><span class=s>&#34;30sp&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>&lt;TextView</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_width=</span><span class=s>&#34;wrap_content&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_height=</span><span class=s>&#34;wrap_content&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_marginTop=</span><span class=s>&#34;30dp&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:shadowColor=</span><span class=s>&#34;#CCCCCC&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:shadowDx=</span><span class=s>&#34;0.5&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:shadowDy=</span><span class=s>&#34;0.5&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:shadowRadius=</span><span class=s>&#34;2&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:text=</span><span class=s>&#34;浮雕效果&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:textColor=</span><span class=s>&#34;#FF000000&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:textSize=</span><span class=s>&#34;30sp&#34;</span> <span class=nt>/&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=行间距>行间距</h3><p>android:lineSpacingExtra 设置行间距 android:lineSpacingMultiplier 设置行间距的倍数</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;TextView</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_width=</span><span class=s>&#34;wrap_content&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_height=</span><span class=s>&#34;wrap_content&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:includeFontPadding=</span><span class=s>&#34;false&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:lineSpacingMultiplier=</span><span class=s>&#34;1.2&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:lineSpacingExtra=</span><span class=s>&#34;4dp&#34;</span> <span class=nt>/&gt;</span>
 </span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/android/android-glide-tutorial/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">Android Glide Tutorial</span>
 <span class="prev-text nav-mobile">上一篇</span></a>
@@ -69,7 +147,7 @@ marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1"><!--[if
 <span>Kalaqiae</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
-<script type=text/javascript src=/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script>
 <script type=text/javascript src=https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js></script>
 <script src=https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js></script>
 <script>var jsonModel=["https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json"];L2Dwidget.init({model:{jsonPath:jsonModel[Math.floor(Math.random()*jsonModel.length)],scale:1},display:{position:"left",width:66,height:90,hOffset:10,vOffset:0},mobile:{show:!1}})</script></body></html>

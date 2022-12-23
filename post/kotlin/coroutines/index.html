@@ -1,5 +1,5 @@
 <!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Kotlin 协程 - KALAQIAE</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Kalaqiae"><meta name=description content="启动协程 launch 启动一个新的线程，在新线程上创建运行协程，不堵塞当前线程，返回一个Job类型的对象
-1 2 3  launch { //do sth. }   "><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.94.1 with theme even"><link rel=canonical href=https://kalaqiae.com/post/kotlin/coroutines/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+1 2 3 launch { //do sth. } "><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.108.0 with theme even"><link rel=canonical href=https://kalaqiae.com/post/kotlin/coroutines/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <link href=/sass/main.min.8bb66a6c962ec1755867d3d5ce8e5267f80d5dc80d7d74f19be0b9686de4c75f.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Kotlin 协程"><meta property="og:description" content="启动协程
 
 launch
@@ -32,7 +32,7 @@ launch {
 }
 
 
-"><meta itemprop=datePublished content="2021-04-09T23:14:11+08:00"><meta itemprop=dateModified content="2021-04-09T23:14:11+08:00"><meta itemprop=wordCount content="2528"><meta itemprop=keywords content="Kotlin,coroutines,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Kotlin 协程"><meta name=twitter:description content="启动协程
+"><meta itemprop=datePublished content="2021-04-09T23:14:11+08:00"><meta itemprop=dateModified content="2021-04-09T23:14:11+08:00"><meta itemprop=wordCount content="2529"><meta itemprop=keywords content="Kotlin,coroutines,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Kotlin 协程"><meta name=twitter:description content="启动协程
 
 launch
 启动一个新的线程，在新线程上创建运行协程，不堵塞当前线程，返回一个Job类型的对象
@@ -94,7 +94,7 @@ launch {
 </span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>result</span> <span class=p>=</span> <span class=n>deferred</span><span class=p>.</span><span class=n>await</span><span class=p>()</span>
 </span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;result = </span><span class=si>$result</span><span class=s2>&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>        <span class=c1>//当前线程休眠以便调度线程有机会执行
-</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>Thread</span><span class=p>.</span><span class=n>sleep</span><span class=p>(</span><span class=m>3000</span><span class=p>)</span>
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nc>Thread</span><span class=p>.</span><span class=n>sleep</span><span class=p>(</span><span class=m>3000</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=协程启动模式>协程启动模式</h3><table><thead><tr><th style=text-align:left>模式</th><th style=text-align:left>功能</th></tr></thead><tbody><tr><td style=text-align:left>DEFAULT</td><td style=text-align:left>立即执行协程体</td></tr><tr><td style=text-align:left>ATOMIC</td><td style=text-align:left>立即执行协程体，但在开始运行之前无法取消</td></tr><tr><td style=text-align:left>UNDISPATCHED</td><td style=text-align:left>立即在当前线程执行协程体，直到第一个 suspend 调用</td></tr><tr><td style=text-align:left>LAZY</td><td style=text-align:left>只有在需要的情况下运行</td></tr></tbody></table><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -106,8 +106,8 @@ launch {
 </span><span class=lnt>7
 </span><span class=lnt>8
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=n>runBlocking</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=k>val</span> <span class=py>job</span> <span class=p>=</span> <span class=n>GlobalScope</span><span class=p>.</span><span class=n>launch</span><span class=p>(</span><span class=n>start</span> <span class=p>=</span> <span class=n>CoroutineStart</span><span class=p>.</span><span class=n>LAZY</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;1: &#34;</span> <span class=p>+</span> <span class=n>Thread</span><span class=p>.</span><span class=n>currentThread</span><span class=p>().</span><span class=n>name</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>val</span> <span class=py>job</span> <span class=p>=</span> <span class=nc>GlobalScope</span><span class=p>.</span><span class=n>launch</span><span class=p>(</span><span class=n>start</span> <span class=p>=</span> <span class=nc>CoroutineStart</span><span class=p>.</span><span class=n>LAZY</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;1: &#34;</span> <span class=p>+</span> <span class=nc>Thread</span><span class=p>.</span><span class=n>currentThread</span><span class=p>().</span><span class=n>name</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>    <span class=c1>// LAZY模式要通过start或者join调用
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>job</span><span class=p>.</span><span class=n>start</span><span class=p>()</span>
@@ -119,7 +119,7 @@ launch {
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=n>launch</span><span class=p>(</span><span class=n>Dispatchers</span><span class=p>.</span><span class=n>Default</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// 将会获取默认调度器
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=n>launch</span><span class=p>(</span><span class=nc>Dispatchers</span><span class=p>.</span><span class=n>Default</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// 将会获取默认调度器
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>println</span><span class=p>(</span><span class=s2>&#34;Default: I&#39;m working in thread </span><span class=si>${Thread.currentThread().name}</span><span class=s2>&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=n>launch</span><span class=p>(</span><span class=n>newSingleThreadContext</span><span class=p>(</span><span class=s2>&#34;MyOwnThread&#34;</span><span class=p>))</span> <span class=p>{</span> <span class=c1>// 将使它获得一个新的线程
@@ -141,13 +141,13 @@ launch {
 </span><span class=lnt>14
 </span><span class=lnt>15
 </span><span class=lnt>16
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>val</span> <span class=py>startTime</span> <span class=p>=</span> <span class=n>System</span><span class=p>.</span><span class=n>currentTimeMillis</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=k>val</span> <span class=py>job</span> <span class=p>=</span> <span class=n>launch</span><span class=p>(</span><span class=n>Dispatchers</span><span class=p>.</span><span class=n>Default</span><span class=p>)</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>val</span> <span class=py>startTime</span> <span class=p>=</span> <span class=nc>System</span><span class=p>.</span><span class=n>currentTimeMillis</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>val</span> <span class=py>job</span> <span class=p>=</span> <span class=n>launch</span><span class=p>(</span><span class=nc>Dispatchers</span><span class=p>.</span><span class=n>Default</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>var</span> <span class=py>nextPrintTime</span> <span class=p>=</span> <span class=n>startTime</span>
 </span></span><span class=line><span class=cl>    <span class=k>var</span> <span class=py>i</span> <span class=p>=</span> <span class=m>0</span>
 </span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=p>(</span><span class=n>i</span> <span class=p>&lt;</span> <span class=m>5</span> <span class=o>&amp;&amp;</span> <span class=n>isActive</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// 可以被取消的计算循环
 </span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=c1>// 每秒打印消息两次
-</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span> <span class=p>(</span><span class=n>System</span><span class=p>.</span><span class=n>currentTimeMillis</span><span class=p>()</span> <span class=o>&gt;=</span> <span class=n>nextPrintTime</span><span class=p>)</span> <span class=p>{</span>
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span> <span class=p>(</span><span class=nc>System</span><span class=p>.</span><span class=n>currentTimeMillis</span><span class=p>()</span> <span class=o>&gt;=</span> <span class=n>nextPrintTime</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>            <span class=n>println</span><span class=p>(</span><span class=s2>&#34;job: I&#39;m sleeping </span><span class=si>${i++}</span><span class=s2> ...&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>            <span class=n>nextPrintTime</span> <span class=o>+=</span> <span class=m>500L</span>
 </span></span><span class=line><span class=cl>        <span class=p>}</span>
@@ -237,7 +237,7 @@ launch {
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>println</span><span class=p>(</span><span class=s2>&#34;main: I&#39;m tired of waiting!&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=n>job</span><span class=p>.</span><span class=n>cancelAndJoin</span><span class=p>()</span> <span class=c1>// 取消该作业并等待它结束
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>println</span><span class=p>(</span><span class=s2>&#34;main: Now I can quit.&#34;</span><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div><p>英文官方文档<br><a href=https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/index.html>https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/index.html</a><br><a href=https://kotlinlang.org/docs/composing-suspending-functions.html>https://kotlinlang.org/docs/composing-suspending-functions.html</a></p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/android/android-abifilter-about/><i class="iconfont icon-left"></i>
+</span></span></code></pre></td></tr></table></div></div><p>官方文档<br><a href=https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/index.html>https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/index.html</a><br><a href=https://kotlinlang.org/docs/composing-suspending-functions.html>https://kotlinlang.org/docs/composing-suspending-functions.html</a></p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/android/android-abifilter-about/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">Android abiFilter相关</span>
 <span class="prev-text nav-mobile">上一篇</span></a>
 <a class=next href=/post/common/mirror/><span class="next-text nav-default">常用镜像</span>
@@ -248,7 +248,7 @@ launch {
 <span>Kalaqiae</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
-<script type=text/javascript src=/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script>
 <script type=text/javascript src=https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js></script>
 <script src=https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js></script>
 <script>var jsonModel=["https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json"];L2Dwidget.init({model:{jsonPath:jsonModel[Math.floor(Math.random()*jsonModel.length)],scale:1},display:{position:"left",width:66,height:90,hOffset:10,vOffset:0},mobile:{show:!1}})</script></body></html>

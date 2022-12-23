@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Textview on KALAQIAE</title><link>https://kalaqiae.com/tags/textview/</link><description>Recent content in Textview on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 12 Mar 2022 16:27:58 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/textview/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Textview</title><link>https://kalaqiae.com/post/android/android-textview/</link><pubDate>Sat, 12 Mar 2022 16:27:58 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-textview/</guid><description>&lt;h3 id="textview-ellipsize">TextView ellipsize&lt;/h3>
 &lt;p>配合 maxLines 使用，超出部分省略号表示，跑马灯等效果&lt;/p>
-&lt;p>marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true);&lt;/p>
+&lt;p>marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true); 需要注意不要抢了其他控件的焦点&lt;/p>
 &lt;p>marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1&lt;/p></description></item></channel></rss>

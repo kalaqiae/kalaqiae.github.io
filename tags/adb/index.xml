@@ -5,9 +5,9 @@
 &lt;/blockquote>
 &lt;p>当前显示的 activity ，用 findstr 或 grep 过滤&lt;/p>
 &lt;blockquote>
-&lt;p>adb shell dumpsys activity | findstr &amp;ldquo;mFocusedActivity&amp;rdquo;
-效果等同
-adb shell &amp;ldquo;dumpsys activity | grep mFocusedActivity&amp;rdquo;
-8.0以上用
+&lt;p>adb shell dumpsys activity | findstr &amp;ldquo;mFocusedActivity&amp;rdquo;&lt;br>
+效果等同&lt;br>
+adb shell &amp;ldquo;dumpsys activity | grep mFocusedActivity&amp;rdquo;&lt;br>
+8.0以上用&lt;br>
 adb shell dumpsys activity | findstr &amp;ldquo;mResumedActivity&amp;rdquo;&lt;/p>
 &lt;/blockquote></description></item></channel></rss>
