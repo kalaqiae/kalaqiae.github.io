@@ -8,6 +8,11 @@ categories: ["Android"]
 
 ### 切换语言
 
+获取 string.xml 里的字段时，可以用下面的 getAttachBaseContext 获取对应语言的 context  
+注意集成 tinker 热更适配
+
+<!--more-->
+
 ```kotlin
 
     /**
