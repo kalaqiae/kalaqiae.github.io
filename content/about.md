@@ -13,4 +13,4 @@ kalaqiae 要什么自行车。使用 Hugo 博客框架搭建，even 主题
 
 ## 联系方式
 
-邮箱：352733536@qq.com
+邮箱：linsenwork@163.com

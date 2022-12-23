@@ -2,8 +2,8 @@
 title: "Note"
 date: 2021-07-10T22:07:28+08:00
 draft: falase
-tags: ["Java","note"]
-categories: ["Java"]
+tags: ["Java","Android","note"]
+categories: ["Undefined"]
 ---
 
 ### json解析
@@ -155,3 +155,341 @@ public enum Singleton {
 ### list 去重
 
 ### 反射 -->
+
+### android ndk
+
+[官方文档](https://developer.android.com/ndk/guides)
+
+在 Android studio 中直接新建 Native C++ 的项目，IDE 会自动安装需要的工具，如 CMake 。新版 Android studio 不用另外再安装 LLDB ,所以在 SDK Manger 中看不到。
+
+```kotlin
+package com.kalaqiae.test
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.kalaqiae.test.databinding.ActivityMainBinding
+
+class MainActivity : AppCompatActivity() {
+
+  private lateinit var binding: ActivityMainBinding
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+
+    // Example of a call to a native method
+    binding.sampleText.text = stringFromJNI()
+  }
+
+  /**
+   * A native method that is implemented by the 'test' native library,
+   * which is packaged with this application.
+   */
+  external fun stringFromJNI(): String
+
+  companion object {
+    // Used to load the 'test' library on application startup.
+    init {
+      //加载的 so 文件为 libtest.so
+      System.loadLibrary("test")
+    }
+  }
+}
+```
+
+```c++
+#include <jni.h>
+#include <string>
+
+extern "C" JNIEXPORT jstring JNICALL
+//静态注册 native 方法规则 Java+类的路径+类名+方法名
+Java_com_kalaqiae_test_MainActivity_stringFromJNI(
+        JNIEnv* env,
+        jobject /* this */) {
+    std::string hello = "Hello from C++";
+    return env->NewStringUTF(hello.c_str());
+}
+```
+
+```txt
+# For more information about using CMake with Android Studio, read the
+# documentation: https://d.android.com/studio/projects/add-native-code.html
+
+# Sets the minimum version of CMake required to build the native library.
+
+cmake_minimum_required(VERSION 3.18.1)
+
+# Declares and names the project.
+
+project("test")
+
+# Creates and names a library, sets it as either STATIC
+# or SHARED, and provides the relative paths to its source code.
+# You can define multiple libraries, and CMake builds them for you.
+# Gradle automatically packages shared libraries with your APK.
+
+add_library( # Sets the name of the library.
+        test
+
+        # Sets the library as a shared library.
+        SHARED
+
+        # Provides a relative path to your source file(s).
+        native-lib.cpp)
+
+# Searches for a specified prebuilt library and stores the path as a
+# variable. Because CMake includes system libraries in the search path by
+# default, you only need to specify the name of the public NDK library
+# you want to add. CMake verifies that the library exists before
+# completing its build.
+
+find_library( # Sets the name of the path variable.
+        log-lib
+
+        # Specifies the name of the NDK library that
+        # you want CMake to locate.
+        log)
+
+# Specifies libraries CMake should link to your target library. You
+# can link multiple libraries, such as libraries you define in this
+# build script, prebuilt third-party libraries, or system libraries.
+
+target_link_libraries( # Specifies the target library.
+        test
+
+            # Links the target library to the log library
+        # included in the NDK.
+        ${log-lib})
+```
+
+生成 so 文件
+
+可以利用 Gradle 生成。在 Android studio 中选择 Build->Make Project ，在项目的 build\intermediates\cmake 中会生成各个 ABI 的 so
+
+将 so 文件 放在 libs 的对应路径下 如 libs\armeabi-v8a
+
+应用场景:1.加密 2.音视频解码,图像操作等等（ffmpeg） 3.安全相关,比如hook注入 4.增量更新 5.游戏开发
+
+[JNI和NDK的区别](https://cloud.tencent.com/developer/article/1392774)
+<!-- https://juejin.cn/post/6844903941101060104#heading-7 -->
+<!-- https://juejin.cn/post/6844904177924046856 -->
+
+<!-- demo
+https://github.com/desfate/JniSocketForAndroid
+https://github.com/sjfricke/NDK-Socket-IPC -->
+
+<!-- cmake -->
+<!-- http://file.ncnynl.com/ros/CMake%20Practice.pdf -->
+
+.c 和 .h 区别
+<!-- https://cloud.tencent.com/developer/news/459726 -->
+<!-- https://www.jianshu.com/p/7a5815d92afa -->
+本质上没有任何区别。 只不过一般：.h文件是头文件，内含函数声明、宏定义、结构体定义等内容  
+.c文件是程序文件，内含函数实现，变量定义等内容。而且是什么后缀也没有关系，只不过编译器会默认对某些后缀的文件采取某些动作。你可以强制编译器把任何后缀的文件都当作c文件来编。  
+一般一个 .c 对应一个 .h 方便管理。
+
+.cpp 是 c++ cplusplus...
+
+### android proguard
+
+#### 查看混淆后的错误日志（两种方法）
+
+方法一：使用 proguardgui
+
+* 打包后在 build->outputs->mapping 有 mapping.txt 文件
+* 找到 proguardgui.bat 并双击 C:\Users\Administrator\AppData\Local\Android\Sdk\tools\proguard\bin
+* 打开的 Proguard 程序中点击左边菜单中的 Retrace ，再选择 mapping.txt 并复制错误日志到对应区域，然后点击 Retrace
+
+方法二：直接打开 mapping.txt 文件，在文本中查找对应信息
+
+[参考](https://www.jianshu.com/p/11ade070de83)
+
+### Android 上传库到 Meaven
+
+MavenCentral 和 JitPack 都是 Meaven 仓库
+谷歌推荐 MavenCentral 看起来更专业，可以绑定域名 可以用发布脚本 JitPack 更简单用 git
+<!-- https://guolin.blog.csdn.net/article/details/119706565 -->
+<!-- https://juejin.cn/post/6953598441817636900#heading-0 -->
+<!-- https://juejin.cn/post/6932485276124233735 -->
+
+Apache Maven：是一个软件（特别是Java软件）项目管理以及自动构建工具，由Apache软件基金会所提供。是基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。
+
+Maven仓库你可以理解为和Apache Maven没有直接的关系，他就是一个存放各种工程jar文件、library文件、插件或者任何工程项目的仓库，用Maven来构建项目的时候可能也会用到Maven仓库里面的依赖库。
+
+Maven仓库有三种类型：本地（local）中央（central），在android开发中最常用 远程（remote）
+
+mavenCentral：中央仓库，这个仓库是由Maven社区管理，由Sonatype公司提供服务，是Apache Maven、SBT和其他构建系统默认的仓库，并且很容易被Apache Ant、Gradle和其他的构建工具使用，需要通过网络访问，通过：http://search.maven.org/#browse 开发者就可以在里面找到自己所需要的代码库。
+
+Gradle支持三种不同的仓库，分别是：Maven和Ivy以及文件夹。
+
+### c
+
+typedef
+
+用于自定义类型
+
+Struct 和 Union 区别
+
+Struct 更像是对象，所占空间是所有成员的存储空间之和。 Union 像泛型，同一时间只能存一个成员的值，所占空间是最大成员的存储空间。
+
+### Hook 框架
+
+[Xposed](https://github.com/rovo89/Xposed) Xposed is a framework for modules that can change the behavior of the system and apps without touching any APKs.
+
+[VirtualApp](https://github.com/asLody/VirtualApp) (简称：VA)是一款运行于Android系统的沙盒产品，可以理解为轻量级的“Android虚拟机”。其产品形态为高可扩展，可定制的集成SDK，您可以基于VA或者使用VA定制开发各种看似不可能完成的项目。VA目前被广泛应用于APP多开、小游戏合集、手游加速器、手游租号、手游手柄免激活、VR程序移植、区块链、移动办公安全、军队政府数据隔离、手机模拟信息、脚本自动化、插件化开发、无感知热更新、云控等技术领域。
+
+[VirtualApp技术黑产利用研究报告](https://m.qq.com/security_lab/news_detail_435.html)
+
+[VirtualXposed](https://github.com/android-hacker/VirtualXposed) 是基于VirtualApp 和 epic 在非ROOT环境下运行Xposed模块的实现（支持5.0~10.0)
+
+[Magisk](https://github.com/topjohnwu/Magisk) Magisk is a suite of open source software for customizing Android, supporting devices higher than Android 5.0.
+
+[EdXposed](https://github.com/ElderDrivers/EdXposed) A Riru module trying to provide an ART hooking framework (initially for Android Pie) which delivers consistent APIs with the OG Xposed, leveraging YAHFA (or SandHook) hooking framework, supports Android 8.0 ~ 11.
+
+[TaiChi](https://github.com/taichi-framework/TaiChi) 太极能够运行 Xposed 模块的框架，模块能通过它改变系统和应用的行为，是个类 Xposed 框架.。[中文文档](https://taichi.cool/zh/doc/)
+
+### Android Studio Debug
+
+设置调试类型默认是 auto ，可以选择只调试 Java/Kotlin 或者 C/C++ 的代码
+Run > Edit Configurations
+
+### view 源码
+
+[view 三万行源码](https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/view/View.java)
+
+### kotlin 自定义控件报错
+
+Caused by: java.lang.NoSuchMethodException: <init> [class android.content.Context, interface android.util.AttributeSet]
+
+构造函数里的参数需要是 Context
+
+```kotlin
+class MyView : LinearLayout {
+
+    constructor(context: Context) : super(context)
+
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
+
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle)
+}
+```
+
+或者
+
+```kotlin
+class MyView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyle: Int = 0
+) : LinearLayout(context, attrs, defStyle){
+    
+}
+```
+
+### socket 和 websocket
+
+websocket 在建立连接后就是全双工模式了，适合服务端需要主动推数据给客户端
+
+socket 每次交互都是客户端主动发起
+
+[马甲包](https://blog.yorek.xyz/android/other/android_alias/#25)
+
+### jetpack compose
+
+[官方文档](https://developer.android.com/jetpack/compose/documentation?hl=zh-cn)
+
+[将 Jetpack Compose 添加到应用中](https://developer.android.com/jetpack/compose/interop/adding?hl=zh-cn)
+
+[samples](https://github.com/android/compose-samples)
+
+[demo](https://gitee.com/Rickyal/compose-demo#%E7%8A%B6%E6%80%81%E4%B8%8B%E6%B2%89%E4%BA%8B%E4%BB%B6%E4%B8%8A%E6%B5%AE)
+
+[使用viewmodel](https://ithelp.ithome.com.tw/articles/10277978)
+
+[一个简单的例子](https://blog.51cto.com/u_15200109/2786144)
+
+### 阴影实现方式 elevation
+
+https://developer.android.com/training/material/shadows-clipping?hl=zh-cn
+
+### 查看 apk 签名是 v 几
+
+apksigner通常在 sdk/build-tools/版本号
+
+>apksigner verify -v apkName.apk
+
+### MMKV DataStore
+
+MMKV 基于内存映射所以写入很快，即使写入时应用崩溃也能完成写入，系统级奔溃就没办法了，如断电。有数据丢失的风险。  
+读取不是在内存上操作相对就没那么快了。  
+他是在主线程同步运行，因为快所以没影响，但是如果大量写入，还是会卡的。  
+支持跨进程。  
+增量式更新。
+
+DataStore 使用 Kotlin 协程和 Flow 以异步、一致的事务方式存储数据。不会丢数据，支持回调，在子线程读写，速度稳定。
+
+SharedPreferences 速度慢 有 ANR 的问题
+
+### Matrix
+
+线上没办法用 profiler ，就可以用 Matrix 记录
+
+### 设置 Dialog 最大高度
+
+在 show 前调用
+
+```java
+    View decorView = dialog.getWindow().getDecorView();
+    int maxHeight = DisplayUtils.dp2px(mActivity, 456);
+    decorView.measure(
+        MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED),
+        MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
+    if (decorView.getMeasuredHeight() > maxHeight) {
+        dialog.getWindow().setLayout(width, maxHeight);
+        }
+```
+
+### android studio 搜索
+
+regex 正则表达式搜索  
+比如 ^((?!(\*|//)).)+[\u4e00-\u9fa5] 搜索中文
+
+### Java ArrayList LinkedList Vector
+
+<!-- https://cloud.tencent.com/developer/news/700913 -->
+* ArrayList 基于数组实现的并且实现了动态扩容。它允许所有元素，包括 null
+* LinkedList 基于双向链表实现
+* Vector 类似 ArrayList。Vector 是线程安全的。如果线程已经是安全的，直接用 ArrayList 就不用 Vector 了
+* ArrayList get/set 比 LinkedList 快。ArrayList 在尾部增加不需要扩容时比 LinkedList 快，中间增加不需要扩容时 LinkedList 要遍历所以 LinkedList可能更慢，在头部增加和时因为要复制数组所以比较慢
+* ArrayList 删除时，删除的元素越靠前越慢，LinkedList 删除越靠中间越慢
+* for 循环遍历的时候，ArrayList 花费的时间远小于 LinkedList；迭代器遍历的时候，两者性能差不多。所以遍历 LinkedList 的时候，不要使用 for 循环，要使用迭代器
+
+### Android 重启
+
+```java
+final Intent intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            context.startActivity(intent);
+            //杀掉以前进程
+            android.os.Process.killProcess(android.os.Process.myPid());
+```
+
+<!-- [javacv](https://www.cnblogs.com/eguid/p/13557932.html) -->
+
+<!-- [阮ffmpeg](https://www.ruanyifeng.com/blog/2020/01/ffmpeg.html) -->
+
+<!-- [FFmpeg手撕视频（Android端）](https://juejin.cn/post/6844903961644793869#heading-1) -->
+
+<!-- [阮c](https://wangdoc.com/clang/) -->
+
+<!-- [Android FrameWork - 学习启动篇](https://juejin.cn/post/6844903904749027336) -->
+
+<!-- 抓包工具 -->
+
+<!-- https://github.com/r0ysue/r0capture -->
+
+<!-- 反编译 -->
+
+<!-- https://github.com/skylot/jadx -->

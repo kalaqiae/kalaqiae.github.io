@@ -60,6 +60,8 @@ val songsFound = resources.getQuantityString(R.plurals.numberOfSongsAvailable, c
 * @号 &#064;
 * :号 &#058;
 * 空格 &#160;
+* lt(<) (&#60; 或 &lt;)
+* gt(>) (&#62; 或 &gt;)
 
 <!-- 参考：  
 <https://developer.android.com/guide/topics/resources/string-resource>  

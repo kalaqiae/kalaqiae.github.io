@@ -10,7 +10,7 @@ categories: ["Android"]
 
 配合 maxLines 使用，超出部分省略号表示，跑马灯等效果
 
-marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true);
+marquee 使用跑马灯效果时记得设置 tvMarquee.setSelected(true); 需要注意不要抢了其他控件的焦点
 
 marqueeRepeatLimit 限制滚动次数可以设置 marquee_forever 或 1
 
@@ -72,4 +72,72 @@ setCompoundDrawablesWithIntrinsicBounds 是画的 drawable 的宽高是按 drawa
     Drawable drawable = ContextCompat.getDrawable(context, R.drawable.***);
     rightDrawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
     textview.setCompoundDrawables(null, null, drawable, null);
+```
+
+### TextView Html 标签
+
+可以修改个别文字样式
+
+```java
+Spanned message = null;
+if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+    message = Html.fromHtml(getString(R.string.cdata_text),Html.FROM_HTML_MODE_LEGACY);
+}else {
+    message = Html.fromHtml(getString(R.string.cdata_text));
+}
+text.setText(message);
+//设置 a 标签点击跳转
+text.setMovementMethod(LinkMovementMethod.getInstance());
+```
+
+在 string.xml 用 <![CDATA[]]> 或者直接转义 Html 标签
+
+```xml
+<string name="cdata_text"><![CDATA[1.<a href="https://kalaqiae.com/">kalaqiae<a><br/>2.<b>bold</b> 3.<font color = "#FF0000">color text</font>]]></string>
+```
+
+如果要获取到 a 标签的点击事件（比如想自定义跳转页面） textview 需要设置  android:autoLink="web" 然后用另外写事件
+
+### 阴影
+
+android:shadowColor 阴影颜色 android:shadowDx 阴影的水平偏移量 android:shadowDy 阴影的垂直偏移量 android:shadowRadius 阴影的范围
+
+```xml
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="30dp"
+android:shadowColor="#FF000000"
+android:shadowDx="5"
+android:shadowDy="5"
+android:shadowRadius="3"
+android:text="阴影效果"
+android:textColor="#FFF"
+android:textSize="30sp" />
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="30dp"
+android:shadowColor="#CCCCCC"
+android:shadowDx="0.5"
+android:shadowDy="0.5"
+android:shadowRadius="2"
+android:text="浮雕效果"
+android:textColor="#FF000000"
+android:textSize="30sp" />
+```
+
+### 行间距
+
+<!-- https://blog.csdn.net/ccpat/article/details/45507751 -->
+android:lineSpacingExtra 设置行间距 android:lineSpacingMultiplier 设置行间距的倍数
+
+```xml
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:includeFontPadding="false"
+android:lineSpacingMultiplier="1.2"
+android:lineSpacingExtra="4dp" />
 ```

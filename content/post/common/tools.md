@@ -6,7 +6,27 @@ tags: ["Tools"]
 categories: ["Tools"]
 ---
 
-### 网址记录
+### Bookmark
+
+<!-- [网盘搜索工具 优聚搜](https://ujuso.com/#/main?kw=Android&type=ALL&time=ALL&exact=FALSE) -->
+
+[Google I/O](https://io.google/)
+
+[Google codelabs](https://codelabs.developers.google.com/)
+
+[Android Developers Blog](https://android-developers.googleblog.com/)
+
+[Android Studio 快捷键](https://developer.android.com/studio/intro/keyboard-shortcuts?hl=zh-cn)
+
+<!--more-->
+
+[合成器原理](https://learningsynths.ableton.com/zh-Hans)
+
+[谷歌软件工程](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/)
+
+[机械表原理](https://ciechanow.ski/mechanical-watch/)
+
+[medium android developers](https://medium.com/androiddevelopers)
 
 [GDG](https://developers.google.cn/)
 
@@ -14,13 +34,9 @@ categories: ["Tools"]
 
 [Android 开发者](https://developer.android.google.cn)
 
-<!--more-->
-
 [kotlin 文档](https://www.kotlincn.net/docs/reference/)
 
 [Flutter 文档](https://flutterchina.club/docs/)
-
-[android googleBlog](https://android-developers.googleblog.com/)
 
 [androidweekly](https://androidweekly.net/)
 
@@ -34,7 +50,7 @@ categories: ["Tools"]
 
 <!-- [美团技术团队](https://tech.meituan.com/) -->
 
-### 工具记录
+### Tools
 
 在线图片压缩 [TinyPNG](https://tinypng.com/)
 
@@ -46,7 +62,7 @@ json测试数据 [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
 截图工具 [Snipaste](https://www.snipaste.com/)
 
-### Android Studio 插件
+### Android Studio Plugs
 
 ADB Idea
 
@@ -66,7 +82,7 @@ JSON To Kotlin Class ​(JsonToKotlinClass)​
 
 Markdown
 
-### VSCode 插件
+### VSCode Plugs
 
 Chinese (Simplified) Language Pack for Visual Studio Code
 
@@ -87,3 +103,13 @@ markdownlint
 Prettier - Code formatter
 
 Vetur
+
+### Chrome Plugs
+
+Dark Reader
+
+DeepL翻译
+
+### Homebrew
+
+[Homebrew](https://brew.sh/)

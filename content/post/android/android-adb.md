@@ -14,10 +14,10 @@ AS插件ADB IDEA
 
 当前显示的 activity ，用 findstr 或 grep 过滤
 
->adb shell dumpsys activity | findstr "mFocusedActivity"
-效果等同
-adb shell "dumpsys activity | grep mFocusedActivity"
-8.0以上用
+>adb shell dumpsys activity | findstr "mFocusedActivity"  
+效果等同  
+adb shell "dumpsys activity | grep mFocusedActivity"  
+8.0以上用  
 adb shell dumpsys activity | findstr "mResumedActivity"
 
 <!--more-->
@@ -67,10 +67,10 @@ eg. adb push C:\Users\Administrator\Desktop\temp /sdcard/kalaqiae
 
 当前显示的 activity ，加条件
 
->adb shell dumpsys activity | findstr "mFocusedActivity"
-效果等同
-adb shell "dumpsys activity | grep mFocusedActivity"
-8.0以上用
+>adb shell dumpsys activity | findstr "mFocusedActivity"  
+效果等同  
+adb shell "dumpsys activity | grep mFocusedActivity"  
+8.0以上用  
 adb shell dumpsys activity | findstr "mResumedActivity"
 
 当前允许的 activity
@@ -95,7 +95,8 @@ adb shell dumpsys activity | findstr Run
 
 ### 清数据
 
->adb shell pm clear packagename
+>adb shell pm clear packagename  
+pm 是 packagemanager 缩写
 
 ### 重启
 
@@ -103,26 +104,26 @@ adb shell dumpsys activity | findstr Run
 
 ### 查看应用包名
 
+>adb shell pm list packages
+
 * packages 后可加参数，不加则查看全部应用
 * 查看包名包含某字符串的应用，如 adb shell pm list packages tencent
 * -s，系统应用
 * -3，第三方应用
 
->adb shell pm list packages
-
 ### 操作数据库
 
 先找到数据库路径，再 sqlite3 数据库名，然后执行相关语句
->adb shell
-su
-cd /data/data/com.test.core/databases //数据库路径
-sqlite3 DbName.db //数据库名
-sqlite> .tables
-OPTION_INFO
-sqlite> select * from OPTION_INFO; //要加分号
-select option_value from OPTION_INFO where option_name="ShowSex";
-insert into OPTION_INFO(Option_Name,Option_Value) values('ShowAge','1');
-update OPTION_INFO set option_value='0' WHERE option_name="ShowSex";
+>adb shell  
+su  
+cd /data/data/com.test.core/databases //数据库路径 
+sqlite3 DbName.db //数据库名  
+sqlite> .tables  
+OPTION_INFO  
+sqlite> select * from OPTION_INFO; //要加分号  
+select option_value from OPTION_INFO where option_name="ShowSex";  
+insert into OPTION_INFO(Option_Name,Option_Value) values('ShowAge','1');  
+update OPTION_INFO set option_value='0' WHERE option_name="ShowSex";  
 
 ### 更改读写权限
 
@@ -136,12 +137,12 @@ update OPTION_INFO set option_value='0' WHERE option_name="ShowSex";
 ### 删除文件
 
 例子
->adb shell
-\#su
-\#cd system/sd/data //进入系统内指定文件夹
-\#ls //列表显示当前文件夹内容
-\#rm -r xxx //删除名字为xxx的文件夹及其里面的所有文件
-\#rm xxx //删除文件xxx
+>adb shell  
+\#su  
+\#cd system/sd/data //进入系统内指定文件夹  
+\#ls //列表显示当前文件夹内容  
+\#rm -r xxx //删除名字为xxx的文件夹及其里面的所有文件  
+\#rm xxx //删除文件xxx  
 \#rmdir xxx //删除xxx的文件夹
 
 cd .. 返回
@@ -154,3 +155,8 @@ adb shell dumpsys notification > D:\log\alllogcat.txt
 
 [awesome-adb](https://github.com/mzlogin/awesome-adb)
 [developer adb](https://developer.android.com/studio/command-line/adb)
+
+### debug 异常
+Warning: debug info can be unavailable.Please close other application using ADB: Monitor, DDMS, Eclipse
+
+adb usb

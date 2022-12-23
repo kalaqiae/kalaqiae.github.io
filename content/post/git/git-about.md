@@ -64,6 +64,15 @@ merge操作会生成一个新的节点，之前提交分开显示。而rebase操
 查看所有分支  
 >git branch -a
 
+### 查看远程仓库地址
+
+>git remote -v
+
+### git合并某次提交到其他分支
+
+android studio 有 cherry-pick 的功能，或者用命令  
+git log 查看提交历史，复制出需要的 commit 编号，git checkout xx 切换到 xx 分支，执行 git cherry-pick 编号，有冲突就解决后 git push
+
 ## SVN使用
 
 工具TortoiesSVN

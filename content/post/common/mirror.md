@@ -8,12 +8,15 @@ categories: ["Mirror"]
 
 ### Android
 
-按顺序写  
->maven { url 'https://maven.aliyun.com/repository/public/' }  
+按顺序写  public包含central和jcenter
+>maven { url 'https://maven.aliyun.com/repository/public' }  
 maven { url 'https://maven.aliyun.com/repository/google' }  
 maven { url 'https://maven.aliyun.com/repositories/jcenter' }  
+maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
 google()  
 jcenter()
+
+[阿里云云效 Maven](https://developer.aliyun.com/mvn/guide)
 
 <!--more-->
 

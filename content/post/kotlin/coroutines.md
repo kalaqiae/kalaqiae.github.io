@@ -262,7 +262,7 @@ job.cancelAndJoin() // 取消该作业并等待它结束
 println("main: Now I can quit.")
 ```
 
-英文官方文档  
+官方文档  
 <https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/index.html>  
 <https://kotlinlang.org/docs/composing-suspending-functions.html>
 
