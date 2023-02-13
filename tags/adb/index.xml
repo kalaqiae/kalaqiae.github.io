@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>adb on KALAQIAE</title><link>https://kalaqiae.com/tags/adb/</link><description>Recent content in adb on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 04 Apr 2021 21:06:02 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/adb/index.xml" rel="self" type="application/rss+xml"/><item><title>Android adb命令</title><link>https://kalaqiae.com/post/android/android-adb/</link><pubDate>Sun, 04 Apr 2021 21:06:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-adb/</guid><description>&lt;p>AS插件ADB IDEA&lt;/p>
-&lt;h3 id="查看activity-task栈的情况">查看Activity Task栈的情况&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>adb on KALAQIAE</title><link>https://kalaqiae.com/tags/adb/</link><description>Recent content in adb on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 04 Apr 2021 21:06:02 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/tags/adb/index.xml" rel="self" type="application/rss+xml"/><item><title>Android adb 命令</title><link>https://kalaqiae.com/post/android/android-adb/</link><pubDate>Sun, 04 Apr 2021 21:06:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-adb/</guid><description>&lt;p>AS 插件 ADB IDEA&lt;br>
+pm 是 packagemanager 缩写, am 是 activitymanager 缩写&lt;br>
+&lt;a href="https://developer.android.com/studio/command-line/adb?hl=zh-cn">Android 调试桥 (adb)&lt;/a>&lt;br>
+&lt;a href="https://github.com/mzlogin/awesome-adb">awesome-adb&lt;/a>&lt;/p>
+&lt;h3 id="查看-activity-task-栈的情况">查看 Activity Task 栈的情况&lt;/h3>
 &lt;blockquote>
 &lt;p>adb shell dumpsys activity&lt;/p>
 &lt;/blockquote>

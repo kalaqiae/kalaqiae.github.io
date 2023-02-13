@@ -70,8 +70,11 @@
 &lt;li>MessageQueue 消息队列（实际用链表实现的），负责存放 Handler 发送过来 Message&lt;/li>
 &lt;li>Looper 负责不停的从 MessageQueue 中取 Message 交给 Handler 处理&lt;/li>
 &lt;/ul>
-&lt;p>Handler 通过 sendMessage 发送 Message 到 MessageQueue 队列，Looper 通过 loop() 从 MessageQueue 取出 Message，再经过 msg.target.dispatchMessage 交给 Handler 的 handleMessage() 进行处理&lt;/p></description></item><item><title>Android abiFilter相关</title><link>https://kalaqiae.com/post/android/android-abifilter-about/</link><pubDate>Thu, 22 Apr 2021 21:48:37 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-abifilter-about/</guid><description>为了优化apk的大小，一般会只选择支持一种ABI，可以在AS中双击apk，在lib路径下查看so文件占用大小 Android ABI概念 Application Binary Interface 官方文档 cpu</description></item><item><title>Android adb命令</title><link>https://kalaqiae.com/post/android/android-adb/</link><pubDate>Sun, 04 Apr 2021 21:06:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-adb/</guid><description>&lt;p>AS插件ADB IDEA&lt;/p>
-&lt;h3 id="查看activity-task栈的情况">查看Activity Task栈的情况&lt;/h3>
+&lt;p>Handler 通过 sendMessage 发送 Message 到 MessageQueue 队列，Looper 通过 loop() 从 MessageQueue 取出 Message，再经过 msg.target.dispatchMessage 交给 Handler 的 handleMessage() 进行处理&lt;/p></description></item><item><title>Android abiFilter 相关</title><link>https://kalaqiae.com/post/android/android-abifilter-about/</link><pubDate>Thu, 22 Apr 2021 21:48:37 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-abifilter-about/</guid><description>为了优化apk的大小，一般会只选择支持一种ABI，可以在AS中双击apk，在lib路径下查看so文件占用大小 Android ABI概念 Application Binary Interface 官方文档 cpu</description></item><item><title>Android adb 命令</title><link>https://kalaqiae.com/post/android/android-adb/</link><pubDate>Sun, 04 Apr 2021 21:06:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-adb/</guid><description>&lt;p>AS 插件 ADB IDEA&lt;br>
+pm 是 packagemanager 缩写, am 是 activitymanager 缩写&lt;br>
+&lt;a href="https://developer.android.com/studio/command-line/adb?hl=zh-cn">Android 调试桥 (adb)&lt;/a>&lt;br>
+&lt;a href="https://github.com/mzlogin/awesome-adb">awesome-adb&lt;/a>&lt;/p>
+&lt;h3 id="查看-activity-task-栈的情况">查看 Activity Task 栈的情况&lt;/h3>
 &lt;blockquote>
 &lt;p>adb shell dumpsys activity&lt;/p>
 &lt;/blockquote>
@@ -82,7 +85,7 @@
 adb shell &amp;ldquo;dumpsys activity | grep mFocusedActivity&amp;rdquo;&lt;br>
 8.0以上用&lt;br>
 adb shell dumpsys activity | findstr &amp;ldquo;mResumedActivity&amp;rdquo;&lt;/p>
-&lt;/blockquote></description></item><item><title>Android strings.xml使用</title><link>https://kalaqiae.com/post/android/android-xml-string/</link><pubDate>Thu, 01 Apr 2021 10:30:04 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-xml-string/</guid><description>&lt;h3 id="设置字符串格式">设置字符串格式&lt;/h3>
+&lt;/blockquote></description></item><item><title>Android strings.xml 使用</title><link>https://kalaqiae.com/post/android/android-xml-string/</link><pubDate>Thu, 01 Apr 2021 10:30:04 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-xml-string/</guid><description>&lt;h3 id="设置字符串格式">设置字符串格式&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -102,6 +105,6 @@ adb shell dumpsys activity | findstr &amp;ldquo;mResumedActivity&amp;rdquo;&lt;/
 &lt;/div>&lt;p>输出：Hi, kalaqiae! You have 10 new messages.&lt;/p>
 &lt;p>%d （表示整数）&lt;br>
 %f （表示浮点数）&lt;br>
-%s （表示字符串）&lt;/p></description></item><item><title>Activity的生命周期</title><link>https://kalaqiae.com/post/android/android-activity-lifecycle/</link><pubDate>Wed, 31 Mar 2021 22:34:15 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-lifecycle/</guid><description>&lt;h3 id="生命周期简介">生命周期简介&lt;/h3>
+%s （表示字符串）&lt;/p></description></item><item><title>Activity 的生命周期</title><link>https://kalaqiae.com/post/android/android-activity-lifecycle/</link><pubDate>Wed, 31 Mar 2021 22:34:15 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-lifecycle/</guid><description>&lt;h3 id="生命周期简介">生命周期简介&lt;/h3>
 &lt;p>先上图&lt;/p>
 &lt;p>&lt;img src="https://developer.android.google.cn/guide/components/images/activity_lifecycle.png" alt="Lifecycle">&lt;/p></description></item></channel></rss>
