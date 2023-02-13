@@ -21,3 +21,5 @@ Row 行 Column 列 Box 类似 FrameLayout , ConstraintLayout 要另外导入依�
 [将 Compose 与现有界面集成](https://developer.android.com/jetpack/compose/interop/compose-in-existing-ui#shared-ui)
 
 compose multiplatform 跨平台
+
+[Compose 与 Kotlin 的兼容性对应关系](https://developer.android.com/jetpack/androidx/releases/compose-kotlin)

@@ -1,5 +1,5 @@
 ---
-title: "Android strings.xml使用"
+title: "Android strings.xml 使用"
 date: 2021-04-01T10:30:04+08:00
 draft: false
 tags: ["Android","xml"]
@@ -57,11 +57,14 @@ val songsFound = resources.getQuantityString(R.plurals.numberOfSongsAvailable, c
 
 ### 特殊字符
 
-* @号 &#064;
-* :号 &#058;
-* 空格 &#160;
-* lt(<) (&#60; 或 &lt;)
-* gt(>) (&#62; 或 &gt;)
+```
+@号 &#064;
+:号 &#058;
+空格 &#160;
+lt(<) (&#60; 或 &lt;)
+gt(>) (&#62; 或 &gt;)
+```
+
 
 <!-- 参考：  
 <https://developer.android.com/guide/topics/resources/string-resource>  

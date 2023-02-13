@@ -1,14 +1,17 @@
 ---
-title: "Android adb命令"
+title: "Android adb 命令"
 date: 2021-04-04T21:06:02+08:00
 draft: false
 tags: ["Android","adb"]
 categories: ["Android"]
 ---
 
-AS插件ADB IDEA
+AS 插件 ADB IDEA  
+pm 是 packagemanager 缩写, am 是 activitymanager 缩写  
+[Android 调试桥 (adb)](https://developer.android.com/studio/command-line/adb?hl=zh-cn)  
+[awesome-adb](https://github.com/mzlogin/awesome-adb)  
 
-### 查看Activity Task栈的情况
+### 查看 Activity Task 栈的情况
 
 >adb shell dumpsys activity
 
@@ -61,21 +64,6 @@ eg. adb pull /mnt/sdcard/kalaqiae C:/Users/Administrator/Desktop
 >adb push local remote  
 eg. adb push C:\Users\Administrator\Desktop\temp /sdcard/kalaqiae
 
-### 查看 Activity Task 栈的情况
-
->adb shell dumpsys activity
-
-当前显示的 activity ，加条件
-
->adb shell dumpsys activity | findstr "mFocusedActivity"  
-效果等同  
-adb shell "dumpsys activity | grep mFocusedActivity"  
-8.0以上用  
-adb shell dumpsys activity | findstr "mResumedActivity"
-
-当前允许的 activity
-adb shell dumpsys activity | findstr Run
-
 ### 开启服务
 
 >adb start-server
@@ -96,7 +84,6 @@ adb shell dumpsys activity | findstr Run
 ### 清数据
 
 >adb shell pm clear packagename  
-pm 是 packagemanager 缩写
 
 ### 重启
 
@@ -116,7 +103,7 @@ pm 是 packagemanager 缩写
 先找到数据库路径，再 sqlite3 数据库名，然后执行相关语句
 >adb shell  
 su  
-cd /data/data/com.test.core/databases //数据库路径 
+cd /data/data/com.test.core/databases //数据库路径  
 sqlite3 DbName.db //数据库名  
 sqlite> .tables  
 OPTION_INFO  
@@ -150,13 +137,102 @@ cat 查看文件内容
 
 ### adb shell dumpsys
 
+可以查看一些系统信息，如内存，通知，网络，输入等  
 adb shell dumpsys > D:\log\alllogcat.txt
 adb shell dumpsys notification > D:\log\alllogcat.txt
 
-[awesome-adb](https://github.com/mzlogin/awesome-adb)
-[developer adb](https://developer.android.com/studio/command-line/adb)
-
 ### debug 异常
+
 Warning: debug info can be unavailable.Please close other application using ADB: Monitor, DDMS, Eclipse
 
 adb usb
+
+### 启动停止应用
+
+>adb shell monkey -p com.example.app -c android.intent.category.LAUNCHER 1
+adb shell am force-stop com.example.app
+
+### 启动 Activity
+
+启动 activity 需要 android:exported="true"
+
+adb shell am start -n com.example.app/.MainActivity --es "params" "hello, world"
+
+-n 指定带有软件包名称前缀的组件名称，以创建显式 intent  
+es extra_key extra_string_value 以键值对的形式添加字符串数据，还有 ei el ef ez 等  
+
+### 启动 Service
+
+adb shell am startservice -n com.example.app/.ExampleService
+
+停止服务  
+
+adb shell am stopservice -n com.example.app/.ExampleService
+
+### 发送广播
+
+adb shell am broadcast -a android.net.wifi.STATE_CHANGE  
+
+-a 表示 action  
+
+测试时发现要权限，报 Permission Denial: not allowed to send broadcast  
+
+### 模拟按键/输入/滑动/点击
+
+>adb shell
+input keyevent 3
+input text Hello
+input swipe 300 1000 300 500
+input tap 500 500
+
+keyevent 3 是点击 home 键，更多可以看 [keyevent](https://developer.android.com/reference/android/view/KeyEvent)
+
+input text 获取到输入框焦点时可以输入文本，adb 默认不支持 Unicode 编码，所以无法 input 中文，可以下载安装 [ADBKeyBoard](https://github.com/senzhk/ADBKeyBoard)
+
+input swipe 滑动(300,1000) 到 (300,500)
+
+### 设置
+
+>adb shell
+settings list global
+settings list system
+settings list secure
+settings put system screen_off_timeout 600000
+
+system 系统设置， global 全局系统设置， secure 安全系统设置，只读不能写
+
+安卓 5 及以前 设置的值用 database 保存，从 6 开始保存在 settings_global.xml ， settings_secure.xml ， settings_system.xml ，路径在 /data/system/users/0
+
+```java
+//获取 miui 优化开关状态
+Settings.Secure.getInt(context.getContentResolver(), "miui_optimization", 0);
+```
+
+### 截屏录屏
+
+截屏  
+adb exec-out screencap -p > test.png  
+或  
+adb shell screencap /sdcard/test.png  
+adb pull /sdcard/test.png ./  
+录屏  
+adb shell screenrecord  --time-limit 10 /sdcard/test.mp4  
+adb pull /sdcard/demo.mp4  
+截屏保存到电脑还有这个方法，试了半天图片格式还是有问题，暂时记录一下  
+adb shell screencap -p | sed 's/\r$//' > screen.png
+
+### 查看分辨率和密度
+
+>adb shell wm size  
+adb shell wm density
+
+### 获取撤销权限
+
+要求6.0以上，可能会报错 SecurityException ，需要在开发者选项里开启禁止权限监控
+
+>adb shell pm grant com.example.app android.permission.READ_PHONE_STATE  
+adb shell pm revoke com.example.app android.permission.READ_PHONE_STATE
+
+### 退出 adb shell
+
+输入 exit 或者 ctrl + D

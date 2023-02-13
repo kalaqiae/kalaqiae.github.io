@@ -1,5 +1,5 @@
 ---
-title: "Android abiFilter相关"
+title: "Android abiFilter 相关"
 date: 2021-04-22T21:48:37+08:00
 draft: false
 tags: ["Android","ABI","优化"]
@@ -35,14 +35,14 @@ android {
 
 ![ABI流程](https://cdn.jsdelivr.net/gh/kalaqiae/picBank/img/find_abi.png)
 
-对于一个cpu是arm64-v8a架构的手机，它运行app时，进入jnilibs去读取库文件时，先看有没有arm64-v8a文件夹，如果没有该文件夹，去找armeabi-v7a文件夹，如果没有，再去找armeabi文件夹，如果连这个文件夹也没有，就抛出异常；
+对于一个 cpu 是 arm64-v8a 架构的手机，它运行 app 时，进入 jnilibs 去读取库文件时，先看有没有 arm64-v8a 文件夹，如果没有该文件夹，去找 armeabi-v7a 文件夹，如果没有，再去找 armeabi 文件夹，如果连这个文件夹也没有，就抛出异常；
 
-如果有arm64-v8a文件夹，那么就去找特定名称的.so文件，注意：如果没有找到想要的.so文件，不会再往下（armeabi-v7a文件夹）找了，而是直接抛出异常。
+如果有 arm64-v8a 文件夹，那么就去找特定名称的 .so 文件，注意：如果没有找到想要的 .so 文件，不会再往下（armeabi-v7a文件夹）找了，而是直接抛出异常。
 
 ### 小孩才做选择，我全都要
 
 ABI 配置多个 APK，[官方文档](https://developer.android.com/studio/build/configure-apk-splits)  
-部分应用市场支持上传多个apk，比如谷歌
+部分应用市场支持上传多个 apk，比如谷歌
 
 ```Groovy
 android {
@@ -73,6 +73,6 @@ android {
 
 ### 其他
 
-* 如果仅保留armeabi-v7a，而有些第三方包未提供v7a的包，可以尝试将对应armeabi包拷贝到armeabi-v7a
+* 如果仅保留 armeabi-v7a，而有些第三方包未提供v7a的包，可以尝试将对应 armeabi 的包拷贝到 armeabi-v7a
 
 <!-- https://segmentfault.com/a/1190000023517574 -->

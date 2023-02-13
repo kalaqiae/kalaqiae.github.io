@@ -476,6 +476,19 @@ final Intent intent = context.getPackageManager().getLaunchIntentForPackage(cont
             android.os.Process.killProcess(android.os.Process.myPid());
 ```
 
+### Android studio 空判断和循环快捷键
+
+object.nn object.null 空判断快捷方式  
+for 循环，快捷方式 list.fori 或 list.forr  
+
+### Android studio 提取 style
+
+提取style：在XML文件中，光标选中需要提取样式的控件，然后右键选择-->Refactor-->Extract-->Style
+
+### final 修饰作用
+
+final 修饰的类不能被继承，修饰的方法不能被重写
+
 <!-- [javacv](https://www.cnblogs.com/eguid/p/13557932.html) -->
 
 <!-- [阮ffmpeg](https://www.ruanyifeng.com/blog/2020/01/ffmpeg.html) -->
@@ -493,3 +506,6 @@ final Intent intent = context.getPackageManager().getLaunchIntentForPackage(cont
 <!-- 反编译 -->
 
 <!-- https://github.com/skylot/jadx -->
+
+<!--jni监听应用卸载 https://cloud.tencent.com/developer/article/1033962 -->
+<!--jni监听应用卸载 https://www.helloworld.net/p/8912563749 -->

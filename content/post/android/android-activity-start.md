@@ -74,7 +74,7 @@ intent.setAction("com.test.jump");
 startActivity(intent);
 ```
 
-在AndroidManifest.xml 中给要跳转的 activity 设置 action
+在 AndroidManifest.xml 中给要跳转的 activity 设置 action
 
 ```xml
 <activity android:name=".TestActivity" >  
