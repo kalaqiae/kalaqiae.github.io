@@ -7,13 +7,13 @@ optString会在得不到你想要的值时候返回空字符串“ ”或指定�
 推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/java/note/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-07-10T22:07:28+08:00"><meta property="article:modified_time" content="2021-07-10T22:07:28+08:00"><meta itemprop=name content="Note"><meta itemprop=description content="json解析
 jsonObject.getString() vs jsonObject.optString()
 optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。
-推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常"><meta itemprop=datePublished content="2021-07-10T22:07:28+08:00"><meta itemprop=dateModified content="2021-07-10T22:07:28+08:00"><meta itemprop=wordCount content="3835"><meta itemprop=keywords content="Java,Android,note,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Note"><meta name=twitter:description content="json解析
+推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常"><meta itemprop=datePublished content="2021-07-10T22:07:28+08:00"><meta itemprop=dateModified content="2021-07-10T22:07:28+08:00"><meta itemprop=wordCount content="4794"><meta itemprop=keywords content="Java,Android,note,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Note"><meta name=twitter:description content="json解析
 jsonObject.getString() vs jsonObject.optString()
 optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。
 推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script data-ad-client=ca-pub-6216241935841265 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Note</h1><div class=post-meta><span class=post-time>2021-07-10</span><div class=post-category><a href=/categories/undefined/>Undefined</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#json解析>json解析</a></li><li><a href=#java-线程池>Java 线程池</a></li><li><a href=#future-和-futuretask>Future 和 FutureTask</a></li><li><a href=#onintercepttouchevent-不被触发收不到事件问题>onInterceptTouchEvent 不被触发，收不到事件问题</a></li><li><a href=#单例>单例</a></li><li><a href=#android-ndk>android ndk</a></li><li><a href=#android-proguard>android proguard</a></li><li><a href=#android-上传库到-meaven>Android 上传库到 Meaven</a></li><li><a href=#c>c</a></li><li><a href=#hook-框架>Hook 框架</a></li><li><a href=#android-studio-debug>Android Studio Debug</a></li><li><a href=#view-源码>view 源码</a></li><li><a href=#kotlin-自定义控件报错>kotlin 自定义控件报错</a></li><li><a href=#socket-和-websocket>socket 和 websocket</a></li><li><a href=#jetpack-compose>jetpack compose</a></li><li><a href=#阴影实现方式-elevation>阴影实现方式 elevation</a></li><li><a href=#查看-apk-签名是-v-几>查看 apk 签名是 v 几</a></li><li><a href=#mmkv-datastore>MMKV DataStore</a></li><li><a href=#matrix>Matrix</a></li><li><a href=#设置-dialog-最大高度>设置 Dialog 最大高度</a></li><li><a href=#android-studio-搜索>android studio 搜索</a></li><li><a href=#java-arraylist-linkedlist-vector>Java ArrayList LinkedList Vector</a></li><li><a href=#android-重启>Android 重启</a></li><li><a href=#android-studio-空判断和循环快捷键>Android studio 空判断和循环快捷键</a></li><li><a href=#android-studio-提取-style>Android studio 提取 style</a></li><li><a href=#final-修饰作用>final 修饰作用</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=json解析>json解析</h3><h4 id=jsonobjectgetstring-vs-jsonobjectoptstring>jsonObject.getString() vs jsonObject.optString()</h4><p>optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。<br>推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常</p><h3 id=java-线程池>Java 线程池</h3><h4 id=callable--future-获取执行结果>Callable + Future 获取执行结果</h4><p>简单使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Note</h1><div class=post-meta><span class=post-time>2021-07-10</span><div class=post-category><a href=/categories/undefined/>Undefined</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#json解析>json解析</a></li><li><a href=#java-线程池>Java 线程池</a></li><li><a href=#future-和-futuretask>Future 和 FutureTask</a></li><li><a href=#onintercepttouchevent-不被触发收不到事件问题>onInterceptTouchEvent 不被触发，收不到事件问题</a></li><li><a href=#单例>单例</a></li><li><a href=#android-ndk>android ndk</a></li><li><a href=#android-proguard>android proguard</a></li><li><a href=#android-上传库到-meaven>Android 上传库到 Meaven</a></li><li><a href=#c>c</a></li><li><a href=#hook-框架>Hook 框架</a></li><li><a href=#android-studio-debug>Android Studio Debug</a></li><li><a href=#view-源码>view 源码</a></li><li><a href=#kotlin-自定义控件报错>kotlin 自定义控件报错</a></li><li><a href=#socket-和-websocket>socket 和 websocket</a></li><li><a href=#jetpack-compose>jetpack compose</a></li><li><a href=#阴影实现方式-elevation>阴影实现方式 elevation</a></li><li><a href=#查看-apk-签名是-v-几>查看 apk 签名是 v 几</a></li><li><a href=#mmkv-datastore>MMKV DataStore</a></li><li><a href=#matrix>Matrix</a></li><li><a href=#设置-dialog-最大高度>设置 Dialog 最大高度</a></li><li><a href=#android-studio-搜索>android studio 搜索</a></li><li><a href=#java-arraylist-linkedlist-vector>Java ArrayList LinkedList Vector</a></li><li><a href=#android-重启>Android 重启</a></li><li><a href=#android-studio-空判断和循环快捷键>Android studio 空判断和循环快捷键</a></li><li><a href=#android-studio-提取-style>Android studio 提取 style</a></li><li><a href=#final-修饰作用>final 修饰作用</a></li><li><a href=#try-catch-输出日志>try catch 输出日志</a></li><li><a href=#在单独的类中接收-activity-结果>在单独的类中接收 activity 结果</a></li><li><a href=#压缩工具-zip4j>压缩工具 zip4j</a></li><li><a href=#android-studio-live-templates>Android Studio Live Templates</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=json解析>json解析</h3><h4 id=jsonobjectgetstring-vs-jsonobjectoptstring>jsonObject.getString() vs jsonObject.optString()</h4><p>optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。<br>推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常</p><h3 id=java-线程池>Java 线程池</h3><h4 id=callable--future-获取执行结果>Callable + Future 获取执行结果</h4><p>简单使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -83,7 +83,7 @@ optString会在得不到你想要的值时候返回空字符串“ ”或指定�
 </span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>taskFlag</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><p>Future 包含方法 cancel(boolean mayInterruptRunning)，isCancelled()，isDone()，get()，get(long timeout, TimeUnit unit)</p><h3 id=future-和-futuretask>Future 和 FutureTask</h3><p>Future 是一个接口，代表可以取消的任务，并可以获得任务的执行结果</p><p>FutureTask 实现了 RunnableFuture ， RunnableFuture 继承了 Runnable, Future<br>实现 Runnable 接口，说明可以把 FutureTask 实例传入到 Thread 中，在一个新的线程中执行。<br>实现 Future 接口，说明可以从 FutureTask 中通过 get 取到任务的返回结果，也可以取消任务执行（通过 interreput 中断）</p><p>FutureTask 可用于异步获取执行结果或取消执行任务的场景。通过传入 Runnable 或者 Callable 的任务给 FutureTask，直接调用其 run 方法或者放入线程池执行，之后可以在外部通过 FutureTask 的 get 方法异步获取执行结果，因此，FutureTask 非常适合用于耗时的计算，主线程可以在完成自己的任务后，再去获取结果。另外，FutureTask 还可以确保即使调用了多次 run 方法，它都只会执行一次 Runnable 或者 Callable 任务，或者通过 cancel 取消 FutureTask 的执行等</p><h3 id=onintercepttouchevent-不被触发收不到事件问题>onInterceptTouchEvent 不被触发，收不到事件问题</h3><p>某些控件要添加 android:clickable=&ldquo;true&rdquo; 或者 onTouch 方法里返回 true（Button 默认是可点击的，所以能正常收到事件）</p><h3 id=单例>单例</h3><p>双重检查模式</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p>Future 包含方法 cancel(boolean mayInterruptRunning)，isCancelled()，isDone()，get()，get(long timeout, TimeUnit unit)</p><h3 id=future-和-futuretask>Future 和 FutureTask</h3><p>Future 是一个接口，代表可以取消的任务，并可以获得任务的执行结果</p><p>FutureTask 实现了 RunnableFuture ， RunnableFuture 继承了 Runnable, Future<br>实现 Runnable 接口，说明可以把 FutureTask 实例传入到 Thread 中，在一个新的线程中执行。<br>实现 Future 接口，说明可以从 FutureTask 中通过 get 取到任务的返回结果，也可以取消任务执行（通过 interreput 中断）</p><p>FutureTask 可用于异步获取执行结果或取消执行任务的场景。通过传入 Runnable 或者 Callable 的任务给 FutureTask，直接调用其 run 方法或者放入线程池执行，之后可以在外部通过 FutureTask 的 get 方法异步获取执行结果，因此，FutureTask 非常适合用于耗时的计算，主线程可以在完成自己的任务后，再去获取结果。另外，FutureTask 还可以确保即使调用了多次 run 方法，它都只会执行一次 Runnable 或者 Callable 任务，或者通过 cancel 取消 FutureTask 的执行等</p><h3 id=onintercepttouchevent-不被触发收不到事件问题>onInterceptTouchEvent 不被触发，收不到事件问题</h3><p>某些控件要添加 android:clickable=&ldquo;true&rdquo; 或者 onTouch 方法里返回 true（Button 默认是可点击的，所以能正常收到事件）</p><h3 id=单例>单例</h3><p>一般可以用静态内部类模式，性能和安全都比较兼顾<br>kotlin 一般简单的用 object 对象声明，伴生对象的写法更灵活，比如需要传参数，继承，接口等时候用</p><p>双重检查模式</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -369,7 +369,7 @@ optString会在得不到你想要的值时候返回空字符串“ ”或指定�
 </span></span><span class=line><span class=cl>        ${log-lib})
 </span></span></code></pre></td></tr></table></div></div><p>生成 so 文件</p><p>可以利用 Gradle 生成。在 Android studio 中选择 Build->Make Project ，在项目的 build\intermediates\cmake 中会生成各个 ABI 的 so</p><p>将 so 文件 放在 libs 的对应路径下 如 libs\armeabi-v8a</p><p>应用场景:1.加密 2.音视频解码,图像操作等等（ffmpeg） 3.安全相关,比如hook注入 4.增量更新 5.游戏开发</p><p><a href=https://cloud.tencent.com/developer/article/1392774>JNI和NDK的区别</a></p><p>.c 和 .h 区别</p><p>本质上没有任何区别。 只不过一般：.h文件是头文件，内含函数声明、宏定义、结构体定义等内容<br>.c文件是程序文件，内含函数实现，变量定义等内容。而且是什么后缀也没有关系，只不过编译器会默认对某些后缀的文件采取某些动作。你可以强制编译器把任何后缀的文件都当作c文件来编。<br>一般一个 .c 对应一个 .h 方便管理。</p><p>.cpp 是 c++ cplusplus&mldr;</p><h3 id=android-proguard>android proguard</h3><h4 id=查看混淆后的错误日志两种方法>查看混淆后的错误日志（两种方法）</h4><p>方法一：使用 proguardgui</p><ul><li>打包后在 build->outputs->mapping 有 mapping.txt 文件</li><li>找到 proguardgui.bat 并双击 C:\Users\Administrator\AppData\Local\Android\Sdk\tools\proguard\bin</li><li>打开的 Proguard 程序中点击左边菜单中的 Retrace ，再选择 mapping.txt 并复制错误日志到对应区域，然后点击 Retrace</li></ul><p>方法二：直接打开 mapping.txt 文件，在文本中查找对应信息</p><p><a href=https://www.jianshu.com/p/11ade070de83>参考</a></p><h3 id=android-上传库到-meaven>Android 上传库到 Meaven</h3><p>MavenCentral 和 JitPack 都是 Meaven 仓库
 谷歌推荐 MavenCentral 看起来更专业，可以绑定域名 可以用发布脚本 JitPack 更简单用 git</p><p>Apache Maven：是一个软件（特别是Java软件）项目管理以及自动构建工具，由Apache软件基金会所提供。是基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。</p><p>Maven仓库你可以理解为和Apache Maven没有直接的关系，他就是一个存放各种工程jar文件、library文件、插件或者任何工程项目的仓库，用Maven来构建项目的时候可能也会用到Maven仓库里面的依赖库。</p><p>Maven仓库有三种类型：本地（local）中央（central），在android开发中最常用 远程（remote）</p><p>mavenCentral：中央仓库，这个仓库是由Maven社区管理，由Sonatype公司提供服务，是Apache Maven、SBT和其他构建系统默认的仓库，并且很容易被Apache Ant、Gradle和其他的构建工具使用，需要通过网络访问，通过：http://search.maven.org/#browse 开发者就可以在里面找到自己所需要的代码库。</p><p>Gradle支持三种不同的仓库，分别是：Maven和Ivy以及文件夹。</p><h3 id=c>c</h3><p>typedef</p><p>用于自定义类型</p><p>Struct 和 Union 区别</p><p>Struct 更像是对象，所占空间是所有成员的存储空间之和。 Union 像泛型，同一时间只能存一个成员的值，所占空间是最大成员的存储空间。</p><h3 id=hook-框架>Hook 框架</h3><p><a href=https://github.com/rovo89/Xposed>Xposed</a> Xposed is a framework for modules that can change the behavior of the system and apps without touching any APKs.</p><p><a href=https://github.com/asLody/VirtualApp>VirtualApp</a> (简称：VA)是一款运行于Android系统的沙盒产品，可以理解为轻量级的“Android虚拟机”。其产品形态为高可扩展，可定制的集成SDK，您可以基于VA或者使用VA定制开发各种看似不可能完成的项目。VA目前被广泛应用于APP多开、小游戏合集、手游加速器、手游租号、手游手柄免激活、VR程序移植、区块链、移动办公安全、军队政府数据隔离、手机模拟信息、脚本自动化、插件化开发、无感知热更新、云控等技术领域。</p><p><a href=https://m.qq.com/security_lab/news_detail_435.html>VirtualApp技术黑产利用研究报告</a></p><p><a href=https://github.com/android-hacker/VirtualXposed>VirtualXposed</a> 是基于VirtualApp 和 epic 在非ROOT环境下运行Xposed模块的实现（支持5.0~10.0)</p><p><a href=https://github.com/topjohnwu/Magisk>Magisk</a> Magisk is a suite of open source software for customizing Android, supporting devices higher than Android 5.0.</p><p><a href=https://github.com/ElderDrivers/EdXposed>EdXposed</a> A Riru module trying to provide an ART hooking framework (initially for Android Pie) which delivers consistent APIs with the OG Xposed, leveraging YAHFA (or SandHook) hooking framework, supports Android 8.0 ~ 11.</p><p><a href=https://github.com/taichi-framework/TaiChi>TaiChi</a> 太极能够运行 Xposed 模块的框架，模块能通过它改变系统和应用的行为，是个类 Xposed 框架.。<a href=https://taichi.cool/zh/doc/>中文文档</a></p><h3 id=android-studio-debug>Android Studio Debug</h3><p>设置调试类型默认是 auto ，可以选择只调试 Java/Kotlin 或者 C/C++ 的代码
-Run > Edit Configurations</p><h3 id=view-源码>view 源码</h3><p><a href=https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/view/View.java>view 三万行源码</a></p><h3 id=kotlin-自定义控件报错>kotlin 自定义控件报错</h3><p>Caused by: java.lang.NoSuchMethodException: <init>[class android.content.Context, interface android.util.AttributeSet]</p><p>构造函数里的参数需要是 Context</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+Run > Edit Configurations</p><p>按住 alt 鼠标点击左侧边栏，可以设置触发一次就取消的断点，还可以设置断点不生效</p><p><a href=https://juejin.cn/post/6844903811908108295#heading-9>debug</a></p><h3 id=view-源码>view 源码</h3><p><a href=https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/view/View.java>view 三万行源码</a></p><h3 id=kotlin-自定义控件报错>kotlin 自定义控件报错</h3><p>Caused by: java.lang.NoSuchMethodException: <init>[class android.content.Context, interface android.util.AttributeSet]</p><p>构造函数里的参数需要是 Context</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -399,7 +399,17 @@ Run > Edit Configurations</p><h3 id=view-源码>view 源码</h3><p><a href=https
 </span></span><span class=line><span class=cl><span class=p>)</span> <span class=p>:</span> <span class=n>LinearLayout</span><span class=p>(</span><span class=n>context</span><span class=p>,</span> <span class=n>attrs</span><span class=p>,</span> <span class=n>defStyle</span><span class=p>){</span>
 </span></span><span class=line><span class=cl>    
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=socket-和-websocket>socket 和 websocket</h3><p>websocket 在建立连接后就是全双工模式了，适合服务端需要主动推数据给客户端</p><p>socket 每次交互都是客户端主动发起</p><p><a href=https://blog.yorek.xyz/android/other/android_alias/#25>马甲包</a></p><h3 id=jetpack-compose>jetpack compose</h3><p><a href="https://developer.android.com/jetpack/compose/documentation?hl=zh-cn">官方文档</a></p><p><a href="https://developer.android.com/jetpack/compose/interop/adding?hl=zh-cn">将 Jetpack Compose 添加到应用中</a></p><p><a href=https://github.com/android/compose-samples>samples</a></p><p><a href=https://gitee.com/Rickyal/compose-demo#%E7%8A%B6%E6%80%81%E4%B8%8B%E6%B2%89%E4%BA%8B%E4%BB%B6%E4%B8%8A%E6%B5%AE>demo</a></p><p><a href=https://ithelp.ithome.com.tw/articles/10277978>使用viewmodel</a></p><p><a href=https://blog.51cto.com/u_15200109/2786144>一个简单的例子</a></p><h3 id=阴影实现方式-elevation>阴影实现方式 elevation</h3><p><a href="https://developer.android.com/training/material/shadows-clipping?hl=zh-cn">https://developer.android.com/training/material/shadows-clipping?hl=zh-cn</a></p><h3 id=查看-apk-签名是-v-几>查看 apk 签名是 v 几</h3><p>apksigner通常在 sdk/build-tools/版本号</p><blockquote><p>apksigner verify -v apkName.apk</p></blockquote><h3 id=mmkv-datastore>MMKV DataStore</h3><p>MMKV 基于内存映射所以写入很快，即使写入时应用崩溃也能完成写入，系统级奔溃就没办法了，如断电。有数据丢失的风险。<br>读取不是在内存上操作相对就没那么快了。<br>他是在主线程同步运行，因为快所以没影响，但是如果大量写入，还是会卡的。<br>支持跨进程。<br>增量式更新。</p><p>DataStore 使用 Kotlin 协程和 Flow 以异步、一致的事务方式存储数据。不会丢数据，支持回调，在子线程读写，速度稳定。</p><p>SharedPreferences 速度慢 有 ANR 的问题</p><h3 id=matrix>Matrix</h3><p>线上没办法用 profiler ，就可以用 Matrix 记录</p><h3 id=设置-dialog-最大高度>设置 Dialog 最大高度</h3><p>在 show 前调用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h3 id=socket-和-websocket>socket 和 websocket</h3><p>websocket 在建立连接后就是全双工模式了，适合服务端需要主动推数据给客户端</p><p>socket 每次交互都是客户端主动发起</p><p><a href=https://blog.yorek.xyz/android/other/android_alias/#25>马甲包</a></p><h3 id=jetpack-compose>jetpack compose</h3><p><a href="https://developer.android.com/jetpack/compose/documentation?hl=zh-cn">官方文档</a></p><p><a href="https://developer.android.com/jetpack/compose/interop/adding?hl=zh-cn">将 Jetpack Compose 添加到应用中</a></p><p><a href=https://github.com/android/compose-samples>samples</a></p><p><a href=https://gitee.com/Rickyal/compose-demo#%E7%8A%B6%E6%80%81%E4%B8%8B%E6%B2%89%E4%BA%8B%E4%BB%B6%E4%B8%8A%E6%B5%AE>demo</a></p><p><a href=https://ithelp.ithome.com.tw/articles/10277978>使用viewmodel</a></p><p><a href=https://blog.51cto.com/u_15200109/2786144>一个简单的例子</a></p><h3 id=阴影实现方式-elevation>阴影实现方式 elevation</h3><p><a href="https://developer.android.com/training/material/shadows-clipping?hl=zh-cn">https://developer.android.com/training/material/shadows-clipping?hl=zh-cn</a></p><p>elevation 是宽度 outlineSpotShadowColor 是颜色</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;TextView</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_width=</span><span class=s>&#34;match_parent&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:layout_height=</span><span class=s>&#34;wrap_content&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:elevation=</span><span class=s>&#34;3dp&#34;</span>
+</span></span><span class=line><span class=cl><span class=na>android:outlineSpotShadowColor=</span><span class=s>&#34;#57000000&#34;</span><span class=nt>/&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=查看-apk-签名是-v-几>查看 apk 签名是 v 几</h3><p>apksigner通常在 sdk/build-tools/版本号</p><blockquote><p>apksigner verify -v apkName.apk</p></blockquote><h3 id=mmkv-datastore>MMKV DataStore</h3><p>MMKV 基于内存映射所以写入很快，即使写入时应用崩溃也能完成写入，系统级奔溃就没办法了，如断电。有数据丢失的风险。<br>读取不是在内存上操作相对就没那么快了。<br>他是在主线程同步运行，因为快所以没影响，但是如果大量写入，还是会卡的。<br>支持跨进程。<br>增量式更新。</p><p>DataStore 使用 Kotlin 协程和 Flow 以异步、一致的事务方式存储数据。不会丢数据，支持回调，在子线程读写，速度稳定。</p><p>SharedPreferences 速度慢 有 ANR 的问题</p><h3 id=matrix>Matrix</h3><p>线上没办法用 profiler ，就可以用 Matrix 记录</p><h3 id=设置-dialog-最大高度>设置 Dialog 最大高度</h3><p>在 show 前调用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -425,7 +435,242 @@ Run > Edit Configurations</p><h3 id=view-源码>view 源码</h3><p><a href=https
 </span></span><span class=line><span class=cl>            <span class=n>context</span><span class=o>.</span><span class=na>startActivity</span><span class=o>(</span><span class=n>intent</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>            <span class=c1>//杀掉以前进程
 </span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>android</span><span class=o>.</span><span class=na>os</span><span class=o>.</span><span class=na>Process</span><span class=o>.</span><span class=na>killProcess</span><span class=o>(</span><span class=n>android</span><span class=o>.</span><span class=na>os</span><span class=o>.</span><span class=na>Process</span><span class=o>.</span><span class=na>myPid</span><span class=o>());</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=android-studio-空判断和循环快捷键>Android studio 空判断和循环快捷键</h3><p>object.nn object.null 空判断快捷方式<br>for 循环，快捷方式 list.fori 或 list.forr</p><h3 id=android-studio-提取-style>Android studio 提取 style</h3><p>提取style：在XML文件中，光标选中需要提取样式的控件，然后右键选择&ndash;>Refactor&ndash;>Extract&ndash;>Style</p><h3 id=final-修饰作用>final 修饰作用</h3><p>final 修饰的类不能被继承，修饰的方法不能被重写</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/android/android-activity-start/><i class="iconfont icon-left"></i>
+</span></span></code></pre></td></tr></table></div></div><h3 id=android-studio-空判断和循环快捷键>Android studio 空判断和循环快捷键</h3><p>object.nn object.null 空判断快捷方式<br>for 循环，快捷方式 list.fori 或 list.forr</p><h3 id=android-studio-提取-style>Android studio 提取 style</h3><p>提取style：在XML文件中，光标选中需要提取样式的控件，然后右键选择&ndash;>Refactor&ndash;>Extract&ndash;>Style</p><h3 id=final-修饰作用>final 修饰作用</h3><p>final 修饰的类不能被继承，修饰的方法不能被重写</p><h3 id=try-catch-输出日志>try catch 输出日志</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl>            <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=n>e</span><span class=p>:</span> <span class=n>Exception</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>e</span><span class=p>.</span><span class=n>printStackTrace</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=在单独的类中接收-activity-结果>在单独的类中接收 activity 结果</h3><p><a href="https://developer.android.com/training/basics/intents/result?hl=zh-cn#separate">与其他应用交互 在单独的类中接收 activity 结果</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyLifecycleObserver</span><span class=p>(</span><span class=k>private</span> <span class=k>val</span> <span class=py>registry</span> <span class=p>:</span> <span class=n>ActivityResultRegistry</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>:</span> <span class=n>DefaultLifecycleObserver</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>lateinit</span> <span class=k>var</span> <span class=py>getContent</span> <span class=p>:</span> <span class=n>ActivityResultLauncher</span><span class=p>&lt;</span><span class=n>String</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>override</span> <span class=k>fun</span> <span class=nf>onCreate</span><span class=p>(</span><span class=n>owner</span><span class=p>:</span> <span class=n>LifecycleOwner</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>getContent</span> <span class=p>=</span> <span class=n>registry</span><span class=p>.</span><span class=n>register</span><span class=p>(</span><span class=s2>&#34;key&#34;</span><span class=p>,</span> <span class=n>owner</span><span class=p>,</span> <span class=n>GetContent</span><span class=p>())</span> <span class=p>{</span> <span class=n>uri</span> <span class=o>-&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// Handle the returned Uri
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>fun</span> <span class=nf>selectImage</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>getContent</span><span class=p>.</span><span class=n>launch</span><span class=p>(</span><span class=s2>&#34;image/*&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyFragment</span> <span class=p>:</span> <span class=n>Fragment</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>lateinit</span> <span class=k>var</span> <span class=py>observer</span> <span class=p>:</span> <span class=n>MyLifecycleObserver</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>override</span> <span class=k>fun</span> <span class=nf>onCreate</span><span class=p>(</span><span class=n>savedInstanceState</span><span class=p>:</span> <span class=n>Bundle</span><span class=p>?)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// ...
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>        <span class=n>observer</span> <span class=p>=</span> <span class=n>MyLifecycleObserver</span><span class=p>(</span><span class=n>requireActivity</span><span class=p>().</span><span class=n>activityResultRegistry</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>lifecycle</span><span class=p>.</span><span class=n>addObserver</span><span class=p>(</span><span class=n>observer</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>override</span> <span class=k>fun</span> <span class=nf>onViewCreated</span><span class=p>(</span><span class=n>view</span><span class=p>:</span> <span class=n>View</span><span class=p>,</span> <span class=n>savedInstanceState</span><span class=p>:</span> <span class=n>Bundle</span><span class=p>?)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>selectButton</span> <span class=p>=</span> <span class=n>view</span><span class=p>.</span><span class=n>findViewById</span><span class=p>&lt;</span><span class=n>Button</span><span class=p>&gt;(</span><span class=nc>R</span><span class=p>.</span><span class=n>id</span><span class=p>.</span><span class=n>select_button</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>selectButton</span><span class=p>.</span><span class=n>setOnClickListener</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// Open the activity to select an image
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>observer</span><span class=p>.</span><span class=n>selectImage</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=压缩工具-zip4j>压缩工具 zip4j</h3><p>删除路径下的 zip 和解压出来的文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>deleteZipFile</span><span class=o>(</span><span class=n>File</span> <span class=n>file</span><span class=o>,</span> <span class=n>String</span> <span class=n>filePath</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>ZipException</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>ZipFile</span> <span class=n>zFile</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ZipFile</span><span class=o>(</span><span class=n>file</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//zFile.setFileNameCharset(&#34;GBK&#34;);
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(!</span><span class=n>zFile</span><span class=o>.</span><span class=na>isValidZipFile</span><span class=o>())</span> <span class=o>{</span> <span class=c1>// 验证.zip文件是否合法，包括文件是否存在、是否为zip文件、是否被损坏等
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>throw</span> <span class=k>new</span> <span class=n>ZipException</span><span class=o>(</span><span class=s>&#34;压缩文件不合法,可能被损坏.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>List</span><span class=o>&lt;</span><span class=n>FileHeader</span><span class=o>&gt;</span> <span class=n>zipFiles</span> <span class=o>=</span> <span class=n>zFile</span><span class=o>.</span><span class=na>getFileHeaders</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>tempPath</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>zipFiles</span><span class=o>.</span><span class=na>size</span><span class=o>();</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>File</span> <span class=n>tempFile</span> <span class=o>=</span> <span class=k>new</span> <span class=n>File</span><span class=o>(</span><span class=n>filePath</span> <span class=o>+</span> <span class=s>&#34;/&#34;</span> <span class=o>+</span> <span class=n>zipFiles</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>i</span><span class=o>).</span><span class=na>getFileName</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>tempFile</span><span class=o>.</span><span class=na>isDirectory</span><span class=o>())</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>tempPath</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>filePath</span> <span class=o>+</span> <span class=s>&#34;/&#34;</span> <span class=o>+</span> <span class=n>zipFiles</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>i</span><span class=o>).</span><span class=na>getFileName</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>tempFile</span><span class=o>.</span><span class=na>exists</span><span class=o>())</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>tempFile</span><span class=o>.</span><span class=na>delete</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>i</span> <span class=o>==</span> <span class=n>zipFiles</span><span class=o>.</span><span class=na>size</span><span class=o>()</span> <span class=o>-</span> <span class=mi>1</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>tempPath</span><span class=o>.</span><span class=na>size</span><span class=o>()</span> <span class=o>&gt;</span> <span class=mi>0</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=k>for</span> <span class=o>(</span><span class=n>String</span> <span class=n>path</span> <span class=o>:</span> <span class=n>tempPath</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                        <span class=n>File</span> <span class=n>tempDirectoryFile</span> <span class=o>=</span> <span class=k>new</span> <span class=n>File</span><span class=o>(</span><span class=n>path</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                        <span class=n>String</span><span class=o>[]</span> <span class=n>tempDirectoryFiles</span> <span class=o>=</span> <span class=n>tempDirectoryFile</span><span class=o>.</span><span class=na>list</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                        <span class=k>if</span> <span class=o>(</span><span class=n>tempDirectoryFiles</span> <span class=o>!=</span> <span class=kc>null</span> <span class=o>&amp;&amp;</span> <span class=n>tempDirectoryFiles</span><span class=o>.</span><span class=na>length</span> <span class=o>&gt;</span> <span class=mi>0</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                        <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>tempDirectoryFile</span><span class=o>.</span><span class=na>exists</span><span class=o>())</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                            <span class=n>tempDirectoryFile</span><span class=o>.</span><span class=na>delete</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                        <span class=o>}</span>
+</span></span><span class=line><span class=cl>                    <span class=o>}</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>file</span><span class=o>.</span><span class=na>delete</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>解压所有文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>unZipFileWithProgress</span><span class=o>(</span><span class=kd>final</span> <span class=n>File</span> <span class=n>zipFile</span><span class=o>,</span> <span class=kd>final</span> <span class=n>String</span> <span class=n>filePath</span><span class=o>,</span>
+</span></span><span class=line><span class=cl>                                             <span class=n>CallbackUnzipMonitor</span> <span class=n>callback</span><span class=o>,</span>
+</span></span><span class=line><span class=cl>                                             <span class=kd>final</span> <span class=kt>boolean</span> <span class=n>isDeleteZip</span><span class=o>,</span> <span class=kt>boolean</span> <span class=n>isRunThread</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>ZipException</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>ZipFile</span> <span class=n>zFile</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ZipFile</span><span class=o>(</span><span class=n>zipFile</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(!</span><span class=n>zFile</span><span class=o>.</span><span class=na>isValidZipFile</span><span class=o>())</span> <span class=o>{</span> <span class=c1>// 验证.zip文件是否合法，包括文件是否存在、是否为zip文件、是否被损坏等
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>throw</span> <span class=k>new</span> <span class=n>ZipException</span><span class=o>(</span><span class=s>&#34;压缩文件不合法,可能被损坏.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>zFile</span><span class=o>.</span><span class=na>setFileNameCharset</span><span class=o>(</span><span class=s>&#34;GBK&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>File</span> <span class=n>destDir</span> <span class=o>=</span> <span class=k>new</span> <span class=n>File</span><span class=o>(</span><span class=n>filePath</span><span class=o>);</span> <span class=c1>// 解压目录
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span> <span class=o>(</span><span class=n>destDir</span><span class=o>.</span><span class=na>isDirectory</span><span class=o>()</span> <span class=o>&amp;&amp;</span> <span class=o>!</span><span class=n>destDir</span><span class=o>.</span><span class=na>exists</span><span class=o>())</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>destDir</span><span class=o>.</span><span class=na>mkdir</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>callback</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=kd>final</span> <span class=n>ProgressMonitor</span> <span class=n>progressMonitor</span> <span class=o>=</span> <span class=n>zFile</span><span class=o>.</span><span class=na>getProgressMonitor</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=n>callback</span><span class=o>.</span><span class=na>setMonitor</span><span class=o>(</span><span class=n>progressMonitor</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>zFile</span><span class=o>.</span><span class=na>setRunInThread</span><span class=o>(</span><span class=n>isRunThread</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>zFile</span><span class=o>.</span><span class=na>extractAll</span><span class=o>(</span><span class=n>filePath</span><span class=o>);</span> <span class=c1>// 解压到此文件夹中
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>解压 zip 中单独某个文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl>        <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>unZipFileWithProgressSingle</span><span class=o>(</span><span class=kd>final</span> <span class=n>File</span> <span class=n>zipFile</span><span class=o>,</span> <span class=kd>final</span> <span class=n>String</span> <span class=n>filePath</span><span class=o>,</span>
+</span></span><span class=line><span class=cl>        <span class=kd>final</span> <span class=n>String</span> <span class=n>singleFilePath</span><span class=o>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>CallbackUnzipMonitor</span> <span class=n>callback</span><span class=o>,</span>
+</span></span><span class=line><span class=cl>        <span class=kd>final</span> <span class=kt>boolean</span> <span class=n>isDeleteZip</span><span class=o>,</span> <span class=kt>boolean</span> <span class=n>isRunThread</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>ZipException</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>ZipFile</span> <span class=n>zFile</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ZipFile</span><span class=o>(</span><span class=n>zipFile</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(!</span><span class=n>zFile</span><span class=o>.</span><span class=na>isValidZipFile</span><span class=o>())</span> <span class=o>{</span> <span class=c1>// 验证.zip文件是否合法，包括文件是否存在、是否为zip文件、是否被损坏等
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>throw</span> <span class=k>new</span> <span class=n>ZipException</span><span class=o>(</span><span class=s>&#34;压缩文件不合法,可能被损坏.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>zFile</span><span class=o>.</span><span class=na>setFileNameCharset</span><span class=o>(</span><span class=s>&#34;GBK&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>File</span> <span class=n>destDir</span> <span class=o>=</span> <span class=k>new</span> <span class=n>File</span><span class=o>(</span><span class=n>filePath</span><span class=o>);</span> <span class=c1>// 解压目录
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span> <span class=o>(</span><span class=n>destDir</span><span class=o>.</span><span class=na>isDirectory</span><span class=o>()</span> <span class=o>&amp;&amp;</span> <span class=o>!</span><span class=n>destDir</span><span class=o>.</span><span class=na>exists</span><span class=o>())</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>destDir</span><span class=o>.</span><span class=na>mkdir</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>callback</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=kd>final</span> <span class=n>ProgressMonitor</span> <span class=n>progressMonitor</span> <span class=o>=</span> <span class=n>zFile</span><span class=o>.</span><span class=na>getProgressMonitor</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=n>callback</span><span class=o>.</span><span class=na>setMonitor</span><span class=o>(</span><span class=n>progressMonitor</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>zFile</span><span class=o>.</span><span class=na>setRunInThread</span><span class=o>(</span><span class=n>isRunThread</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>zFile</span><span class=o>.</span><span class=na>extractFile</span><span class=o>(</span><span class=n>singleFilePath</span><span class=o>,</span> <span class=n>filePath</span><span class=o>);</span> <span class=c1>// 解压到此文件夹中
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=android-studio-live-templates>Android Studio Live Templates</h3><p>布局文件 宽高相关 lh lw lhw lhm</p><p>将.cpp /.c 转化成 .so 文件的两种方式<br>通过 ndk-build 工具，需要编辑 Android.mk 文件。
+通过 CMake，需要编辑 CMakeLists.txt 文件</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/android/android-activity-start/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">activity 跳转</span>
 <span class="prev-text nav-mobile">上一篇</span></a>
 <a class=next href=/post/android/android-video-base/><span class="next-text nav-default">Android Video 基础笔记</span>
