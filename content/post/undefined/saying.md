@@ -19,3 +19,7 @@ categories: ["Undefined"]
 * Murphy's law: Anything that can go wrong will go wrong
 
 * the innocent can never last 天真岁月岂能永驻
+
+* We are like butterflies who flutter for a day and think it is forever
+
+* Live each day as if it were your last. Learn as if you would live forever

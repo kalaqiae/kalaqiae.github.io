@@ -236,3 +236,7 @@ adb shell pm revoke com.example.app android.permission.READ_PHONE_STATE
 ### 退出 adb shell
 
 输入 exit 或者 ctrl + D
+
+### adb shell dumpsys activity top
+
+查出顶部 activity 后，可以搜索查看 activity 的布局,比如搜 DecorView

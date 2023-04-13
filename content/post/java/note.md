@@ -80,6 +80,9 @@ FutureTask 可用于异步获取执行结果或取消执行任务的场景。通
 <!-- https://segmentfault.com/a/1190000040020116 -->
 <!-- https://juejin.cn/post/6844903858276139021 -->
 
+一般可以用静态内部类模式，性能和安全都比较兼顾  
+kotlin 一般简单的用 object 对象声明，伴生对象的写法更灵活，比如需要传参数，继承，接口等时候用
+
 双重检查模式
 
 ```java
@@ -355,6 +358,10 @@ Struct 更像是对象，所占空间是所有成员的存储空间之和。 Uni
 设置调试类型默认是 auto ，可以选择只调试 Java/Kotlin 或者 C/C++ 的代码
 Run > Edit Configurations
 
+按住 alt 鼠标点击左侧边栏，可以设置触发一次就取消的断点，还可以设置断点不生效
+
+[debug](https://juejin.cn/post/6844903811908108295#heading-9)
+
 ### view 源码
 
 [view 三万行源码](https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/view/View.java)
@@ -413,6 +420,15 @@ socket 每次交互都是客户端主动发起
 ### 阴影实现方式 elevation
 
 https://developer.android.com/training/material/shadows-clipping?hl=zh-cn
+
+elevation 是宽度 outlineSpotShadowColor 是颜色
+```xml
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:elevation="3dp"
+android:outlineSpotShadowColor="#57000000"/>
+```
 
 ### 查看 apk 签名是 v 几
 
@@ -489,6 +505,160 @@ for 循环，快捷方式 list.fori 或 list.forr
 
 final 修饰的类不能被继承，修饰的方法不能被重写
 
+### try catch 输出日志
+
+```kotlin
+            try {
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+```
+
+### 在单独的类中接收 activity 结果
+
+[与其他应用交互 在单独的类中接收 activity 结果](https://developer.android.com/training/basics/intents/result?hl=zh-cn#separate)
+
+```kotlin
+class MyLifecycleObserver(private val registry : ActivityResultRegistry)
+        : DefaultLifecycleObserver {
+    lateinit var getContent : ActivityResultLauncher<String>
+
+    override fun onCreate(owner: LifecycleOwner) {
+        getContent = registry.register("key", owner, GetContent()) { uri ->
+            // Handle the returned Uri
+        }
+    }
+
+    fun selectImage() {
+        getContent.launch("image/*")
+    }
+}
+
+class MyFragment : Fragment() {
+    lateinit var observer : MyLifecycleObserver
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // ...
+
+        observer = MyLifecycleObserver(requireActivity().activityResultRegistry)
+        lifecycle.addObserver(observer)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val selectButton = view.findViewById<Button>(R.id.select_button)
+
+        selectButton.setOnClickListener {
+            // Open the activity to select an image
+            observer.selectImage()
+        }
+    }
+}
+```
+
+### 压缩工具 zip4j
+
+删除路径下的 zip 和解压出来的文件
+
+```java
+public static void deleteZipFile(File file, String filePath) throws ZipException {
+        ZipFile zFile = new ZipFile(file);
+        //zFile.setFileNameCharset("GBK");
+
+        if (!zFile.isValidZipFile()) { // 验证.zip文件是否合法，包括文件是否存在、是否为zip文件、是否被损坏等
+            throw new ZipException("压缩文件不合法,可能被损坏.");
+        }
+        List<FileHeader> zipFiles = zFile.getFileHeaders();
+        List<String> tempPath = new ArrayList<>();
+        for (int i = 0; i < zipFiles.size(); i++) {
+            File tempFile = new File(filePath + "/" + zipFiles.get(i).getFileName());
+            if (tempFile.isDirectory()) {
+                tempPath.add(filePath + "/" + zipFiles.get(i).getFileName());
+            } else if (tempFile.exists()) {
+                tempFile.delete();
+            }
+            if (i == zipFiles.size() - 1) {
+                if (tempPath.size() > 0) {
+                    for (String path : tempPath) {
+                        File tempDirectoryFile = new File(path);
+                        String[] tempDirectoryFiles = tempDirectoryFile.list();
+                        if (tempDirectoryFiles != null && tempDirectoryFiles.length > 0) {
+
+                        } else if (tempDirectoryFile.exists()) {
+                            tempDirectoryFile.delete();
+                        }
+                    }
+                }
+            }
+        }
+        file.delete();
+    }
+```
+
+解压所有文件
+
+```java
+    public static void unZipFileWithProgress(final File zipFile, final String filePath,
+                                             CallbackUnzipMonitor callback,
+                                             final boolean isDeleteZip, boolean isRunThread) throws ZipException {
+        ZipFile zFile = new ZipFile(zipFile);
+
+        if (!zFile.isValidZipFile()) { // 验证.zip文件是否合法，包括文件是否存在、是否为zip文件、是否被损坏等
+            throw new ZipException("压缩文件不合法,可能被损坏.");
+        }
+        zFile.setFileNameCharset("GBK");
+
+        File destDir = new File(filePath); // 解压目录
+        if (destDir.isDirectory() && !destDir.exists()) {
+            destDir.mkdir();
+        }
+
+
+        if (callback != null) {
+            final ProgressMonitor progressMonitor = zFile.getProgressMonitor();
+            callback.setMonitor(progressMonitor);
+        }
+        zFile.setRunInThread(isRunThread);
+        zFile.extractAll(filePath); // 解压到此文件夹中
+    }
+```
+
+解压 zip 中单独某个文件
+
+```java
+        public static void unZipFileWithProgressSingle(final File zipFile, final String filePath,
+        final String singleFilePath,
+        CallbackUnzipMonitor callback,
+        final boolean isDeleteZip, boolean isRunThread) throws ZipException {
+        ZipFile zFile = new ZipFile(zipFile);
+
+        if (!zFile.isValidZipFile()) { // 验证.zip文件是否合法，包括文件是否存在、是否为zip文件、是否被损坏等
+            throw new ZipException("压缩文件不合法,可能被损坏.");
+        }
+        zFile.setFileNameCharset("GBK");
+
+        File destDir = new File(filePath); // 解压目录
+        if (destDir.isDirectory() && !destDir.exists()) {
+            destDir.mkdir();
+        }
+
+        if (callback != null) {
+            final ProgressMonitor progressMonitor = zFile.getProgressMonitor();
+            callback.setMonitor(progressMonitor);
+        }
+        zFile.setRunInThread(isRunThread);
+        zFile.extractFile(singleFilePath, filePath); // 解压到此文件夹中
+    }
+```
+
+### Android Studio Live Templates
+
+布局文件 宽高相关 lh lw lhw lhm
+
+将.cpp /.c 转化成 .so 文件的两种方式  
+通过 ndk-build 工具，需要编辑 Android.mk 文件。
+通过 CMake，需要编辑 CMakeLists.txt 文件
+
 <!-- [javacv](https://www.cnblogs.com/eguid/p/13557932.html) -->
 
 <!-- [阮ffmpeg](https://www.ruanyifeng.com/blog/2020/01/ffmpeg.html) -->
@@ -509,3 +679,19 @@ final 修饰的类不能被继承，修饰的方法不能被重写
 
 <!--jni监听应用卸载 https://cloud.tencent.com/developer/article/1033962 -->
 <!--jni监听应用卸载 https://www.helloworld.net/p/8912563749 -->
+
+<!-- https://juejin.cn/post/7216968724938195001 逆向-->
+<!-- SkyDroid F-Droid 上传安卓市场 -->
+<!-- https://zhuanlan.zhihu.com/p/359314031 gv -->
+<!-- https://www.anquanke.com/post/id/273348 反编译 -->
+<!-- 使用walle生产的渠道包加固后获取不到渠道信息 -->
+<!-- https://www.freesion.com/article/3733762873/ -->
+
+<!-- KinhDown 百度网盘 -->
+<!-- https://hostloc.com/ 服务器论坛 -->
+<!-- https://diobulanduo.gitee.io/animalcrossing.github.io/#/fish -->
+<!-- https://telegramchannels.me/zh/list/biggest?language=all -->
+<!-- https://sites.google.com/view/honven/%E9%A6%96%E9%A1%B5/telegram%E7%BE%A4%E7%BB%84%E6%8E%A8%E8%8D%90%E9%A2%91%E9%81%93%E6%8E%A8%E8%8D%90%E5%BC%80%E8%BD%A6%E6%8A%80%E6%9C%AF%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E5%90%88%E7%A7%9F%E7%BE%8A%E6%AF%9B?authuser=1 -->
+<!-- android killer 逆向相关 -->
+<!-- 青龙面版 docker相关 京东薅羊毛-->
+<!-- powertoys -->

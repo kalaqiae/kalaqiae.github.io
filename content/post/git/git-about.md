@@ -73,6 +73,14 @@ merge 操作会生成一个新的节点，之前提交分开显示。而 rebase 
 android studio 有 cherry-pick 的功能，或者用命令  
 git log 查看提交历史，复制出需要的 commit 编号，git checkout xx 切换到 xx 分支，执行 git cherry-pick 编号，有冲突就解决后 git push
 
+### git stash
+
+git stash save "描述"  
+git stash list 查看所有stash列表  
+git stash pop 取出最新stash内容 取出后自动删除  
+git stash apply stash@{0}：取出某条stash中的内容  
+git stash show -p stash@{0}：查看某个stash中详细的修改信息
+
 ### 配置信息
 
 查看是否存在现有的 SSH 密钥  

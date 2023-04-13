@@ -9,7 +9,7 @@ categories: ["Android"]
 ### 切换语言
 
 获取 string.xml 里的字段时，可以用下面的 getAttachBaseContext 获取对应语言的 context  
-注意集成 tinker 热更适配
+集成 tinker 热更适配要拿到对的上下文
 
 <!--more-->
 
@@ -21,7 +21,22 @@ categories: ["Android"]
      * 并设置 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK 就能做到应用内切换
      */
     override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(newBase?.let { AppUtilsKtx.getAttachBaseContext(it) })
+        //注意 androidx 语言失效问题 这么写有问题
+        //super.attachBaseContext(newBase?.let { AppUtilsKtx.getAttachBaseContext(it) })
+        val context = AppUtilsKtx.getAttachBaseContext(newBase)
+        val configuration = context.resources.configuration
+        // 此处的ContextThemeWrapper是androidx.appcompat.view包下的
+        // 你也可以使用android.view.ContextThemeWrapper，但是使用该对象最低只兼容到API 17
+        // 所以使用 androidx.appcompat.view.ContextThemeWrapper省心
+        val wrappedContext = object : ContextThemeWrapper(context, R.style.Theme_AppCompat_Empty) {
+            override fun applyOverrideConfiguration(overrideConfiguration: Configuration?) {
+                if (overrideConfiguration != null) {
+                    overrideConfiguration.setTo(configuration)
+                }
+                super.applyOverrideConfiguration(overrideConfiguration)
+            }
+        }
+        super.attachBaseContext(wrappedContext)
     }
 
     class AppUtilsKtx {
@@ -231,6 +246,10 @@ public class StrokeTextView extends AppCompatTextView {
 ```
 
 ### other
+
+[问题注意](https://www.jianshu.com/p/cd9a8ae37d82)
+
+[多语言切换在Androidx失效](https://juejin.cn/post/6915751118416904199)
 
 [时间格式问题](https://www.jianshu.com/p/df86ed66be11)
 

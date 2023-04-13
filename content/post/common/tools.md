@@ -18,13 +18,13 @@ categories: ["Tools"]
 
 [Android Studio 快捷键](https://developer.android.com/studio/intro/keyboard-shortcuts?hl=zh-cn)
 
+[android source](https://source.android.com/)
+
 <!--more-->
 
 [合成器原理](https://learningsynths.ableton.com/zh-Hans)
 
 [谷歌软件工程](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/)
-
-[机械表原理](https://ciechanow.ski/mechanical-watch/)
 
 [medium android developers](https://medium.com/androiddevelopers)
 
@@ -117,3 +117,17 @@ DeepL翻译
 ### Homebrew
 
 [Homebrew](https://brew.sh/)
+
+### Other
+
+[国际化翻译](https://i18ns.com/zh/index.html)
+
+[机械表原理](https://ciechanow.ski/mechanical-watch/)
+
+[learn](https://hourofcode.com/ca/cn/learn)
+
+[查看 github 星星增长](https://star-history.com/)
+
+<!-- [tg](https://tingtalk.me/telegram/) -->
+
+<!-- [freegpt](https://freegpt.one/) -->

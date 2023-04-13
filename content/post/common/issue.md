@@ -99,4 +99,61 @@ viewpager2 1.0.0版本，在 onRestoreInstanceState 方法中报错，也可能�
 https://issuetracker.google.com/issues/185820237  
 https://stackoverflow.com/questions/37113031/wrong-state-class-expecting-view-state-but-received-class-android-widget-compou
 
+### firebase google-services.json 包名不同问题
+
+```groovy
+android {
+    //修改 build，在 src 的不同路径新建对应的 google-services.json ，根据条件不同复制到根目录下
+    if (rootProject.ext.type) {
+        copy {
+            from 'src/release/'
+            include '*.json'
+            into '.'
+        }
+    } else {
+        copy {
+            from 'src/debug/'
+            include '*.json'
+            into '.'
+        }
+    }
+}
+```
+
+### kotlin 中 TextUtils.isEmpty() 找不到类
+
+不会报错，但是 debug 时会报 TextUtils 未初始化，获取不到值，可以用 isNullOrEmpty() 代替
+
+### 多语言失效问题
+
+更改语言设置，后台结束应用重开应用未生效，Android studio 再运行一遍又正常了，清了数据更改语言设置，其实还是会失效，或走开屏广告的流程也会正常生效，没找到这两个会生效的原因
+
+问题是要适配 Androidx ，attachBaseContext() 包装了一层 ContextThemeWrapper
+
+修改如下
+
+```java
+@Override
+    protected void attachBaseContext(Context newBase) {
+        //需要切换的语言
+        Context context = AppUtilsKtx.Companion.getAttachBaseContext(newBase);
+        final Configuration configuration = context.getResources().getConfiguration();
+        // 此处的ContextThemeWrapper是androidx.appcompat.view包下的
+        // 你也可以使用android.view.ContextThemeWrapper，但是使用该对象最低只兼容到API 17
+        // 所以使用 androidx.appcompat.view.ContextThemeWrapper省心
+        final ContextThemeWrapper wrappedContext = new ContextThemeWrapper(context,
+            R.style.Theme_AppCompat_Empty) {
+            @Override
+            public void applyOverrideConfiguration(Configuration overrideConfiguration) {
+                if (overrideConfiguration != null) {
+                    overrideConfiguration.setTo(configuration);
+                }
+                super.applyOverrideConfiguration(overrideConfiguration);
+            }
+        };
+        super.attachBaseContext(wrappedContext);
+        //super.attachBaseContext(AppUtilsKtx.Companion.getAttachBaseContext(newBase));
+    }
+```
+
 <!-- * umeng -->
