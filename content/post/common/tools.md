@@ -22,6 +22,8 @@ categories: ["Tools"]
 
 <!--more-->
 
+[python](https://docs.python.org/zh-cn/3/tutorial/index.html)
+
 [合成器原理](https://learningsynths.ableton.com/zh-Hans)
 
 [谷歌软件工程](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/)
@@ -33,8 +35,6 @@ categories: ["Tools"]
 [Stack Overflow](https://stackoverflow.com/questions/tagged/android)
 
 [Android 开发者](https://developer.android.google.cn)
-
-[kotlin 文档](https://www.kotlincn.net/docs/reference/)
 
 [Flutter 文档](https://flutterchina.club/docs/)
 
@@ -86,6 +86,8 @@ JSON To Kotlin Class ​(JsonToKotlinClass)​
 
 Markdown
 
+AWS Toolkit
+
 ### VSCode Plugs
 
 Chinese (Simplified) Language Pack for Visual Studio Code
@@ -127,6 +129,8 @@ DeepL翻译
 [learn](https://hourofcode.com/ca/cn/learn)
 
 [查看 github 星星增长](https://star-history.com/)
+
+[random quotations](https://randomquotations.com/)
 
 <!-- [tg](https://tingtalk.me/telegram/) -->
 

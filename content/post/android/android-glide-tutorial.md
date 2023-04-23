@@ -1,5 +1,5 @@
 ---
-title: "Android Glide Tutorial"
+title: "Android Glide Note"
 date: 2022-03-12T16:45:18+08:00
 draft: false
 tags: ["Android","Glide"]

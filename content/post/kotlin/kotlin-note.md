@@ -10,6 +10,8 @@ categories: ["Kotlin"]
 
 [英文教程](https://kotlinlang.org/docs/home.html)
 
+[kotlin 文档](https://www.kotlincn.net/docs/reference/)
+
 <!--more-->
 
 ### kotlin 对比 java
@@ -187,15 +189,70 @@ toCollection 是一个扩展函数，用于将一个可迭代对象转换为指�
 
 <!-- ### 扩展函数 -->
 
-<!-- ### 密封类 -->
+### 密封类
+
+优点
+密封类拥有抽象类的灵活，子类可以是任意的类，数据类，对象，普通类，甚至密封类  
+密封类拥有枚举的限制  
+子类涵盖所有情况时，使用 when 表达式，不必添加 else 分支  
+
+相对 java 有点像可以带参数的枚举, 使用如下
+
+```kotlin
+sealed class UIEvent {
+    object ShowLoading: UIEvent()
+    object HideLoading: UIEvent()
+    class ShowData(val message: String): UIEvent()
+}
+
+
+interface ISplashBaseView : IView {
+    fun sendEvent(event: UIEvent)
+}
+```
+
+```kotlin
+class MainActivity() : BaseActivity(), ISplashBaseView {
+    override fun sendEvent(event: UIEvent) {
+        when (event) {
+            is UIEvent.ShowLoading -> showLoading()
+            is UIEvent.HideLoading -> hideLoading()
+            is UIEvent.ShowData -> showData(event.message)
+        }
+    }
+
+    private fun showLoading() {
+
+    }
+
+    private fun hideLoading() {
+
+    }
+
+    private fun showData(message: String) {
+
+    }
+
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_main
+    }
+}
+
+```
 
 <!-- ### 委托 -->
 
-<!-- ### 解构声明 -->
+### 解构声明
 
+```kotlin
+//一个解构声明同时创建多个变量 和 swift 元组类似
+val (name, age) = person
+```
 <!-- ### 序列 -->
 
-<!-- ### 作用域函数 -->
+<!-- ### 作用域函数
+
+let run with apply also -->
 
 ### 为什么有些匿名内部类写法 object : 可以用 lambda省略
 

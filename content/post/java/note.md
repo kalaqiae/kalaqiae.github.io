@@ -659,6 +659,30 @@ public static void deleteZipFile(File file, String filePath) throws ZipException
 通过 ndk-build 工具，需要编辑 Android.mk 文件。
 通过 CMake，需要编辑 CMakeLists.txt 文件
 
+### JS 闭包
+
+js 子对象可以读取到父对象的变量，父对象不能读取到子对象内部的变量  
+f2可以读取f1中的局部变量，把f2作为返回值，f1外部就读取它的内部变量，f2函数，就是闭包。  
+用于读取函数内部的变量和让这些变量的值始终保持在内存中
+
+```javascript
+　　function f1(){
+
+　　　　var n=999;
+
+　　　　function f2(){
+　　　　　　alert(n);
+　　　　}
+
+　　　　return f2;
+
+　　}
+
+　　var result=f1();
+
+　　result(); // 999
+```
+
 <!-- [javacv](https://www.cnblogs.com/eguid/p/13557932.html) -->
 
 <!-- [阮ffmpeg](https://www.ruanyifeng.com/blog/2020/01/ffmpeg.html) -->
@@ -672,10 +696,6 @@ public static void deleteZipFile(File file, String filePath) throws ZipException
 <!-- 抓包工具 -->
 
 <!-- https://github.com/r0ysue/r0capture -->
-
-<!-- 反编译 -->
-
-<!-- https://github.com/skylot/jadx -->
 
 <!--jni监听应用卸载 https://cloud.tencent.com/developer/article/1033962 -->
 <!--jni监听应用卸载 https://www.helloworld.net/p/8912563749 -->
@@ -695,3 +715,5 @@ public static void deleteZipFile(File file, String filePath) throws ZipException
 <!-- android killer 逆向相关 -->
 <!-- 青龙面版 docker相关 京东薅羊毛-->
 <!-- powertoys -->
+
+<!-- giffgaff T-Mobile prepaid card -->

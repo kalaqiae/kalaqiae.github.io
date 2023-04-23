@@ -223,8 +223,11 @@ adb shell screencap -p | sed 's/\r$//' > screen.png
 
 ### 查看分辨率和密度
 
+修改分辨率需要 root 权限
+
 >adb shell wm size  
 adb shell wm density
+adb shell wm size 1080x1920
 
 ### 获取撤销权限
 

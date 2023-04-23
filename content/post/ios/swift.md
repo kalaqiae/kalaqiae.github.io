@@ -44,6 +44,22 @@ for (animalName, legCount) in numberOfLegs {
     print("\(animalName)s have \(legCount) legs")
 }
 
+//构造函数
+init(){}
+
+var text: String
+init(text: String) {
+    self.text = text
+}
+
+//析构
+//实例释放之前被自动调用  
+//子类继承了父类的析构器，并且在子类析构器实现的最后，父类的析构器会被自动调用。即使子类没有提供自己的析构器，父类的析构器也同样会被调用  
+//通常你不需要使用deinit,当你的实例化对象不在使用时，系统会自动帮你管理内存，但一些自定义的情况会涉及自己手动deinit  
+deinit {}
+
+//接口 关键字 protocol
+
 //区间
 let num = 1...3 //1,2,3
 let num = 1..<3 //1,2
