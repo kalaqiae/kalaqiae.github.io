@@ -5,7 +5,7 @@
 英文教程
 中文教程"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/ios/swift/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-04-08T10:50:05+08:00"><meta property="article:modified_time" content="2023-04-08T10:50:05+08:00"><meta itemprop=name content="Swift"><meta itemprop=description content="基础
 英文教程
-中文教程"><meta itemprop=datePublished content="2023-04-08T10:50:05+08:00"><meta itemprop=dateModified content="2023-04-08T10:50:05+08:00"><meta itemprop=wordCount content="749"><meta itemprop=keywords content="iOS,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Swift"><meta name=twitter:description content="基础
+中文教程"><meta itemprop=datePublished content="2023-04-08T10:50:05+08:00"><meta itemprop=dateModified content="2023-04-08T10:50:05+08:00"><meta itemprop=wordCount content="943"><meta itemprop=keywords content="iOS,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Swift"><meta name=twitter:description content="基础
 英文教程
 中文教程"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script data-ad-client=ca-pub-6216241935841265 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span>
@@ -83,6 +83,22 @@
 </span><span class=lnt>71
 </span><span class=lnt>72
 </span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span><span class=lnt>87
+</span><span class=lnt>88
+</span><span class=lnt>89
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-swift data-lang=swift><span class=line><span class=cl><span class=c1>//变量 类型用冒号声明，加?表示可选类型（可空(nil)），加!表示隐式解析可选类型(不可空)，或者不写类型，会自动推断，使用时加!强制解析(forced unwrapping)</span>
 </span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nv>myVariable</span><span class=p>:</span> <span class=nb>String</span><span class=p>?</span> <span class=p>=</span> <span class=s>&#34;An optional string.&#34;</span>
 </span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nv>assumedString</span><span class=p>:</span> <span class=nb>String</span><span class=p>!</span> <span class=p>=</span> <span class=s>&#34;An implicitly unwrapped optional string.&#34;</span>
@@ -109,6 +125,22 @@
 </span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=n>animalName</span><span class=p>,</span> <span class=n>legCount</span><span class=p>)</span> <span class=k>in</span> <span class=n>numberOfLegs</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>animalName</span><span class=si>)</span><span class=s>s have </span><span class=si>\(</span><span class=n>legCount</span><span class=si>)</span><span class=s> legs&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//构造函数</span>
+</span></span><span class=line><span class=cl><span class=kd>init</span><span class=p>(){}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nv>text</span><span class=p>:</span> <span class=nb>String</span>
+</span></span><span class=line><span class=cl><span class=kd>init</span><span class=p>(</span><span class=n>text</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kc>self</span><span class=p>.</span><span class=n>text</span> <span class=p>=</span> <span class=n>text</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//析构</span>
+</span></span><span class=line><span class=cl><span class=c1>//实例释放之前被自动调用  </span>
+</span></span><span class=line><span class=cl><span class=c1>//子类继承了父类的析构器，并且在子类析构器实现的最后，父类的析构器会被自动调用。即使子类没有提供自己的析构器，父类的析构器也同样会被调用  </span>
+</span></span><span class=line><span class=cl><span class=c1>//通常你不需要使用deinit,当你的实例化对象不在使用时，系统会自动帮你管理内存，但一些自定义的情况会涉及自己手动deinit  </span>
+</span></span><span class=line><span class=cl><span class=kd>deinit</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//接口 关键字 protocol</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>//区间</span>
 </span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nv>num</span> <span class=p>=</span> <span class=mf>1.</span><span class=p>..</span><span class=mi>3</span> <span class=c1>//1,2,3</span>
@@ -156,7 +188,7 @@
 </span></span><span class=line><span class=cl><span class=c1>//self 表示当前对象或实例,类似 java 的 this</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>//方法用 func 声明</span>
-</span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer><nav class=post-nav><a class=next href=/post/kotlin/note/><span class="next-text nav-default">Kotlin Note</span>
+</span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer><nav class=post-nav><a class=next href=/post/kotlin/kotlin-note/><span class="next-text nav-default">Kotlin Note</span>
 <span class="next-text nav-mobile">下一篇</span>
 <i class="iconfont icon-right"></i></a></nav></footer></article></div><script src=https://utteranc.es/client.js repo=kalaqiae/kalaqiae.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script><noscript>Please enable JavaScript to view the <a href=https://github.com/utterance>comments powered by utterances.</a></noscript></div></main><footer id=footer class=footer><div class=social-links></div><div class=copyright><span class=power-by></span><span class=theme-info></span><div class=busuanzi-footer></div><span class=copyright-year>&copy;
 2023

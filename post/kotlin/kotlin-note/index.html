@@ -1,13 +1,17 @@
 <!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Kotlin Note - KALAQIAE</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Kalaqiae"><meta name=description content="中文教程
 英文教程
-"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.108.0 with theme even"><link rel=canonical href=https://kalaqiae.com/post/kotlin/note/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+kotlin 文档
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.108.0 with theme even"><link rel=canonical href=https://kalaqiae.com/post/kotlin/kotlin-note/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <link href=/sass/main.min.64cde2c5850b06d3c56f0c74b725d4bdf393df50c9a92b98ffd59a4d5eefab93.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Kotlin Note"><meta property="og:description" content="中文教程
-英文教程"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/kotlin/note/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-03-17T09:59:30+08:00"><meta property="article:modified_time" content="2023-03-17T09:59:30+08:00"><meta itemprop=name content="Kotlin Note"><meta itemprop=description content="中文教程
-英文教程"><meta itemprop=datePublished content="2023-03-17T09:59:30+08:00"><meta itemprop=dateModified content="2023-03-17T09:59:30+08:00"><meta itemprop=wordCount content="1509"><meta itemprop=keywords content="Kotlin,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Kotlin Note"><meta name=twitter:description content="中文教程
-英文教程"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+英文教程
+kotlin 文档"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/kotlin/kotlin-note/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-03-17T09:59:30+08:00"><meta property="article:modified_time" content="2023-03-17T09:59:30+08:00"><meta itemprop=name content="Kotlin Note"><meta itemprop=description content="中文教程
+英文教程
+kotlin 文档"><meta itemprop=datePublished content="2023-03-17T09:59:30+08:00"><meta itemprop=dateModified content="2023-03-17T09:59:30+08:00"><meta itemprop=wordCount content="1754"><meta itemprop=keywords content="Kotlin,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Kotlin Note"><meta name=twitter:description content="中文教程
+英文教程
+kotlin 文档"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script data-ad-client=ca-pub-6216241935841265 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Kotlin Note</h1><div class=post-meta><span class=post-time>2023-03-17</span><div class=post-category><a href=/categories/kotlin/>Kotlin</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#kotlin-对比-java>kotlin 对比 java</a></li><li><a href=#构造函数>构造函数</a></li><li><a href=#集合>集合</a></li><li><a href=#companion-object>companion object</a></li><li><a href=#other>other</a></li><li><a href=#inline-内联函数>inline 内联函数</a></li><li><a href=#为什么有些匿名内部类写法-object--可以用-lambda省略>为什么有些匿名内部类写法 object : 可以用 lambda省略</a></li><li><a href=#无符号整形>无符号整形</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><p><a href=https://book.kotlincn.net/text/home.html>中文教程</a></p><p><a href=https://kotlinlang.org/docs/home.html>英文教程</a></p><h3 id=kotlin-对比-java>kotlin 对比 java</h3><p>kotlin 没有 new ,所以匿名内部类 用 object: ，类似代码如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Kotlin Note</h1><div class=post-meta><span class=post-time>2023-03-17</span><div class=post-category><a href=/categories/kotlin/>Kotlin</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#kotlin-对比-java>kotlin 对比 java</a></li><li><a href=#构造函数>构造函数</a></li><li><a href=#集合>集合</a></li><li><a href=#companion-object>companion object</a></li><li><a href=#other>other</a></li><li><a href=#inline-内联函数>inline 内联函数</a></li><li><a href=#密封类>密封类</a></li><li><a href=#解构声明>解构声明</a></li><li><a href=#为什么有些匿名内部类写法-object--可以用-lambda省略>为什么有些匿名内部类写法 object : 可以用 lambda省略</a></li><li><a href=#无符号整形>无符号整形</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><p><a href=https://book.kotlincn.net/text/home.html>中文教程</a></p><p><a href=https://kotlinlang.org/docs/home.html>英文教程</a></p><p><a href=https://www.kotlincn.net/docs/reference/>kotlin 文档</a></p><h3 id=kotlin-对比-java>kotlin 对比 java</h3><p>kotlin 没有 new ,所以匿名内部类 用 object: ，类似代码如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>setOnClickListener</span><span class=o>(</span><span class=k>new</span> <span class=n>View</span><span class=o>.</span><span class=na>OnClickListener</span><span class=o>()</span> <span class=o>{})</span>
 </span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=n>setOnClickListener</span><span class=p>(</span> <span class=k>object</span> <span class=err>: </span><span class=nc>View</span><span class=p>.</span><span class=n>OnClickListener</span><span class=p>{})</span>
@@ -197,7 +201,82 @@
 </span></span><span class=line><span class=cl><span class=nc>lateinit</span> <span class=k>var</span> <span class=py>lateString</span><span class=p>:</span> <span class=n>String</span>
 </span></span><span class=line><span class=cl><span class=c1>//isInitialized 用来判断 lateinit var 是否初始化
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>::</span><span class=n>lateString</span><span class=p>.</span><span class=n>isInitialized</span>
-</span></span></code></pre></td></tr></table></div></div><p>as? 用于安全类型转换。</p><p>Kotlin 一切都是对象，所有类都有一个共同的超类 Any，对于没有超类型声明的类它是默认超类，kotlin 的类默认是 final ，加 open 后才可继承</p><p>kotlin 可以嵌套函数，可以方便子函数可以直接调用父函数的对象，可能对性能有影响</p><p>toCollection 是一个扩展函数，用于将一个可迭代对象转换为指定类型的集合。</p><h3 id=inline-内联函数>inline 内联函数</h3><p>效果相当是复制到调用的地方<br>一般推荐在入参是函数时使用，可以减少调用栈</p><h3 id=为什么有些匿名内部类写法-object--可以用-lambda省略>为什么有些匿名内部类写法 object : 可以用 lambda省略</h3><p>如果一个接口只有一个抽象方法(即这个接口是函数式接口或单方法接口)，那么可以使用 lambda 表达式或方法引用来代替该接口的实现。<br>如果一个接口有多个抽象方法，那么必须实例化该接口并重写其中的所有方法，直接使用 lambda 表达式或方法引用是不允许的。<br>如果一个类是抽象类，那么你必须实现其中的所有抽象方法，否则你的类仍然需要声明为一个抽象类。<br>如果一个类实现了一个接口，那么该类必须实现该接口中的每一个方法，使用 lambda 表达式或方法引用是不允许的。<br>如果一个类实现了一个接口但只想使用该接口的某些方法，则可以使用 default 方法、抽象类(包含默认实现)或者抽象的委托类(只委托某些方法)，转发该接口的所有方法到这些类，从而避免重复的编码实现。</p><p>匿名内部类 比如 new Thread(new Runnable() { &mldr; }) 这种写法就是匿名内部类</p><h3 id=无符号整形>无符号整形</h3><p>UByte: 无符号 8 位整数，范围是 0 到 2^8 - 1<br>还有 UShort UInt ULong</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/ios/swift/><i class="iconfont icon-left"></i>
+</span></span></code></pre></td></tr></table></div></div><p>as? 用于安全类型转换。</p><p>Kotlin 一切都是对象，所有类都有一个共同的超类 Any，对于没有超类型声明的类它是默认超类，kotlin 的类默认是 final ，加 open 后才可继承</p><p>kotlin 可以嵌套函数，可以方便子函数可以直接调用父函数的对象，可能对性能有影响</p><p>toCollection 是一个扩展函数，用于将一个可迭代对象转换为指定类型的集合。</p><h3 id=inline-内联函数>inline 内联函数</h3><p>效果相当是复制到调用的地方<br>一般推荐在入参是函数时使用，可以减少调用栈</p><h3 id=密封类>密封类</h3><p>优点
+密封类拥有抽象类的灵活，子类可以是任意的类，数据类，对象，普通类，甚至密封类<br>密封类拥有枚举的限制<br>子类涵盖所有情况时，使用 when 表达式，不必添加 else 分支</p><p>相对 java 有点像可以带参数的枚举, 使用如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>sealed</span> <span class=k>class</span> <span class=nc>UIEvent</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>object</span> <span class=nc>ShowLoading</span><span class=p>:</span> <span class=n>UIEvent</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>object</span> <span class=nc>HideLoading</span><span class=p>:</span> <span class=n>UIEvent</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>class</span> <span class=nc>ShowData</span><span class=p>(</span><span class=k>val</span> <span class=py>message</span><span class=p>:</span> <span class=n>String</span><span class=p>):</span> <span class=n>UIEvent</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>interface</span> <span class=nc>ISplashBaseView</span> <span class=p>:</span> <span class=n>IView</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>fun</span> <span class=nf>sendEvent</span><span class=p>(</span><span class=n>event</span><span class=p>:</span> <span class=n>UIEvent</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>class</span> <span class=nc>MainActivity</span><span class=p>()</span> <span class=p>:</span> <span class=n>BaseActivity</span><span class=p>(),</span> <span class=n>ISplashBaseView</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>override</span> <span class=k>fun</span> <span class=nf>sendEvent</span><span class=p>(</span><span class=n>event</span><span class=p>:</span> <span class=n>UIEvent</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>when</span> <span class=p>(</span><span class=n>event</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>is</span> <span class=nc>UIEvent</span><span class=p>.</span><span class=n>ShowLoading</span> <span class=o>-&gt;</span> <span class=n>showLoading</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>            <span class=k>is</span> <span class=nc>UIEvent</span><span class=p>.</span><span class=n>HideLoading</span> <span class=o>-&gt;</span> <span class=n>hideLoading</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>            <span class=k>is</span> <span class=nc>UIEvent</span><span class=p>.</span><span class=n>ShowData</span> <span class=o>-&gt;</span> <span class=n>showData</span><span class=p>(</span><span class=n>event</span><span class=p>.</span><span class=n>message</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>private</span> <span class=k>fun</span> <span class=nf>showLoading</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>private</span> <span class=k>fun</span> <span class=nf>hideLoading</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>private</span> <span class=k>fun</span> <span class=nf>showData</span><span class=p>(</span><span class=n>message</span><span class=p>:</span> <span class=n>String</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>override</span> <span class=k>fun</span> <span class=nf>getLayoutResId</span><span class=p>():</span> <span class=n>Int</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nc>R</span><span class=p>.</span><span class=n>layout</span><span class=p>.</span><span class=n>activity_main</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=解构声明>解构声明</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=c1>//一个解构声明同时创建多个变量 和 swift 元组类似
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>val</span> <span class=err>(</span><span class=py>name</span><span class=p>,</span> <span class=n>age</span><span class=p>)</span> <span class=p>=</span> <span class=n>person</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=为什么有些匿名内部类写法-object--可以用-lambda省略>为什么有些匿名内部类写法 object : 可以用 lambda省略</h3><p>如果一个接口只有一个抽象方法(即这个接口是函数式接口或单方法接口)，那么可以使用 lambda 表达式或方法引用来代替该接口的实现。<br>如果一个接口有多个抽象方法，那么必须实例化该接口并重写其中的所有方法，直接使用 lambda 表达式或方法引用是不允许的。<br>如果一个类是抽象类，那么你必须实现其中的所有抽象方法，否则你的类仍然需要声明为一个抽象类。<br>如果一个类实现了一个接口，那么该类必须实现该接口中的每一个方法，使用 lambda 表达式或方法引用是不允许的。<br>如果一个类实现了一个接口但只想使用该接口的某些方法，则可以使用 default 方法、抽象类(包含默认实现)或者抽象的委托类(只委托某些方法)，转发该接口的所有方法到这些类，从而避免重复的编码实现。</p><p>匿名内部类 比如 new Thread(new Runnable() { &mldr; }) 这种写法就是匿名内部类</p><h3 id=无符号整形>无符号整形</h3><p>UByte: 无符号 8 位整数，范围是 0 到 2^8 - 1<br>还有 UShort UInt ULong</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/ios/swift/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">Swift</span>
 <span class="prev-text nav-mobile">上一篇</span></a>
 <a class=next href=/post/android/android-localization/><span class="next-text nav-default">Android Localization</span>

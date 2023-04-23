@@ -19,7 +19,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">startActivity&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">Intent&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">createChooser&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">sharingIntent&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="s">&amp;#34;Share using&amp;#34;&lt;/span>&lt;span class="o">));&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Android Glide Tutorial</title><link>https://kalaqiae.com/post/android/android-glide-tutorial/</link><pubDate>Sat, 12 Mar 2022 16:45:18 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-glide-tutorial/</guid><description>&lt;h3 id="glide-图片加载回调监听">Glide 图片加载回调监听&lt;/h3>
+&lt;/div></description></item><item><title>Android Glide Note</title><link>https://kalaqiae.com/post/android/android-glide-tutorial/</link><pubDate>Sat, 12 Mar 2022 16:45:18 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-glide-tutorial/</guid><description>&lt;h3 id="glide-图片加载回调监听">Glide 图片加载回调监听&lt;/h3>
 &lt;ul>
 &lt;li>可以使用 ImageViewTarget ， RequestListener 监听, RequestListener 可以监听网络图片是否加载成功。&lt;/li>
 &lt;li>可以使用 listener 或 addListener 添加 RequestListener 监听。当调用多个 listener 方法时，只会调用最后的 listener 回调， addListener 方法会依次调用多个 addListener 设置的回调。&lt;/li>
