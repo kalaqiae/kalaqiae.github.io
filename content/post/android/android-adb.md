@@ -243,3 +243,10 @@ adb shell pm revoke com.example.app android.permission.READ_PHONE_STATE
 ### adb shell dumpsys activity top
 
 查出顶部 activity 后，可以搜索查看 activity 的布局,比如搜 DecorView
+
+### 隐藏和显示状态栏
+
+需要 root
+
+>adb shell settings put global policy_control immersive.status=*  
+adb shell settings put global policy_control null

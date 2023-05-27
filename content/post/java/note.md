@@ -293,7 +293,11 @@ https://github.com/sjfricke/NDK-Socket-IPC -->
 .c文件是程序文件，内含函数实现，变量定义等内容。而且是什么后缀也没有关系，只不过编译器会默认对某些后缀的文件采取某些动作。你可以强制编译器把任何后缀的文件都当作c文件来编。  
 一般一个 .c 对应一个 .h 方便管理。
 
-.cpp 是 c++ cplusplus...
+.cpp 是 c++(cplusplus)
+
+f将.cpp /.c 转化成 .so 文件的两种方式  
+通过 ndk-build 工具，需要编辑 Android.mk 文件。
+通过 CMake，需要编辑 CMakeLists.txt 文件
 
 ### android proguard
 
@@ -327,23 +331,13 @@ mavenCentral：中央仓库，这个仓库是由Maven社区管理，由Sonatype�
 
 Gradle支持三种不同的仓库，分别是：Maven和Ivy以及文件夹。
 
-### c
-
-typedef
-
-用于自定义类型
-
-Struct 和 Union 区别
-
-Struct 更像是对象，所占空间是所有成员的存储空间之和。 Union 像泛型，同一时间只能存一个成员的值，所占空间是最大成员的存储空间。
-
 ### Hook 框架
 
 [Xposed](https://github.com/rovo89/Xposed) Xposed is a framework for modules that can change the behavior of the system and apps without touching any APKs.
 
 [VirtualApp](https://github.com/asLody/VirtualApp) (简称：VA)是一款运行于Android系统的沙盒产品，可以理解为轻量级的“Android虚拟机”。其产品形态为高可扩展，可定制的集成SDK，您可以基于VA或者使用VA定制开发各种看似不可能完成的项目。VA目前被广泛应用于APP多开、小游戏合集、手游加速器、手游租号、手游手柄免激活、VR程序移植、区块链、移动办公安全、军队政府数据隔离、手机模拟信息、脚本自动化、插件化开发、无感知热更新、云控等技术领域。
 
-[VirtualApp技术黑产利用研究报告](https://m.qq.com/security_lab/news_detail_435.html)
+[VirtualApp 技术黑产利用研究报告](https://m.qq.com/security_lab/news_detail_435.html)
 
 [VirtualXposed](https://github.com/android-hacker/VirtualXposed) 是基于VirtualApp 和 epic 在非ROOT环境下运行Xposed模块的实现（支持5.0~10.0)
 
@@ -360,7 +354,8 @@ Run > Edit Configurations
 
 按住 alt 鼠标点击左侧边栏，可以设置触发一次就取消的断点，还可以设置断点不生效
 
-[debug](https://juejin.cn/post/6844903811908108295#heading-9)
+[debug 这个已经挺详细了](https://juejin.cn/post/6844903811908108295#heading-9)
+[debug 这个还包含了 debug smali](https://juejin.cn/post/7194630163924484155)
 
 ### view 源码
 
@@ -368,7 +363,7 @@ Run > Edit Configurations
 
 ### kotlin 自定义控件报错
 
-Caused by: java.lang.NoSuchMethodException: <init> [class android.content.Context, interface android.util.AttributeSet]
+Caused by: java.lang.NoSuchMethodException: &lt;init&gt; [class android.content.Context, interface android.util.AttributeSet]
 
 构造函数里的参数需要是 Context
 
@@ -413,7 +408,7 @@ socket 每次交互都是客户端主动发起
 
 [demo](https://gitee.com/Rickyal/compose-demo#%E7%8A%B6%E6%80%81%E4%B8%8B%E6%B2%89%E4%BA%8B%E4%BB%B6%E4%B8%8A%E6%B5%AE)
 
-[使用viewmodel](https://ithelp.ithome.com.tw/articles/10277978)
+[使用 viewmodel](https://ithelp.ithome.com.tw/articles/10277978)
 
 [一个简单的例子](https://blog.51cto.com/u_15200109/2786144)
 
@@ -422,6 +417,7 @@ socket 每次交互都是客户端主动发起
 https://developer.android.com/training/material/shadows-clipping?hl=zh-cn
 
 elevation 是宽度 outlineSpotShadowColor 是颜色
+
 ```xml
 <TextView
 android:layout_width="match_parent"
@@ -655,10 +651,6 @@ public static void deleteZipFile(File file, String filePath) throws ZipException
 
 布局文件 宽高相关 lh lw lhw lhm
 
-将.cpp /.c 转化成 .so 文件的两种方式  
-通过 ndk-build 工具，需要编辑 Android.mk 文件。
-通过 CMake，需要编辑 CMakeLists.txt 文件
-
 ### JS 闭包
 
 js 子对象可以读取到父对象的变量，父对象不能读取到子对象内部的变量  
@@ -683,6 +675,76 @@ f2可以读取f1中的局部变量，把f2作为返回值，f1外部就读取它
 　　result(); // 999
 ```
 
+### build.gradle 修改 apk 名称
+
+一般自定义打包出来的 apk 名称可以这么写
+
+```groovy
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            if (variant.buildType.name.equals("release")) {
+                variant.outputs.all {
+                    outputFileName = "kalaqiae_" + variant.buildType.name + "_" + variant.productFlavors[0].name + "_v"+
+                            defaultConfig.versionCode + "_" + new Date().format("yyyy.MM.dd-HH.mm") + ".apk"
+                }
+            } else {
+                variant.outputs.all {
+                    outputFileName = "kalaqiae_" + variant.buildType.name + "_v" +
+                            defaultConfig.versionCode + "_" + new Date().format("yyyy.MM.dd-HH.mm") + "_test" + ".apk"
+                }
+            }
+        }
+    }
+```
+
+在执行某个命令后重命名这么写
+
+```groovy
+//复制后重命名
+task renameApk(type: Copy) {
+    from 'build/outputs/apk/release/app-release.apk'
+    into 'build/outputs/apk/release/'
+    rename { fileName ->
+        fileName.replace('app-release',
+            "kalaqiae" + "_v" + android.defaultConfig.versionCode +
+                "_" + new Date().format("yyyy.MM.dd-HH.mm") +
+                "_" + (rootProject.ext.IS_TEST ? "test" : "production"))
+    }
+}
+//当执行 installRelease 或 assembleRelease 后执行 finalizedBy
+tasks.whenTaskAdded { task ->
+    if (task.name == 'installRelease' || task.name == 'assembleRelease') {
+        task.finalizedBy(renameApk)
+    }
+
+}
+```
+
+### 查看 md5
+
+certutil -hashfile example.exe MD5
+
+### 依赖冲突
+
+app->task->dependcies 查看依赖
+
+```groovy
+//移除重复依赖例子
+implementation 'com.example:library:1.0.0', {
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
+}
+```
+
+<!-- ### c
+
+typedef
+
+用于自定义类型
+
+Struct 和 Union 区别
+
+Struct 更像是对象，所占空间是所有成员的存储空间之和。 Union 像泛型，同一时间只能存一个成员的值，所占空间是最大成员的存储空间。 -->
+
 <!-- [javacv](https://www.cnblogs.com/eguid/p/13557932.html) -->
 
 <!-- [阮ffmpeg](https://www.ruanyifeng.com/blog/2020/01/ffmpeg.html) -->
@@ -691,29 +753,14 @@ f2可以读取f1中的局部变量，把f2作为返回值，f1外部就读取它
 
 <!-- [阮c](https://wangdoc.com/clang/) -->
 
-<!-- [Android FrameWork - 学习启动篇](https://juejin.cn/post/6844903904749027336) -->
-
-<!-- 抓包工具 -->
-
-<!-- https://github.com/r0ysue/r0capture -->
-
 <!--jni监听应用卸载 https://cloud.tencent.com/developer/article/1033962 -->
 <!--jni监听应用卸载 https://www.helloworld.net/p/8912563749 -->
 
-<!-- https://juejin.cn/post/7216968724938195001 逆向-->
-<!-- SkyDroid F-Droid 上传安卓市场 -->
-<!-- https://zhuanlan.zhihu.com/p/359314031 gv -->
-<!-- https://www.anquanke.com/post/id/273348 反编译 -->
-<!-- 使用walle生产的渠道包加固后获取不到渠道信息 -->
-<!-- https://www.freesion.com/article/3733762873/ -->
+<!-- https://github.com/suming77/SumTea_Android 基于组件化+模块化+Kotlin+协程+Flow+Retrofit+Jetpack+MVVM+短视频架构实现的WanAndroid客户端 -->
 
-<!-- KinhDown 百度网盘 -->
-<!-- https://hostloc.com/ 服务器论坛 -->
-<!-- https://diobulanduo.gitee.io/animalcrossing.github.io/#/fish -->
-<!-- https://telegramchannels.me/zh/list/biggest?language=all -->
-<!-- https://sites.google.com/view/honven/%E9%A6%96%E9%A1%B5/telegram%E7%BE%A4%E7%BB%84%E6%8E%A8%E8%8D%90%E9%A2%91%E9%81%93%E6%8E%A8%E8%8D%90%E5%BC%80%E8%BD%A6%E6%8A%80%E6%9C%AF%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E5%90%88%E7%A7%9F%E7%BE%8A%E6%AF%9B?authuser=1 -->
-<!-- android killer 逆向相关 -->
-<!-- 青龙面版 docker相关 京东薅羊毛-->
-<!-- powertoys -->
+<!-- RecyclerView 位置 http://www.gityunstar.com/post/fa19cc06eee211eb8faf00163e0febfd -->
+<!-- 反向代理 https://cloud.tencent.com/developer/beta/article/1418457 -->
+<!-- bazingga.xyz -->
 
-<!-- giffgaff T-Mobile prepaid card -->
+<!-- mac 应该是只能支持12之前的 aosp 编译 Android 推荐用 Ubuntu 18.04 (Bionic Beaver)
+https://source.android.com/docs/setup/start/requirements?hl=zh-cn -->

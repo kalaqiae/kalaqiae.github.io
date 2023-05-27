@@ -156,4 +156,8 @@ android {
     }
 ```
 
+### 使用 walle 生产的渠道包加固后获取不到渠道信息
+
+[python 多渠道打包](https://www.freesion.com/article/3733762873/)
+
 <!-- * umeng -->

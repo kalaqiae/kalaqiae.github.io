@@ -28,6 +28,17 @@ AndroidKiller 默认的 apktool 版本比较旧，需要替换，直接改名替
 
 ### Other
 
-jd-gui dex2jar 个人觉得不太好用
+平常可以用 JADX 看，用 AndroidKiller 改  
+apktool 可以反编译得到 smali 文件等  
+dex2jar 可以将 classes.dex 转化成 classes_dex2jar.jar 文件  
+jd-gui 查看 classes_dex2jar.jar 文件内的源码  
+重新签名打包分别用到 keystore jarsigner ，安装 Java 环境就有，Android SDK 中的 apksigner 执行 v1、v2   v3 签名，具体没试过可以直接用 AndroidKiller  
+在 Android 7.0 及以上的版本中，默认签名工具从 jarsigner 切换到了 apksigner
 
-[基础](https://www.anquanke.com/post/id/273348#h2-8)
+[逆向基础](https://www.anquanke.com/post/id/273348)
+
+[Android Studio debug 调试 Smali 代码](https://blog.csdn.net/PLA12147111/article/details/98179217)
+
+[Smali 基础](https://juejin.cn/post/7020960576666861576)
+
+[apktool 简单使用](https://juejin.cn/post/7216968724938195001)
