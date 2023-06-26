@@ -1,12 +1,14 @@
 ---
 title: "Ubuntu install"
 date: 2023-06-07T16:31:59+08:00
-draft: false
+draft: true
 tags: ["Linux","Ubuntu"]
 categories: ["Linux"]
 ---
 
-Linux Window 双系统安装。安装的 Linux 为 Ubuntu 18.0.4。也可以用 Vmware 虚拟机装 Linux。
+Linux Window 双系统安装记录。安装的 Linux 为 Ubuntu 18.0.4。也可以用 Vmware 虚拟机装 Linux。
+
+<!--more-->
 
 安装双系统注意！！！很多文档比较旧，使用了传统 BIOS ，和 UEFI 启动方式区别不少
 
@@ -77,7 +79,7 @@ home 分区 Ext4文件系统
 
 SWAP 分区，一般是1到2倍内存的大小，如果内存够大也还是建议设置以下
 
-我的硬盘1t，内存16g，方案（按顺序）是 EFI 系统分区1g，根分区500g，swap 分区32g，home 分区200g
+我的硬盘1t，内存16g，方案（按顺序）是 EFI 系统分区1g，根分区500g，swap 分区32g，home 分区420g
 
 #### 分区不同的原因
 
