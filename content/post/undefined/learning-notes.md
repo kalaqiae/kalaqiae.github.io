@@ -217,4 +217,38 @@ be adverse to doing 介意，反对，不乐意
 lingering thought  
 take the below  
 
+### The United States used to have cachet in China. Not anymore.
+cachet 声望，威望，标志，印章/good reputation  
+sharp words 尖锐言辞  
+bluster 威吓，咄咄逼人（但收效甚微）  
+wan 衰弱，衰败；苍白，月亏
+badge 工牌，校徽，象征，警章
+bastion 堡垒
+sneaker/trainer 运动鞋  
+mockingly 嘲弄地，戏谑地  
+erosion 侵袭，侵蚀；减弱 erosion in positive opinions towards  
+opine 认为，发表意见-正式用词  
+at gunpoint 枪口威胁下  
+scrambled egg 炒蛋  
+tome 巨著，鸿篇巨著，大部头书  
+canned laughter 背景笑声(情景剧中非现场笑声)  
+bubbly 活泼的，热情奔放的(尤其指女子)  
+bubbly excitement 开心得冒泡  
+do no wrong 不会出错  
+atrophy (身体部位)萎缩；衰退  
+take/claim/seize the moral high land 道德高地/制高点  
+shoot oneself in the foot 搬起石头砸自己的脚  
+difficult rival 难对付的对手  
+clash over 冲突  
+chic 时髦的  
+prize v. 重视 treasure  
+on the brink of 在...边缘  
+overtake 超过  
+homegrown brand 国产品牌  
+household names 家户喻晓  
+once-dominated  
+take one's place/replace 代替，取代  
+
+### June 6, 2024  
+put up quite a fight  
 
