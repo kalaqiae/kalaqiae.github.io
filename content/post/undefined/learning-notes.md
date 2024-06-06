@@ -124,3 +124,97 @@ rash 轻率的，鲁莽的，毛躁的
 get beat up  
 budge an inch  
 great and mighty  
+Dote on sb 宠爱;溺爱  
+Down for sth/(down for a fight)  
+What’s in the past stays in the past/bygones are bygones  
+Sb is a bad apple/troublemaker  
+(one bad apple spoils the whole barrel)  
+Bean sprout 豆芽  
+Obnoxious 令人讨厌的  
+(Number) Servings of sth （）份（食物）  
+Get ahead of oneself  
+Gorge sb to death 撑死某人  
+Motion sensor 移动传感器  
+Death wish  
+Thump 心怦怦直跳；重击；头痛欲裂；砰然作响
+Overbearing 盛气凌人的，傲慢的，专横的
+Tsundere 傲娇的
+Rack one's brains 绞尽脑汁，搜肠刮肚  
+Moral compass 道德准则
+Within one’s moral compass
+Get on one’s nerves  
+Treat sb out  
+Swipe card 刷卡  
+Foot the bill/pay the bill
+Put it on one’s tab 记某人账上  
+Get stripped of  
+In due time  
+Princess carry 公主抱  
+Put on an act 演戏  
+Meet-up gift 见面礼  
+Pocket brain/brain pocket  
+Craft a weapon  
+Copycat  
+Play casuals  
+Play PVE  
+Game booster 代打，代练  
+Play at nightmare difficulty
+meet-and-greet  
+lax 马虎的；不严格的；松音的  
+defensive support  
+pull every bit of information of/about sb  
+strike gold  发大财  
+
+### The new dream job is working for ... the government?
+grim realities  
+delude  
+climb the corporate ladder 步步/一路晋升  
+a dose of flu 一场流感  
+high/low dose 高/小剂量  
+rewarding 值得做的，报酬高的，收获丰厚的  
+civil service 公职，政府工作  
+inundated (with) 使应接不暇，被...淹没（消息，报道，洪水等）  
+come amid 在...情况下  
+averse 讨厌的，厌恶的  
+contraction 收缩，宫缩，紧缩  
+has yet to do 尚未  
+Granted, 放句首，表示诚然，确实，当然  
+on the decline 处于下降态势  
+the far reaches 最远处，尽头  
+the far reaches of the universe 宇宙尽头  
+an army of soldiers and horses attempting to cross a single-plank bridge  
+an army of 一大批，一大群  
+be-all and end-all 最重要的事，一切的一切  
+come ashore 上岸  
+rookie/newbie/noob 新手  
+be subpar to 逊色于  
+on a par with sb 与...比肩  
+cause/create/raise/start a ruckus 引起骚动，制造噪音  
+poser 装腔作势  
+cheapskate 小气鬼  
+just you wait 你给我等着  
+smurf account 小号  
+easy peasy  
+big shot/bigwig 大佬  
+proctor 监考员  
+flop  
+Esport 电竞  
+fill sb in 给某人细说情况  
+tear up/rip the paper  
+get another set of utensils 加一副碗筷/餐具  
+pay-to-play P2P 利益输送  
+power-tripping  
+team up with sb  
+talk trash  
+turn the other cheek  
+bygones are bygones  
+preliminaries 初赛  
+armor loadout 装备  
+plump sb up  
+by blood 有血缘关系的  
+cream of the crop  
+be adverse to doing 介意，反对，不乐意  
+lingering thought  
+take the below  
+
+
