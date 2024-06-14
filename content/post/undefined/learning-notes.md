@@ -25,7 +25,7 @@ tech-speak 科技行话/术语/专业用语
 reams of 大量  
 footage 一段影片，片段  
 in time/eventually 迟早，最终  
-behenmoth/giant/conglomerate/titan 巨头公司  
+behemoth/giant/conglomerate/titan 巨头公司  
 crunch the data 处理大量数据  
 crunch v. 嘎吱作响；嘎吱声  
 a magnet for 有吸引力  
@@ -252,3 +252,219 @@ take one's place/replace 代替，取代
 ### June 6, 2024  
 put up quite a fight  
 
+### Is China's gaokao the world's toughest school exam?  
+come to a standstill 陷入停滞/安静  
+college entrance exams  
+on a par with 与...比肩/相提并论  
+traffic diverted 交通改道  
+painstaking 认真仔细的，精心的，煞费苦心的，费尽心思的+ research  
+fete 隆重欢迎；赞扬  
+culmination 巅峰，一段时间的终点  
+wiry 清瘦结实的  
+half-rim spectacles 半框眼镜  
+close-cropped hair 寸头/很短的头发  
+budding wisps 刚长出的绒毛/一撮毛发  
+crop 平头发型  
+fiddle with 摆弄，拨动  
+slur 说话含糊不清，嘟嘟囔囔  
+telepathy 心电感应  
+pick at one's fingers 抠手指  
+crop up 突然出现，意外发生；冒出  
+dawn on sb 顿悟；开始理解  
+emblematic 象征  
+monolithic 单一的  
+rote 死记硬背的  
+automaton 机械行事的人；机器人，自动操作装置  
+rip up textbooks 撕书  
+roundly 严厉地;尖刻地;狠狠地  
+gruelling 艰辛的  
+refrain 重复的话；副歌；老生常谈的话  
+separate the wheat from the chaff 区别好坏；去芜存菁  
+antiquity 
+imperial examinations/keju 科举  
+sole criterion 唯一标准  
+abolition 废除  
+sat an exam 考试  
+eight-legged essay 八股文  
+aspiring bureaucrats 渴望走上仕途的考生  
+cotton on 明白，领悟，发现  
+gohst-deity 鬼神  
+
+### The latest threat to China? The rise of the DINks  
+DINK: dual/double income, no kids  
+acronym 首字母缩写  
+initialism 首字母缩写（需每个字母单独发音）：BBC
+shorthand for 速记，缩写  
+gainfully employed 有收入的  
+unabashed 恬不知耻的，不加掩饰的
+make a comeback 卷土重来  
+millennial 千禧一代  
+flaunt/  
+lavish  
+take off 开始走红，突然开始成功，流行  
+up/increase the limit to 提高限制  
+opt for/choose  选择  
+the phonetic translation in Mandarin 音译  
+vasectomy 结扎；输精管切除术  
+childless-by-choice ethos 选择/自愿不要孩子；不生主义  
+ethos 个人或团体的精神特质，价值观，信条  
+high-class 高级的，优质的；高阶层的；社会等级高的  
+societal norms 社会准则  
+inopportune/inappropriate 不合适的  
+come at an inopportune time  不合时宜  
+stave off 阻止；延缓；避开
+matchmaking 做媒  
+scare sb into doing sth 威胁，吓唬  
+marital strife/conflict 婚姻冲突  
+byline 署名  
+original intention 初衷，初心  
+take issue with  对...有异议  
+go by the name/moniker 人称  
+moniker 假名，绰号，名字  
+stalling  停滞的 economy  
+relative to 相较于  
+at the end of the day 到头来，最终，归根结底  
+untenable 理论或论点难以捍卫的，站不住脚的；难以维持的  
+miss out on 错过  
+mock 模拟的  
+pass sth on to 传递，传给
+squander 挥霍(时间/金钱)
+
+### Baby-boomers are loaded, why are they so stingy?  
+loaded 口语化表达，腰缠万贯，很有钱  
+stingy 小气的  
+cohort 有共同特点的一群人  
+in (the) aggregate 总体来说,总计  
+amass/accumulate 积累  
+move into/come into/go into 进入到某种阶段  
+golf clubs 高尔夫球杆/俱乐部  
+cast doubt on 产生怀疑  
+splurge 乱花钱，挥霍(尤其指购买奢侈品)  
+wealth decumulation 财富消耗  
+observation 评论，看法 remark  
+oldies 老物件，老古董，老人家  
+lucre/money 钱；不义之财  
+life-cycle hypothesis 生命周期假说  
+anti-ageism 反老年人歧视  
+at play 玩耍；起作用  
+bequest motives 遗赠动机  
+pass sth on to sb 递给，传递，流传  
+Messrs （用于两个或多个人的姓名前，通常出现于公司名称中）先生们（Mr 的复数）  
+go a long way towards 对...有很大帮助  
+spend down 花光，消耗殆尽  
+hermit-like 隐居的，深居简出的  
+shake off/get rid of 摆脱  
+in real terms 实际地  
+dine out 外出吃饭  
+Colosseum/arena 圆形竞技场/剧场  
+round-the-clock 全天候 medical care  
+mobility 行动能力；流动性  
+dementia 精神错乱，痴呆症  
+
+### North Korea's trash rains onto South Korea, ballon by ballon.  
+rain onto 像雨点般落下  
+manure 粪肥  
+cigarette butts 烟头  
+CD compact discs 光碟  
+psychological warfare 心理战  
+war 具体战争  
+warfare 战争方式/策略/打法  
+loudspeaker blaring 喇叭广播  
+billboard 广告牌(更大)
+signboard 招牌，告示牌  
+dial up + tensions 增加(程度，数量等)  
+revive 使苏醒；使复原/复兴；使重新流行  
+powder one's nose 补妆  
+emeritus professor 荣誉教授  
+clamp down 取缔，严厉打击 crack down  
+authoritarian 独裁的  
+secretive 讳莫如深的；守口如瓶的，遮遮掩掩的； 
+fragmentary 零碎的，碎片化的  
+fodder 牛马等的饲料，引申义：素材  
+defector 叛逃者  
+strike sb down 使病倒，打击，使猝然死去；裁定法律法条非法  
+
+### Singapore's new prime minister vows to lead in our own way as Lee dynasty ends after half-century  
+take one's oath of office 宣誓就职  
+a succession of 一连串，一系列  
+outpost 驻外办事处；前哨基地  
+think boldly and think far  
+meticulously crafted/carefully planned 精心安排/筹划/制作的  
+come to prominence 崭露头角  
+blaze new trail 开辟新的道路  
+blaze 烈火  
+rampant 不好的事情猖獗的，泛滥的  
+portfolio 部长或大臣职责/职务  
+dissident 批评政府者  
+stay on 留下继续(工作/学习等)  
+income disparity 收入差异  
+disparity 不平等；（不公平的）差异  
+steer/navigate 带领  
+turbulent waters 比喻动荡的局面  
+settle for 将就，妥协;无奈接受；勉强同意  
+
+### Hey Siri! Help me get Apple out of an AI-shaped hole  
+bashful 害羞的，羞怯的  
+reverence 崇敬；尊敬  
+at the helm of 掌舵，执掌  
+divine providence 神的旨意  
+providence 天意，天道，天命  
+clasp 握紧，攥紧  
+out of/in character 不/符合性格特点  
+take to the stage 登台  
+bout （疾病的）发作;（某活动的）一段，一阵，一场  
+angst 焦虑  
+mojo 个人魅力；魔力  
+bequeath 把...遗赠给  
+Promethean/pioneering 开创性的  
+sputter out 消失殆尽，熄灭  
+euphoria 狂喜;亢奋;异常兴奋  
+one-time nemesis 昔日宿敌  
+conundrum 难题  
+concierge （尤指法国的）大楼管理员，看门人，门房;（帮助客人安排戏票、餐馆等事宜的）旅馆服务台人员
+perennial 长期存在的，常年的  
+clunky shoes 鞋子笨重
+makeover 大改造；改头换面  
+computing muscle 算力  
+souped-up （车辆或机器）经过增强的
+supercharged 加强的，增进的；给发动机增压的  
+strike a deal with 达成协议  
+hype up 兴奋，热情  
+telling 有说服力的  
+telling argument 有力论据  
+groan 痛苦呻吟声；不高兴的哼哼声，叹息声  
+rue/regret 后悔  
+fire up 点燃，激起；使…激动；令…发怒
+
+### A guilty verdict for Hunter Biden weighs on a worried President Biden  
+weigh on 使...心事重重；（问题、责任等）使（某人）焦虑不安，使（某人）担忧  
+tarmac 以柏油铺筑（路面）；柏油碎石地面  
+rush up 迅速移动，冲，(使)仓促行事，做事草率  
+disembark from 下船，下飞机，下交通工具  
+battle-tested  经受过考验  
+understatement 保守的陈述; 轻描淡写  
+fallout 恶果，不良影响  
+plague 不断困扰;折磨;使受煎熬  
+for all 尽管 although  
+maintain 坚称，断言  
+come to terms with 逐渐接受  
+no easy end to 不会轻易结束  
+resigned 无可奈何的，不得不接受；听任的  
+what the future might hold for 前路如何  
+relay 转述，转录，转播，传达  
+back taxes 欠税  
+back pay 延期付款  
+benefactor 资助人  
+cash crunch 资金不足/缺口  
+pardon 赦免  
+proceedings 诉讼，诉讼程序  
+turn back （使某人）折回，（使某人）原路返回  
+appreciate 了解到，意识到 realize  
+with arms crossed 双手交叉  
+turn back a verdict 作出裁决  
+shut out 阻止…进入，把…关在外面，拒之门外  
+liability 麻烦，累赘  
+a (treasure) trove of 丰富的...，...的宝库  
+treasure trove 无主宝藏；无主珍宝  
+attack line 攻击话术  
+bound/leave for 前往  
