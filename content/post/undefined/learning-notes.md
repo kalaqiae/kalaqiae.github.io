@@ -1,7 +1,7 @@
 ---
 title: "Learning Notes"
 date: 2024-06-03T21:52:09+08:00
-draft: false
+draft: true
 tags: ["Note"]
 categories: ["Note"]
 ---
@@ -361,7 +361,7 @@ round-the-clock 全天候 medical care
 mobility 行动能力；流动性  
 dementia 精神错乱，痴呆症  
 
-### North Korea's trash rains onto South Korea, ballon by ballon.  
+### North Korea's trash rains onto South Korea 
 rain onto 像雨点般落下  
 manure 粪肥  
 cigarette butts 烟头  
@@ -468,3 +468,392 @@ a (treasure) trove of 丰富的...，...的宝库
 treasure trove 无主宝藏；无主珍宝  
 attack line 攻击话术  
 bound/leave for 前往  
+
+### Should you buy expensive stocks?  
+stock split 股票分割，拆股  
+backer 赞助人，股东(金融方面)
+pop the champagne/let the corks fly 开香槟  
+factor 倍数  
+hopelessly 彻底地；毫无希望地  
+plainly 显而易见地  
+(by) no stretch of the imagination 无论如何也难以相信  
+dividend yield 股息率  
+reams of 大量 lots of  
+portend 预示，预兆，预告(坏事) predict  
+a school of thought 思想流派  
+a school of fish 一群鱼  
+stubborn  人顽固，事情难搞，疾病难愈，顽疾，污渍难去掉  
+of late/recently 放句首或句尾  
+hew to 坚守，遵守  
+fret about/over 苦恼，烦躁，焦虑不安  
+wade into/in 插入，参与  
+impeccable/perfect 完美的，无可挑剔的  
+discount 折现  
+myriad/reams of 大量，无数  
+risk appetite 风险偏好  
+feed through to 渗入到，反映到，影响  
+conversely 相反  
+landmark/millstone 里程碑式的  
+discount rate 折现率  
+vary by season/with the season 根据季节变化  
+tempting/attractive  
+go out of fashion 过时  
+eye-watering 惊人的（在数目方面）令人极度惊讶的  
+barnstorming 激动人心的，活力四射的  
+fall into 掉入，分为(几部分)  
+
+### Donald Trump is a convicted felon  
+felon 重罪犯  
+felony 重罪  
+game-changer 在很大程度上改变一场比赛结果的人（或事）/改变形势（或商业领域）的产品（或事件）  
+bank on/rely on 依靠  
+exasperation 焦灼  
+
+### Who shaved $250bn from Kweichow Moutai's market value  
+shave 削减，降低  
+fiery 火红的，火一般的；食物辣的 fiery baijiu 烈酒  
+translucent 半透明的  
+by far/by a great amount 强调程度，区别so far 目前  
+vintage wine 佳酿，年份酒  
+fetch 售卖，买得  
+throat-scorching 酒辣嗓子的，令人咋舌的  
+eclipse 使相形见绌，黯然失色  
+market value/capitalisation 市值  
+graft 移植的皮肤；嫁接用的枝条；贪污，受贿，以权谋私；  
+sorghum 高粱  
+change hands 易手，转手  
+in place of 代替 replace  
+evaporate 蒸发(市值) 等  
+firewater 烈酒，尤指威士忌  
+hit-piece 打击对象  
+prized 贵重的，珍贵的  
+eye-watering 数目等令人瞠目结舌的，引人流泪的  
+captivate/enchant 吸引  
+aficionado 酷爱...者；...迷；...爱好者；发烧友  
+make/go/do the rounds 轮次  
+woe 困难；灾难；不幸；悲伤，悲哀  
+tycoon 大亨，巨头  
+magnate 富豪，大亨，工商业巨头  
+prodigious 强大的，巨大的  
+dry spell 干涸期  
+proof 酒精度数的 美式 1 proof=1.5度左右  
+fixture 房屋内的固定设施；保留节目，固定项目  
+e-merchant 电商  
+self-professed 自称  
+indispensable 不可或缺的  
+competitive drinking 拼酒  
+keep sth/sb off 使远离  
+mundane 世俗的，单调的，平凡的  
+ramp up 提高  
+get sloshed /get drunk 喝醉  
+stick the knife into 严重打击  
+
+### US-Sino tensions help spawn China card game craze  
+spawn 催生，孕育，导致，带来，助推；产卵  
+craze 热潮  
+reliant on 依赖  
+dry up 枯竭  
+gain fresh life 获得新生  
+awake to /become aware of 察觉，意识到  
+deck 一副牌  
+pair up 组队  
+staple 主要部分  
+pastime /kill-time 消遣  
+
+### Donald Trump survives an apparent assassination attempt 
+dark turn  
+duck （尤指为避免被击中而）猛低头，猛弯腰  
+detail 特遣队  
+in that/because/for the reason that 引导原因状语从句 因为  
+whizzing sound 飕飕声  
+rip through/into 穿过 (the skin)  
+recount 讲述  
+profile picture/avatar 头像  
+seethe with 充满 full of  
+contempt 轻视，蔑视  
+vie for/compete for 与...竞争  
+fanatic 狂热分子  
+crazed 疯狂的，疯魔的 程度比crazy高  
+incense 大怒；香  
+sack 洗劫一空  
+(as) shocking as the attempt is 第一个as可去掉，第二个as表尽管，引导让步状从，倒装  
+bash 猛撞;猛击；猛烈抨击，严厉批评  
+saturate the media 表示媒体铺天盖地报道某新闻  
+define the narrative 定下基调  
+triumphal 庆祝胜利的  
+self-immolation 自杀是的，自毁式的  
+immolation （通常指通过焚烧）杀死自己或他人，或毁灭某物  
+viability 可以实施；可望成功；能生长发育;可以存活
+agonise 焦虑，心急如焚  
+consensus (view) 共识  
+dominant favorite 大热门  
+indictment c此处不发音 起诉，控告  
+lip balm 润唇膏  
+balm 慰藉(引申义)  
+fractious 易怒的;暴躁的  
+comity 礼让，礼仪；国家礼让（国家间的友谊和尊重，表现为接受彼此的法律、政治制度以及风俗习惯）  
+comity of nations  
+shortlist 最终候选名单，决选名单  
+incendiary 煽动性的 accusations  
+insurgent 政党的反对派；叛乱者  
+establishment 建制派  
+twists and turns 一波三折，转折  
+abysmal 极坏的，糟透的  
+
+### A legendary American photograph  
+MAGA make America great again  
+streak 条纹，条痕；blood/tear streaks his face 血痕，泪痕  
+snarl 咆哮，怒吼  
+composition 构图，构思  
+unbidden/uninvited 未被邀请的；未经要求的；自发的  
+encapsulate/sum up 总结  
+teeter 摇晃，摇摇欲坠;蹒跚行走  
+hunker down 蹲坐，蹲着  
+undaunted 顽强的，百折不挠的 and undeterred 未被吓住的；不灰心丧气的  
+spread 整版（或横贯几版的）文章（或广告）/照片  
+duress 胁迫，威胁  
+distill 蒸馏；提炼；浓缩  
+surmise 猜测，推测，臆测 v/n  
+juxtapose 把（不同的事物）并置，把…并列 （照片对比等）  
+frail 脆弱的；虚弱的；易碎的；易受损的  
+grudging 勉强的，不情愿的  
+stan 疯狂追星的人，狂热粉  
+bulging muscles 凸起的，鼓起的  
+cultish 邪教般的  
+unshakable 不可动摇的  
+indistinguishable 难以区分的  
+slavish 盲从的，唯命是从的 devotee  
+vigor 精力，活力，生命力 vitality  
+paranoid 偏执的，多疑的  
+absolve （尤指宗教或法律上）为（某人）解罪;赦免（某人）的罪;宣告（某人）无罪;免除（某人）的责任  
+palatable 美味的，可口的；可以接受的，合乎趣味的  
+political platform 政治纲领  
+contextualize 将…置于其背景下考虑  
+constitutionally 按照宪法地;依照章程地；就体质而言;就性格而言;生性地  
+default to 默认  
+skeleton key 万能钥匙  
+shibboleth/cliche 过时的信仰;陈旧的习俗；（特定人群的）特有用语（习俗等）；惯用技俩  
+inhabit the mind of 了解...想法，进入...内心世界  
+unbowing resolve 不屈的决心  
+irresolute  wavering 举棋不定的；犹豫不决的，优柔寡断的  
+
+### Why the Paris Olympics are strictly bring-your-own-AC for U.S. athletes  
+steamy bathroom 充满水汽的浴室  
+billow 烟雾涌出 smoke  
+topmost=highest 最高的  
+crest 达到顶峰  
+box units 箱式机，可指空调外机  
+stoic 克制感情的;（尤指面对逆境）坚忍的，隐忍的；恬淡寡欲者;克制感情的人  
+whiny 爱发牢骚的;烦躁的，暴躁的  
+callousness 冷酷无情;无同情心，麻木不仁  
+blowback 意料之外的不良效果（或结果、影响）；后坐力  
+cooling system 冷却/降温系统  
+quarter 为军人，员工，运动员等提供的房间，住宿  
+a long haul 以年记（而不是以天、周、月记）的一段时间；长期  
+long-haul flight 长途飞行  
+more or less/mostly 主要；大体；almost 几乎，差不多；approximately 大约  
+on sb's radar  某人注意到了  
+unmoved 不为所动的，无动于衷的，冷漠的  
+crusade /campaign（为理想或信念而奋斗的）运动；十字军东征  
+bike lanes 自行车道  
+rant 怒吼;抱怨;叫嚷;大声责骂  
+booster 推进器；推动者  
+soupy  
+subterranean 地下的  
+cylindrical 圆柱形的  
+drum 桶；（洗衣机的）缸体，滚筒  
+runoff 径流  
+fretful 烦躁的;不安的  
+take the plunge （尤指经过长时间考虑后）决心行动，打定主意  
+outmatch 
+fecal 粪便的
+prudently 谨慎地；精明地  
+self-preservation 自我保护  
+civic pride 公民自豪感  
+marvel 奇迹  
+basin 流域；盆；水盆；船坞；内湾  
+sump 污水坑，集液池；（尤指发动机下部的）集油槽，油底壳  
+sump-ish
+-ish  
+inflict 使遭受，使承受  
+cautionary 警告性的;劝告的  
+foul 犯规；弄脏；污染  
+wager 赌注
+vagary/change 改变，变化  
+broil 烧焦，烤焦；烧烤，烤制  
+broiled chicken/duck 烤鸡/烤鸭  
+cesspit/cesspool 化粪池；令人厌恶的情形；污秽的场所  
+salute the flag vt.  
+audacity 大胆;勇气
+thermostat 恒温器，温度自动调节器； 
+
+### Joe Biden made the right choice  
+step aside/down/stand down 下台，退位  
+in the best interest of 符合...最佳利益  
+landslide victory 压倒性胜利  
+what are the odds?  
+a millstone around one's neck 压得人喘不过气  
+in an instant 瞬间，马上  
+rout 溃败 complete defeat  
+commentary 实时报道，解说  
+agonizing 极度痛苦的  
+denouement /ending 结局  
+turn on sb. 突然攻击，背叛  
+take (a) delight in doing sth 以...为乐  
+plagiarize 剽窃，抄袭  
+flat on its back 卧病在床，孱弱的，情况一蹶不振，不景气的  
+resurrect 复活  
+scrappy 东西混乱的，人好斗的  
+debility 体弱，虚弱  
+on display 展现  
+excruciating 剧烈疼痛的;极痛苦的；极其乏味的；极其令人厌烦的；极度尴尬的  
+unforgiving 不原谅人的，不饶恕人的;无情的；（环境等）恶劣的，不利的；（衣料、衣服等）显得人胖的  
+glare 刺眼的光，炫目的光；瞪  
+stir up 激起  
+rage against 
+human agency 人类能动性  
+come to terms with 逐渐接受（常指所爱之人的死）  
+monumental 巨大的  
+dig sb into  
+
+### Kamala Harris lacks charisma and time  
+rule out 排除  
+brush past 径直走过，超过  
+chutzpah 厚颜无耻；胆识  
+front-runner 领跑者  
+emphatically 显然；坚决地；断然地；  
+come of political age 达到法定年龄；成年；成熟；  
+kingmaker 可影响重要职位人事任命的人物
+30 years her senior 比她大30岁  
+under one's own steam 靠某人自己的努力  
+stepping-stone 过渡性的，垫脚石般的
+lean to the right 右倾  
+only to 居然  
+long on 擅长，拥有某种特质  
+short on 缺乏，缺少  
+conviction 信念  
+shake off/get rid of  
+lurk 隐藏  
+emotive 有感染力的；煽情的  
+reboot 重启，重新介绍  
+biography 传记  
+barrier-breaking 打破障碍  
+handicapped  
+by dint/means of 借助  
+bar 标准 standard  
+a low bar to clear 低标准  
+hold one's own against 坚持，立于不败之地，表现很好  
+prodigious 巨大的，惊人的  
+war chest 比喻竞选/商业中用的资金，专用资金  
+chest 木制的箱子/柜子/盒子
+extemporaneous/impromptu 即兴的  
+anoint （在宗教仪式上）涂圣水（或圣油）于；（通常由权威人士）选定，指定  
+lay out 提出;排列，铺开  
+attack lines  
+centrist 中间派  
+transatlantic 横跨大西洋的  
+unapologetic 不认错的，不悔改的  
+robust 强有力的，强健的  
+up against 面对，遭遇  
+tumultuous 人激动的；动荡的  
+Oval Office 美国总统办公室  
+Situation Room 情报/政情室  
+remain untested 有待考验  
+the odds seem clearly stacked against 形势不利  
+call out /criticize 揭露，揭发，批评  
+transgression 违法  
+fire up 鼓动  
+heretofore /before this time/up to now 此前，迄今为止  
+charisma-challenged 魅力不足的  
+settle for 妥协，将就  
+
+debunk the idea that  
+appropriate 挪用，盗用，占用；拨款  
+mineral resources  
+menial work/job/tasks 粗活；（工作）乏味的，低贱的，不体面的  
+gear toward: to design or organize something so that it is suitable for a particular purpose, situation, or group of people 使适合于…;使与…相适应  
+ethanol: a chemical compound that is a type of alcohol 乙醇 aka: “ethyl alcohol” or “grade alcohol,”  
+High-fructose corn syrup 高果糖玉米糖浆  
+team up with  
+rapacious 贪婪的，掠夺的，强取豪夺的；~ appetite 贪欲  
+the big time: the state of being famous or successful 出名，成功  
+a boon to/for: something helpful that improves your life: [ usually singular ] 
+coveted: strongly desired by many  
+encompass：to include different types of things:
+a host of: a large number of something:  
+bust：a period of slow economic activity and lack of growth:  
+go bust: if a company goes bust, it is forced to close because it is financially unsuccessful:  
+epidemic: [ C ]
+the appearance of a particular disease in a large number of people at the same time:
+a flu epidemic  
+[ C usually singular ]
+a particular problem that seriously affects many people at the same time:
+a crime/unemployment epidemic  
+adj. happening a lot and affecting many people:  
+Crime and poverty are epidemic in the city.  
+thyroid 甲状腺  
+inadvertently: in a way that is not intentional: 
+concerted effort  
+
+### Black Myth: Wukong - the summer's most exciting, and most controversial, video game  
+cause a stir 引起轰动  
+console game 主机游戏  
+action-packed  
+-packed 充满...  
+titular leader/head 名义上的领导 有名无实的  
+titular 同名的 - book/song  
+Buddhist-folklore 佛教传说  
+anthropomorphic 化为人形的  
+lusciously rendered forest  
+inordinately 不寻常的  
+few and far between/extremely rare 很稀少/罕见的  
+fever pitch 狂热  
+trailer 预告片  
+rack up 累计，达到 collect/accumulate  
+twist 转折；改编  
+deliver on 兑现  
+miraculously 奇迹般地  
+marry 融合，结合  
+fluid-feeling 流畅的，行云流水的，丝滑的  
+reflex-testing 考验反应的  
+filmic sheen 电影质感  
+healthy sheen 健康的光泽  
+a-hundred-meter sprint 100米速跑  
+duck and dodge 躲避  
+flora and fauna 动植物  
+gi 空手道/柔道道服  
+toad 癞蛤蟆  
+nightmarish 梦魇般的  
+showy  
+grizzly end 游戏中失败 defeated  
+simian  
+
+### Tencent-Backed ‘Wukong' makes game history in first-day rush  
+title 在游戏中,相当于game  
+rapid ascent  
+seal/secure one's place 确立地位，占据一席之地  
+industry lore 行业传说  
+action-adventure title 动作冒险类游戏  
+antics  
+fabled 传说中的  
+garner/gain/acquire 收获  
+concurrent players 同时在线玩家  
+much-hyped 备受吹捧的，大肆炒作的  
+shore up 支撑，支持  
+gaming arena 游戏（竞争）市场  
+round a corner 出现转机，在回暖  
+incessant 持续的 - meetings 接二连三的会议  
+pipeline 路径，路线  
+indie = independent  
+indie studio 独立工作室  
+splashy 轰动的，奢华的  
+blockbuster 大片，游戏巨制，书  
+outsized attention  
+shot to the top of 冲到  
+No.1 trending topic 热搜第一  
+review site 评分网站  
+rollout 推出  
+gameplay 游戏玩法  
+signature dish/product 招牌菜/标志产品  
+cultural gems 文化瑰宝  
+embody 呈现，承载  
