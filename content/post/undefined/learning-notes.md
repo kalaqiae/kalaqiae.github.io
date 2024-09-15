@@ -86,7 +86,7 @@ bore 无聊的人
 quantify an accomplishment 量化成就  
 life happens 世事无常  
 clear one's head 散心  
-dealbreaker 
+dealbreaker  
 red flag 危险信号  
 job-switching 换工作  
 masterful 出色的；傲慢的；熟练的  
@@ -166,6 +166,7 @@ pull every bit of information of/about sb
 strike gold  发大财  
 
 ### The new dream job is working for ... the government?
+
 grim realities  
 delude  
 climb the corporate ladder 步步/一路晋升  
@@ -218,6 +219,7 @@ lingering thought
 take the below  
 
 ### The United States used to have cachet in China. Not anymore.
+
 cachet 声望，威望，标志，印章/good reputation  
 sharp words 尖锐言辞  
 bluster 威吓，咄咄逼人（但收效甚微）  
@@ -249,10 +251,12 @@ household names 家户喻晓
 once-dominated  
 take one's place/replace 代替，取代  
 
-### June 6, 2024  
+### June 6, 2024
+
 put up quite a fight  
 
-### Is China's gaokao the world's toughest school exam?  
+### Is China's gaokao the world's toughest school exam?
+
 come to a standstill 陷入停滞/安静  
 college entrance exams  
 on a par with 与...比肩/相提并论  
@@ -280,7 +284,7 @@ roundly 严厉地;尖刻地;狠狠地
 gruelling 艰辛的  
 refrain 重复的话；副歌；老生常谈的话  
 separate the wheat from the chaff 区别好坏；去芜存菁  
-antiquity 
+antiquity  
 imperial examinations/keju 科举  
 sole criterion 唯一标准  
 abolition 废除  
@@ -290,7 +294,8 @@ aspiring bureaucrats 渴望走上仕途的考生
 cotton on 明白，领悟，发现  
 gohst-deity 鬼神  
 
-### The latest threat to China? The rise of the DINks  
+### The latest threat to China? The rise of the DINks
+
 DINK: dual/double income, no kids  
 acronym 首字母缩写  
 initialism 首字母缩写（需每个字母单独发音）：BBC
@@ -330,7 +335,8 @@ mock 模拟的
 pass sth on to 传递，传给
 squander 挥霍(时间/金钱)
 
-### Baby-boomers are loaded, why are they so stingy?  
+### Baby-boomers are loaded, why are they so stingy?
+
 loaded 口语化表达，腰缠万贯，很有钱  
 stingy 小气的  
 cohort 有共同特点的一群人  
@@ -361,7 +367,8 @@ round-the-clock 全天候 medical care
 mobility 行动能力；流动性  
 dementia 精神错乱，痴呆症  
 
-### North Korea's trash rains onto South Korea 
+### North Korea's trash rains onto South Korea
+
 rain onto 像雨点般落下  
 manure 粪肥  
 cigarette butts 烟头  
@@ -378,13 +385,14 @@ powder one's nose 补妆
 emeritus professor 荣誉教授  
 clamp down 取缔，严厉打击 crack down  
 authoritarian 独裁的  
-secretive 讳莫如深的；守口如瓶的，遮遮掩掩的； 
+secretive 讳莫如深的；守口如瓶的，遮遮掩掩的；  
 fragmentary 零碎的，碎片化的  
 fodder 牛马等的饲料，引申义：素材  
 defector 叛逃者  
 strike sb down 使病倒，打击，使猝然死去；裁定法律法条非法  
 
-### Singapore's new prime minister vows to lead in our own way as Lee dynasty ends after half-century  
+### Singapore's new prime minister vows to lead in our own way as Lee dynasty ends after half-century
+
 take one's oath of office 宣誓就职  
 a succession of 一连串，一系列  
 outpost 驻外办事处；前哨基地  
@@ -403,7 +411,8 @@ steer/navigate 带领
 turbulent waters 比喻动荡的局面  
 settle for 将就，妥协;无奈接受；勉强同意  
 
-### Hey Siri! Help me get Apple out of an AI-shaped hole  
+### Hey Siri! Help me get Apple out of an AI-shaped hole
+
 bashful 害羞的，羞怯的  
 reverence 崇敬；尊敬  
 at the helm of 掌舵，执掌  
@@ -436,7 +445,8 @@ groan 痛苦呻吟声；不高兴的哼哼声，叹息声
 rue/regret 后悔  
 fire up 点燃，激起；使…激动；令…发怒
 
-### A guilty verdict for Hunter Biden weighs on a worried President Biden  
+### A guilty verdict for Hunter Biden weighs on a worried President Biden
+
 weigh on 使...心事重重；（问题、责任等）使（某人）焦虑不安，使（某人）担忧  
 tarmac 以柏油铺筑（路面）；柏油碎石地面  
 rush up 迅速移动，冲，(使)仓促行事，做事草率  
@@ -469,7 +479,8 @@ treasure trove 无主宝藏；无主珍宝
 attack line 攻击话术  
 bound/leave for 前往  
 
-### Should you buy expensive stocks?  
+### Should you buy expensive stocks?
+
 stock split 股票分割，拆股  
 backer 赞助人，股东(金融方面)
 pop the champagne/let the corks fly 开香槟  
@@ -502,14 +513,16 @@ eye-watering 惊人的（在数目方面）令人极度惊讶的
 barnstorming 激动人心的，活力四射的  
 fall into 掉入，分为(几部分)  
 
-### Donald Trump is a convicted felon  
+### Donald Trump is a convicted felon
+
 felon 重罪犯  
 felony 重罪  
 game-changer 在很大程度上改变一场比赛结果的人（或事）/改变形势（或商业领域）的产品（或事件）  
 bank on/rely on 依靠  
 exasperation 焦灼  
 
-### Who shaved $250bn from Kweichow Moutai's market value  
+### Who shaved $250bn from Kweichow Moutai's market value
+
 shave 削减，降低  
 fiery 火红的，火一般的；食物辣的 fiery baijiu 烈酒  
 translucent 半透明的  
@@ -548,7 +561,8 @@ ramp up 提高
 get sloshed /get drunk 喝醉  
 stick the knife into 严重打击  
 
-### US-Sino tensions help spawn China card game craze  
+### US-Sino tensions help spawn China card game craze
+
 spawn 催生，孕育，导致，带来，助推；产卵  
 craze 热潮  
 reliant on 依赖  
@@ -560,7 +574,8 @@ pair up 组队
 staple 主要部分  
 pastime /kill-time 消遣  
 
-### Donald Trump survives an apparent assassination attempt 
+### Donald Trump survives an apparent assassination attempt
+
 dark turn  
 duck （尤指为避免被击中而）猛低头，猛弯腰  
 detail 特遣队  
@@ -600,7 +615,8 @@ establishment 建制派
 twists and turns 一波三折，转折  
 abysmal 极坏的，糟透的  
 
-### A legendary American photograph  
+### A legendary American photograph
+
 MAGA make America great again  
 streak 条纹，条痕；blood/tear streaks his face 血痕，泪痕  
 snarl 咆哮，怒吼  
@@ -637,7 +653,8 @@ inhabit the mind of 了解...想法，进入...内心世界
 unbowing resolve 不屈的决心  
 irresolute  wavering 举棋不定的；犹豫不决的，优柔寡断的  
 
-### Why the Paris Olympics are strictly bring-your-own-AC for U.S. athletes  
+### Why the Paris Olympics are strictly bring-your-own-AC for U.S. athletes
+
 steamy bathroom 充满水汽的浴室  
 billow 烟雾涌出 smoke  
 topmost=highest 最高的  
@@ -665,7 +682,7 @@ drum 桶；（洗衣机的）缸体，滚筒
 runoff 径流  
 fretful 烦躁的;不安的  
 take the plunge （尤指经过长时间考虑后）决心行动，打定主意  
-outmatch 
+outmatch  
 fecal 粪便的
 prudently 谨慎地；精明地  
 self-preservation 自我保护  
@@ -685,9 +702,10 @@ broiled chicken/duck 烤鸡/烤鸭
 cesspit/cesspool 化粪池；令人厌恶的情形；污秽的场所  
 salute the flag vt.  
 audacity 大胆;勇气
-thermostat 恒温器，温度自动调节器； 
+thermostat 恒温器，温度自动调节器；
 
-### Joe Biden made the right choice  
+### Joe Biden made the right choice
+
 step aside/down/stand down 下台，退位  
 in the best interest of 符合...最佳利益  
 landslide victory 压倒性胜利  
@@ -710,13 +728,14 @@ excruciating 剧烈疼痛的;极痛苦的；极其乏味的；极其令人厌烦
 unforgiving 不原谅人的，不饶恕人的;无情的；（环境等）恶劣的，不利的；（衣料、衣服等）显得人胖的  
 glare 刺眼的光，炫目的光；瞪  
 stir up 激起  
-rage against 
+rage against  
 human agency 人类能动性  
 come to terms with 逐渐接受（常指所爱之人的死）  
 monumental 巨大的  
 dig sb into  
 
-### Kamala Harris lacks charisma and time  
+### Kamala Harris lacks charisma and time
+
 rule out 排除  
 brush past 径直走过，超过  
 chutzpah 厚颜无耻；胆识  
@@ -777,7 +796,7 @@ High-fructose corn syrup 高果糖玉米糖浆
 team up with  
 rapacious 贪婪的，掠夺的，强取豪夺的；~ appetite 贪欲  
 the big time: the state of being famous or successful 出名，成功  
-a boon to/for: something helpful that improves your life: [ usually singular ] 
+a boon to/for: something helpful that improves your life: [ usually singular ]  
 coveted: strongly desired by many  
 encompass：to include different types of things:
 a host of: a large number of something:  
@@ -792,10 +811,11 @@ a crime/unemployment epidemic
 adj. happening a lot and affecting many people:  
 Crime and poverty are epidemic in the city.  
 thyroid 甲状腺  
-inadvertently: in a way that is not intentional: 
+inadvertently: in a way that is not intentional:  
 concerted effort  
 
-### Black Myth: Wukong - the summer's most exciting, and most controversial, video game  
+### Black Myth: Wukong - the summer's most exciting, and most controversial, video game
+
 cause a stir 引起轰动  
 console game 主机游戏  
 action-packed  
@@ -828,7 +848,8 @@ showy
 grizzly end 游戏中失败 defeated  
 simian  
 
-### Tencent-Backed ‘Wukong' makes game history in first-day rush  
+### Tencent-Backed ‘Wukong' makes game history in first-day rush
+
 title 在游戏中,相当于game  
 rapid ascent  
 seal/secure one's place 确立地位，占据一席之地  
@@ -857,3 +878,33 @@ gameplay 游戏玩法
 signature dish/product 招牌菜/标志产品  
 cultural gems 文化瑰宝  
 embody 呈现，承载  
+
+### September 15, 2024
+
+in the early/late 10th century 十世纪初期/晚期  
+象征 symbolize 可考虑动词名词化 is a symbol of  
+展现出 exhibit, show, showcase, demonstrate  
+网民 Internet users/netizens  
+shift from A to B A转变到B  
+centrally planned economy/market-based economy 中央计划经济/市场经济  
+改革开放以来 since the introduction of reform and opening up 改革开放会一直持续，并未完成  
+人们的生产生活方式 the way people work and live  
+生产与消费 production and consumption 根据语境判断生产的用法  
+climate change 不要the 不可数  
+热门话题 hot topic/ a topic of huge interest  
+棘手问题 a tricky problem  
+老大难问题 a chronic/age-old/longstanding problem  
+相互关心的问题 an issue of mutual concern  
+指人数时 一般用the number of 不用 the amount of  
+高/中初等/学前教育 higher (tertiary)/ secondary/primary/pre-school education  
+economy 作“经济”讲，抽象概念不可数，作“经济体”讲，可数  
+循环经济 the circular economy  
+低碳经济 the low-carbon ~  
+实体/虚拟经济 the real/virtual ~  
+地摊经济 street vending/the stall economy  
+碳排放 carbon emissions （排放量）  
+出台/推出/实施/落实 introduce/implement/roll out/launch/adopt  
+emission s. 排放 pl. 排放量  
+import/export s. 进/出口 pl. 进/出口量  
+value s. 价值 pl. 价值观  
+sale s. 销售 pl. 销售额  
