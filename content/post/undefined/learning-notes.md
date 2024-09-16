@@ -879,7 +879,7 @@ signature dish/product 招牌菜/标志产品
 cultural gems 文化瑰宝  
 embody 呈现，承载  
 
-### September 15, 2024
+### September 15, 2024 XXL 汉英翻译 1.2.1 英汉语言对比之词汇
 
 in the early/late 10th century 十世纪初期/晚期  
 象征 symbolize 可考虑动词名词化 is a symbol of  
@@ -908,3 +908,57 @@ emission s. 排放 pl. 排放量
 import/export s. 进/出口 pl. 进/出口量  
 value s. 价值 pl. 价值观  
 sale s. 销售 pl. 销售额  
+
+### September 16, 2024 XXL 汉英翻译 1.2.1 英汉语言对比之句式
+
+活到老，学到老 we live and learn.
+发扬/弘扬/传承/继承 carry on/forward；keep alive
+文化传统 cultural traditions 此处可数  
+无主句的处理：使用被动句或there be
+epidemic 在某一国家内大面积爆发或多国内小面积爆发
+pandemic 在多国内大面积爆发
+伪主语的处理：
+My English is terrible/rusty 不用poor  
+I can not speak fluent English  
+不构成威胁 pose no threat to  
+中国的富强与发展不会对任何国家构成威胁  
+此处真正主语应为中国，考虑将富强与发展转变为形容词形容中国，开展后续翻译  
+A more prosperous and developed China will pose no threat to any countries.
+表达面积，动词用cover  
+某地有多少人口，此处人应译为residents  
+发展中国家 developing countries/the Global South  
+发达国家 developed countries/the Global North  
+最不发达国家 the least developed countries LDCS  
+
+### September 16, 2024 XXL 汉英翻译 1.2.1 英汉语言对比之逻辑
+
+奶嘴 pacifier  
+红绿灯 traffic lights/signals  
+北京市海淀区魏公村大街5号  
+5 Weigongcun Dajie, Haidian District, Beijing  
+historical 与历史相关的 ~ event/figure  
+historic 具有历史意义的=重大的  
+共同努力 joint efforts  
+历史遗迹 historical sites  
+追溯 date/trace back to  
+拥有 be home to/have/ there be  
+保存良好 well preserved  
+注入持久动力 inject lasting momentum for  
+对外贸易额 international trade  
+发源地 source/birth place/cradle 常用  
+中华文明 Chinese civilization 没有 the  
+逻辑关系的区分：主从关系-根据原文判断逻辑；确定“事实”与“评价”的关系（facts客观存在，常见形式有数字呈现；opinions对客观存在的主观看法-隐性因果关系）;存在并列关系，切勿硬凹因果关系，使用and等连接意群即可  
+人口最多的 most populous  
+消费市场 consumer market
+1.4 billion population 错误用法，population集体名词，前面不加具体数量，应为~ people或a popular of 1.4 billion  
+主产区 a primary producer of  
+灵活运用producer/consumer 生产/消费国/地区等  
+烟叶 tobacco leaves  
+还有很长的路要走/任重而道远 Much work remains to be done  
+小康社会 a well-off society/a moderately prosperous society  
+增加就业/提供更多的就业机会 provide more job opportunities/create (more) jobs  
+骄傲所在 a source of pride (for)  
+中华民族 the Chinese nation  
+故宫 the Forbidden City  
+是（了解）……的窗口 a window on/into  
+中国大陆 (on) the Chinese mainland（地理性）；(in) mainland China 政治性  
