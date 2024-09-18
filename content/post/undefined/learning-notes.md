@@ -962,3 +962,83 @@ historic 具有历史意义的=重大的
 故宫 the Forbidden City  
 是（了解）……的窗口 a window on/into  
 中国大陆 (on) the Chinese mainland（地理性）；(in) mainland China 政治性  
+
+### September 18, 2024 XXL 汉英翻译 1.3.1 直译（上）
+
+注意固定英文表达中的定冠词  
+垃圾分类 waste sorting  
+淡水 fresh water  
+补短板 strengthen areas of weakness  
+低碳经济 the ~  
+国际社会 the international community  
+全球变暖 global warming  
+自贸区 free trade zones/areas FTA  
+生活水平 living standards  
+非政府组织 non-governmental organizations  
+双刃剑 a double-edged sword  
+central bank governor 央行行长  
+governor 州长，省长  
+改革开放 reform and opening up 无需大写，无定冠词the  
+高素质人才 highly skilled professionals 不用high-quality形容人，用于形容物品居多  
+大学教育即高等教育 higher education  
+和平稳定 peace and stability  
+前提 the prerequisite/precondition for/of  
+中小企业 small- and medium-sized enterprises SME 英文先小后大的表达习惯  
+融资 accessing capital/financing  
+country vs. economy 政治与经济概念区别 economy 可大可小，大至国家，小至地区等  
+
+### September 18, 2024 XXL 汉英翻译 1.3.2 直译（下）
+
+直译场景1：汉语句子结构和表达方式与英语相同或差异较小，可直译  
+房价 housing/house prices  
+恢复对香港行使主权 resume sovereignty over Hong Kong  
+直译场景2：为体现原文特色；往往需补充说明，直译与意译结合  
+如：  
+纸老虎 paper tiger  
+高考 Gaokao, or National College Entrance Examination  
+俗语等  
+中文习惯语意重复进行强调，翻译英文时保留一处即可。  
+如：和国际社会一道，通力合作，携手...，共同... 统一处理成 work together即可  
+
+### September 18, 2024 XXL 汉英翻译 1.3.3 意译
+
+常用于中国特色概念处理  
+戏精 drama queen  
+五湖四海 from every part/corner of the country/world  
+鱼米之乡 a land of milk of honey/abundance  
+……之乡 a land of...  
+玻璃心 be oversensitive to criticism  
+望子成龙 have high ambitions for the children  
+三个和尚没水喝 Everybody's business is nobody's business.  
+一剂良方 a good solution to  
+西部大开发 Go West (strategy)  
+
+### September 18, 2024 XXL 汉英翻译 1.3.4 策略选择
+能直译则直译，不能再意译；直译为主，意义为辅  
+贸易保护主义有所抬头  
+Trade protectionism is raising its (ugly) head/on the rise.  
+
+### September 18, 2024 XXL 汉英翻译 1.4.1 语义标准
+
+1. 理解正确  
+例：中国的经济增长速度已经放缓。
+China has slowed its pace of economic development. 过于主观陈述
+The Chinese economy has slowed down.  
+客观陈述的内容，主语转换可能导致内容变成主观能动性的表达。  
+例：30%的毕业生已与单位签约。（即已找到工作）  
+
+2. 表达完整  
+互联网 the internet  
+
+### September 18, 2024 XXL 汉英翻译 1.4.2 语法标准
+所有朝代前都应加the，如the Ming Dynasty  
+抵御 defend against  
+外敌侵扰 foreign invasion  
+1. 首字母缩写以单词形式发音，不使用the；反之，需使用the  
+如：UNESCO; the UN  
+2. 单个山峰/海岛等前不加the；群山组成的山脉或众多岛屿组成群岛，前面需加the  
+如：Mount Everest，Taishan Mountain；  
+the Penghu Islands 澎湖列岛  
+3. 大学名称前往往不加the，包括其首字母缩略词Peking University  
+4. 若大学首个单词为university，则需加the
+the University of Toronto  
