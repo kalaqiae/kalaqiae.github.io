@@ -1014,6 +1014,7 @@ country vs. economy 政治与经济概念区别 economy 可大可小，大至国
 西部大开发 Go West (strategy)  
 
 ### September 18, 2024 XXL 汉英翻译 1.3.4 策略选择
+
 能直译则直译，不能再意译；直译为主，意义为辅  
 贸易保护主义有所抬头  
 Trade protectionism is raising its (ugly) head/on the rise.  
@@ -1031,9 +1032,11 @@ The Chinese economy has slowed down.
 互联网 the internet  
 
 ### September 18, 2024 XXL 汉英翻译 1.4.2 语法标准
+
 所有朝代前都应加the，如the Ming Dynasty  
 抵御 defend against  
 外敌侵扰 foreign invasion  
+
 1. 首字母缩写以单词形式发音，不使用the；反之，需使用the  
 如：UNESCO; the UN  
 2. 单个山峰/海岛等前不加the；群山组成的山脉或众多岛屿组成群岛，前面需加the  
@@ -1042,3 +1045,51 @@ the Penghu Islands 澎湖列岛
 3. 大学名称前往往不加the，包括其首字母缩略词Peking University  
 4. 若大学首个单词为university，则需加the
 the University of Toronto  
+
+### September 19, 2024 XXL 汉英翻译 1.4.3 句法标准
+
+放之四海而皆准 universally applicable  
+共享单车 bike-sharing  
+出行方式 method of transportation  
+加入世贸组织 entry into the WTO/join the WTO  
+保持强劲增长势头 maintain strong momentum  
+历史的十字路口 at a crossroads of history  
+小词活用  
+
+### September 19, 2024 XXL 汉英翻译 2.1.1 语境概念
+
+### September 19, 2024 XXL 汉英翻译 2.1.2/3 文本语境 上/下
+
+英译汉时，丰富中文表达，为汉译英提供支撑  
+the best opportunity 机不可失失不再来；大好时机；过这村没这店  
+heavy smoker 烟鬼  
+heavy traffic 拥挤的交通  
+heavy crops 丰收  
+搞特殊化 seek privileges  
+搞建设 promote development  
+搞小动作 play tricks  
+中文里同个词语在不同语境中所表达的含义不同，理解其本质义的基础上做汉译英，而非固化中文词汇的英文表达。  
+有名的 褒义：well-known/renowned  
+贬义：infamous/notorious  
+温柔以待 be treated with kindness  
+农民工 rural workers  
+愿 hope/stand ready to  
+中国愿为……  
+维和行动 peacekeeping operations  
+科学发展 balanced and sustainable development  
+化解社会矛盾 to solve social problems  
+方便价廉的公共卫生服务 accessible and affordable public health services  
+鼓励社会资本投入教育 private investment (in) 社会，即与政府相对的概念  
+大家都在抢盐 there is a rush on salt.  
+好汉做事好汉当 A true man has the courage to accept the consequences of his own actions.  
+物有所值的 deliver value for money  
+
+### September 19, 2024 XXL 汉英翻译 2.1.4 文化语境
+
+新中国 the PRC；the 1950s  
+山东省  Shandong Province (in East China) 补充说明，便于读者理解  
+宋代 the Song Dynasty (960-1279 补充时间)  
+家里排行老三 the third oldest child
+茶博士 waiter  
+天生我才必有用 Heaven has endowed me with talents for eventual use.  
+
