@@ -1093,3 +1093,79 @@ heavy crops 丰收
 茶博士 waiter  
 天生我才必有用 Heaven has endowed me with talents for eventual use.  
 
+### September 20, 2024 XXL 汉英翻译 2.2.1/2 背景知识 上/下
+
+政治：  
+以人为本 put people first/people-centered  
+人类命运共同体 a community of shared future for mankind  
+利益共同体 a community of shared interests  
+综合国力 (comprehensive) national strength/power  
+求同存异 seek common ground while shelving differences  
+对外援助 foreign aid 不可数  
+无偿援助 grants  
+低息贷款 concessional loans  
+无息贷款 interest free loans  
+和平发展道路 the path of peaceful development  
+互利共赢的开放战略 the win-win strategy of opening up 互利与共赢是重复语义 无需mutual benefits  
+符合中国国庆的发展模式 a development mode that works in China  
+中华民族伟大复兴的中国梦 the Chinese dream of national rejuvenation  
+一带一路 the Belt and Road Initiative  
+三股势力 terrorism, separatism, extremism  
+联合国宪章的宗旨和原则 the purposes and principles of the UN Charter  
+和则两利，斗则双输 to stand to gain from cooperation and lose from confrontation（此处不用conflict，conflict程度更深，几乎要交战的程度）  
+stand to 有可能  
+经济：  
+第一产业 the primary industry (agriculture etc.)  
+第二产业 the secondary ~ (manufacturing, mining etc.)  
+第三产业 the tertiary ~ (services, retails)  
+类比中国初中高等教育记忆  
+经济作物 cash crops  
+粮食作物 food crops  
+市场规模 market size  
+自主创新 indigenous innovation  
+去产能 cut excess capacity  
+大宗商品价格 commodity prices  
+经济结构调整 economic restructuring  
+汇率市场化 market-based exchange rates  
+多边贸易体制 the multilateral trading system  
+释放消费潜力 unleash/unlock consumption potential  
+走出去战略 the Go Global strategy 引进来 Bring In  
+平均关税水平 the average tariff level  
+战略新兴产业 strategic emerging industries  
+社会话题  
+粮食安全：一个国家或地区的粮食供应足够，能满足本国或本地区粮食需求 food security  
+食品安全：化学剂添加等，是否对人体健康造成损失 food safety  
+人民的福祉 the wellbeing of the people  
+人口老龄化 population aging  
+控烟 tobacco control  
+中医药 traditional Chinese medicine  
+脱贫 lift... out of poverty/escape poverty  
+人权 human rights 复数   
+发展权 the right to development  
+生存权 the right to subsistence  
+……权 the right to  
+能源  
+非/可再生能源 non-renewable energy/renewable ~  
+稀土 rare earths 复数 土壤元素  
+节能灯 energy-efficient lights  
+资源禀赋 resource endowment  
+能源安全 energy security  
+非化石能源 non-fossil fuels  
+燃煤发电厂 coal-fired plants  
+一次能源消费 primary energy consumption  
+环保  
+生态文明建设 make ecological progress/ecological preservation 第二个现在更长久  
+单位国内生产总值能耗 energy consumption per unit of GDP/energy intensity  
+单位国内生产总值二氧化碳排放 carbon dioxide emissions per unit of GDP/carbon dioxide intensity of GDP  
+
+### September 20, 2024 XXL 汉英翻译 2.2.3 修辞格
+
+中文修辞格（英汉翻译时，使用四字结构）但进行汉英翻译时，应理解其内涵翻译  
+惊天动地的变化 remarkable/impressive changes  
+四周群山耸峙 surrounded by mountains  
+大自然鬼斧神工的杰作 formed by nature/natural wonder  
+我们将进一步提升中国护照的含金量 we will make it easier to travel with a Chinese passport.  
+中美两国携手合作，可以产生一加一大于二的力量。Working together, China and the United States can make a greater impact than working individually.  
+中美双方应八仙过海，各显神通，推动合作。China and the United States should leverage their strengths to boost cooperation.  
+leverage/harness  
+strengths 优势 可数  
