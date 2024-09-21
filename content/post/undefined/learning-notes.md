@@ -887,7 +887,7 @@ in the early/late 10th century 十世纪初期/晚期
 网民 Internet users/netizens  
 shift from A to B A转变到B  
 centrally planned economy/market-based economy 中央计划经济/市场经济  
-改革开放以来 since the introduction of reform and opening up 改革开放会一直持续，并未完成  
+改革开放以来 since the introduction/start/launch of reform and opening up 改革开放会一直持续，并未完成  
 人们的生产生活方式 the way people work and live  
 生产与消费 production and consumption 根据语境判断生产的用法  
 climate change 不要the 不可数  
@@ -903,7 +903,7 @@ economy 作“经济”讲，抽象概念不可数，作“经济体”讲，可
 实体/虚拟经济 the real/virtual ~  
 地摊经济 street vending/the stall economy  
 碳排放 carbon emissions （排放量）  
-出台/推出/实施/落实 introduce/implement/roll out/launch/adopt  
+**出台/推出/实施/落实 introduce/implement/roll out/launch/adopt**  
 emission s. 排放 pl. 排放量  
 import/export s. 进/出口 pl. 进/出口量  
 value s. 价值 pl. 价值观  
@@ -945,12 +945,12 @@ historic 具有历史意义的=重大的
 保存良好 well preserved  
 注入持久动力 inject lasting momentum for  
 对外贸易额 international trade  
-发源地 source/birth place/cradle 常用  
+发源地 source/birth place/**cradle** 常用  
 中华文明 Chinese civilization 没有 the  
 逻辑关系的区分：主从关系-根据原文判断逻辑；确定“事实”与“评价”的关系（facts客观存在，常见形式有数字呈现；opinions对客观存在的主观看法-隐性因果关系）;存在并列关系，切勿硬凹因果关系，使用and等连接意群即可  
 人口最多的 most populous  
 消费市场 consumer market
-1.4 billion population 错误用法，population集体名词，前面不加具体数量，应为~ people或a popular of 1.4 billion  
+1.4 billion population 是错误用法，population集体名词，前面不加具体数量，应为~ people或a population of 1.4 billion  
 主产区 a primary producer of  
 灵活运用producer/consumer 生产/消费国/地区等  
 烟叶 tobacco leaves  
@@ -960,7 +960,7 @@ historic 具有历史意义的=重大的
 骄傲所在 a source of pride (for)  
 中华民族 the Chinese nation  
 故宫 the Forbidden City  
-是（了解）……的窗口 a window on/into  
+是（了解）……的窗口 a window **on/into**  
 中国大陆 (on) the Chinese mainland（地理性）；(in) mainland China 政治性  
 
 ### September 18, 2024 XXL 汉英翻译 1.3.1 直译（上）
@@ -969,7 +969,7 @@ historic 具有历史意义的=重大的
 垃圾分类 waste sorting  
 淡水 fresh water  
 补短板 strengthen areas of weakness  
-低碳经济 the ~  
+低碳经济 the low-carbon economy  
 国际社会 the international community  
 全球变暖 global warming  
 自贸区 free trade zones/areas FTA  
@@ -983,7 +983,7 @@ governor 州长，省长
 大学教育即高等教育 higher education  
 和平稳定 peace and stability  
 前提 the prerequisite/precondition for/of  
-中小企业 small- and medium-sized enterprises SME 英文先小后大的表达习惯  
+中小企业 small**-** and medium**-sized** enterprises SME 英文先小后大的表达习惯  
 融资 accessing capital/financing  
 country vs. economy 政治与经济概念区别 economy 可大可小，大至国家，小至地区等  
 
@@ -1002,12 +1002,12 @@ country vs. economy 政治与经济概念区别 economy 可大可小，大至国
 
 ### September 18, 2024 XXL 汉英翻译 1.3.3 意译
 
-常用于中国特色概念处理  
+意译常用于中国特色概念处理  
 戏精 drama queen  
 五湖四海 from every part/corner of the country/world  
 鱼米之乡 a land of milk of honey/abundance  
 ……之乡 a land of...  
-玻璃心 be oversensitive to criticism  
+玻璃心 be oversensitive to criticism/play the victim（视语境使用）  
 望子成龙 have high ambitions for the children  
 三个和尚没水喝 Everybody's business is nobody's business.  
 一剂良方 a good solution to  
@@ -1015,7 +1015,7 @@ country vs. economy 政治与经济概念区别 economy 可大可小，大至国
 
 ### September 18, 2024 XXL 汉英翻译 1.3.4 策略选择
 
-能直译则直译，不能再意译；直译为主，意义为辅  
+能直译则直译，不能再意译；直译为主，意译为辅  
 贸易保护主义有所抬头  
 Trade protectionism is raising its (ugly) head/on the rise.  
 
@@ -1029,7 +1029,7 @@ The Chinese economy has slowed down.
 例：30%的毕业生已与单位签约。（即已找到工作）  
 
 2. 表达完整  
-互联网 the internet  
+互联网 the Internet  
 
 ### September 18, 2024 XXL 汉英翻译 1.4.2 语法标准
 
@@ -1053,7 +1053,7 @@ the University of Toronto
 出行方式 method of transportation  
 加入世贸组织 entry into the WTO/join the WTO  
 保持强劲增长势头 maintain strong momentum  
-历史的十字路口 at a crossroads of history  
+历史的十字路口 at a crossroad**s** of history  
 小词活用  
 
 ### September 19, 2024 XXL 汉英翻译 2.1.1 语境概念
@@ -1095,7 +1095,7 @@ heavy crops 丰收
 
 ### September 20, 2024 XXL 汉英翻译 2.2.1/2 背景知识 上/下
 
-政治：  
+1. 政治：  
 以人为本 put people first/people-centered  
 人类命运共同体 a community of shared future for mankind  
 利益共同体 a community of shared interests  
@@ -1107,14 +1107,14 @@ heavy crops 丰收
 无息贷款 interest free loans  
 和平发展道路 the path of peaceful development  
 互利共赢的开放战略 the win-win strategy of opening up 互利与共赢是重复语义 无需mutual benefits  
-符合中国国庆的发展模式 a development mode that works in China  
+符合中国国情的发展模式 a development mode that works in China  
 中华民族伟大复兴的中国梦 the Chinese dream of national rejuvenation  
 一带一路 the Belt and Road Initiative  
 三股势力 terrorism, separatism, extremism  
 联合国宪章的宗旨和原则 the purposes and principles of the UN Charter  
-和则两利，斗则双输 to stand to gain from cooperation and lose from confrontation（此处不用conflict，conflict程度更深，几乎要交战的程度）  
+和则两利，斗则双输 to stand to gain from cooperation and lose from confrontation（此处不用conflict，conflict程度更深，可能要交战的程度）  
 stand to 有可能  
-经济：  
+2. 经济：  
 第一产业 the primary industry (agriculture etc.)  
 第二产业 the secondary ~ (manufacturing, mining etc.)  
 第三产业 the tertiary ~ (services, retails)  
@@ -1132,19 +1132,19 @@ stand to 有可能
 走出去战略 the Go Global strategy 引进来 Bring In  
 平均关税水平 the average tariff level  
 战略新兴产业 strategic emerging industries  
-社会话题  
+3. 社会话题  
 粮食安全：一个国家或地区的粮食供应足够，能满足本国或本地区粮食需求 food security  
-食品安全：化学剂添加等，是否对人体健康造成损失 food safety  
+食品安全：化学剂添加等，是否对人体健康造成损害 food safety  
 人民的福祉 the wellbeing of the people  
 人口老龄化 population aging  
 控烟 tobacco control  
 中医药 traditional Chinese medicine  
 脱贫 lift... out of poverty/escape poverty  
-人权 human rights 复数   
+人权 human rights 复数  
 发展权 the right to development  
 生存权 the right to subsistence  
 ……权 the right to  
-能源  
+4. 能源  
 非/可再生能源 non-renewable energy/renewable ~  
 稀土 rare earths 复数 土壤元素  
 节能灯 energy-efficient lights  
@@ -1153,14 +1153,14 @@ stand to 有可能
 非化石能源 non-fossil fuels  
 燃煤发电厂 coal-fired plants  
 一次能源消费 primary energy consumption  
-环保  
-生态文明建设 make ecological progress/ecological preservation 第二个现在更长久  
+5. 环保  
+生态文明建设 make ecological progress/ecological preservation 第二个现在更常见  
 单位国内生产总值能耗 energy consumption per unit of GDP/energy intensity  
 单位国内生产总值二氧化碳排放 carbon dioxide emissions per unit of GDP/carbon dioxide intensity of GDP  
 
 ### September 20, 2024 XXL 汉英翻译 2.2.3 修辞格
 
-中文修辞格（英汉翻译时，使用四字结构）但进行汉英翻译时，应理解其内涵翻译  
+中文修辞格（英汉翻译时，考虑使用四字结构）但进行汉英翻译时，应理解其内涵翻译  
 惊天动地的变化 remarkable/impressive changes  
 四周群山耸峙 surrounded by mountains  
 大自然鬼斧神工的杰作 formed by nature/natural wonder  
@@ -1169,3 +1169,83 @@ stand to 有可能
 中美双方应八仙过海，各显神通，推动合作。China and the United States should leverage their strengths to boost cooperation.  
 leverage/harness  
 strengths 优势 可数  
+
+### September 21, 2024 XXL 汉英翻译 3.1.1/2/3 翻译减法之语义重复/范畴词/冗余修饰
+
+1. 语义重复（中文惯用重复表示强调，英译汉是时可考虑）  
+**词汇层面**
+* 名词  
+城市的规划布局 urban planning  
+经过深思熟虑 after much thought  
+人类的前途命运 the future/fate/destiny of humanity/humankind/human beings  
+推动国家的发展进步 promote national development/progress  
+* 动词  
+加强和改进立法 improve legislation  
+优化升级产业结构 optimize/upgrade/modernize **the** industrial structure  
+* 形容词  
+崎岖不平的道路 a bumpy road  
+取之不尽用之不竭的资源 inexhaustible resources  
+这是通向富裕和繁荣的唯一出路。This is the only way/path/pathway to/towards prosperity.  
+双边关系将继续发展壮大。Bilateral relations will continue to grow/strengthen/develop/expand.  
+我们要为这些地区制定正确的发展和建设规划。We need to make **sound** development plans for these regions.  
+be environmentally sound 环保的  
+sound policy/advice 合理政策/建议  
+中国有针对性地加强和改善宏观调控。China has taken targeted measures to strengthen **macroeconomic control**.  
+精准脱贫 targeted poverty reduction  
+中国已经制定和实施了《应对气候变化国家方案》。China has adopted **the** National Climate Change Program. 此处制定无需翻译，因实施前必定得先制定，实施语义有所包含。  
+中华民族从未放弃对美好梦想的向往和追求。**The Chinese nation** has never abandoned its pursuit of beautiful dreams.  
+"民族”  
+the Han ethnic group/people; the Miao ~. 少数民族名字翻译时不要使用minority，体现民族平等。说明中国有多少少数民族时可用，或单独讲某个民族是少数民族时。  
+少数民族 ethnic minority  
+非物质文化遗憾**在当代****仍然散发着**独特的光彩和魅力，是文化创新的基础和源泉。  
+**In modern times**, intangible culcural heritage **retains** its charm and is a source of cultural innovation.  
+**分局层面**  
+聚精会神搞建设，一心一意谋发展。focus/concentrate on development.  
+我们国家的经济底子薄，基础差。 The economic foundation of our country is weak.  
+台湾海峡两岸的中国人都是骨肉同胞，手足兄弟。 The Chinese **on** both sides of **the** Taiwan Strait **are of the same flesh and blood**.  
+优势互补，相互促进/相辅相成 mutually reinforcing  
+众说纷纭，莫衷一是 have different views on/be divided on/disagree on  
+2. 范畴词  
+一般是名词，对前面的名词进行概况/定性。表示行为/现象/属性等。常见都有“工作/方面/方式/态度/局面/情况/问题等。可省略不翻译。  
+* 名词性范畴词  
+计划工作中的严重错误 a big mistake in planning  
+促进和平统一大业 to promote peaceful **re**unification  
+经济领域的改革 economic reform  
+密切合作的关系 close cooperation  
+看到 at the sight of  
+想到了他的童年 recalled his childhood  
+长足发展 make sustained progress  
+* 动词+名词范畴词  
+采用改革的方法 through reform  
+秉持着谦虚的态度 be modest  
+我们必须采取知之为知之，不知为不知的态度。We must admit what we do and do not know.  
+结构调整 structural adjustment  
+3. 多余修饰  
+* 多余的形容词  
+非常罕见 rare  
+过去的往事 the past  
+过高的奢望/想得美 wishful thinking  
+无数莘莘学子 many students  
+珍贵的国家宝藏 a national treasure  
+获得ISO9001质量标准认证的企业 the ISO9001-certified faucet manufacturer  
+* 多余副词  
+积极促进世界多极化 boost global multi-polarity  
+弘扬开拓进取的精神 keep alive the spirit of enterprise  
+南北差距进一步扩大 the South-North gap is widening  
+务实合作 result-oriented/practical cooperation  
+能源结构 energy mix  
+经济的 affordable 要具体领会语境含义，不要机械反应为economic/economical  
+进一步可不翻译，或翻译成continue to  
+资源配置 resource allocation 不用复数  
+始终不渝 remain committed to  
+
+### September 21, 2024 XXL 汉英翻译 3.2.1/2 翻译加法之结构性词语/逻辑衔接词  
+1. 结构性词语  
+2. 逻辑衔接词  
+付出沉重代价 pay **an** enormous price  
+集中供暖 central heating  
+呼声越来越高 there are stronger calls for  
+摆脱……的依赖 move beyond sb's reliance on sth.  
+劳动密集型的 labor-intensive  
+科技含量低的 low-technology/tech  
+investment in 单数  
