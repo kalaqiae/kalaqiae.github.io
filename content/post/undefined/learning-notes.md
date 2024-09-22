@@ -911,13 +911,13 @@ sale s. 销售 pl. 销售额
 
 ### September 16, 2024 XXL 汉英翻译 1.2.1 英汉语言对比之句式
 
-活到老，学到老 we live and learn.
-发扬/弘扬/传承/继承 carry on/forward；keep alive
+活到老，学到老 we live and learn.  
+发扬/弘扬/传承/继承 carry on/forward；keep alive  
 文化传统 cultural traditions 此处可数  
-无主句的处理：使用被动句或there be
-epidemic 在某一国家内大面积爆发或多国内小面积爆发
-pandemic 在多国内大面积爆发
-伪主语的处理：
+无主句的处理：使用被动句或there be  
+epidemic 在某一国家内大面积爆发或多国内小面积爆发  
+pandemic 在多国内大面积爆发  
+伪主语的处理：  
 My English is terrible/rusty 不用poor  
 I can not speak fluent English  
 不构成威胁 pose no threat to  
@@ -1240,6 +1240,7 @@ the Han ethnic group/people; the Miao ~. 少数民族名字翻译时不要使用
 始终不渝 remain committed to  
 
 ### September 21, 2024 XXL 汉英翻译 3.2.1/2 翻译加法之结构性词语/逻辑衔接词  
+
 1. 结构性词语  
 2. 逻辑衔接词  
 付出沉重代价 pay **an** enormous price  
@@ -1249,3 +1250,147 @@ the Han ethnic group/people; the Miao ~. 少数民族名字翻译时不要使用
 劳动密集型的 labor-intensive  
 科技含量低的 low-technology/tech  
 investment in 单数  
+
+### September 22, 2024 XXL 汉英翻译 4.1.1 增减  
+
+1. 数字表达  
+* 增减  
+increase/drop by (幅度) to (结果)  
+增加：increase/grow/rise/go up  
+飙升：skyrocket/surge/jump/shoot up
+减少：decrease/drop/fall/go down/reduce/decline  
+暴跌：plunge/plummet/nosedive/slump  
+人均预期寿命 average life expectancy  
+**可使用比较级表达增减，higher than...**  
+第一产业增加值达到20744亿元，增长6.3%。  
+The added value of the primary industry was 2.07 trillion, up by 6.3 percent.  
+**up/down by**  
+达到 increase to/amount to/reach/hit  
+贸易顺/逆差 trade surplus/deficit (in)  
+产品与服务 goods and services (贸易中使用goods表达产品，不用products)  
+直接投资 foreign direct investment FDI  
+达到历史最高水平 at **an** all-time high/**a** record high  
+* 占比
+同比：2024年9月与2023年9月比
+环比：2024年9月与2024年8月比
+今年第二季度，谷歌的收入**同比**增速已经下滑到了3%。  
+Revenue growth in Google dropped to 3% year on year in the second quarter.  
+九月份房地产价格**环比**下降了0.1%。  
+Real estate prices declined by 0.1 percent in September compared with August.  
+英译汉时，翻译选择。  
+上/下半年 in the first/second half of the year/或具体年份 2024  
+占比：account for/represent/make up/contribute  
+比重 proportion/share  
+* ……率  
+城镇化率 urbanization rate/即城市人口占全国人口的比率  
+死亡率 death/mortality rate  
+出生率 birth rate  
+贡献率，可理解成占比  
+超过50% more than half  
+服务业 **the** service industry  
+参保率 即
+各种率，如不知道其惯用表达，可在理解基础上将含义解释出来翻译即可。  
+基本养老保险 the basic old-age insurance  
+* 排名  
+the 序数词+名词  
+rank + 序数词 + in sth/in terms of sth **此处序数词前面无the**  
+中国是世界上最大的FDI吸收国。  
+China is the world's largest recipient/destination of foreign direct investment.  
+China now ranks first in attracting/receiving ~.  
+中国时世界上第二大经济体，仅次于美国，位列日本之前。  
+China is the second largest economy in the world, behind the US and ahead of/ in front of Japan.  
+持平 be equal/equivalent to  
+* 倍数  
+增加一倍/翻番 to double  
+增加两倍/三倍于 to triple/to increase three-fold  
+增加三倍/四倍于 to quadruple/to increase four-fold  
+onefold/twofold/threefold=multiplied by 1/2/3  
+
+### September 22, 2024 XXL 汉英翻译 4.2.2 并列/总分/三步走  
+
+* 并列：句子较长，有并列关系，可合理断句  
+在……时代之下 in the age of  
+日益增长的 ever-increasing  
+对抗只会双输，战争没有出路。  
+Confrontations produces no winners, and war gets us nowhere.  
+日益紧密的利益共同体 an increasingly closer community of common interests  
+* 总分/分总
+消除贫困 end/eliminate/eradicate poverty  
+第一要务 give top priority to  
+社会事业 social programs  
+综合国力 national power in all terms  
+经济实力 economic strength  
+全面 across the board  
+温饱不足 live at subsistence level  
+活力 vigor  
+* 三步走  
+原则+行动+目标/结果  
+……将坚持/秉持/按照/根据……的精神/理念/原则  
+做A，做B，做C，做D……  
+从而/为了/以此/实现了/取得了/搭建了……  
+国际秩序 **the** international order  
+公平合理 fair and equitable  
+和平自主的外交政策 an independent foreign policy of peace  
+基本国策 the basic state policy  
+互动 exchange/interaction  
+推动 push forward/promote  
+反对 oppose/stand against  
+各种形式的 in all forms  
+推动朝着……方向发展 push...towards  
+
+### September 22, 2024 XXL 汉英翻译 4.3.1/2 企业篇/地区篇/标点符号  
+企业篇  
+总部位于 headquartered in  
+拥有……员工 (the company) employs  
+2024财年 in fiscal 2024  
+开展业务 be present in/operate in  
+业务板块 business segments  
+主要业务 main business/main lines of business  
+fixed-line services 固话服务  
+broadband 宽带  
+上市的 listed/public  
+上市 listed **on**  
+上市公司 publicly-traded/listed company  
+上市 go public/be listed  
+交易代码 under the symbol/stock code  
+市值 market value/market capitalization/market cap  
+（公司）年收入 annual revenue  
+利润额 profits  
+销售额 sales  
+福祉 wellbeing  
+财富全球500强 Fortune Global 500  
+世界500强 the world's top 500 companies  
+回馈社会 give back to the communities  
+年销售额达到 generate an annual sales of  
+签约金额即合同金额 contract sales  
+院士 academician  
+某领域最具实力的公司 the strongest play in  
+翻译几十年 记得使用decades  
+
+地区篇  
+紧邻/接壤 border  
+上海西北紧邻江苏 Shanghai borders Jiangsu to the north and west  
+位于上/中/下游 in the upper/middle/lower reaches of  
+杭州辖9区…… Hangzhou has/comprises 9 districts...  
+上海为湿润的亚热带气候，四季分明。  
+Shanghai has a **humid** **subtropical** climate and four **distinct** seasons.  
+杭州和世界上多个大城市缔结了姊妹城市关系。  
+Hangzhou **is twinned with** many big cities in the world.  
+姊妹/友好城市 sister cities  
+经济大省 an economically leading province/an economic powerhouse/engine  
+企业在某地区落户 take root/establish presence  
+实现更高层次的互利和共赢 achieve greater win-win results  
+少数民族比例最高 the highest concentration of ethnic minorities  
+……主产区 a primary -producing region (grain-producing)  
+粮仓 Breadbasket  
+维基百科/企业官网学习地区/企业简介表达  
+
+中英标点符号  
+英文没有书名号，一般用斜体或者**实词大写法**  
+英文慎用感叹号。中文是感叹号，翻译成英文一般不用，除非情感很重。  
+陈述性直接引语的结尾应加逗号。"The biggest threat now is complacency**,**" said WHO...  
+直接引用的内容加引号，间接引用不加。He asked, "When will you be arriving?"  
+完整引句的首单词首字母要大写 "How..."  
+部分引语的首字母无需大写 “way too busy”  
+英文标点学习资源  
+The Writing Lab & The OWL at Purdue  
