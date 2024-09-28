@@ -881,13 +881,13 @@ embody 呈现，承载
 
 ### September 15, 2024 XXL 汉英翻译 1.2.1 英汉语言对比之词汇
 
-in the early/late 10th century 十世纪初期/晚期  
+in the early/late/mid 10th century 十世纪初期/晚期/中期  
 象征 symbolize 可考虑动词名词化 is a symbol of  
 展现出 exhibit, show, showcase, demonstrate  
 网民 Internet users/netizens  
-shift from A to B A转变到B  
-centrally planned economy/market-based economy 中央计划经济/市场经济  
-改革开放以来 since the introduction/start/launch of reform and opening up 改革开放会一直持续，并未完成  
+A转变到B shift from A to B  
+中央计划经济/市场经济 centrally planned economy/market-based economy  
+改革开放以来 since the **initiation/introduction/start/launch** of reform and opening up 改革开放会一直持续，并未完成  
 人们的生产生活方式 the way people work and live  
 生产与消费 production and consumption 根据语境判断生产的用法  
 climate change 不要the 不可数  
@@ -914,7 +914,7 @@ sale s. 销售 pl. 销售额
 活到老，学到老 we live and learn.  
 发扬/弘扬/传承/继承 carry on/forward；keep alive  
 文化传统 cultural traditions 此处可数  
-无主句的处理：使用被动句或there be  
+**无主句的处理：使用被动句或there be**  
 epidemic 在某一国家内大面积爆发或多国内小面积爆发  
 pandemic 在多国内大面积爆发  
 伪主语的处理：  
@@ -922,10 +922,10 @@ My English is terrible/rusty 不用poor
 I can not speak fluent English  
 不构成威胁 pose no threat to  
 中国的富强与发展不会对任何国家构成威胁  
-此处真正主语应为中国，考虑将富强与发展转变为形容词形容中国，开展后续翻译  
-A more prosperous and developed China will pose no threat to any countries.
+此处真正主语应为中国，考虑将富强与发展转变为形容词形容中国，开展后续翻译；考虑富强与发展的动态性，选择用比较级  
+A more **prosperous and developed** China will pose no threat to any countries.
 表达面积，动词用cover  
-某地有多少人口，此处人应译为residents  
+某地有多少人口，此处人应译为**residents**  
 发展中国家 developing countries/the Global South  
 发达国家 developed countries/the Global North  
 最不发达国家 the least developed countries LDCS  
@@ -976,8 +976,8 @@ historic 具有历史意义的=重大的
 生活水平 living standards  
 非政府组织 non-governmental organizations  
 双刃剑 a double-edged sword  
-central bank governor 央行行长  
-governor 州长，省长  
+央行行长 central bank governor  
+州长，省长 governor  
 改革开放 reform and opening up 无需大写，无定冠词the  
 高素质人才 highly skilled professionals 不用high-quality形容人，用于形容物品居多  
 大学教育即高等教育 higher education  
@@ -1005,7 +1005,7 @@ country vs. economy 政治与经济概念区别 economy 可大可小，大至国
 意译常用于中国特色概念处理  
 戏精 drama queen  
 五湖四海 from every part/corner of the country/world  
-鱼米之乡 a land of milk of honey/abundance  
+鱼米之乡 a land of milk and honey/abundance  
 ……之乡 a land of...  
 玻璃心 be oversensitive to criticism/play the victim（视语境使用）  
 望子成龙 have high ambitions for the children  
@@ -1195,9 +1195,9 @@ sound policy/advice 合理政策/建议
 中国已经制定和实施了《应对气候变化国家方案》。China has adopted **the** National Climate Change Program. 此处制定无需翻译，因实施前必定得先制定，实施语义有所包含。  
 中华民族从未放弃对美好梦想的向往和追求。**The Chinese nation** has never abandoned its pursuit of beautiful dreams.  
 "民族”  
-the Han ethnic group/people; the Miao ~. 少数民族名字翻译时不要使用minority，体现民族平等。说明中国有多少少数民族时可用，或单独讲某个民族是少数民族时。  
+**the** Han ethnic group/people; the Miao ~. 少数民族名字翻译时不要使用minority，体现民族平等。说明中国有多少少数民族时可用，或单独讲某个民族是少数民族时。  
 少数民族 ethnic minority  
-非物质文化遗憾**在当代****仍然散发着**独特的光彩和魅力，是文化创新的基础和源泉。  
+非物质文化遗产**在当代****仍然散发着**独特的光彩和魅力，是文化创新的基础和源泉。  
 **In modern times**, intangible culcural heritage **retains** its charm and is a source of cultural innovation.  
 **分局层面**  
 聚精会神搞建设，一心一意谋发展。focus/concentrate on development.  
@@ -1394,3 +1394,4 @@ Hangzhou **is twinned with** many big cities in the world.
 部分引语的首字母无需大写 “way too busy”  
 英文标点学习资源  
 The Writing Lab & The OWL at Purdue  
+
