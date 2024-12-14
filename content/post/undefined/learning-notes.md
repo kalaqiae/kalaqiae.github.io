@@ -1239,7 +1239,7 @@ sound policy/advice 合理政策/建议
 资源配置 resource allocation 不用复数  
 始终不渝 remain committed to  
 
-### September 21, 2024 XXL 汉英翻译 3.2.1/2 翻译加法之结构性词语/逻辑衔接词  
+### September 21, 2024 XXL 汉英翻译 3.2.1/2 翻译加法之结构性词语/逻辑衔接词
 
 1. 结构性词语  
 2. 逻辑衔接词  
@@ -1251,7 +1251,7 @@ sound policy/advice 合理政策/建议
 科技含量低的 low-technology/tech  
 investment in 单数  
 
-### September 22, 2024 XXL 汉英翻译 4.1.1 增减  
+### September 22, 2024 XXL 汉英翻译 4.1.1 增减
 
 1. 数字表达  
 * 增减  
@@ -1306,7 +1306,7 @@ China is the second largest economy in the world, behind the US and ahead of/ in
 增加三倍/四倍于 to quadruple/to increase four-fold  
 onefold/twofold/threefold=multiplied by 1/2/3  
 
-### September 22, 2024 XXL 汉英翻译 4.2.2 并列/总分/三步走  
+### September 22, 2024 XXL 汉英翻译 4.2.2 并列/总分/三步走
 
 * 并列：句子较长，有并列关系，可合理断句  
 在……时代之下 in the age of  
@@ -1338,7 +1338,8 @@ Confrontations produces no winners, and war gets us nowhere.
 各种形式的 in all forms  
 推动朝着……方向发展 push...towards  
 
-### September 22, 2024 XXL 汉英翻译 4.3.1/2 企业篇/地区篇/标点符号  
+### September 22, 2024 XXL 汉英翻译 4.3.1/2 企业篇/地区篇/标点符号
+
 企业篇  
 总部位于 headquartered in  
 拥有……员工 (the company) employs  
@@ -1395,3 +1396,122 @@ Hangzhou **is twinned with** many big cities in the world.
 英文标点学习资源  
 The Writing Lab & The OWL at Purdue  
 
+### Has Sequoia Capital outgrown its business modedl
+
+perenial 四季常青的  
+poshly  
+cross-section 横截面  
+plaque 牌匾，匾额  
+aeon/eon 描述宇宙/地质时，常用于夸张，十亿年，京年  
+old growths 老牌公司  
+wilt 枯萎；（名声）大不如前  
+rainmaker 祈雨师；（商界/政界）能人，大拿，创收人；  
+pocket 赚取  
+disburse 支出  
+I've got a Midas touch 我能够点石成金，赚大钱  
+Midas touch 赚大钱的能力  
+make the list 登上榜单，榜上有名  
+responsive to 适应  
+bankroll 资助  
+hatch 孵化(公司)  
+heqge fund 对冲基金  
+arm 分支，部门  
+geopolitical rift 地缘冲突  
+intractable/tricky 棘手的  
+stiffen  
+part ways with 分道扬镳  
+sound mind 心智健全  
+in principle/theory  
+spendthrift 花钱无度的人，挥霍者  
+bid up 哄抬价格，抬高竞价  
+sexy job/attractive 工作很不错  
+ferret 挑选，搜寻，寻找  
+niggle 烦恼，疑虑；问题  
+pale/drawf 相形见绌  
+white-hot 白热化的，激烈的  
+function 函数，应变量  
+The number of smart founders is not a funcion of the money available. 聪明的创业者并非随资金变化。  
+duly  
+candour 坦诚，直率  
+tightlip 守口如瓶  
+let up 放松，减轻  
+inhabit the same Whatsapp groups 活跃于……群组中  
+out of the woods 走出困境  
+forego 放弃  
+cede 放弃  
+beef up/increase/strengthen/enhance 增强  
+scout 探寻；星探；侦察兵  
+incorporate 注册，成立，创立  
+and the like 诸如此类，等等  
+upside 优点，好处  
+pride oneself on sth 以……为豪  
+nimble 行动灵活的，头脑敏捷的  
+handicap  
+sturdiness  
+have one's work cut out 有困难  
+
+### Nvida's profit smorgasbord attracts an ant invasion
+
+smorgasbord 北欧式自助餐；很多，大量（可供选择）  
+ant invasion 引申含义，垂涎
+China's antitrust authorities aren't the only ones eyeying the chipmaker's hold over the market  
+eye sth. 盯着  
+antitrust 反垄断，反托拉斯  
+nuisance 引起麻烦的人/事；讨厌鬼  
+the only game in the town 唯一选择  
+exceptionalism 独特论，例外论  
+tower over 超过，远胜于，比……优秀；高于，矗立于……上  
+racy ranges 引申，顶级产品  
+probe 详尽调查，比investigation更详细  
+throw some grit in the wheels 使绊子，阻碍前进  
+grit 小石子，沙砾  
+clip/speed 速度  
+at a fast clip 快速  
+keep sth. off the menu 无法选择  
+balance of power  
+viable 可实施的，有望成功的；可存活的，可生长发育的；+ alternative/idea 可行替代/  
+bill sth as sth 将……宣传为  
+pitch as 定位为，推销为  
+take on sb./take sb. on 与……对抗；雇佣某人  
+contend with 必须处理/应对（不愉快的事或困境）  
+earnings 盈利，利润；工资，薪水  
+nous 良好的判断力；常识  
+riches 财富/fortune  
+keep sth out in front 保持领先，保持优势地位  
+adjacent/neighboring 邻近的  
+put a lid on 限制  
+(without) breaking a sweat (费大力气) 不费吹灰之力  
+financial goodies 经济好处/利益  
+hold/keep (sth/sb) at bay 防范，阻止，遏制  
+
+### Nvidia's dizzying growth is now everyone's business
+
+dizzying 炫目的  
+$ 3.6tn heft 市值  
+heft 重量；举起，抱起，抬起  
+hefty （数额、尺寸、力量等）大的，可观的  
+the shares move up, down or sideways 股票上涨/下跌/保持不变/横着  
+peruse 仔细阅读  
+apparent wrinkle 最明显的问题，引申义  
+That said/Having said that 话虽如此，表转折  
+outdo 优于  
+dip 下跌  
+be par for the course 正常的，意料之中的  
+twitchiness 紧张情绪  
+animal spirits 投资情绪；动物本能  
+quip 打趣  
+interconnectedness 相互关联性  
+enviable 令人艳羡的  
+reverse/oppsite 相反的情况  
+virtuous/vicious circle 良性/恶行循环  
+指人，品德高尚的，品行端正的；/邪恶的  
+forward earnings 未来盈利  
+up for grabs 人人可争取的  
+dotcom crash 互联网泡沫  
+pay hand over fist 付大价钱  
+hand over fist 迅速大量的赚钱或赔钱  
+resulting 随之而来的，相应的  
+hindsight 后见之明；吸取教训/经验；事后复盘  
+Monday morning quarterback 马后炮，贬义  
+lavish profitability 极其可观的盈利  
+lavish 大方的，慷慨的；奢华的，豪华的  
