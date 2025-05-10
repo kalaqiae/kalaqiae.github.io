@@ -16,24 +16,52 @@ categories: ["Android"]
 
 一次完整的 MotionEvent 事件：ACTION_DOWN(1次) -> ACTION_MOVE(N次) -> ACTION_UP(1次)
 
-顺序 Activity -> ViewGroup -> View
-
 <!--more-->
 
-dispatchTouchEvent 和 onTouchEvent 一旦return true,事件就停止传递了（到达终点）
+### 事件分发顺序
+
+Activity -> Window -> DecorView -> ViewGroup -> View  
+如果事件没有被消费，则会按照相反的顺序回传
+View -> ViewGroup -> DecorView -> Window -> Activity  
+
+从系统层级描述事件分发的完整流程包含 Window， DecorView， 如果是从应用层开发来说可以简化省略掉  
+
+Window 是 Android 视图系统的顶层容器，每个 Activity 都关联一个 Window 对象，通常是 PhoneWindow（Window 的唯一实现类）  
+DecorView 是 Window 的根视图，它是一个 FrameLayout ，包含了系统的装饰部分（如状态栏、导航栏）和用户自定义的内容视图  
+
+#### 流程
+
+* Activity 接收到触摸事件，调用 dispatchTouchEvent() 将事件传递给 ViewGroup
+* ViewGroup dispatchTouchEvent() 被调用
+  * 调用 onInterceptTouchEvent() 来判断是否要拦截
+  * 返回 true：表示拦截，交由自身的 onTouchEvent() 处理
+  * 返回 false：事件传递给子 View
+* View 的 dispatchTouchEvent() 被调用
+  * 设置了 OnTouchListener，则先调用 OnTouchListener.onTouch()
+  * 如果 OnTouchListener 没有消费事件，则调用 onTouchEvent()
+* 如果事件未被消费，事件会回传到父 ViewGroup，最终回传到 Activity 的 OnTouchEvent
+
+#### 总结
+
+* 如果没有重写或者更改默认值。按 Activity > ViewGroup > View 顺序调用 dispatchTouchEvent 方法一层层往下分发  
+* ViewGroup 通过 onInterceptTouchEvent() 决定是否拦截事件  
+* 进入最底层的View后，开始由最底层的 OnTouchEvent 或 OnTouchListener.onTouch() 来处理，如果一直不消费按 View > ViewGroup > Activity 顺序从下往上调用 onTouchEvent ，最后返回到Activity.OnTouchEvent
+
+### 三个核心方法
+
+dispatchTouchEvent 和 onTouchEvent 的 return true,表示事件被消费，就停止传递了（到达终点）
 
 dispatchTouchEvent 和 onTouchEvent return false 的时候事件都回传给父控件的 onTouchEvent 处理
 
-如果没有重写或者更改默认值。按 Activity > ViewGroup > View 顺序调用 dispatchTouchEvent方法一层层往下分发  
-进入最底层的View后，开始由最底层的 OnTouchEvent 来处理，如果一直不消费按 View > ViewGroup > Activity 顺序从下往上调用 onTouchEvent ，最后返回到Activity.OnTouchEvent
+onInterceptTouchEvent return true 表示拦截事件，不再传递给子视图，转而调用自身的 onTouchEvent；false 表示不拦截，继续传递给子视图
 
-ViewGroup 的 dispatchTouchEvent 返回 true 则事件被消费，返回 false 则回传给父控件的 onTouchEvent，__只能通过 Interceptor 把事件拦截下来给自己的 onTouchEvent ，所以 ViewGroup dispatchTouchEvent 方法的 super 默认实现就是去调用 onInterceptTouchEvent。__ onInterceptTouchEvent 默认不拦截
+ViewGroup 的 dispatchTouchEvent 返回 true 则事件被消费，返回 false 则回传给父控件的 onTouchEvent，**只能通过 Interceptor 把事件拦截下来给自己的 onTouchEvent ，所以 ViewGroup dispatchTouchEvent 方法的 super 默认实现就是去调用 onInterceptTouchEvent。** onInterceptTouchEvent 默认不拦截
 
-| 方法                    | 作用                      | 调用时刻
-| :-----------------------|:--------------------------|:------------|
-| dispatchTouchEvent()    | 分发（传递）点击事件        | 当点击事件能够传递给当前 View 时                 |
-| onInterceptTouchEvent() | 事件拦截，只有 ViewGroup 有 | 在 ViewGroup 的 dispatchTouchEvent() 内部调用  |
-| onTouchEvent()          | 处理点击事件               | 在 dispatchTouchEvent() 内部调用               |
+| 方法                    | 作用                            | 调用时刻                                      |
+| :---------------------- | :------------------------------ | :-------------------------------------------- |
+| dispatchTouchEvent()    | 分发（传递）点击事件            | 当点击事件能够传递给当前 View 时              |
+| onInterceptTouchEvent() | 事件拦截，**只有 ViewGroup 有** | 在 ViewGroup 的 dispatchTouchEvent() 内部调用 |
+| onTouchEvent()          | 处理点击事件                    | 在 dispatchTouchEvent() 内部调用              |
 
 ### ACTION_MOVE 和 ACTION_UP
 
@@ -43,7 +71,7 @@ ViewGroup 的 dispatchTouchEvent 返回 true 则事件被消费，返回 false �
 
 ### 其他
 
-* onTouch() 优先于 onTouchEvent 执行,若手动复写在 onTouch() 中返回 true（即 将事件消费掉），将不会再执行 onTouchEvent()
+* 如果设置了 OnTouchListener, onTouch() 优先于 onTouchEvent 执行,若手动复写在 onTouch() 中返回 true（即 将事件消费掉），将不会再执行 onTouchEvent()
 
 * onTouch（）的执行 先于 onClick（）
 
