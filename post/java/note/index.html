@@ -7,13 +7,13 @@ optString会在得不到你想要的值时候返回空字符串“ ”或指定�
 推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/java/note/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-07-10T22:07:28+08:00"><meta property="article:modified_time" content="2021-07-10T22:07:28+08:00"><meta itemprop=name content="Note"><meta itemprop=description content="json解析
 jsonObject.getString() vs jsonObject.optString()
 optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。
-推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常"><meta itemprop=datePublished content="2021-07-10T22:07:28+08:00"><meta itemprop=dateModified content="2021-07-10T22:07:28+08:00"><meta itemprop=wordCount content="5103"><meta itemprop=keywords content="Java,Android,note,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Note"><meta name=twitter:description content="json解析
+推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常"><meta itemprop=datePublished content="2021-07-10T22:07:28+08:00"><meta itemprop=dateModified content="2021-07-10T22:07:28+08:00"><meta itemprop=wordCount content="6265"><meta itemprop=keywords content="Java,Android,note,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Note"><meta name=twitter:description content="json解析
 jsonObject.getString() vs jsonObject.optString()
 optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。
 推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script data-ad-client=ca-pub-6216241935841265 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
-<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Note</h1><div class=post-meta><span class=post-time>2021-07-10</span><div class=post-category><a href=/categories/undefined/>Undefined</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#json解析>json解析</a></li><li><a href=#java-线程池>Java 线程池</a></li><li><a href=#future-和-futuretask>Future 和 FutureTask</a></li><li><a href=#onintercepttouchevent-不被触发收不到事件问题>onInterceptTouchEvent 不被触发，收不到事件问题</a></li><li><a href=#单例>单例</a></li><li><a href=#android-ndk>android ndk</a></li><li><a href=#android-proguard>android proguard</a></li><li><a href=#android-上传库到-meaven>Android 上传库到 Meaven</a></li><li><a href=#hook-框架>Hook 框架</a></li><li><a href=#android-studio-debug>Android Studio Debug</a></li><li><a href=#view-源码>view 源码</a></li><li><a href=#kotlin-自定义控件报错>kotlin 自定义控件报错</a></li><li><a href=#socket-和-websocket>socket 和 websocket</a></li><li><a href=#jetpack-compose>jetpack compose</a></li><li><a href=#阴影实现方式-elevation>阴影实现方式 elevation</a></li><li><a href=#查看-apk-签名是-v-几>查看 apk 签名是 v 几</a></li><li><a href=#mmkv-datastore>MMKV DataStore</a></li><li><a href=#matrix>Matrix</a></li><li><a href=#设置-dialog-最大高度>设置 Dialog 最大高度</a></li><li><a href=#android-studio-搜索>android studio 搜索</a></li><li><a href=#java-arraylist-linkedlist-vector>Java ArrayList LinkedList Vector</a></li><li><a href=#android-重启>Android 重启</a></li><li><a href=#android-studio-空判断和循环快捷键>Android studio 空判断和循环快捷键</a></li><li><a href=#android-studio-提取-style>Android studio 提取 style</a></li><li><a href=#final-修饰作用>final 修饰作用</a></li><li><a href=#try-catch-输出日志>try catch 输出日志</a></li><li><a href=#在单独的类中接收-activity-结果>在单独的类中接收 activity 结果</a></li><li><a href=#压缩工具-zip4j>压缩工具 zip4j</a></li><li><a href=#android-studio-live-templates>Android Studio Live Templates</a></li><li><a href=#js-闭包>JS 闭包</a></li><li><a href=#buildgradle-修改-apk-名称>build.gradle 修改 apk 名称</a></li><li><a href=#查看-md5>查看 md5</a></li><li><a href=#依赖冲突>依赖冲突</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=json解析>json解析</h3><h4 id=jsonobjectgetstring-vs-jsonobjectoptstring>jsonObject.getString() vs jsonObject.optString()</h4><p>optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。<br>推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常</p><h3 id=java-线程池>Java 线程池</h3><h4 id=callable--future-获取执行结果>Callable + Future 获取执行结果</h4><p>简单使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Note</h1><div class=post-meta><span class=post-time>2021-07-10</span><div class=post-category><a href=/categories/undefined/>Undefined</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#json解析>json解析</a></li><li><a href=#java-线程池>Java 线程池</a></li><li><a href=#future-和-futuretask>Future 和 FutureTask</a></li><li><a href=#onintercepttouchevent-不被触发收不到事件问题>onInterceptTouchEvent 不被触发，收不到事件问题</a></li><li><a href=#单例>单例</a></li><li><a href=#android-ndk>android ndk</a></li><li><a href=#android-proguard>android proguard</a></li><li><a href=#android-上传库到-meaven>Android 上传库到 Meaven</a></li><li><a href=#hook-框架>Hook 框架</a></li><li><a href=#android-studio-debug>Android Studio Debug</a></li><li><a href=#view-源码>view 源码</a></li><li><a href=#kotlin-自定义控件报错>kotlin 自定义控件报错</a></li><li><a href=#socket-和-websocket>socket 和 websocket</a></li><li><a href=#jetpack-compose>jetpack compose</a></li><li><a href=#阴影实现方式-elevation>阴影实现方式 elevation</a></li><li><a href=#查看-apk-签名是-v-几>查看 apk 签名是 v 几</a></li><li><a href=#mmkv-datastore>MMKV DataStore</a></li><li><a href=#matrix>Matrix</a></li><li><a href=#设置-dialog-最大高度>设置 Dialog 最大高度</a></li><li><a href=#android-studio-搜索>android studio 搜索</a></li><li><a href=#java-arraylist-linkedlist-vector>Java ArrayList LinkedList Vector</a></li><li><a href=#java-集合>java 集合</a></li><li><a href=#android-重启>Android 重启</a></li><li><a href=#android-studio-空判断和循环快捷键>Android studio 空判断和循环快捷键</a></li><li><a href=#android-studio-提取-style>Android studio 提取 style</a></li><li><a href=#final-修饰作用>final 修饰作用</a></li><li><a href=#try-catch-输出日志>try catch 输出日志</a></li><li><a href=#在单独的类中接收-activity-结果>在单独的类中接收 activity 结果</a></li><li><a href=#压缩工具-zip4j>压缩工具 zip4j</a></li><li><a href=#android-studio-live-templates>Android Studio Live Templates</a></li><li><a href=#js-闭包>JS 闭包</a></li><li><a href=#buildgradle-修改-apk-名称>build.gradle 修改 apk 名称</a></li><li><a href=#查看-md5>查看 md5</a></li><li><a href=#依赖冲突>依赖冲突</a></li><li><a href=#深拷贝和浅拷贝>深拷贝和浅拷贝</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=json解析>json解析</h3><h4 id=jsonobjectgetstring-vs-jsonobjectoptstring>jsonObject.getString() vs jsonObject.optString()</h4><p>optString会在得不到你想要的值时候返回空字符串“ ”或指定的默认值，而getString会抛出异常。<br>推荐使用optString，可避免接口字段的缺失、value的数据类型转换等异常</p><h3 id=java-线程池>Java 线程池</h3><h4 id=callable--future-获取执行结果>Callable + Future 获取执行结果</h4><p>简单使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -427,7 +427,7 @@ Run > Edit Configurations</p><p>按住 alt 鼠标点击左侧边栏，可以设�
 </span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=o>(</span><span class=n>decorView</span><span class=o>.</span><span class=na>getMeasuredHeight</span><span class=o>()</span> <span class=o>&gt;</span> <span class=n>maxHeight</span><span class=o>)</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>        <span class=n>dialog</span><span class=o>.</span><span class=na>getWindow</span><span class=o>().</span><span class=na>setLayout</span><span class=o>(</span><span class=n>width</span><span class=o>,</span> <span class=n>maxHeight</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=android-studio-搜索>android studio 搜索</h3><p>regex 正则表达式搜索<br>比如 ^((?!(*|//)).)+[\u4e00-\u9fa5] 搜索中文</p><h3 id=java-arraylist-linkedlist-vector>Java ArrayList LinkedList Vector</h3><ul><li>ArrayList 基于数组实现的并且实现了动态扩容。它允许所有元素，包括 null</li><li>LinkedList 基于双向链表实现</li><li>Vector 类似 ArrayList。Vector 是线程安全的。如果线程已经是安全的，直接用 ArrayList 就不用 Vector 了</li><li>ArrayList get/set 比 LinkedList 快。ArrayList 在尾部增加不需要扩容时比 LinkedList 快，中间增加不需要扩容时 LinkedList 要遍历所以 LinkedList可能更慢，在头部增加和时因为要复制数组所以比较慢</li><li>ArrayList 删除时，删除的元素越靠前越慢，LinkedList 删除越靠中间越慢</li><li>for 循环遍历的时候，ArrayList 花费的时间远小于 LinkedList；迭代器遍历的时候，两者性能差不多。所以遍历 LinkedList 的时候，不要使用 for 循环，要使用迭代器</li></ul><h3 id=android-重启>Android 重启</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h3 id=android-studio-搜索>android studio 搜索</h3><p>regex 正则表达式搜索<br>比如 ^((?!(*|//)).)+[\u4e00-\u9fa5] 搜索中文</p><h3 id=java-arraylist-linkedlist-vector>Java ArrayList LinkedList Vector</h3><ul><li>ArrayList 基于数组实现的并且实现了动态扩容。它允许所有元素，包括 null</li><li>LinkedList 基于双向链表实现</li><li>Vector 类似 ArrayList。Vector 是线程安全的。如果线程已经是安全的，直接用 ArrayList 就不用 Vector 了</li><li>ArrayList get/set 比 LinkedList 快。ArrayList 在尾部增加不需要扩容时比 LinkedList 快，中间增加不需要扩容时 LinkedList 要遍历所以 LinkedList可能更慢，在头部增加和时因为要复制数组所以比较慢</li><li>ArrayList 删除时，删除的元素越靠前越慢，LinkedList 删除越靠中间越慢</li><li>for 循环遍历的时候，ArrayList 花费的时间远小于 LinkedList；迭代器遍历的时候，两者性能差不多。所以遍历 LinkedList 的时候，不要使用 for 循环，要使用迭代器</li></ul><h3 id=java-集合>java 集合</h3><h4 id=collection-接口>Collection 接口</h4><ul><li><p>List（有序，可重复）</p><ul><li>ArrayList: 基于动态数组实现，随机访问速度快，但在中间插入或删除元素时效率较低，线程不安全</li><li>LinkedList：基于双向链表实现，插入和删除元素效率高，但随机访问速度较慢，线程不安全</li><li>Vector：类似 ArrayList，线程安全，效率低，不推荐用</li></ul></li><li><p>Set（无序，不可重复）</p><ul><li>HashSet: 基于 HashMap 实现，不保证元素的顺序，查找速度快</li><li>LinkedHashSet: 基于 LinkedHashMap 实现，保留了元素的插入顺序，查找速度也较快</li><li>TreeSet: 基于红黑树实现，会对元素进行排序（可以自然排序或自定义排序），元素需要实现 Comparable 或传 Comparator</li></ul></li><li><p>Queue</p><ul><li>LinkedList: 可以作为队列使用</li><li>PriorityQueue: 基于堆实现，允许按照优先级处理元素，元素按优先级出队</li><li>ArrayDeque: 基于动态数组实现的双端队列</li></ul></li></ul><h4 id=map-接口>Map 接口</h4><ul><li>HashMap: 基于哈希表实现，提供快速的查找、插入和删除操作，不保证键值对的顺序，键不能重复，值可以重复，线程不安全</li><li>LinkedHashMap: 基于哈希表和双向链表实现，保留了键值对的插入顺序</li><li>TreeMap: 基于红黑树实现，会对键进行排序（可以自然排序或自定义排序）</li><li>Hashtable和 HashMap 类似，但它是线程安全的，因此性能略低，并且不允许 null 键和 null 值，不推荐用</li><li>ConcurrentHashMap: 线程安全的 HashMap 实现，适用于高并发场景</li></ul><h4 id=集合选择>集合选择</h4><ul><li>是否需要键值对：是→Map，否→Collection</li><li>是否需要排序：是→TreeSet/TreeMap，否→HashSet/HashMap</li><li>是否需要保持插入顺序：是→LinkedHashSet/LinkedHashMap</li><li>是否需要线程安全：是→ConcurrentHashMap/Collections.synchronizedXXX</li><li>频繁插入删除：LinkedList</li><li>频繁随机访问：ArrayList</li></ul><h3 id=android-重启>Android 重启</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -442,10 +442,12 @@ Run > Edit Configurations</p><p>按住 alt 鼠标点击左侧边栏，可以设�
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
+</span><span class=lnt>6
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl>            <span class=k>try</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>            <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=n>e</span><span class=p>:</span> <span class=n>Exception</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>                <span class=n>e</span><span class=p>.</span><span class=n>printStackTrace</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>                <span class=c1>//正式环境不建议用，输出太多会影响性能
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=n>e</span><span class=p>.</span><span class=n>printStackTrace</span><span class=p>()</span>
 </span></span><span class=line><span class=cl>            <span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=在单独的类中接收-activity-结果>在单独的类中接收 activity 结果</h3><p><a href="https://developer.android.com/training/basics/intents/result?hl=zh-cn#separate">与其他应用交互 在单独的类中接收 activity 结果</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -774,6 +776,126 @@ Run > Edit Configurations</p><p>按住 alt 鼠标点击左侧边栏，可以设�
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-groovy data-lang=groovy><span class=line><span class=cl><span class=c1>//移除重复依赖例子
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>implementation</span> <span class=s1>&#39;com.example:library:1.0.0&#39;</span><span class=o>,</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>    <span class=n>exclude</span> <span class=nl>group:</span> <span class=s1>&#39;org.jetbrains.kotlin&#39;</span><span class=o>,</span> <span class=nl>module:</span> <span class=s1>&#39;kotlin-stdlib&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=深拷贝和浅拷贝>深拷贝和浅拷贝</h3><p>都要实现 Cloneable 重写 clone 方法，浅拷贝对拷贝后的对象修改可能会影响到原有对象，修改对象不会影响原对象</p><p>深拷贝实现方式</p><ul><li>构造函数深拷贝（new 创建新对象）</li><li>重写clone()方法并递归调用引用对象的clone()</li><li>使用序列化/反序列化</li><li>使用第三方库如Apache Commons Lang的SerializationUtils</li></ul><p>如何选择</p><ul><li>如果对象只包含基本类型或不可变对象(如String)，浅拷贝通常足够</li><li>如果对象包含可变引用类型且需要完全独立，应使用深拷贝</li><li>考虑性能开销，深拷贝比浅拷贝更消耗资源</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>//浅拷贝
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Person</span> <span class=kd>implements</span> <span class=n>Cloneable</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>String</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>Address</span> <span class=n>address</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>protected</span> <span class=n>Object</span> <span class=nf>clone</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>CloneNotSupportedException</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=kd>super</span><span class=o>.</span><span class=na>clone</span><span class=o>();</span> <span class=c1>// 浅拷贝
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Address</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>String</span> <span class=n>city</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 使用
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Person</span> <span class=n>p1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Person</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=n>Person</span> <span class=n>p2</span> <span class=o>=</span> <span class=o>(</span><span class=n>Person</span><span class=o>)</span><span class=n>p1</span><span class=o>.</span><span class=na>clone</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=c1>// p1和p2的address指向同一个对象
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>//递归深拷贝
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Person</span> <span class=kd>implements</span> <span class=n>Cloneable</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>String</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>Address</span> <span class=n>address</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>protected</span> <span class=n>Object</span> <span class=nf>clone</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>CloneNotSupportedException</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>Person</span> <span class=n>cloned</span> <span class=o>=</span> <span class=o>(</span><span class=n>Person</span><span class=o>)</span><span class=kd>super</span><span class=o>.</span><span class=na>clone</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>cloned</span><span class=o>.</span><span class=na>address</span> <span class=o>=</span> <span class=o>(</span><span class=n>Address</span><span class=o>)</span><span class=n>address</span><span class=o>.</span><span class=na>clone</span><span class=o>();</span> <span class=c1>// 递归clone
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>return</span> <span class=n>cloned</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Address</span> <span class=kd>implements</span> <span class=n>Cloneable</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>String</span> <span class=n>city</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>protected</span> <span class=n>Object</span> <span class=nf>clone</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>CloneNotSupportedException</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=kd>super</span><span class=o>.</span><span class=na>clone</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//序列化深拷贝
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kn>import</span> <span class=nn>java.io.*</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>DeepCopyUtil</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=o>&lt;</span><span class=n>T</span> <span class=kd>extends</span> <span class=n>Serializable</span><span class=o>&gt;</span> <span class=n>T</span> <span class=nf>deepCopy</span><span class=o>(</span><span class=n>T</span> <span class=n>object</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>ByteArrayOutputStream</span> <span class=n>bos</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ByteArrayOutputStream</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=n>ObjectOutputStream</span> <span class=n>oos</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ObjectOutputStream</span><span class=o>(</span><span class=n>bos</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=n>oos</span><span class=o>.</span><span class=na>writeObject</span><span class=o>(</span><span class=n>object</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            <span class=n>ByteArrayInputStream</span> <span class=n>bis</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ByteArrayInputStream</span><span class=o>(</span><span class=n>bos</span><span class=o>.</span><span class=na>toByteArray</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>            <span class=n>ObjectInputStream</span> <span class=n>ois</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ObjectInputStream</span><span class=o>(</span><span class=n>bis</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=o>(</span><span class=n>T</span><span class=o>)</span><span class=n>ois</span><span class=o>.</span><span class=na>readObject</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>throw</span> <span class=k>new</span> <span class=n>RuntimeException</span><span class=o>(</span><span class=n>e</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl><span class=o>}</span>
 </span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/android/android-activity-start/><i class="iconfont icon-left"></i>
 <span class="prev-text nav-default">activity 跳转</span>
