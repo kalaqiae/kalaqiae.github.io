@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on KALAQIAE</title><link>https://kalaqiae.com/post/</link><description>Recent content in Posts on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 08 Apr 2023 10:50:05 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Swift</title><link>https://kalaqiae.com/post/ios/swift/</link><pubDate>Sat, 08 Apr 2023 10:50:05 +0800</pubDate><guid>https://kalaqiae.com/post/ios/swift/</guid><description>&lt;h3 id="基础">基础&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on KALAQIAE</title><link>https://kalaqiae.com/post/</link><description>Recent content in Posts on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2024 16:42:02 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Note</title><link>https://kalaqiae.com/post/android/android-note/</link><pubDate>Tue, 24 Dec 2024 16:42:02 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-note/</guid><description>&lt;h2 id="android-四大组件">Android 四大组件&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Activity&lt;/strong>
+&lt;ul>
+&lt;li>生命周期&lt;/li>
+&lt;li>启动模式（standard，singleTop，singleTask，singleInstance）&lt;/li>
+&lt;li>任务栈&lt;/li>
+&lt;li>启动方式：显式 Intent，隐式 Intent（Intent Filter，URL Scheme，跨应用场景用隐式），ARouter&lt;/li>
+&lt;li>PendingIntent&lt;/li>
+&lt;li>数据传递&lt;/li>
+&lt;li>startActivityForResult
+启动一个 Activity 并等待结果。注意：&lt;code>startActivityForResult()&lt;/code> 在 Android 11 及以上版本已被弃用，推荐使用 &lt;code>ActivityResultContracts&lt;/code> 替代&lt;/li>
+&lt;li>Fragment
+&lt;ul>
+&lt;li>生命周期（onAttach，onCreate，onCreateView，onActivityCreated，onStart，onResume，onPause，onStop，onDestroyView，onDestroy，onDetach）&lt;/li>
+&lt;li>通信&lt;/li>
+&lt;li>DialogFragment()&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>onConfigurationChanged&lt;/li>
+&lt;li>onSaveInstanceState&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Swift</title><link>https://kalaqiae.com/post/ios/swift/</link><pubDate>Sat, 08 Apr 2023 10:50:05 +0800</pubDate><guid>https://kalaqiae.com/post/ios/swift/</guid><description>&lt;h3 id="基础">基础&lt;/h3>
 &lt;p>&lt;a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/">英文教程&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://swift.bootcss.com/">中文教程&lt;/a>&lt;/p></description></item><item><title>Kotlin Note</title><link>https://kalaqiae.com/post/kotlin/kotlin-note/</link><pubDate>Fri, 17 Mar 2023 09:59:30 +0800</pubDate><guid>https://kalaqiae.com/post/kotlin/kotlin-note/</guid><description>&lt;p>&lt;a href="https://book.kotlincn.net/text/home.html">中文教程&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://kotlinlang.org/docs/home.html">英文教程&lt;/a>&lt;/p>
