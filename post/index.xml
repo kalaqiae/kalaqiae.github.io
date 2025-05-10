@@ -76,8 +76,7 @@
 &lt;p>先上图，注意看左下角方法所属&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/kalaqiae/picBank/img/touch.png" alt="touch">&lt;/p>
 &lt;p>当一个点击事件（MotionEvent ）产生后，系统需把这个事件传递给一个具体的 View 去处理&lt;/p>
-&lt;p>一次完整的 MotionEvent 事件：ACTION_DOWN(1次) -&amp;gt; ACTION_MOVE(N次) -&amp;gt; ACTION_UP(1次)&lt;/p>
-&lt;p>顺序 Activity -&amp;gt; ViewGroup -&amp;gt; View&lt;/p></description></item><item><title>Tools</title><link>https://kalaqiae.com/post/common/tools/</link><pubDate>Thu, 06 May 2021 21:36:19 +0800</pubDate><guid>https://kalaqiae.com/post/common/tools/</guid><description>&lt;h3 id="bookmark">Bookmark&lt;/h3>
+&lt;p>一次完整的 MotionEvent 事件：ACTION_DOWN(1次) -&amp;gt; ACTION_MOVE(N次) -&amp;gt; ACTION_UP(1次)&lt;/p></description></item><item><title>Tools</title><link>https://kalaqiae.com/post/common/tools/</link><pubDate>Thu, 06 May 2021 21:36:19 +0800</pubDate><guid>https://kalaqiae.com/post/common/tools/</guid><description>&lt;h3 id="bookmark">Bookmark&lt;/h3>
 &lt;!-- [网盘搜索工具 优聚搜](https://ujuso.com/#/main?kw=Android&amp;type=ALL&amp;time=ALL&amp;exact=FALSE) -->
 &lt;p>&lt;a href="https://io.google/">Google I/O&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://codelabs.developers.google.com/">Google codelabs&lt;/a>&lt;/p>

@@ -2,5 +2,4 @@
 &lt;p>先上图，注意看左下角方法所属&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/kalaqiae/picBank/img/touch.png" alt="touch">&lt;/p>
 &lt;p>当一个点击事件（MotionEvent ）产生后，系统需把这个事件传递给一个具体的 View 去处理&lt;/p>
-&lt;p>一次完整的 MotionEvent 事件：ACTION_DOWN(1次) -&amp;gt; ACTION_MOVE(N次) -&amp;gt; ACTION_UP(1次)&lt;/p>
-&lt;p>顺序 Activity -&amp;gt; ViewGroup -&amp;gt; View&lt;/p></description></item></channel></rss>
+&lt;p>一次完整的 MotionEvent 事件：ACTION_DOWN(1次) -&amp;gt; ACTION_MOVE(N次) -&amp;gt; ACTION_UP(1次)&lt;/p></description></item></channel></rss>
