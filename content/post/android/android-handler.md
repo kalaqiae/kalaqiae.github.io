@@ -30,6 +30,51 @@ Handler 通过 sendMessage 发送 Message 到 MessageQueue 队列，Looper 通�
 
 ![handler](https://cdn.jsdelivr.net/gh/kalaqiae/picBank/img/handler.webp)
 
+### 简单示例
+
+```kotlin
+
+class MainActivity : AppCompatActivity() {
+
+    // 在主线程中创建 Handler，绑定主线程的 Looper,不写Looper.getMainLooper()，只写Handler()就是绑定到当前线程，这里不写也是绑定到主线程，为了代码更清晰推荐要写，显式指定 Looper
+    private val mainHandler = Handler(Looper.getMainLooper()) { message ->
+        // 在主线程中处理消息
+        when (message.what) {
+            1 -> {
+                Log.d("MainHandler", "Received message in main thread")
+                // 可以在这里更新 UI
+                // textView.text = "Message received!"
+            }
+        }
+        true
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // 在子线程中执行任务并切换到主线程
+        startBackgroundTask()
+    }
+
+    private fun startBackgroundTask() {
+        // 启动一个子线程
+        Thread {
+            // 发送消息到主线程
+            val message = mainHandler.obtainMessage(1)
+            mainHandler.sendMessage(message)
+
+            // 或者直接 post 一个 Runnable 到主线程
+            mainHandler.post {
+                Log.d("MainHandler", "Running in main thread")
+                // 可以在这里更新 UI
+                // textView.text = "Task completed!"
+            }
+        }.start()
+    }
+}
+```
+
 ### 发送消息
 
 发送消息最后都是调用到 sendMessageAtTime ，sendMessageAtTime 最后返回 enqueueMessage 方法
@@ -237,7 +282,7 @@ Handler 主要利用了 ThreadLocal 在每个线程单独存储副本的特性
 
     每个线程只允许调用一次 Looper.prepare()
 
-    由于多个线程之间共享内存空间，所以 Handler 可以在线程A把消息存放到 MessageQueue，Looper 可以在线程B把消息取出来，一存一取之间就实现了线程的切换
+    **线程切换**：由于多个线程之间共享内存空间，所以 Handler 可以在线程A把消息存放到 MessageQueue，Looper 可以在线程B把消息取出来，一存一取之间就实现了线程的切换
 
 * ANR
 
