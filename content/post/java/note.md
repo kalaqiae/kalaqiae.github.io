@@ -478,6 +478,42 @@ regex 正则表达式搜索
 * ArrayList 删除时，删除的元素越靠前越慢，LinkedList 删除越靠中间越慢
 * for 循环遍历的时候，ArrayList 花费的时间远小于 LinkedList；迭代器遍历的时候，两者性能差不多。所以遍历 LinkedList 的时候，不要使用 for 循环，要使用迭代器
 
+### java 集合
+
+#### Collection 接口
+
+* List（有序，可重复）
+  * ArrayList: 基于动态数组实现，随机访问速度快，但在中间插入或删除元素时效率较低，线程不安全
+  * LinkedList：基于双向链表实现，插入和删除元素效率高，但随机访问速度较慢，线程不安全
+  * Vector：类似 ArrayList，线程安全，效率低，不推荐用
+
+* Set（无序，不可重复）
+  * HashSet: 基于 HashMap 实现，不保证元素的顺序，查找速度快
+  * LinkedHashSet: 基于 LinkedHashMap 实现，保留了元素的插入顺序，查找速度也较快
+  * TreeSet: 基于红黑树实现，会对元素进行排序（可以自然排序或自定义排序），元素需要实现 Comparable 或传 Comparator
+
+* Queue
+  * LinkedList: 可以作为队列使用
+  * PriorityQueue: 基于堆实现，允许按照优先级处理元素，元素按优先级出队
+  * ArrayDeque: 基于动态数组实现的双端队列
+
+#### Map 接口
+
+* HashMap: 基于哈希表实现，提供快速的查找、插入和删除操作，不保证键值对的顺序，键不能重复，值可以重复，线程不安全
+* LinkedHashMap: 基于哈希表和双向链表实现，保留了键值对的插入顺序
+* TreeMap: 基于红黑树实现，会对键进行排序（可以自然排序或自定义排序）
+* Hashtable和 HashMap 类似，但它是线程安全的，因此性能略低，并且不允许 null 键和 null 值，不推荐用
+* ConcurrentHashMap: 线程安全的 HashMap 实现，适用于高并发场景
+
+#### 集合选择
+
+* 是否需要键值对：是→Map，否→Collection
+* 是否需要排序：是→TreeSet/TreeMap，否→HashSet/HashMap
+* 是否需要保持插入顺序：是→LinkedHashSet/LinkedHashMap
+* 是否需要线程安全：是→ConcurrentHashMap/Collections.synchronizedXXX
+* 频繁插入删除：LinkedList
+* 频繁随机访问：ArrayList
+
 ### Android 重启
 
 ```java
@@ -507,6 +543,7 @@ final 修饰的类不能被继承，修饰的方法不能被重写
             try {
 
             } catch (e: Exception) {
+                //正式环境不建议用，输出太多会影响性能
                 e.printStackTrace()
             }
 ```
@@ -732,6 +769,86 @@ app->task->dependcies 查看依赖
 //移除重复依赖例子
 implementation 'com.example:library:1.0.0', {
     exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
+}
+```
+
+### 深拷贝和浅拷贝
+
+都要实现 Cloneable 重写 clone 方法，浅拷贝对拷贝后的对象修改可能会影响到原有对象，修改对象不会影响原对象
+
+深拷贝实现方式
+
+* 构造函数深拷贝（new 创建新对象）
+* 重写clone()方法并递归调用引用对象的clone()
+* 使用序列化/反序列化
+* 使用第三方库如Apache Commons Lang的SerializationUtils
+
+如何选择
+
+* 如果对象只包含基本类型或不可变对象(如String)，浅拷贝通常足够
+* 如果对象包含可变引用类型且需要完全独立，应使用深拷贝
+* 考虑性能开销，深拷贝比浅拷贝更消耗资源
+
+```java
+//浅拷贝
+class Person implements Cloneable {
+    String name;
+    Address address;
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone(); // 浅拷贝
+    }
+}
+
+class Address {
+    String city;
+}
+
+// 使用
+Person p1 = new Person();
+Person p2 = (Person)p1.clone();
+// p1和p2的address指向同一个对象
+
+//递归深拷贝
+class Person implements Cloneable {
+    String name;
+    Address address;
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Person cloned = (Person)super.clone();
+        cloned.address = (Address)address.clone(); // 递归clone
+        return cloned;
+    }
+}
+
+class Address implements Cloneable {
+    String city;
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+//序列化深拷贝
+import java.io.*;
+
+class DeepCopyUtil {
+    public static <T extends Serializable> T deepCopy(T object) {
+        try {
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(bos);
+            oos.writeObject(object);
+            
+            ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
+            ObjectInputStream ois = new ObjectInputStream(bis);
+            return (T)ois.readObject();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 ```
 
