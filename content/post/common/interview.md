@@ -87,7 +87,7 @@ View的绘制流程分为3步：测量、布局、绘制，分别对应3个方�
 
 * 测量阶段。 measure 方法会被父 View 调用，在measure 方法中做一些优化和准备工作后会调用 onMeasure 方法进行实际的自我测量。onMeasure方法在View和ViewGroup做的事情是不一样的：
   * View。 View 中的 onMeasure 方法会计算自己的尺寸并通过 setMeasureDimension 保存。
-  * ViewGroup。 ViewGroup 中的 onMeasure 方法会调用所有子 iew的measure 方法进行自我测量并保存。然后通过子View的尺寸和位置计算出自己的尺寸并保存。
+  * ViewGroup。 ViewGroup 中的 onMeasure 方法会调用所有子 View 的 measure 方法进行自我测量并保存。然后通过子View的尺寸和位置计算出自己的尺寸并保存。
 
 * 布局阶段。 layout 方法会被父View调用，layout 方法会保存父 View 传进来的尺寸和位置，并调用 onLayout 进行实际的内部布局。onLayout 在 View 和 ViewGroup 中做的事情也是不一样的：
 
@@ -211,3 +211,41 @@ AIDL 、广播、文件、socket、管道
 
   * 重写 WebChromClient 的 onJsPrompt() 方法，同前一个方式一样，拿到 url 之后先进行解析，如果符合双方规定，即可调用Android方法。如果需要返回值，通过 result.confirm("Android方法返回值") 即可将 Android 的返回值返回给 js
 
+### ContentProvider 的创建时机
+
+* 应用启动时
+在 AndroidManifest.xml 中设置了 android:initOrder（数值越大，优先级越高）或 设置了 android:multiprocess="false"（默认值）会自动创建，未设置不会自动创建
+* 第一次访问 ContentProvider 时
+当系统或其他组件（如 Activity、Service 或其他应用）通过以下方式访问 ContentProvider 中的数据时，ContentProvider 就会被实例化和创建：
+  * 通过 ContentResolver 调用：
+    query()
+    insert()
+    update()
+    delete()
+  * 通过 getType() 方法查询 MIME 类型
+
+### 在 Android 的 Intent 中，FLAG_ACTIVITY_CLEAR_TOP 的作用
+
+如果要启动的 Activity 已经在返回栈中存在，则会清除它之上的所有 Activity，并将其置于栈顶，如果要启动的 Activity 已存在于返回栈中，不会被重新创建，但会回调其 onNewIntent() 方法
+
+* 场景 1：返回主界面并清除其他 Activity
+* 场景 2：避免启动相同的 Activity 实例
+
+### java, new String() 在 JVM 中会创建几个字符串对象
+
+* 如果是 new String("abc")，总对象数 = 2（1 个在字符串常量池，1 个在堆中）。常量池对象在类加载时创建（如果首次出现），堆对象在运行时创建
+* 如果是 `new String(char[])，总对象数 = 1（仅在堆中创建，不涉及常量池）
+
+```java
+// 不推荐（可能创建2个对象）
+String s1 = new String("abc"); 
+
+// 推荐（复用常量池，仅1个对象）
+String s2 = "abc"; 
+
+// 推荐（动态字符串处理后复用常量池，需权衡性能，常量池是全局的，可能引发竞争）
+//new String("abc").intern() 会创建几个对象，如果 "abc" 不在常量池 2，如果 "abc" 已在常量池 1
+String s3 = new String(charArray).intern();
+```
+
+<!-- ### aidl使用，anr oom排查解决 -->

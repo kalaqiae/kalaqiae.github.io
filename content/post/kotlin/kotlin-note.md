@@ -136,6 +136,54 @@ class TestClass {
 }
 ```
 
+### kotlin Lambda和高阶函数
+
+* Lambda 表达式是 Kotlin 中的一种简洁的函数表示法，本质上是一个匿名函数（没有名称）
+
+```kotlin
+//基本语法
+val lambdaName: (参数类型) -> 返回类型 = { 参数名: 参数类型 -> 函数体 }
+
+//eg.1
+val sum: (Int, Int) -> Int = { a, b -> a + b }
+println(sum(3, 5)) // 输出：8
+
+//eg.2 可以省略类型声明
+val sum = { a: Int, b: Int -> a + b }
+println(sum(3, 5)) // 输出：8
+
+//eg.3 如果 Lambda 是函数的最后一个参数，可以将它移到括号外面。如果 Lambda 是唯一的参数，括号可以完全省略
+listOf(1, 2, 3).forEach { println(it) }
+
+```
+
+* 高阶函数是指接收函数作为参数或返回一个函数的函数
+
+```kotlin
+//基本语法
+fun <T, R> myHigherOrderFunction(value: T, operation: (T) -> R): R {
+    return operation(value)
+}
+//eg.1 定义一个接受 Lambda 的高阶函数
+fun calculate(x: Int, operation: (Int) -> Int): Int {
+    return operation(x)
+}
+
+val result = calculate(5) { it * 2 }
+println(result) // 输出：10
+
+//eg.2 返回一个函数的高阶函数
+fun getMultiplier(factor: Int): (Int) -> Int {
+    return { number -> number * factor }
+}
+
+val multiplyBy2 = getMultiplier(2)
+println(multiplyBy2(5)) // 输出：10
+
+```
+
+* 常见的高阶函数:集合的filter take drop forEach map 等
+
 ### other
 
 ```kotlin

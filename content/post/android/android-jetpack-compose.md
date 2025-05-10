@@ -8,7 +8,7 @@ categories: ["Jetpack"]
 
 ### 其他
 
- 在 Android studio 中， Ctrl+H  查看继承关系， Alt+7 查看结构信息，可以看到 ComposeView 继承 AbstractComposeView 继承 ViewGroup
+ 在 Android studio 中， Ctrl+H  查看继承关系， Alt+7（Ctrl + F12 或点击左侧边栏的 Structure 按钮） 查看结构信息，可以看到 ComposeView 继承 AbstractComposeView 继承 ViewGroup
 
 [原理](https://juejin.cn/post/6966241418046078983#heading-0)
 
