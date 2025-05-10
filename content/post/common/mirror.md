@@ -20,6 +20,10 @@ jcenter()
 
 <!--more-->
 
+（1）官网地址：https://services.gradle.org/distributions/  
+（2）腾讯镜像 Gradle下载地址：https://mirrors.cloud.tencent.com/gradle/  
+（3）阿里云镜像 Gradle下载地址：https://mirrors.aliyun.com/macports/distfiles/gradle/
+
 ### Flutter
 
 推荐用社区或清华的
@@ -52,12 +56,14 @@ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 
 #### 临时使用
 
->npm --registry https://registry.npm.taobao.org install express
+>npm --registry https://registry.npmmirror.com install express
 
 #### 持久使用
 
->npm config set registry https://registry.npm.taobao.org
+>npm config set registry https://registry.npmmirror.com
 npm config list
+
+淘宝的镜像换了，用旧的会有证书过期问题
 
 #### 获取配置镜像地址
 
