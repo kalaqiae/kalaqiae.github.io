@@ -74,6 +74,17 @@ npm config delete registry
 >npm install -g cnpm --registry=https://registry.npm.taobao.org  
 使用cnpm代替npm
 
+### python
+
+设置  
+>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+验证  
+>pip config list
+
+恢复  
+>pip config unset global.index-url
+
 <!-- 参考:  
 <https://developer.aliyun.com/article/754038>  
 <https://flutter.cn/community/china>  
