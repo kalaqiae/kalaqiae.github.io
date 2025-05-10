@@ -1515,3 +1515,2342 @@ hindsight 后见之明；吸取教训/经验；事后复盘
 Monday morning quarterback 马后炮，贬义  
 lavish profitability 极其可观的盈利  
 lavish 大方的，慷慨的；奢华的，豪华的  
+
+### Donald Trump 2024 TIME Person of the Year
+
+Moorish
+all but 几乎，差不多  
+cavernous 空旷的，大的  
+traverse 横穿  
+intermittently 间歇地  
+aide 尤指从政者的助理  
+staffer 政府工作人员  
+cast-bronze 铸铜的  
+lavatory 厕所  
+urinal 小便池  
+adorn 装饰  
+trim 颀长/修长的；人收拾得干干净净的；修剪  
+President-elect 当选总统（尚未就职时候的title）  
+curate 精心挑选  
+honcho 负责人，主事者  
+perch 坐在(边缘)，栖息在  
+huddle 聚集在一起，挤成一团，蜷缩  
+chief of staff 幕僚长  
+a retinue of 一批人，一队人 staffers  
+retinue 随行人员  
+confer 商讨 with  
+post up  
+patio 露台  
+light up 亮起，点亮  
+the phone lit up occasionally with calls and texts  
+media personalities 媒体人士  
+rise to one's feet 站起来  
+bonhomie 友好  
+trademark 标志性的  
+subdued 柔和的；暗淡的；默不作声的，闷闷不乐的 
+verbose 罗嗦的，冗长的，累赘的  
+discursive 东拉西扯的，不着边际的；推论的  
+unparalleled 绝无仅有的，无可比拟的  
+culminate 以……告终；达到……的顶点  
+shun 敬而远之  
+primary 初选 presidential ~  
+contested 受争议的  
+clinch 赢得  
+dampen 使受潮；把……弄湿；对……泼冷水；削弱  
+popular vote 普选票  
+GOP grand old party 大老党，即共和党  
+reckon 思考  
+go awry 出差错，出岔子  
+improbable 不可能的 impossible  
+climactic 高潮的  
+harness 利用，控制  
+grievance 不满情绪  
+resonate with 共鸣  
+edgelord 边缘化的人 tech ~ 互联网边缘人物，键盘侠  
+tap into 利用 harness  
+rigged /manipulated 被操纵的  
+dismantle 解散，废止；拆解  
+adversary 对手  
+censorious 有压制性的  
+zeitgeist 潮流，时代思潮，时代精神  
+crave vt. crave eg. change vi. carve for  
+malaise 麻烦，困境，问题 problem  
+free rider 爱贪小便宜/爱白嫖/免费搭车的人/搭便车的人/爱蹭车的人  
+beneficence 恩惠  
+bare-knuckle 徒手的；毫无顾忌的，不留情面的；  
+upend 推翻  
+bulwark 保护者；防御工具  
+punitive 惩罚的  
+boundary-pushing  
+thwart 阻挠，阻止  
+check 制衡，制约  
+surf to power 获得权力  
+anti-incumbent 反现任的  
+enact 通过  
+divisive 分裂的  
+a cult of personality 个人崇拜  
+xenophobic 排外的  
+
+### How Elon Musk and Taylor Swift can resolve U.S.-China relations
+
+get right/strait to the point  
+take a great leap forward  
+relentless 持续严厉/强烈的  
+bashing 猛烈抨击  
+relentless China bashing  
+double down efforts on 双倍加注  
+formidable  
+muscles 引申义 power； manufacturing ~  
+puny 小的；弱的；微不足道的；无效的  
+consumption remains puny  
+spinach 菠菜  
+cut off 切断 （water） supplies/electricity  
+pushover 形容人，软柿子，轻易妥协的人；形容事，容易的事  
+bargain/deal/agreement 协议  
+paradigm 范式，典范  typical example  
+be toast 完蛋了  
+gasoline-fueled cars 燃油车  
+the talk of sth./sb. ……的谈资/谈论话题  
+subcompact E.V. 超小型的，形容汽车  
+a fleet of 舰队  
+shipyard 造船厂  
+bullet/high-speed train 高铁  
+dime 十美分硬币  
+ledge 小窗台，可指高铁靠窗位置的小窗台  
+wobble 摇晃，摇摆，形容人，犹豫，动摇  
+drill-baby-drill 加大石油钻探力度  
+gas guzzler/gas-guzzling cars 高油耗车  
+roboticized 机器化的 即automatic 自动化的 
+shake the confidence 动摇信心  
+be compounded by 恶化，加剧 worse/deteriorate  
+raid 突击  
+house-poor 有房没钱，因房致穷  
+-poor 缺乏 vitamin-poor  
+born of 由于  
+
+### Masa Son is promising a massive investment in Trump's America. Don't hold your breath
+
+don't hold your breath 别抱太大希望，别太当真  
+enigmatic /mysterious 神秘的  
+turn up/show up 现身  
+pump up 加油打气  
+ICYMI in case you miss it 前情提要，热点回顾  
+sprawling global tech investing company 规模庞大的  
+
+### Softbank's gambling founder Masayoshi Son, is catnip for authors
+
+catnip 樟脑草，猫薄荷  
+be catnip for/to 对……有极大吸引力  
+misstep 失败，错误  
+prescient 有预见性的  
+vaporise billions 蒸发数十亿美元  
+confection 糖果，甜食；引申：华而不实的东西，徒有其表  
+revere 崇敬，尊敬，程度高于respect  
+overreach 过度伸张  
+discern 辨别出，看出，明白  
+illuminate 点亮；阐述，阐明  
+reconcile 调和，调解  
+dichotomy 矛盾  
+cradle-to-present 从出生至今  
+treatment 描述
+biography 传记  
+lay claims to 声称  
+unvarnished 不加修饰的  
+memoir 回忆录  
+… as heroic, if flawed 此处if表转折  
+hubris 骄傲自满  
+tumble down 跌落  
+career arc 职业轨迹  
+epic 史诗般的  
+from a tender age 少不更事时，涉世未深时  
+keen student 敏捷的，敏锐的 
+yearn for sth 渴望  
+fixate on 对……着迷，迷恋  
+finagle 欺诈，骗取  
+chameleon 变色龙，变色蜥蜴；（使用不同场景）不断变化的角色；见风使舵的人  
+media baron 巨头；男爵  
+craze 狂潮  
+vision fund 愿景基金  
+tell-all 揭秘，爆料  
+lieutenant 海军上尉，陆军中尉；引申，核心人员  
+chronicle 按时间顺序编写  
+Rorschach test 罗夏墨迹测试；引申：个人解读不同，千人千面  
+paean 赞歌，颂歌  
+screed 冗长的文章  
+vacuousness 空洞，空虚  
+tick 引申，内在动力  
+make sb. tick 让某人保持内驱力  
+verve 精力；活力，热情  
+sui generis 独一无二的，unique/one of a kind  
+reckless 鲁莽的  
+breakneck investment/speed 高速而危险的  
+cannot help but do 忍不住做  
+in a net-positive light 总体积极  
+colossal 巨大的  
+vitality/verve 活力  
+but what of it 那又怎么样呢  
+take a breather 休息下 take a short break  
+inveterate 积习难改的（说谎者／赌徒（等等）  
+egg (sb.) on (sb.) 鼓动  
+spotty record 有瑕疵的记录  
+
+### South Korea's president is impeached
+
+impeach one's motives 怀疑某人的动机  
+martial law 戒严令  
+reckon 清算；思考，反思；计算  
+National Assembly 国民议会，国会  
+short-lived 短暂的；短命的  
+demonstrator 示威者，游行者；产品展示员  
+songs ring out from the speakers  
+impeachment motion 弹劾动议  
+defiant stance 强硬立场  
+defiant 反叛的，叛逆的  
+ensuing 随后的  
+pull back the martial law 撤回戒严令  
+affirmative vote 赞成票  
+technocrat 技术官僚  
+uphold/overturn the impeachment 维持/支持弹劾/推翻弹劾动议  
+justice 法官  
+approval rating(s) 支持率  
+public opinion 民意，舆论  
+gesture to/point to 指向  
+in the wake of 紧跟着  
+no-fly list 禁飞名单  
+non-fly zone 禁飞区  
+unsettling 令人不安的  
+kink 缺陷，障碍；（绳线、管道等直线物体上的）扭结，绞缠，弯  
+unicameral 一院制的  
+
+### Jimmy Carter, a one-term president who became a globe-trotting elder statesman, dies at 100
+
+globe-trotting 周游世界/列国的  
+restore morality 恢复政坛的道德 (to politics)  
+新闻标题中常用一般现在时描写过去的事情，突出时效性。  
+hospice 临终关怀医院，安养院  
+standing overseas 国际影响力/地位  
+indefatigable 不知疲倦的  
+compassionate 富有同情心的  
+long-shot 希望渺茫的  
+a flashing smile 笑容灿烂  
+法文/条例 stand 依然有效，still valid  
+fell 动词原形 使……倒下，打败，击败 过去式 felled  
+flout 无视/藐视（权威）  
+malaise 困境，身体不适;萎靡;心神不宁;（尤指对社会的）不满，无奈  
+strip of 剥离  
+ostentation 张扬/铺张，炫耀，卖弄  
+verge on 接近，濒临  
+sanctimony 装腔作势，道貌岸然，伪善  
+black eye 眼睛淤青  
+dark circles 黑眼圈  
+Sunday school 主日学校  
+devout 虔诚的  
+incumbent 现任者/的，在职者/的 adj. n.  
+Baptist  
+he proved as good as his words 践行诺言，言出必行  
+hotspot 政治上指交火/动乱的 ~ elections  
+despot 
+nothing less than 不亚于，堪称，简直，可谓  
+reinvent 重塑 ~ the concept of  
+blaze a path/trail 开辟道路  
+trail-blazer 开辟者  
+philanthropic 慈善的 
+wage a war 发动战争  
+wage peace 带来/争取/促进和平  
+polarizing political figure 两极化的政治人物，风评两极分化  
+come full circle 回到起点  
+scandal-plagued 丑闻缠身的  
+-plagued 深受……其害/饱受……困扰的  
+corrosive impact 毁灭性的影响  
+ballot （无记名）投票，选票  
+cast a ballot 投票  
+on the ballot 
+prematurely 过早地;不成熟地;仓促地  
+swap 交换  
+
+### The ironies of Trump's tantrums about the dollar
+
+tantrum 闹脾气，耍（小孩）脾气；have/throw a ~  
+cement 水泥，粘合剂；加强，巩固  
+cement dollar's dominance  
+undercut 削弱；损害，使失败；要价低于（竞争对手）  
+institutional framework 制度框架  
+bedrock 基础；基岩  
+trade deficit/surplus 贸易逆差/顺差  
+brook 允许某事发生 前面常用否定 not ~  
+cannot condone 无法忍受  
+be at cross-purposes with 互相误解，互相矛盾，各说各的  
+reserve currency 储备货币  
+be accompanied by/be coupled with  
+invariably/always 必然，总是  
+spill over 外溢，波及，影响； ~ into other countries' economies and markets  
+devalue 使……贬值；贬低(某人等)  
+drive up/boost/push up the dollar's value  
+budget deficit 预算赤字  
+drive down 降低  
+the doldrums 赤道无风带；(人)消极情绪；in the ~  
+economic doldrums 经济萧条  
+boomlet 短暂的繁荣  
+wall sth./sb./oneself off 隔开；隔绝  
+relative to/compared to 相比，相较于；？  
+dethrone 跌落神坛；推翻；废黜；使下台；体育赛事中打败，击败顶尖好手 topple  
+needless to say  
+checks and balances 制约与平衡；制衡  
+expressly 明确地，清楚地，清晰地，明显地  
+bend to 屈服于  
+political ends 政治目的  
+it is a fair bet 很有可能，可以肯定的是  
+at odds with 不一致，矛盾  
+imminent/looming 即将到来的  
+fray （使）（布料或绳子）磨损，（使）磨散  
+imminent fraying 
+conundrum 难题，问题 dilemma  
+relief 浮雕；突出的品质；瞩目的特征  
+bring/throw into sharper relief 更加凸显  
+mercurial 多变的，不稳定的  
+scurry 小步跑  
+surry for safety 快速寻求避险  
+have nowhere else to turn other than 除了……别无他法  
+for all 尽管  
+in no shape 无法 not capable to do sth  
+wrack/rack 使……痛苦(身心) with/by  
+be beset by 受……困扰  
+cyclical 周期性的  
+paradox 悖论，自相矛盾  
+parlous 糟糕的，危险的 ~ state  
+exceptionalism 例外主义  
+
+### Elon Musk is Donald Trump's disrupter-in-chief
+
+disrupter/or 颠覆者；破坏者，分裂者，干扰者  
+let loose 任（某人）自由行动，放任（某人），放任自由；猛烈开（火），密集发射（子弹、炸弹等）；  
+sb's inner circle 内部圈子  
+con man 骗子  
+to explosive effect 产生爆炸性作用/炸裂性  
+slash bureaucracy/spending 削减官僚主义/开支  
+detonate 引爆，（使）爆炸  
+in the name of 以……名义，借……之名  
+orthodoxy 正统观念，普遍接受的观念  
+apex 顶点，最高峰，巅峰  
+baron/magnate/mogul/tycoon 大亨，巨头  
+freebies from Uncle Sam （缩写同US，用于指代美国政府）政府补贴/优惠  
+messianic 救世主的 ~ complex/ideology 救世主情节/意识形态  
+intractable 难驾驭的；难对付的；难解决的 ~ challenges  
+distant goals 遥不可及的目标  
+woke conformism 觉醒文化的顺从主义  
+box-tickers 形式主义者  
+an impediment to 阻碍  
+a speech impediment 语言障碍  
+ridicule sth as 嘲笑  
+incumbent 现有的，现任的 ~ firms/president  
+cronyism 任人唯亲；裙带关系 nepotism 裙带关系  
+graft 受贿  
+proximity to 接近，靠近  
+skew 偏离；使歪斜;歪曲;使有误差；歪斜的;有偏差的 ~ regulations  
+hobble 约束，限制；跛行；  
+bungle 弄糟；失败，搞砸  
+erratic 不稳定的；（动作、行为等）不规则的，不确定的，无计划的  
+micromanage 细节管理  
+the limelight 公众关注  
+swirl 使旋转  
+burn through 快速消耗；to spend money quickly  
+fusion 融合，结合  
+pernicious 有害的 harmful  
+mount 发起，开展；举行；安装  
+half-baked （想法或计划）考虑不周全的，草率的  
+set back 搁置，推迟；使受挫；使倒退；削弱  
+state capture 国家夺取/俘获  
+oligarchic 寡头的  
+titan 泰斗，巨人  
+oligarchy 寡头统治（的政府）；寡头统治集团  
+
+### The real meaning of the DeepSeek drama
+
+drama queen/king 戏精  
+-maker  制造商  
+shovel-seller 贩卖工具的人  
+gold rush 淘金热  
+wipe a trillion dollars off the market capitalisation 市值蒸发  
+rattle/panick  
+at a fraction of 一小部分  
+eke out 节省  
+stand toe-to-toe with 比肩，相媲美  
+stay at the forefront of 保持前沿地位  
+eat away at  
+the world at large 全世界，整个世界  
+pay through the nose 花大钱,烧钱  
+a stock market drubbing 股市溃败/重创  
+build-out 成长，扩张  
+take a tumble/plunge 股票跌  
+vie to/be racing/rushing to 争相做，竞相  
+stand to/be likely to 可能  
+come into play 开始起作用  
+at play 起作用  
+clout/sway 影响  
+take Britain (for example)  
+trail-blazing/ground-breaking？  
+
+### The clean-up after the LA fires is already revealing tensions
+
+hazmat （hazardous materials） 
+methodically 有条不紊的
+poke and prod
+piles of/mounds of/heaps of 成堆  
+sift through 筛选  
+wipe out/be reduced to ashes/raze （sth into ashes） 夷为平地 destroy sth completely  
+jumpsuit 防护服  
+gas mask 防毒面具  
+paint cans 油漆罐  
+oxygen tank 氧气罐  
+incinerate 焚毁 ~ lot 焚烧堆  
+topple over/fall down 倒塌  
+charred 烧焦的，烧成炭的 ~ mountains  
+loom 若隐若现  
+prone to 倾向于，易于  
+before sth, there is the question of  
+debris/wreckage 残骸/废墟  
+daunting task/intimidating/formidable 艰巨/令人生畏的任务  
+spark questions about 引发……问题  
+only one big road serves the area 仅有一条路通往  
+work around 应对  
+haul  
+power utilities  
+scrap yards 垃圾场  
+landfills 垃圾填埋场  
+toxic/poisonous  
+lithium-ion batteries 锂离子电池/锂电池  
+on-site/on-scene 现场  
+jet fire 喷射式火焰  
+gingerly/cautiously 谨慎的  
+tow 拖车，拖走  
+husks of washing machines /shell 外壳  
+revolt 反抗，抗议  
+the chimneys standing sentry over 哨兵似的站立在  
+sentry 哨兵，放哨  
+lambaste 猛烈抨击  
+a carbon copy of ……翻版  
+field calls 接到电话并处理  
+it's anybody's guess  
+fast process 快速通道  
+slower lane 慢通道  
+single-family homes 独栋住宅  
+fire-prone 容易着火的 flammable  
+YIMBY yes, in my backyard; NIMBY not ~  
+fire code 防火规范  
+sclerotic 医学：僵硬；思想固化，不愿改变  
+government is fragmented 政府内部意见分歧，支离破碎  
+
+### Shein and Temu are in Donald Trump's cross-hairs
+
+de demimis exemption/waiver 最低限度豁免  
+de deminis 无关紧要的  
+enrage 使……暴怒  
+Temu team up, price down  
+tighten screws on 对……施加压力  
+do away with/put an end to/remove 取消，终结sth/谋杀sb  
+stroke 笔画；泳姿；中风；举动，操作  
+inbound flights/passengers 回航/回航乘客  
+parcels (UK)/package (US) 快递，包裹  
+part and parcel of sth 重要部分  
+all manner of sth 各种各样的  
+reverse 推翻 overturn/overhaul  
+about-face/turn 向后转；巨大转变  
+without thought to 未经深思熟虑  
+cash in on 从……获利/牟利  
+apparel 正式场合的穿着打扮；商店里卖的衣服  
+offshoot 分公司，分支  
+limbo 不稳定的状态，飘渺  
+in legal limbo 身陷法律纠纷  
+shoddy 粗制滥造/劣质的/奸诈/狡诈 ~ quality/product/guy  
+logistical 物流的  
+strained 不堪重负的；紧张的，焦虑的，神色不安的  
+hang over one's head 阴云/疑虑笼罩  
+fatal blow 致命一击  
+lessen 减弱，使变少 ~ delays  
+wares/products/goods 用品，商品  
+fallout （核爆炸后产生的）放射性坠尘；不良后果  
+wage trade battles 发起贸易战  
+e-emporium (old-fashioned term) 电子商务平台  
+ditch 沟渠；抛弃，丢弃；dump 甩；逃学，~ school；紧急迫降  
+disproportionately 不成比例地，更大程度上  
+appease 安抚  
+
+### Have we hit peak tech bro?
+tech bro 科技男/精英  
+Sputnik（苏联发送的第一颗人造卫星） moment 促使人奋起直追/发人深省的契机/时刻  
+poseur 装腔作势的人；伪君子  
+cut down to size 挫锐气  
+scant 极少的，一丁点 ~information  
+rout/defeat 彻底的震动；击溃（敌人），使彻底溃败；彻底击败（对手）  
+tech geek 科技迷/极客  
+geek 蠢蛋  
+mingle 交际，社交，应酬  
+peacock 炫耀  
+nuptials 正式用词，婚礼  
+clipped 修剪整齐的（草坪等）~ goatee 山羊胡子  
+self-assured 自信的  
+discredit 使名誉受损;使受到怀疑  
+callow （尤指年轻人）幼稚的;不自信的;不谙世事的  
+quantitative hedge fund 量化对冲基金  
+handsome salaries 薪水丰厚/可观  
+stand in contrast 与……形成对比/截然不同  
+counter-narrative  
+vaudeville 闹剧  
+be swollen on 膨胀，飘了  
+proponent 提倡者，倡导者，辩护者  
+a parade of 一系列的  
+lizard-effect coat 蜥蜴皮纹外套  
+child-man 孩子气/幼稚的  
+permatan 永久古铜色/美黑  
+personality 名人/celebrity  
+the cult of personality 个人崇拜  
+posturing 装腔作势，故作姿态  
+deportment 姿态，风度，仪态  
+wear a suit and tie 穿西装打领带  
+medallions 大吊坠  
+funky 新潮的  
+sober suits 素净西装  
+slob around 游手好闲，无所事事  
+slob 邋遢鬼  
+dope/idiot  
+patriarch 大家长，族长  
+introspection 自省  
+hype on sth 宣传/炒作过度  
+bad-mouthing 诋毁，蛐蛐  
+couture show 时装秀  
+reservation 存疑，保留意见，异议  
+-clad 身穿  
+clad in 身穿  
+a totem of ……图腾/标志  
+maverick 不正统的，异端的  
+as little more than 只不过是，更像是  
+sour grapes  
+get no skin in the game 不涉及个人风险/利益  
+feathered fringe 蓬松的刘海  
+self-barbered 自己剪的  
+peccadillo 过失，小错误  
+
+### Ne Zha 2: a 3-year-old demon just crushed every movie in China
+
+outcast 排挤对象，异类；受排斥的人;被社会（或集体）抛弃的人;流浪者  
+smash/crush/break records 打破纪录  
+animated 生机勃勃的；活跃的，栩栩如生的；动画的；  
+the highest-grossing film 票房最高  
+grossed over 6.8 bn yuan 总收入超  
+runaway 逃走的；失控的；突如其来且巨大的（成功） ~ success  
+jolt 震动  
+add more screenings 增加（电影）排片  
+draw from 来源于，取材于  
+investiture 授衔仪式  ~ of the Gods 封神榜/演义  
+twist/adapt sth into 改编  
+devil incarnate 恶魔化身  
+antihero 非典型英雄，反派英雄  
+break convention 打破常规/传统  
+fated（可坏可好）/doomed（坏的） to 注定  
+succumb to fate 向命运屈服  
+defy fate 反抗命运  
+rebellious spirit 反抗/反叛精神  
+lotus root 莲藕 ~ starch 藕粉  
+shackles 镣铐，桎梏，枷锁  
+imprison 监禁；束缚，羁绊  
+the credits rolled 影片结束滚动的字幕，引申：影片结束，片尾  
+edge out 逐渐排挤掉，超过一点  
+pinnacle/climax 顶峰，巅峰/高潮  
+execute 制作  
+enlist 争取，谋求  
+protagonist 主角；主要支持者，拥护者  
+push against the limits 挑战极限  
+carve one's own path 开拓自己的道路  
+pivot to animation 转向动画业  
+be set for 即将迎来  
+
+### Elon Musk leads $97.4 billion bid to control OpenAI
+
+swindler/cheater/fraudster 骗子  
+unsolicited 主动提供的，未经请求的 ~ offer/advice/love 爱而不得，一厢情愿？  
+asset 优点，长处；有用的人  
+eg: She is an asset to the company.  
+tussle （激烈地）争执，争辩；扭打  
+consortium （数家公司或银行联合组成的）联营企业;财团，银团  
+power-broker 政治掮客  
+on condition of ……条件下  
+long odds 概率低，不大可能  
+old habits die hard 本性难移  
+person familiar with/with knowledge of the matter 知情人士  
+attach to a for-profit company 挂靠在盈利公司下  
+burn through the cash, pay through the nose 烧钱  
+cash-burner 烧钱的东西  
+go overboard 过火  
+on board with sb 和某人观点一致  
+ouster 罢免，解雇  
+sever ties with 切断联系  
+once bitten, twice shy 一朝被蛇咬，十年怕井绳  
+stack 引申：安插（自己人），塞人；堆  
+bulwark 城堡，堡垒；抵御；保障  
+wrest/take control from 夺取控制  
+weak points/vulnerabilities/frailties 弱点，短处  
+strong suit/points 长处  
+one-time/one-off fee 一次性费用  
+minority/majority stake 少数/多数股权  
+pale the comparison 相形见绌  
+arm 分支 division/offshoot/carve-out/spin-off/branch  
+intend to/be intent on  
+floor price 底价  
+turn away/down/decline  
+under scrutiny 接受监督审查  
+incorporate/establish/set up/found
+the headquarters is/are  
+-based  
+a smooth sailing 一帆风顺  
+
+### The vast and sophisticated global enterprise that is Scam Inc  
+
+scam-safe 不会受骗的  
+phish 诈骗  
+I am with + company 在某公司工作  
+raise stake 加大赌注/投资  
+cash out 提现  
+create sth out of thin air 凭空捏造/想象  
+Filipina/o 女/男菲律宾人  
+be held prisoner/in captivity 囚禁  
+compound 园区（缅甸）  
+lucrative/profitable  
+pig-butchering 杀猪盘  
+fatten up 养肥  
+pigsty/sty 猪圈  
+go under 破产 （go bankrupt/broke 通常指人）  
+bank collapsed 银行破产
+under the tutelage of 在……指导/教导下，联想：tuition  
+put the number of … at 预计  
+embezzle 挪用  
+in size and scope 范围  
+go about one's life 正常过生活  
+prey on 利用  
+in the physical world 现实世界中  
+a cross between ……的结合 a combination/mixture of  
+gas/torture chambers 毒气室/酷刑室  
+mainstay 支柱 cornerstone  
+narco state 毒品猖獗的国家  
+den 动物巢穴，窝；（非法活动）老巢  
+gambling den 赌博窝点  
+just as 与……一样 ~ happy 一样开心  
+elusive 难以表述（或找到、达到、记起）的；困难的  
+prison camp 拘禁营地  
+criminal syndicates 犯罪集团  
+gig economy 零工经济  
+frack/水力壓裂法採油（或天然氣） crack  
+scalable 可调节的，可伸缩的，灵活的  
+crook 罪犯；骗子；无赖；（尤指）诈骗犯  
+malware 恶意软件  
+**harvest** sensitive data 获取敏感数据  
+under way/ongoing  
+turbocharge/speed up 加速，促进，推动，增强  
+turbocharger 涡轮增压器  
+impersonation/imitation/copy 模仿  
+devote huge resources to doing  
+nuisance 烦人的人/事 
+dupe 上当受骗者；骗  
+nerve center 指挥中心  
+loot 赃款  
+law-enforcement machinery 执法机构/体系  
+at loggerheads with/in conflict with 分歧严重，有冲突，争锋相对  
+common good 共同利益
+look across the borders 参考/看看其他国家的情况  
+
+### OpenAI's Sam Altman and SoftBank's Masayoshi Son Are AI's New Power Couple
+
+power couple 强强联手；黄金拍档  
+golf course 高尔夫球场  
+stew 引申：思考，思忖；  
+miss out on 错过，错失  
+golden boy 佼佼者，领先人士；成功人士  
+latch onto 与……产生联系；缠上（某人）；对……产生浓厚兴趣，informal  
+on the latch 门关着但没锁  
+latch 门闩  
+in talks 谈判/洽谈中  
+blockbuster  
+fray 磨损（衣服穿久了磨损等……）；（渐渐）恼火，烦躁  
+contention 看法，主张，论点；争论；口角  
+throw on one's heels 使……措手不及  
+splashy 奢华的；轰动的  
+spend big on sth. 一掷千金  
+gobs of 大量 ~ cash 大量钱  
+gob 醉 shut your gob 闭嘴，informal  
+leading/cutting-edge  
+pale the comparison/overshadow/outshine/dwarf/eclipse 使……相形见绌/黯然失色  
+force 非常有影响力的人/物；强大力量  
+wager 赌注，押注  
+black eye （被打或撞成的）青肿眼眶；引申：败笔，污点  
+black/dark circle 黑眼圈  
+middling 中等的;二流的;普通的，一般的  
+frenzy 狂热，狂潮，疯狂  
+golden goose 摇钱树  
+wiggle room 可操作空间，回旋余地  
+incubator （小鸟等）孵化器；（婴儿）恒温箱  
+bromance （非性关系的）男性情谊，兄弟情谊  
+over the course of/during 2024  
+convert 拥趸，皈依者  
+gush 夸张地表达，感情充沛地说，装腔作势地说；涌出，冒出，喷出  
+flip products 倒卖产品，转手  
+tender offer 认购要约  
+coalesce 合并，结合  
+marry 结合  
+blessing 许可，赞同 approval  
+
+### Tesla is losing ground against its biggest rival in China
+
+lose/gain ground 失去/取得优势  
+approval/go-ahead/nod非正式/sign-off 正式，批准  
+widen one's lead over 扩大竞争优势  
+mass-market/tourism 大众市场/旅游的  
+driver/driving-assistance 辅助驾驶  
+compact hatchback 紧凑型掀背车  
+sedan 轿车  
+in anticipation of 预计，预期  
+eg. Prepare in anticipation of rain before it rains 未雨绸缪  
+human invention/influence/involvement 人为干预  
+self-driving/autonomous driving 自动驾驶  
+bring X to Y, if the 
+nip at one's heels/breathe down one's neck; follow sb closely 紧跟；离某人很近；  
+well-heeled 有钱  
+tentative 试探性的 ~ try；临时的  
+undercut/undermine/weaken  
+plug-in 可插拔的；n. 小插件  
+sth of the hour 此刻备受关注的  
+high-end/upscale/upmarket 高端的 low- 低端的  
+portmanteau/blend word 混合词  
+cost-effective/cheap at the price 性价比高的  
+earnings call 收益电话会议  
+FSD full self-driving 全自动驾驶  
+in a quandary/in dilemma 进退两难，两难境地  
+have yet to do 还未做  
+chess piece 棋子  
+bargaining chip 筹码  
+quid pro quo 交换物；报酬；交换条件  
+proximity to sb/sth 和某人关系紧密；靠近  
+
+get started/kick off/get the ball rolling  
+
+### Knowing what your colleagues earn
+
+pros and cons/advantages and dis-/strengths and weaknesses/merits and drawbacks 优缺点  
+eg. The pros of the plan outweigh the cons.  
+take a good guess 猜得八九不离十  
+speaking of/in terms of/when it comes to /as for doing/n. 说到；涉及到  
+That is about as socially acceptable as saying "What an ugly baby".  
+His idea is as clean as mud.
+He is as reliable as a broken clock.  
+as…as 此处三个例句，第二个as后接的都与前面所说情况相反，因此翻译应否定  
+monetary rewards 金钱奖励  
+rewarding/fruitful/constructive 有收获的  
+precisely/exactly/accurately  
+estimate/project/predict  
+secrecy/confidentiality  
+legislator 立法者，立法委员  
+fret about/concern/be concerned about 担心  
+mask mandate 口罩强制令  
+mandate n/v 强制  
+mandatory  
+pay ranges 薪资范围  
+wage gaps/disparities/differences 薪资差异  
+prior earnings 先前薪资 previous  
+take effect/come into effect/be effective  
+come into force/execute/implement 实行  
+due 预计的，到期的  
+fiord 峡湾  
+bucket list 平生梦想单  
+a mixed picture/bitter sweet 喜忧参半  
+pay bumps/raise/increase/rise  
+bargaining tool 讨价还价/谈判筹码，工具  
+firms above a certain size 超过一定规模的公司  
+counter-productive 起反作用的  
+be fed up with sth/sb/ to do 受够了；不满  
+job postings 招聘信息/启示  
+partly/partially/in part  
+market rates 市场价格  
+room rate 酒店房价  
+going rate 现在的行价  
+bear no resemblance to 与……毫无相似之处  
+stoke 煽风点火；添油加醋 motivation 激发积极性  
+fuel/spark  
+academics 学术界  
+live up to one's name 名副其实  
+value for money 性价比  
+subordinate 下属  
+report to 汇报  
+foster/trigger/fuel resentment 滋生仇恨  
+underdog 不被看好的人，被低估的人，黑马  
+climb the corporate ladder 晋升  
+performance-based pay 绩效工资  
+overloaded but underpaid 活多钱少  
+ice-hockey 冰球  
+prizes and pitfalls 机遇挑战  
+catalyse 加速，推动，催化 speed up/facilitate  
+suffer from 不好的事情  
+enjoy 好的事情  
+converge on 集中，聚集；观点趋同  
+
+### Who needs Hollywood? Chinese animated film shatters box office records
+
+pride and joy  
+animated film/animation  
+poised to： ready to do a particular thing at any moment  
+highest-grossing/top-grossing  
+shatter records 打破纪录（势如破竹之势）  
+runaway success 大获成功（突然的，不可控的）  
+runaway inflation  
+domestic/homegrown  
+blockbuster/  
+demonic child 魔童；熊孩子  
+fight off 对抗  
+loosely 大致  
+cross/go beyond the mark 超过目标  
+anemic ticket sales 疲软的票房销量；贫血的  
+slumping/Stagnant/sluggish economy  
+Hollywood titles/domestic features 好莱坞电影/国内电影  
+prequel 前传  
+sequel 续集  
+original 原作  
+teem with 充满  
+revisit a theme/idea/plan 重温  
+hit the mark 成功做某事  
+miss the mark  
+all demographics 所有人群；前面可加年龄段  
+pull in/gross +  获得……票房  
+rake in 轻易赚（很多钱）；赚大钱  
+portray/describe as  
+opinion essay 评论文章  
+mantle （尤指前任留给继任者的）责任；衣钵  
+have a rippling effect on 影响波及/扩大  
+instant hit/sensation 爆火 smash hit  
+be released/come out（无被动）  
+Let's move on/roll on  
+nationalistic fervor 爱国热情  
+fervor 热情  
+tap into/make use of sth  
+tough stretch 艰难的时期  
+口语：rough patch 艰难  
+reinvigorate 重新注入活力  
+incentives/stimulus 激励  
+carrot and stick/reward and punishment  
+credit/attribute A to B 归因于，归功于  
+put a positive/negative spin on 积极/消极方式讲述  
+resonate with/relate to 共鸣  
+crack the top 10/shortlist 进入前十/最后名单  
+no longer the case
+turn the tables 扭转局势  
+marvel/amaze at 惊叹  
+based on/rooted in  
+take creative liberties 加入创新  
+tantrums 刷孩子脾气  
+back-to-back deadline 一个接一个的  
+
+### Actress Barbie Hsu's shocking death: what is influenza, and how can it turn deadly
+
+zip/zero/zilch 无 nothing, none  
+turn deadly/A fatal disease/a life-threatening illness  
+epilepsy 癫痫  
+cerebral palsy 脑瘫  
+nebulizer 雾化器  
+underlying (health) condition 基础病  
+have my masks welded onto my face 口罩焊死在脸上  
+If apologies worked, why would we need the police?
+N95 respirator  
+blocked/stuffy/congested nose/sniffle 鼻塞  
+runny nose 流鼻涕  
+watery eyes  
+parched 很渴，嗓子要冒烟的  
+unconscionable 无人性的  
+mild infections 轻度感染  
+contracted/developed/suffered from/be diagnosed with/caught influenza  
+fatigue/out of juice/knackered/run out of energy/drain one's energy/be drained of one's energy/depleted/exploited 筋疲力尽  
+GI tracks  
+spread through respiratory droplet dispersed into the air  
+incubation period 潜伏期  
+susceptible 易感染的  
+recover from without treatment/without the need for medical attention/without seeking medical care  
+sepsis 败血症  
+aged 65 and older/over/up  
+metabolism 
+metabolic disease  
+renal failure 肾衰竭  
+tear-jerker 催人泪下  
+immunosupression 免疫抑制  
+blood clots  
+get some rest and drink plenty of fluids 多休息，多喝水  
+acetaminophen  
+reduce fever/bring down/knock down/keep down/get down the fever  
+break fever  
+subdue the agonizing pain you’re in 缓解疼痛  
+practise/develop/form goods habits  
+make it a habit/make a habit of  
+force of habit 习惯使然  
+
+### An Asteroid's Threat: 2024 YR4 and Why Panic Isn't Needed
+
+blockbuster news 重磅消息  
+remain/stay calm/keep one's shirt on  
+get freaked out/panic/anxious  
+has firmly grabbed the world's attention  
+rear-end collision 追尾  
+sound the alarm 拉响警报  
+trigger/activate  
+inactivated vaccine 灭活疫苗  
+astronomical 天文数字的  
+on your marks, get set, go 各就各位，  
+advanced/state-of-the-art/cutting-edge  
+celestial object  
+in the vicinity of 在……附近；大概（around/approximately…）  
+keep a close eye on 紧密关注  
+impact probability 撞击概率  
+deep impact 深度撞击  
+modest pay/salary 微薄的工资  
+He has been funding some students in poverty with his modest salary.  
+radio telescope 射电望远镜  
+velocity 速度  
+optical telescope 光学望远镜  
+hit/impact/strike 撞击  
+batter and pitcher 棒球中的打击手/投球手  
+put sb/sth on high alert 使……处于高度戒备  
+at the forefront  
+deflection 偏离  
+advancement/development/evolution  
+omen 征兆，预兆  
+impending 即将到来的  
+doomsday 世界末日  
+remain vigilant to  
+
+### Behind DeepSeek lies a dazzling Chinese university  
+
+the entrance/exit to 出入口  
+anachronistic/incongruous 格格不入的  
+unveil/release  
+model sth on 以……为蓝本/模板/榜样  
+top-tier/top-of-the-line 顶尖的  
+survey 俯瞰  
+alumnus 男校友/alumna 女/alumni 复数  
+fungus/fungi 真菌  
+by some metrics 根据某些指标/方面  
+eclipse/outshine/overshadow/dwarf  
+be abuzz with （abuzz 不形容名词）非常活跃，有活力  
+zippy 精力充沛的；敏捷的  
+a clutch of/a group of 一群  
+reach new heights 创新高  
+foster/hatch talent 培养人才  
+sales pitch 销售话术  
+pitch 兜售  
+yearn for  
+dabble (in) 浅尝，涉猎，尝新鲜 foray into  
+wiggle room 回旋余地  
+ask for favours 索要好处  
+at the mercy of: be controlled by 受制于  
+leave sb in the dust 远远抛在身后  
+defer to 接受，遵循  
+if memory serves me well 如果我没记错的话  
+be of Chinese descent/heritage 华裔  
+tectonic plate 板块（地理）  
+sth materialize/crystalize/realize 实现，成为现实  
+beyond one's ken/knowledge  
+
+### Chinese cars are taking over the global south
+
+power one's growth  
+lacklustre ；缺乏生气的，懒洋洋的；  
+overhaul 汽车大检修；经历巨变  
+take a decisive lead 大幅领先  
+unpromising 出师不利；hardly encouraging  
+plug-in hybrid 插电式混动汽车  
+once-dominant  
+once- 曾经  
+wrest/steal 抢夺，夺取；  
+overthrow  
+at the pinnacle of  
+be central to 至关重要  
+consternation 焦虑；惊愕  
+incumbents/incumbent(n.)/legacy carmakers/firms 老牌/传统车企（英英释义理解单词，语境理解含义）  
+internal-combustion engines ICES 内燃机  
+three-quarters 四分之三  
+car-carrying vessels  
+-carrying  
+opt for: choose, prefer 选择  
+low-hanging fruit 低垂的果实；容易实现的目标  
+government inducements  
+seeking an alternative outlet 寻求新的出路  
+if that door is slightly ajar, others are firmly shut.  
+keep sth at bay 阻止，遏制
+fierce loyalty to 忠诚度高  
+rocky diplomatic relations 外交关系不稳定  
+shift one's focus/attention to  
+写作：长短句交错  
+in essence  
+stall one's advance 遏制进攻  
+power ahead 迅猛发展  
+have established oneself /to establish footholds 站稳脚跟  
+electrify the （car） markets 推动市场电动化  
+The surge is set to continue.  
+sidestep tariffs 规避关税  
+be in the vanguard 先锋，走在最前沿  
+prying eyes 窥探  
+
+### Why a Chinese gadget company can make an electric car and Apple can't
+
+affordable/accessible/approachable price  
+go down in history  
+go south 变糟，失败  
+tap into/take advantage of/make the most of/make use of  
+consumer electronics 消费电子产品  
+futuristic 未来感的  
+soak up $ 10 billion 耗费大量财力  
+soak up 吸收，耗费大量财力/人力  
+deliver (on) a promise 履行承诺  
+gain full control of/dominate  
+launch/bring out  
+call it in the air ？  
+daily routine 日常惯例  
+infiltrate 渗入，渗透  
+branch out to/expand to other industries 跨界到  
+branch out 节外生枝  
+muddy waters 浑水  
+partner/team up/collaborate/corporate with 合作  
+up the ante/raise the stake 加大赌注  
+bricks-and-mortar 实体店  
+high-design phones 高设计感的手机  
+a fraction/small number/small portion of 一小部分  
+deal a major/heavy blow to 造成沉重打击  
+long command/domination over  
+premium/high-end/up-market cars 高档车  
+go on sale 上市售卖  
+stage/organize a launch/campaign 组织/策划发布会/活动  
+flashy teaser 吸引眼球的广告/预告片/宣传片  
+SUV sport utility vehicle  
+four-seater 四座车  
+give sb an edge/advantage  
+work around the clock 日以继夜地工作  
+flood/swamp A with B 充斥，席卷  
+a deep well/large pool of knowledge 海量知识  
+trick out/decorate 装饰  
+touch-screen panel 触摸屏  
+That's what it takes to do sth  
+It's just a matter of time before  
+generate/make/create buzz 造成轰动/话题  
+
+### Europe vows to defend Ukraine, but prays for Trump's support  
+
+all in the headlines  
+stalk/dog 紧随  
+broad agreement 广泛共识  
+step up to the challenge 迎接挑战  
+step up to 挺身而出，走上前  
+secure/obtain  
+be on offer/available  
+jaw-dropping/appalling/shocking/  
+to the bone  
+verbal abuse 语言暴力，言语侮辱  
+More hast, less speed  
+appalled/appalling distinguish tip: 
+i'm appalled by sth, not appalling by  
+sth appalls you, sth is appalling  
+What do you make of it? 对这事你怎么看  
+get stung by bee,  
+chair the meeting  
+congenial: very pleasant, agreeable 意气相投的，令人愉快的（形同人事物地点）  
+commit a mistake  
+big time and money commitment 费时费钱  
+give or take/or so/more or less 大约  
+celebrity endorsement 名人代言  
+be put to/be presented/handed in to  
+grind on 烦人或乏味地继续下去  
+hammer out/strike a deal/bargain  
+military muscle/might 军事力量  
+backstop 后盾  
+defense capabilities 军事力量  
+deter 震慑  
+coalition 联盟  
+could well/very likely  
+founder/fail/collapse 失败  
+come away with  
+be in order/appropriate 合理/合适的  
+don't you think a little thank you is in order?  
+the chances of sth remain fairly slim.  
+it pains me to say it/i hate to break it to you  
+get sth out of one's chest  
+obstinate/stubborn 顽固  
+obstinacy 顽固  
+as stubborn as a mule  
+hanker after/covet/yearn for/  
+sneer 嘲讽  
+it is past time for sb to do 早该做 /overdue  
+conviction 坚信 strong belief  
+only too 非常，only强调  
+fill gaps 填补空缺  
+off the shelf/ready made 现成的  
+forlorn/hopeless  
+
+### Nvidia is fighting both Trump and China
+
+sizzling (hot) 酷热地;极热地；  
+roster 名单，花名册，阵容  
+duty roster 任务清单  
+tech giant/titan  
+tech hubs 科技中心  
+inaugurate/usher in a new era 开创新时代  
+take a quiet approach/lie/lay low/keep head down/keep it low/keep a low profile 低调  
+run a tight ship 管理得井井有条  
+precipitate/bring on/spark/trigger/prompt  
+sell-off 抛售  
+upstart  
+you are the upstart, who are risen to the top today, so of course you are feeling smug.  
+你今时今日新宠上位自然得意  
+thrifty/frugal 节俭的  
+top-of-the-range/state-of-the-art/top-notch/pioneering/industry-leading/class-leading 顶级/先进的  
+toot/blow one's own horn 自吹自擂  
+the next shoe to drop （坏事，贬义）必然发生的事；早晚会发生  
+curb/curtail 限制  
+weigh in 发表看法  
+take a hard line on 采取强硬立场  
+incremental 逐步，递增的  
+in the wake of/consequently  
+Small incremental steps achieve great things.  
+stifle 遏制，抑制  
+trade-stifling  
+deal a blow 造成打击  
+scaled-down  
+soar/surge/spike  
+ditch/abandon/get rid of  
+As it stands 目前看来  
+tether  
+morass 泥潭，沼泽，困境  
+alienate 疏远  
+put one's own stamp on it  
+beat to our own drum  
+in the run-up to 在……前夕  
+lavish  
+hell-raiser 引起喧哗/制造麻烦的人  
+bludgeon 恫吓，猛烈打击  
+soften/cushion the blow 缓冲  
+kneecap 重创  
+by and large 总体上，大体而言  
+in one's good books 保持好关系  
+ramp up 增加，提高  
+ramp 上坡  
+rout 彻底打垮  
+incumbent party 执政党  
+panic selling  
+
+### Banker Mark Carney wins race to lead Liberal Party, and Canada  
+
+dabble 初次涉足  
+prominent/important  
+amid(st)/against the backdrop of  
+generational crisis 时代危机  
+technocrat 技术官僚  
+plutocrat 财阀  
+take on/challenge/face off with  
+steer/take the wheel/helm/sit in the driver's seat 掌舵  
+The figure speaks for itself. 不言而喻  
+cast a vote 投票  
+in any shape or form 以任何形式  
+acceptance speech 获胜感言  
+faithful/staunch supporter 拥趸  
+the elephant in the room 人們不願多談但卻顯而易見的棘手問題  
+drop the gloves 开始动手  
+(ice) hockey 冰上曲棍球  
+lacrosse 长曲棍球（夏天玩）  
+electric 极其兴奋的  
+swear in 宣誓就职  
+pressing + n/(be) urgent  
+pressing challenges  
+land mass 国土面积  
+put one's thumb on/under one's thumb 控制  
+on-again-off-again 断断续续的  
+cripple 使残废；破坏  
+deal a crippling/major/heavy blow to  
+menace 威胁  
+annexation 吞并  
+retaliatory 报复性的  
+opinion researchers 民意调查员  
+stand up to/face off with 正面应对  
+make moves against  
+toe the line 遵守规则  
+pollster 民调组织/机构  
+poll/polling takers/subjects 参与民调的人  
+manage/handle  
+rough and tumble 混乱的局面  
+establishment 政治上：当权者  
+rally around 围绕在周围  
+lieutenant 副手，副将；中尉  
+have been doing 强调持续状态  
+have done 时断时续  
+it has been raining for 2 hours  
+it has rained for 2 hours  
+on top of/apart from/in addition to 除了  
+a slew of 大量 a large quantity of  
+first and foremost 首先，最重要的是  
+evangelist 布道者，倡导者  
+endowment 馈赠，天赋 talent/gift；学校捐助，资助 donation  
+potash 钾盐  
+brandish 挥舞  
+credentials 资历  
+spend a fortune on  
+attune to 对……很熟悉；与……保持一致  
+it's anybody's guess  
+make a fortune/make good money  
+full-blown 全面爆发的  
+
+### How Trump provoked a stock market sell-off
+
+show no sign of  
+come to/ cross my mind/pop up in my mind  
+institute 开始实施，引入法律/政策 introduce  
+suspend/halt  
+a growing source of (anxiety/concern etc.)  
+trickle 小溪；滴流；淌 drip  
+as is often the case 如同往常一样  
+lose sleep over 夜不能寐  
+get things going/get started  
+reverse/about-turn/about-face  
+go/turn sour 情况变糟糕  
+market mood/sentiment 市场情绪  
+Fed put 指美联储救市行为；看跌期权  
+hard-nosed 强硬的；执着的，顽强的，务实的  
+share sb's view：have similar views 同意你的观点  
+Wall Street 金融界 vs Main Street 大众的，中小型企业  
+recession/downturn/  
+sluggish/stagnant/anemic 疲软的  
+this time (a)round 如今  
+harangue 抨击：criticize strongly/aggressively  
+counterpart/peer/equivalent  
+in dollar terms 以美元计  
+boom and bust 繁荣与萧条  
+wax and wane 盛衰  
+disregard for 不在意  
+put in the limelight/spotlight  
+go on a tear 一路高歌猛进，迅猛发展  
+enticing/appealing/alluring  
+hype/publicity 宣传  
+prominent/stand-out  
+vandalism 破坏  
+turn things around 扭转局势  
+forestall 先发制人，预先阻止  
+不可数名词前/后加限定词后，可加a/an修饰，表示这一类事物  
+a 52% chance/a good knowledge of sth/a probability of less than 10%  
+ire 怒火  
+susceptible/vulnerable/fragile to  
+price-to-earnings ratio 市盈率  
+constituent 组成  
+wobble 走路摇摇晃晃；动荡  
+
+### Elon Musk's antics are not the only problem for Tesla
+
+antics 一般都为复数，古怪而可笑的举动；噱头  
+go under/go bankrupt  
+sink or swim 不成功，便成仁  
+may/might well 很有可能  
+bash: criticize severely/hit hard 猛烈抨击；猛击  
+bring on: cause sth to happen 引起某事  
+bring about 引起（程度更深）  
+apply the brakes to 阻止  
+put/slam/jam on the brakes 踩刹车  
+put the brakes on 抑制，控制，制止  
+hold sway over 对……有巨大影响力，控制力  
+up to no good 不怀好意，不干好事，没安好心  
+mark my words 记住我的话  
+hit the peak/hit bottom  
+gather steam/gain momentum 积蓄力量；势头越来越强；  
+let off steam 发泄  
+backlash 强烈反对  
+picket  
+turn ugly  
+the last resort 最后手段  
+bumper-sticker 车贴  
+bumper to bumper 车离得很近  
+bumper 保险杠  
+distance from  
+vandalise 故意破坏公共财物  
+take a chainsaw approach to 大刀阔斧  
+uproar 轩然大波；喧嚣;嘈杂;吵闹  
+cause an uproar  
+antipathy 敌意，厌恶  
+reckon 认为  
+pro-China 亲华  
+meddling 干涉；管闲事  
+meddler 爱管闲事的人  
+run down: reduce sth in size 减少  
+downsize  
+crimp 限制  
+hold off/put off 推迟  
+the bulk of 大部分，大多数  
+decide against: decide not to do  
+humanoid robots/android 人形机器人  
+turn one's hands to 接触，涉足  
+lose connections with fundamentals 脱离基本面  
+spread oneself (too) thin 精力分散  
+chastise 严厉批评，斥责，谴责  
+keep up with: continue to do or pay sth  
+keep up with the rent  
+offer better terms  
+
+### With Manus, AI experimentation has burst into the open
+
+bring/come/burst into the open 进入开放状态  
+wrapper 套壳，嵌套；包装纸  
+swipe 手机左滑右滑等  
+scroll through ，上下滑动浏览  
+spin up 快速启动，生成（科技界常用）  
+give it/sth a shot/try  
+have a shot  
+a sequence of 一系列  
+have a lot further to go/a long way ahead  
+loop 循环；环形；圆圈  
+be in the loop/loop sb in 知情，参与其中  
+prize A over B 看重  
+prize a job done first over a job done well  
+keep sth under wraps 保密  
+poke and prod 反复调整/测试  
+sit on 搁置，延迟做某事  
+sit on one's hands 啥事不干  
+assorted/various 各种各样的；混杂的  
+at regular intervals 定期  
+upstart 新贵，暴发户，新人，新兴公司……  
+neuveau riche 暴发户  
+manus 拉丁语 手  
+mens et manus/mind and hand  
+fixate on 关注  
+steal a march on 捷足先登，快人一步  
+ahead of the curve 抢占先机，保持领先  
+nowhere near 相差甚远 not even close to  
+be it A, B (or C) 无论是  
+or otherwise 其他
+off-the-shelf: readily available 现成的  
+have a large appetite for  
+in the wild/open 野外；外部；开放  
+spot on/right on/dead on 正中要点  
+pull out of action 终止行动  
+play out 进行，表现  
+misbehaving 变现不好/恶劣的  
+spot/find/identify 发现  
+
+### Have humans passed peak brain power
+
+verbal reasoning 语言推理  
+numerical reasoning 数学推理  
+one-track mind 一根筋  
+Evidence is mounting/There is mounting evidence  
+Nobody would argue that  
+time span  
+focus span 专注力  
+benchmark 基准  
+amelioration 变好  
+deterioration 恶化  
+understandably/naturally 自然地，可被理解的  
+in that: because 因为  
+be confined to/be limited to 限于  
+sb/sth be no exception  
+make an exception for  
+would-be 即将成为的  
+a rapid upward climb/shoot up 急剧上升  
+inflection point 转折点  
+noteworthy 值得注意的  
+newsworthy 值得报道的  
+coincide with 和……吻合，同时发生  
+post-literate 后文字时代的  
+the lion's share 占比占大头  
+transition/shift 转变  
+buck the trend 阻挡潮流  
+eye-opening 大开眼界的  
+eye-opener 大开眼界  
+per se 就其本身而已  
+brain rot  
+feed 推送  
+a barrage of (notifications) 大量，一连串(狂轰滥炸式的)  
+a torrent of 大量  
+direct A at B 注意力转向  
+self-directed 主动的，以自我为导向的  
+context-switching 内容切换  
+benign 良性的  
+bene: prefix means good  
+benediction 说某人好话  
+undimmed 不受影响的，未被削弱的  
+sth be a function of 取决于  
+hamper/hinder 阻止，阻碍  
+be presented with  
+switch gears 换挡；突然转头去做别的事  
+binge-watching/ 刷剧，追剧  
+
+### Can young people afford to not go to college
+
+beyond one's affordability  
+crushing burden 沉重的负担  
+juvenile delinquency 少年犯罪  
+delinquent 未支付的  
+delinquent loan  
+forgo: give up  
+moneywise  
+the long arc 漫长周期  
+bypass 绕过，绕道；置……于不顾；心脏搭桥  
+take a detour  
+under one's belt 尽在掌控，已经获得  
+at first blush/glance 乍一看  
+be off to 去哪里  
+compound 加剧，恶化；小区  
+money loser 亏钱  
+at the onset of 常接不好的事情，在……开始时  
+inoculate 接种疫苗  
+inoculating effects 保护效用  
+weather the storm 渡过难关  
+strike gold 淘金；成功  
+pan in the creek 做繁重工作，但成功机会渺茫  
+business acumen 敏锐度  
+forge bills 造假币  
+launchpad 起点，跳板；发射台  
+replicate 赝品  
+climb/move up the income ladder 收入阶层  
+comb through 梳理  
+inextricably 紧密地 very closely  
+reverberate 回声；回响；震撼；产生广泛影响  
+ramification 分支，衍生；结果  
+keep sth humming 保证……正常运行  
+long tail 长远的  
+expedient 暂时的；权宜的  
+makeshift 权宜的；短期的  
+makeshift hospital 方舱医院  
+
+### MAGA is already rewiring American education
+
+rewire: reshuffle/reorganize 重塑，重组  
+bring to heel 遵守规则，就范  
+high heels 高跟鞋  
+announce/proclaim 公开宣布  
+flank: side 一侧；在一/两侧  
+phalanx 方阵  
+a phalanx of  
+a cup of joke  
+autograph: signature  
+bugbear 讨厌的人/事物  
+meddlesome 好管闲事的  
+nosy 好管闲事的  
+nanny-state  
+encroach on 蚕食土地；侵占，侵蚀时间/经理  
+devolve 下放；分权  
+account for 占比；是……的原因  
+take up 接手，接管  
+enact …… into law  
+fiat: order  
+executive order/fiat  
+separation of powers  
+wiggle room 回旋/商量余地  
+appropriations/grants 拨款  
+money talks, people listen  
+strike to the heat 直击心脏  
+acquiesce to 默认接受  
+emanate from: come from  
+embolden 大胆  
+categorical 明确的 ~ evidence 确凿证据，铁证  
+prelude 前奏，序曲，序幕  
+reprisal/revenge/retaliation/retribution 报复  
+muzzle/mute 使缄默  
+equivocating 模棱两可的，含糊其辞的  
+pre-emptive 先发制人的，捷足先登的  
+rescind 撤销 ~ policies/executive orders  
+attest to 为……提供证据
+voguish/fashionable  
+navigate around 绕过  
+have a taste for  
+devise 设计  
+
+### A leak reveals Team Trump's carelessness, and contempt for allies
+
+mortification: humiliation 尴尬  
+fat thumb/finger 手滑，操作失误  
+mistake 人为；error 机器  
+glitch 小差错，小故障  
+breach 开口，缺口，漏洞  
+inadvertently/accidentally 阴差阳错地  
+recount 描述，讲述  
+at length 长篇大论，长时间  
+dismay 沮丧，灰心，失望  
+lax 松弛的，宽松的，马虎的  
+-laden 充满……  
+foot the bill/pay the bill  
+be had/be tricked/be deceived 被耍了  
+connection request 好友申请  
+purport to be/claim to be 据称  
+implausible: impossible  
+rail/rage against 大肆抨击  
+cozy(sy) relations 关系亲密  
+bizarre/eccentric/strange/weird  
+take a turn for the better/worse  
+ostensibly 表面上  
+seemingly/presumably/apparently 据称，貌似，表面上，似乎  
+upcoming  
+impending 即将到来的（通常不好的事情）
+misgivings about 焦虑，不安  
+(air) strikes 空袭  
+carry a risk 存在风险  
+cease fire/truce 停火  
+fall apart: fail  
+share sb's feelings 与……感同身受  
+bail sb out 保释；拯救某人于危难  
+free-loading/free-ride 白嫖  
+now is as good a time as any 眼下就是最好的时机  
+shipping lanes 航道  
+loathing  
+give the green light 准许  
+set out 详述，阐明  
+(two hours) hence: from now 从现在开始  
+split-screen 分屏  
+hail sth as 称赞  
+flex sb's muscles 炫耀实力，耀武扬威  
+envoy 使者  
+entourage 随从  
+the odd one out 异类；与众不同的人，不合群的人  
+ethos 风气，（个人或团体的）精神特质，价值观，信条  
+ethos, pathos, logos  
+hover 盘旋；徘徊  
+complacent 自鸣得意的，自满的  
+boiling point 沸点；事态/情绪）爆发点  
+plain-speaking 直言不讳的  
+
+### Elon
+
+look over one's shoulder 密切关注  
+migrant worker 农民工  
+gasoline cars 油车  
+rather than/as opposed to/instead of 而不是  
+trickle 涓涓细流  
+undercut 低价竞争  
+outwit  
+bloat  
+make sb redundant  
+aura 气场，气氛；光环  
+winning streak 连胜  
+torn 纠结的  
+tear sb away from 抽离，抽身  
+paper shredder 碎纸机  
+singe 轻微烧焦；引申：损坏  
+whip up 快速完成；煽动，激起  
+stiff competition 激烈竞争  
+underpin 支持，支撑 support  
+have a target on one's back 成为众矢之的  
+intoxication 陶醉，兴奋；醉酒  
+bomb-throwing 激进的  
+on-and-off/on-again, off-again 断断续续  
+propel/spur/fuel/boost 推动  
+temperamental 情绪多变的  
+mercurial 多变的  
+boomerang 回旋镖  
+backfire 引火烧身，反噬  
+immediate 迫在眉睫的  
+immediate boss 顶头上司  
+rev up 使活跃  
+vye with 竞争  
+battery-powered/electric vehicles  
+pull the plug 制止，阻止某事继续；釜底抽薪  
+it never rains but it pours 雪上加霜；祸不单行  
+bleak 惨淡  
+Tesla bull 股市：看好Tesla的人  
+telling/pronounced 明显的  
+staff turnover 人员流失  
+gazump 房产交易中，临时抬价；引申：充分利用  
+pundit: expert  
+cast doubt on 质疑  
+pared-down 精简版的，阉割版的  
+scorched-earth 焦土的，激进的  
+scorching hot  
+thus far: so far  
+sojourn 逗留，旅居，短期逗留  
+strip away/strip of/deprive of 摆脱；剥夺，去除，剥离  
+lofty goals  
+
+### Myanmar's earthquake piles misery on civil war
+
+pile misery on 雪上加霜  
+reel from 卷入，遭受  
+reel film 胶片电影  
+junta /'hun 军政府  
+death toll/casualties 死亡人数  
+灾难等 earthquakes strike/hit/rattle/rock the region  
+petrified  
+slosh around  
+declare a state of emergency 宣布紧急状态  
+cave in/topple/collapse/fall down/tumble down 倒塌/crumple (to the ground)  
+buildings were flattened  
+swing into action 快速展开行动  
+gut-wrenching 揪心的  
+full extent 全部  
+that's the extent of my knowledge on 我就知道这么多  
+cascade 瀑布；(from) 倾泻而下  
+impermanence 无常  
+rubble 瓦砾  
+a pile/mound of rubble  
+fault 断层（地理名词）  
+over-ride  
+dissipate 消散，驱散  
+dissipate one's anger  
+serve as a guide 作为参考  
+reinforced concrete 钢筋水泥  
+have no shortage of 不缺  
+founder 沉没；垮掉;沉沦  
+Every relationship is foundering on suspicion and jealousy.  
+sneak a peek 偷窥  
+regicide  
+spurt out 喷涌而出  
+liquefy 液化  
+wrought 仅有过去式，造成；使发生  
+slashie/multi-hyphenated 斜杠青年  
+help in a crisis, not in chronic need 救急不救穷  
+shun 避开；冷落  
+I hate to impose 不想强人所难  
+disparate 迥然不同的  
+decrepit 非常老的，常指健康状况；破旧的，年久失修的；破烂不堪的；老朽的  
+sense of empathy/capacity for empathy 同理心  
+My heart/condolences go(es) out to the people  
+engulf 吞噬  
+
+### Move over Elon Musk: our electric cars at BYD are overtaking Tesla
+
+global face 全球代言  
+brand ambassador 品牌代言人  
+win over 争取  
+fly out of the door 畅销/sell like hotcakes  
+boast sth. 拥有 equip with  
+battery range 续航里程  
+executive car  
+vegan/faux/artificial leather 人造革  
+prevalence 盛行  
+household appliance  
+the biggest slice of the pie  
+put sth ahead of  
+it won't be long before  
+aim for/target at  
+play second fiddle to/second only to/be in backseat 仅次于  
+speed ahead  
+you get what you pay for 一分钱一分货  
+rigid need 刚需  
+in the international EV arena  
+What’s your two cents? 你的想法是什么  
+snarl-up 混乱 mess-up/chaos  
+umbrella term 通用术语  
+plug-in 插电式的  
+tell sb off 指责  
+sever/cut off ties 切断联系  
+fend off 抵御，抵抗，应对  
+roadblock 障碍 hurdle/obstacle  
+slap/impose tariff/levies 征税  
+hedge against 对冲，保护  
+no fan of 不喜欢  
+raise profile 提升地位  
+profile 侧影；个人资料；公共注意  
+criss-cross 遍布；交叉  
+over to sb 该你了  
+
+### Japanese people are starting to quit their jobs
+
+inertia 惰性，懒惰  
+口语化：me time 个人时间  
+vote with sb's feet 离开表不赞同  
+be cut out for  
+i was never a studying material/wasn't academically inclined  
+rigid hierarchy  
+the pecking order 阶层秩序  
+berate 严厉斥责/批评  
+be hungry for 渴望  
+outlier 异类，另类，例外  
+commonplace 常用于形容现象等  
+for life/for good  
+reap the harvest/benefits  
+glass ceiling 职场天花板  
+salaryman 上班族，工薪族  
+job-switcher/hopper/changer  
+jump ship:change jobs 跳槽  
+bargaining power 议价权  
+regular worker 正式员工  
+do a gig 临时表演；打零工  
+gig economy 零工经济  
+gig worker 零工  
+shrink 心理医生  
+exodus （大批人的）离开；退出  
+archetypical 典型的  
+after-hours bonding 下班后的交际活动  
+celebrated: famous 著名的  
+Be a warrior, not a worrier  
+maternity leave 产假  
+paternity leave 陪产假  
+zombie company 无生气的公司，快破产的  
+follow the same path  
+tensions are brewing 紧张局势加剧  
+take issue with 提出异议，不满  
+veteran 资深员工；老兵  
+slacker 摸鱼的人  
+slack 松弛的，衣服宽松的  
+liken A to B 把A比作B  
+brain drain 人才流失  
+clog upper-management positions  
+little room to advance  
+labor fluidity/mobility 劳动力流动性  
+make haste: hurry up  
+leave/quit one's job  
+coast along 不费力，不费油；引申：职场中混日子，摸鱼  
+close loop 闭环  
+职业1-turned-职业2  
+implication 意义，影响  
+ossify 固化  
+inject dynamism into  
+
+### Intelligence officials face a fresh round of questions about Signal leak
+
+in lock step: in sync/in agreement 步调一致  
+notable/attention-grabbing/striking  
+blunder 大错  
+underling 下属，部下；走卒  
+advisability 明智  
+well-advised 非常可取/明智的  
+ill-advised  
+I yield my time 让出发言时间  
+leave sth open 留有余地，保留可能性  
+waver 犹豫；动摇  
+all but: almost  
+in jest 开玩笑  
+fist bump 击拳  
+find one's footing 站稳脚跟  
+lose one's footing 失去立场  
+on the equal footing 处于平等地位  
+caucus 核心成员  
+hammer away at 努力实现某事；不断重复，反复提  
+filibuster 冗长辩论  
+allotted + 时间 给定时间内  
+dais 讲台，主席台  
+ask questions of you 此处of比较正式，可用于写作  
+interception 截断  
+intently 专注地  
+relentlessly  
+stonewall 打太极，政治术语  
+downplay/play down 淡化；轻描淡写  
+overplay 夸大  
+skirt 避开  
+skirt the law/details  
+rebuke/shoot back 反驳；斥责  
+line of defense 辩词  
+line of questioning 质问  
+hold water 站住脚  
+contentious 有争议的  
+exchange: trade 交换  
+devolve into 演变成  
+shouting match 唇枪舌战  
+abstain/refrain from  
+episode/incident/accident 事件  
+ranking: senior  
+briefing 事前简报  
+debriefing 详细询问（活动之后），事后汇报  
+
+### When Life Gives You Tangerines ending explained
+
+burning questions 急切想知道/亟待解决的问题  
+finale 大结局  
+a touch of: a small amount of 少许，一丝  
+tie up 收尾，解决  
+top the charts 登顶  
+chart-topping  
+category: genre  
+invest (time, efforts, money etc. in sth)  
+financial struggles  
+break the mould 打破常规  
+follow traditions 因循守旧  
+follow a pattern of 遵循，按照特定模式  
+lean on: depend/rely on  
+When the going gets tough, the tough get going. 艰难之路唯勇者行  
+stand up for 为某人出头/撑腰，捍卫  
+do a double take 又看了一眼，愣了下才反应过来  
+desk job 文职工作  
+in the family way: pregnant  
+welcome two children 迎来了两个孩子  
+serve jail time: do time  
+weigh heavily on  
+turn things around 扭转乾坤  
+on the brink/edge/verge of sth 濒临  
+wine and dine 好吃好喝招待；设宴款待  
+
+### Prosecutors to seek death penalty for Mangione, Bondi says
+
+attorney general 司法部长  
+in keeping with: in agreement/line with 符合  
+capital punishment 死刑  
+revive 使复苏/重新流行  
+moratorium 暂停，中止  
+offender 罪犯  
+first offender 初犯  
+repeat offender 累犯  
+headline-grabbing 轰动性的  
+brazen 毫不隐瞒的，明目张胆的  
+callous: unfeeling 冷酷无情的;无同情心的，麻木不仁的  
+premeditated 预谋的，预先策划的  
+defense lawyer 辩方律师  
+amount to: equivalent to 等同于  
+intended to: designed to, devised to  
+run counter to 与……相反/背道而驰  
+death row 死囚牢房  
+lethal injection 注射死刑  
+stake out 蹲守，蹲点，监视  
+hostel 旅馆  
+life in prison 终身监禁  
+parole 假释  
+correspond to 与……相一致  
+capital crime 死罪  
+count 一项罪名  
+outlaw 使成为非法;禁止;取缔；不法分子  
+juror 陪审员  
+effectively 实际上；有效地  
+find against/for 对……做出不利/有利裁决  
+commute 减刑  
+heinous 极其恶劣的；骇人听闻的  
+killing spree 连环杀人  
+defy the gravity 反重力；违背常理  
+subvert: upend 颠覆，破坏  
+in broad daylight 光天化日之下  
+
+### Apple gets caught in a trade-war nightmare
+
+clutch  
+break free/escape from one's clutches 逃离某人的魔爪  
+avert one's eyes 别看  
+avert 避开  
+headwind 逆风；阻碍  
+clobber  
+blunderbuss 老式短枪；比喻粗放手段  
+volley （枪弹的）齐射，群射  
+fence-sitter 墙头草  
+play both ends 墙头草  
+fence-straddling 墙头草的  
+reciprocal 相互的 tariffs/levies 对等关税  
+retaliatory  
+reciprocity 互惠  
+knock off 
+fall (fell) further still 继续下跌  
+jarring 震惊的  
+calamitous: disastrous  
+man-made calamity  
+conspicuously 明显地  
+butter up 讨好  
+curry favor 讨好，巴结  
+woo  
+appease  
+dust off a familiar/old playbook 故技重施  
+be bullish on  
+The jokes is on you. 打脸  
+incipient 初始的  
+on top of  
+wearables  
+reprieve 取消；推迟  
+That invites the question: 问题随之而来  
+live up to the hype 人如其名  
+turn off customers 使消费者却步/失去兴趣  
+foreboding 预感(通常为不好的)  
+a sense of foreboding  
+absorb the shock/burden  
+cushion the blow/shock  
+weakness in demand 需求疲软  
+antics 荒唐的行为；闹剧  
+accelerate the slide 加剧下降/颓势  
+flashpoint 爆发点  
+probe into 调查，仔细研究  
+trip over the tongue 嘴瓢  
+hospitable 友好的  
+public-relations fluff 公关宣传的“虚张声势”；  
+shovels in the ground 八字没一撇  
+reshore 迁回，将（企业）迁回原来的国家，回迁本土  
+top-of-the-range 高端的  
+against a time crunch 陷入时间紧迫的困境  
+it is hard to picture a way forward for 找到出路  
+lionise 把某人视为英雄  
+navigate treacherous waters 应对复杂局面  
+at treacherous depths  
+carve out an exemption  
+grant relief from the tariff volleys  
+waning crescent 残月  
+waxing gibbous 盈凸月  
+wax and wane  
+too deep to get out quickly 
+senile 老的  
+geriatric  
+work wonders  
+look stale 正显老态  
+excruciating positions 处于艰难境地  
+avert great-power conflicts 避免大国冲突  
+immediate result 直接结果  
+lengthy process 漫长的过程  
+heavy subsidies 大量补贴  
+technology hurdles 技术障碍  
+
+### U.S. and China headed for 'Monumental' split putting world economy on edge
+
+be headed for 将面临  
+put sth on edge 使……不安  
+put sth to the brink 推至边缘，逼至绝境  
+monumental 历史性的  
+dizzying 太快的;令人困惑的；令人眩晕的，令人头晕目眩的，令人眼花缭乱的  
+unravel 解体，瓦解  
+drag down the world economy  
+jeopardize  
+in jeopardy: at risk  
+brinkmanship 边缘政治；不断试探底线  
+play out: to unfold, happen over time 发生，出现  
+broader swath of goods: wider range of goods  
+swath of 大量，大范围的  
+back down 退让  
+train wreck 火车碰撞，比喻两败俱伤的  
+fabric of society 社会结构  
+weave together 编织  
+rip apart: tear apart  
+keep in check 控制  
+pad the profits: boost ~  
+find common ground  
+looming （不好的事情）即将到来  
+drive into (sth unpleasant)  
+face the prospect/possibility/likelihood of  
+split/breakup/divide/divorce 决裂  
+sparring 争斗  
+be caught off guard 始料未及/take sb by surprise 大吃一惊  
+campaign trail 竞选活动  
+brush off: shrug off 不屑；漠视，不理睬；充耳不闻；掸去  
+stump speech 竞选演讲  
+hyperbole 夸张，夸大  
+whittle down 削弱，减少  
+inflict on 使遭受  
+hard-headed/coolheaded  
+choke off 切断 cut off  
+trump card 王牌，独有优势  
+just about: almost, nearly  
+stinging: pain-inflicting  
+reverberate: ripple through  
+rupture 破裂  
+sth has been a roller coaster for  
+race to do: scramble to  
+beat sb to the punch 抢先一步  
+be priced out of 因价格/钱原因被挤出  
+shut out 彻底出局  
+
+### Trump reverses course on global tariffs, annoucing 90-day pause
+
+sth rings true  
+get the kicks: get fun  
+reverse course 改弦易辙  
+change (in) course n./v.短语  
+do a 180/about-face/U-turn/about-turn  
+steep tariffs  
+roil 搅动，搅乱（水/市场）  
+raise fears of  
+allay fears  
+raise concerns about  
+opt to: choose to do  
+whopping 通常加数字 staggering/eye-watering  
+blanket tariff 无差别关税  
+on top of: in addition to  
+rally: recover/bounce back 股市：恢复，反弹  
+be concerned with 在意  
+be concerned about 担忧  
+rout 溃败 n./v.  
+market rout  
+feed into: contribute to; influence 引起，影响  
+glum: gloomy  
+out of line 出界；过分  
+panic selling/hoarding 恐慌抛售/囤货  
+investors large and small  
+careen 猛冲 toward  
+of one's own making 自作自受  
+queasy/yippy: nervous 口语化  
+sound the alarm 拉响警报  
+on the sidelines 置身事外，作壁上观  
+mouthpiece 代言人  
+gyrate （叶子飘落打转）打转，打圈，转圈；引申市场波动  
+be committed to (判断to是否为介词，如果后续可加名词则为介词)  
+waiver on  
+near its end 接近尾声  
+in its infancy  
+pull the rug out from under 突然撤资/破坏计划  
+punitive: punishing  
+vilify 诋毁，抹黑  
+decimate 削弱，严重破坏  
+spin as 以某种方式说；公关  
+capitulation 屈服  
+instinctively 本能地  
+
+### China has a weapon taht coulld hurt America: rare-earth exports
+
+unrivalled 无法匹敌的  
+the periodic table 元素周期表  
+be replete with: be full of 遍布  
+point-worthy 能得分的  
+miniscule: mini, tiny, neglectable  
+outrihgt 完全的，彻头彻尾的  
+embargo 禁运  
+retardant 阻滞剂  
+flame retardant 阻燃剂  
+roll up sleeves  
+fracture 骨折；分裂  
+supply crunch/shortage  
+stock up/build stocks/stockpile 囤货  
+a source close to the matter  
+MRI magnetic resonance imaging 磁共振  
+optic shop 眼镜店  
+fibre optics 光学纤维  
+takeaway/taker 关键点  
+know-how/specialist skills/expertise 专有技术  
+thin/thick crust 薄/厚皮  
+smelt 冶炼，熔炼  
+niche market 小众市场  
+mass market 大众市场  
+keep tabs on 紧密关注  
+outlier 异常现象，外来人  
+collateral damage 附加损失  
+green hand/rookie 新手  
+veteran 老兵，老手，资深人员  
+undisputedly: without question, certainly  
+make concessions 退让  
+consequential 影响巨大的  
+
+### Breaking the gender barrier may be new for space tourism-but not for NASA missions
+
+crewed space flight 载人航空飞行  
+uncrewed/crewless  
+liftoff （火箭）起飞  
+takeoff （飞机）起飞  
+saturation coverage 铺天盖地的报道  
+attend 与某事同时发生；伴随…而至；（作为结果）伴随  
+flight profile 飞行轨迹  
+down range 降落点和出发点的距离；投影距离  
+television personality: celebrity  
+this question is beyond me  
+beyond repair  
+figuratively speaking 引申义，比喻义上说  
+email/message blast 群发邮件（广告邮件等）/消息  
+I had a blast/great time last night  
+a whiff of 一丝 ~ excitement etc.  
+condescension 傲慢，屈尊  
+condescend to do 屈尊做  
+Two is company, three is a crowd.  
+make hay 把握机会  
+make hay while the sun shines  
+be accommodated for 调整 do some twists  
+media stunt 媒体炒作/噱头  
+float 漫不经心地提出想法，brainstorming时  
+have zero 口语化/nothing to do with  
+merit: benefits, value  
+burgeoning 快速发展的  
+go public 公开；上市  
+go aloft: go up in the sky 升空  
+grit 勇气，毅力，决心  
+all the same 尽管如此  
+give a fig/damn about 不在乎  
+emeritus 荣誉退休的  
+
+### Trump's trade war with China could be good for India. But is it ready?
+
+pipe dream 白日梦  
+stare down the barrel of 面临危险  
+upside: silver lining 好的方面  
+read between the lines 读懂言外之意  
+substitute (player) 替补队员  
+starter (player) 首发队员
+reprieve 暂缓期，缓刑期 90-day ~s  
+double down on 加倍  
+sky-high tax 天价的 whopping  
+top figure 要员，重要官员  
+elbow (your way) into 强行挤入  
+get a foot in the door 获得入门机会  
+in the name of 以……名义/由头  
+relative to 相较于  
+rise/emerge as a global power  
+mild-mannered 温和的  
+the tip of the iceberg 冰山一角  
+dog 跟随；长期困扰  
+at the mercy of 任……摆布  
+by some estimate(s) 据估计  
+tamp down 减弱，减少 ~ the rush/emotions  
+take the heat off 使（某人）少受批評  
+
+### A flight from the dollar could wreck America's budget
+
+flight 逃离；股市中：抛售  
+capital flight 资金外逃  
+wreck: sabotage, undermine, jeopardize  
+spell 意味着+不好的 ~ disaster/trouble  
+what comes around, goes around  
+stomach 忍受，承受 suffer  
+respite 喘口气，短暂喘息  
+unwelcome return 卷土重来  
+a basket of major currencies 一揽子货币  
+hard currency 硬通货  
+mirror/reflect 反映出  
+it can be proven/reflected/mirrored that  
+ominous 不吉利的  
+auspicious 吉利的  
+on strike 罢工  
+where you look at it 取决于你如何看  
+exorbitant 过分的 excessive  
+prohibitively high price  
+disburse: pay out 支付，支出  
+roll over: 展期，延期 delay, postpone  
+capricious 反复无常的  
+reckless 草率的  
+house 容纳，包容，接纳  
+overdraw 透支  
+dire scenarios 糟糕的情况  
+fiddle with 篡改；玩弄，摆弄  
+make one's way through: advance, go forward, proceed 前进，向前发展  
+a cloud hangs over/to sit over 乌云笼罩  
+spook: frighten  
+creditworthiness 信用度  
+debt to GDP ratio 债务占GDP比重  
+woeful 极其糟糕的  
+score 评估  
+get around 绕过 ~ regulations  
+a (bank) run 挤兑  
+peg to gold 锚定黄金，金本位  
+implode 从内部崩塌  
+havoc 混乱，暴乱，动乱  
+course corrections 纠偏  
+freefall 自由落体；骤降，迅速下降  
+
+### Donald Trump's approval rating is dropping
+
+beat/break record  
+popular vote 民意选票，普选票  
+electoral vote 选举人票  
+vagaries 难以预料的变化，强调不确定性，常用复数  
+vindication 证实  
+mandate 授权  
+one in/out of five  
+likewise: similarly  
+upbeat: optimistic  
+glum: gloomy  
+at This point/stage/time 现在  
+aside/apart from/except for  
+it's plain to see 显而易见的  
+kitchen-table issues 民生相关问题，日常/柴米油盐问题  
+lever: tools, measures 手段；杠杆  
+intent/hell-bent on 执意，一心一意要做  
+engineer 安排，策划  
+eviscerate: degut 去除内脏，引申去除核心部分  
+in the span/matter of/over/in the course of/during + 时间  
+a salvo of tariffs 一连串的，强调事情同时发生  
+salvo 礼炮齐鸣  
+backtrack on 撤销 levies: reverse course  
+carve out 创造  
+wing it/improvise/on the whim/on the spur of the moment 突发奇想，即兴  
+it's hardly surprising/no/little wonder that 不足为奇  
+sagging 下降的  
+self-described 自诩，自称  
+inure sb to sth 免疫，麻木不仁，习以为常+不好的事情  
+dip 快速小幅下降；蘸  
+muse about 认真考虑，深思熟虑  
+face a reckoning 秋后算账，清算  
+customer base 客户群体  
+disillusion 幻想破灭，失望  
+be disillusioned with 感到失望  
+pocketbook 钱包 ~ voters (关注经济利益的选民)  
+dyed-in-the-wool 一心一意的，彻头彻尾的（某类人）  
+be tempted to do/into 容易做某事，被诱惑做某事 be enticed to do  
+hotly contested 争论白热化  
+gubernatorial 州长相关的  
+dismiss A as B 视作，轻视；通常指忽视，不重要，不值一提  
+broadly: on the whole 整体 ~ speaking  
+tailwinds 顺风  
+razor-thin 非常薄的；强调机会低的 slim  
+hubris: arrogance 狂妄自大，傲慢  
+folly: foolish behaviors  
+paradoxically 自相矛盾地，可用于句首  
+hinge on 依靠，取决于  
+few and far between: scarce; infrequent  
+
+### If you're having Elon Musk's baby, this is what to expect
+
+right-hand man 得力助手  
+impregnate 使某人受孕  
+behind the scenes 幕后的  
+well-honed 非常成熟/完善的
+hone your skills/body 打磨技能/锻炼身体  
+little-known: 鲜为人知的  
+wearying 让人筋疲力尽的  
+progeny: offspring, descendants  
+in parallel (to) 与此同时  
+unbeknown to 不知道  
+ghost writer 写手  
+eugenetics 优生  
+eu- meaning good  
+euphoria 狂喜  
+-dict 说  
+defining moments 决定性时刻  
+benedict 说好话  
+embroil 身陷，卷入 ~ in  
+text/bing sb  
+disparage 贬低 belittle  
+bite the dust: pass away; fail  
+on one's hands 手头有事要处理  
+be estranged with 断绝往来，疏远  
+be on good terms with sb  
+on speaking terms 熟识某人  
+shrewed insight into  
+my energy abandoned me 精疲力竭  
+rudimentary 基本的；原始的  
+
+### Man versus machine as China shows off humanoild robots in half-marathon
+
+a baby step  
+if you got it, flaunt it  
+-oid: -like 类似  
+mimicry 模仿  
+a score of: 20 or 20ish sth  
+be billed/advertised as 宣传为，视作，被称为  
+at the forefront of 在最前沿，最尖端  
+tax breaks: tax reductions 减税  
+lavish 慷慨给予  
+runners dashed and spilled onto the course  
+stagger the start 错开安排 by ~ a minute or two  
+ram/slam into 碰撞，撞向: collide with  
+pitch-black 漆黑的  
+tank top 背心  
+off the mark 离开起跑点  
+culmination 结晶；高潮  
+get the hang of sth: master skills 学会做  
+innate to 与生俱来的  
+sth is a breeze: a piece of cake  
+it's no picnic 非易事  
+cutoff time 时限  
+maneuver 应对  
+revamp 改进，修改；翻新  
+swap: exchange; replace  
+sneaker (US) trainer (UK) 跑步鞋  
+propeller 螺旋桨  
+wobble: stagger 踉跄，走路不稳  
+keep sb dangling 吊胃口  
+rascal 顽童，调皮鬼  
+exhilarated 兴奋的  
+sth awaits sb 某人会发生在某人身上  
+sport 穿  
+at stake  
+
+### From selling gum to licking Wall Street: Warrent Buffett's incredible journey
+
+lick 口语用法 彻底击败 defeat completely  
+well-earned/hard-earned 赢得  
+guru 导师人物  
+helm 掌舵，领导  
+take the helm/at the helm of 掌舵  
+hand the reins to 移交控制权  
+take the mantle 接手  
+lash out at sb 猛烈抨击  
+color 影响（观点）；使有偏见  
+-literate 对……有了解  
+financial literacy  
+preferred stock 优先股  
+refurbished 翻新的  
+a succession of 一系列  
+pose as 假装  
+become enamoured with: be in love with 爱上  
+intrinsic value 内在价值，本质价值  
+canny: shrewed  
+scout 星探  
+come/boil/be down to 归因于  
+play into: contribute to 导致  
+guzzle 豪饮  
+rumour has it that  
+the stuff of legend 津津乐道的事，传奇  
+glitzy: showy, flashy 华而不实的  
+stalwart 中流砥柱，坚定支持者  
+trounce 实力碾压: rout  
+hit the bottom/troughs 触底  
+peaks and troughs  
+folksy 亲民的，朴素的  
+general counsel 总法律顾问  
+at every turn 在每个节点  
+accession 上任，就职  
+confidant 密友，知己  
+back-sliding 倒退回去  
+a month shy of his 100th birthday  
+shy of: slightly less of sth  
+measure up to: live up to  
+whether A, B or C: be it A, B or C  
+business circles 商界  
+protege 门生  
+win over 赢得  
+
+### DeepSeek. Temu. Tiktok China tech is starting to pull ahead
+
+pull ahead  
+malaise 经济不确定性，隐忧；身体不适;萎靡;心神不宁;（尤指对社会的）不满，无奈  
+hang in the air 弥漫空中  
+palpable: obvious, easy to notice 可感知的，明显的  
+whizz by 呼啸而过  
+at parity 与……一致；？并驾齐驱 on par with
+disseminate （偏主动）传播  
+diffuse 散布，传播（偏口口相传的传播），扩散  
+distribute  
+a slew of: a lot of  
+an abundance of  
+by some benchmarks: standards 标准，基准  
+be hooked on: keen on, interested in, addicted to 迷上  
+autonomous vehicles: self-driving cars 无人驾驶汽车  
+swell to 激增至  
+reap the benefits of  
+juggernaut 巨头，强大而不可阻挡的力量/事物  
+leapfrog 超过 overtake, surpass  
+knockoff 山寨品，仿品  
+copycat （缺乏主见的）模仿者，抄袭者；模仿的；仿效的
+heft 分量；重量；影响力；重要性，能力  
+iterate 迭代  
+get one's act together 振作起来  
+play catch-up on: catch up with 设法赶上  
+near-term 短期的  
+it's a hard truth to swallow  
+hunker down for 做好长期准备  
+time is on one's side  
+stay on track to 保持正轨  
+an all-out dogfight 全面竞争  
+on every axis 在每个方面/维度  
+
+### The strange success of snooker
+
+billiards/pool 台球  
+agglomeration 聚集，堆积  
+amorality 非道德  
+cottage industry 小型工业/企业？  
+lament 惋惜；痛惜，哀叹  
+demise 衰落；死亡，逝去  
+press launch 新品发布会  
+cut-off 根据语境可引申为最后期限的意思  
+soul music  
+countryman 同胞  
+inveterate 根深蒂固的，长期积习的  
+hardly a picture of youth 几乎看不到年轻人  
+compere 主持人  
+whip up 快速完成（尤其指做饭）；激起（情绪）cheer up  
+viewing figures 观看人数  
+anywhere between A and B  
+rejuvenate 焕发新生  
+tune in 收看，收听  
+be akin/similar to  
+sensory deprivation 剥离感官  
+deprive of  
+frame 台球里的一局  
+the world is reduced to + 场景描述 整个世界好像只剩下  
+waistcoat 马甲  
+it's early days 现在为时尚早  
+groan 呻吟，叹息  
+titter 窃笑，窃窃私语  
+hone one's craft/skill 打磨技术  
+a stable of 一群，一批  
+knackered 使人疲倦的  
+Jack of all trades 万金油  
+scalper 黄牛  
+hawker 四处兜售的人  
+jack up 提高，提升  
+in the doldrums 原意：赤道无风带，引申低迷期  
+prize money 奖金  
+dish out 发放，分发  
+at a premium 有溢价，有加价  
+immaculate: spotless 洁净的，整洁的；完美的  
+hospitality 贵宾席；好客  
+humdrum 乏味的，单调的，令人厌倦的 ~ reality/life/existence  
+brinkmanship 边缘策略  
+impresario （戏剧、音乐、舞蹈等公共娱乐演出的）主办人，经理
+cruise into semi-finals 轻松打入  
