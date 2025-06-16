@@ -1174,6 +1174,7 @@ strengths 优势 可数
 
 1. 语义重复（中文惯用重复表示强调，英译汉是时可考虑）  
 **词汇层面**
+
 * 名词  
 城市的规划布局 urban planning  
 经过深思熟虑 after much thought  
@@ -1204,10 +1205,12 @@ sound policy/advice 合理政策/建议
 我们国家的经济底子薄，基础差。 The economic foundation of our country is weak.  
 台湾海峡两岸的中国人都是骨肉同胞，手足兄弟。 The Chinese **on** both sides of **the** Taiwan Strait **are of the same flesh and blood**.  
 优势互补，相互促进/相辅相成 mutually reinforcing  
-众说纷纭，莫衷一是 have different views on/be divided on/disagree on  
-2. 范畴词  
-一般是名词，对前面的名词进行概况/定性。表示行为/现象/属性等。常见都有“工作/方面/方式/态度/局面/情况/问题等。可省略不翻译。  
-* 名词性范畴词  
+众说纷纭，莫衷一是 have different views on/be divided on/disagree on
+
+2. 范畴词
+一般是名词，对前面的名词进行概况/定性。表示行为/现象/属性等。常见都有“工作/方面/方式/态度/局面/情况/问题等。可省略不翻译。
+
+* 名词性范畴词
 计划工作中的严重错误 a big mistake in planning  
 促进和平统一大业 to promote peaceful **re**unification  
 经济领域的改革 economic reform  
@@ -1219,9 +1222,11 @@ sound policy/advice 合理政策/建议
 采用改革的方法 through reform  
 秉持着谦虚的态度 be modest  
 我们必须采取知之为知之，不知为不知的态度。We must admit what we do and do not know.  
-结构调整 structural adjustment  
-3. 多余修饰  
-* 多余的形容词  
+结构调整 structural adjustment
+
+1. 多余修饰
+
+* 多余的形容词
 非常罕见 rare  
 过去的往事 the past  
 过高的奢望/想得美 wishful thinking  
@@ -1253,7 +1258,8 @@ investment in 单数
 
 ### September 22, 2024 XXL 汉英翻译 4.1.1 增减
 
-1. 数字表达  
+1. 数字表达
+
 * 增减  
 increase/drop by (幅度) to (结果)  
 增加：increase/grow/rise/go up  
@@ -1547,7 +1553,7 @@ media personalities 媒体人士
 rise to one's feet 站起来  
 bonhomie 友好  
 trademark 标志性的  
-subdued 柔和的；暗淡的；默不作声的，闷闷不乐的 
+subdued 柔和的；暗淡的；默不作声的，闷闷不乐的
 verbose 罗嗦的，冗长的，累赘的  
 discursive 东拉西扯的，不着边际的；推论的  
 unparalleled 绝无仅有的，无可比拟的  
@@ -1620,7 +1626,7 @@ ledge 小窗台，可指高铁靠窗位置的小窗台
 wobble 摇晃，摇摆，形容人，犹豫，动摇  
 drill-baby-drill 加大石油钻探力度  
 gas guzzler/gas-guzzling cars 高油耗车  
-roboticized 机器化的 即automatic 自动化的 
+roboticized 机器化的 即automatic 自动化的
 shake the confidence 动摇信心  
 be compounded by 恶化，加剧 worse/deteriorate  
 raid 突击  
@@ -1663,7 +1669,7 @@ tumble down 跌落
 career arc 职业轨迹  
 epic 史诗般的  
 from a tender age 少不更事时，涉世未深时  
-keen student 敏捷的，敏锐的 
+keen student 敏捷的，敏锐的
 yearn for sth 渴望  
 fixate on 对……着迷，迷恋  
 finagle 欺诈，骗取  
@@ -1749,12 +1755,12 @@ incumbent 现任者/的，在职者/的 adj. n.
 Baptist  
 he proved as good as his words 践行诺言，言出必行  
 hotspot 政治上指交火/动乱的 ~ elections  
-despot 
+despot
 nothing less than 不亚于，堪称，简直，可谓  
 reinvent 重塑 ~ the concept of  
 blaze a path/trail 开辟道路  
 trail-blazer 开辟者  
-philanthropic 慈善的 
+philanthropic 慈善的
 wage a war 发动战争  
 wage peace 带来/争取/促进和平  
 polarizing political figure 两极化的政治人物，风评两极分化  
@@ -1764,7 +1770,7 @@ scandal-plagued 丑闻缠身的
 corrosive impact 毁灭性的影响  
 ballot （无记名）投票，选票  
 cast a ballot 投票  
-on the ballot 
+on the ballot
 prematurely 过早地;不成熟地;仓促地  
 swap 交换  
 
@@ -1803,7 +1809,7 @@ it is a fair bet 很有可能，可以肯定的是
 at odds with 不一致，矛盾  
 imminent/looming 即将到来的  
 fray （使）（布料或绳子）磨损，（使）磨散  
-imminent fraying 
+imminent fraying
 conundrum 难题，问题 dilemma  
 relief 浮雕；突出的品质；瞩目的特征  
 bring/throw into sharper relief 更加凸显  
@@ -1892,7 +1898,7 @@ trail-blazing/ground-breaking？
 
 ### The clean-up after the LA fires is already revealing tensions
 
-hazmat （hazardous materials） 
+hazmat （hazardous materials）
 methodically 有条不紊的
 poke and prod
 piles of/mounds of/heaps of 成堆  
@@ -1976,6 +1982,7 @@ disproportionately 不成比例地，更大程度上
 appease 安抚  
 
 ### Have we hit peak tech bro?
+
 tech bro 科技男/精英  
 Sputnik（苏联发送的第一颗人造卫星） moment 促使人奋起直追/发人深省的契机/时刻  
 poseur 装腔作势的人；伪君子  
@@ -2148,7 +2155,7 @@ turbocharge/speed up 加速，促进，推动，增强
 turbocharger 涡轮增压器  
 impersonation/imitation/copy 模仿  
 devote huge resources to doing  
-nuisance 烦人的人/事 
+nuisance 烦人的人/事
 dupe 上当受骗者；骗  
 nerve center 指挥中心  
 loot 赃款  
@@ -2210,7 +2217,7 @@ in anticipation of 预计，预期
 eg. Prepare in anticipation of rain before it rains 未雨绸缪  
 human invention/influence/involvement 人为干预  
 self-driving/autonomous driving 自动驾驶  
-bring X to Y, if the 
+bring X to Y, if the
 nip at one's heels/breathe down one's neck; follow sb closely 紧跟；离某人很近；  
 well-heeled 有钱  
 tentative 试探性的 ~ try；临时的  
@@ -2371,7 +2378,7 @@ susceptible 易感染的
 recover from without treatment/without the need for medical attention/without seeking medical care  
 sepsis 败血症  
 aged 65 and older/over/up  
-metabolism 
+metabolism
 metabolic disease  
 renal failure 肾衰竭  
 tear-jerker 催人泪下  
@@ -2547,7 +2554,7 @@ jaw-dropping/appalling/shocking/
 to the bone  
 verbal abuse 语言暴力，言语侮辱  
 More hast, less speed  
-appalled/appalling distinguish tip: 
+appalled/appalling distinguish tip:
 i'm appalled by sth, not appalling by  
 sth appalls you, sth is appalling  
 What do you make of it? 对这事你怎么看  
@@ -3324,7 +3331,7 @@ fence-straddling 墙头草的
 reciprocal 相互的 tariffs/levies 对等关税  
 retaliatory  
 reciprocity 互惠  
-knock off 
+knock off
 fall (fell) further still 继续下跌  
 jarring 震惊的  
 calamitous: disastrous  
@@ -3369,7 +3376,7 @@ grant relief from the tariff volleys
 waning crescent 残月  
 waxing gibbous 盈凸月  
 wax and wane  
-too deep to get out quickly 
+too deep to get out quickly  
 senile 老的  
 geriatric  
 work wonders  
@@ -3550,7 +3557,7 @@ stare down the barrel of 面临危险
 upside: silver lining 好的方面  
 read between the lines 读懂言外之意  
 substitute (player) 替补队员  
-starter (player) 首发队员
+starter (player) 首发队员  
 reprieve 暂缓期，缓刑期 90-day ~s  
 double down on 加倍  
 sky-high tax 天价的 whopping  
@@ -3795,10 +3802,10 @@ reap the benefits of
 juggernaut 巨头，强大而不可阻挡的力量/事物  
 leapfrog 超过 overtake, surpass  
 knockoff 山寨品，仿品  
-copycat （缺乏主见的）模仿者，抄袭者；模仿的；仿效的
+copycat （缺乏主见的）模仿者，抄袭者；模仿的；仿效的  
 heft 分量；重量；影响力；重要性，能力  
 iterate 迭代  
-get one's act together 振作起来  
+/get one's act together 振作起来  
 play catch-up on: catch up with 设法赶上  
 near-term 短期的  
 it's a hard truth to swallow  
@@ -3811,16 +3818,17 @@ on every axis 在每个方面/维度
 ### The strange success of snooker
 
 billiards/pool 台球  
+cue 球杆  
 agglomeration 聚集，堆积  
 amorality 非道德  
-cottage industry 小型工业/企业？  
+cottage industry 家庭手工业，小作坊  
 lament 惋惜；痛惜，哀叹  
 demise 衰落；死亡，逝去  
 press launch 新品发布会  
 cut-off 根据语境可引申为最后期限的意思  
 soul music  
 countryman 同胞  
-inveterate 根深蒂固的，长期积习的  
+inveterate 积习难改的  
 hardly a picture of youth 几乎看不到年轻人  
 compere 主持人  
 whip up 快速完成（尤其指做饭）；激起（情绪）cheer up  
@@ -3832,9 +3840,9 @@ be akin/similar to
 sensory deprivation 剥离感官  
 deprive of  
 frame 台球里的一局  
-the world is reduced to + 场景描述 整个世界好像只剩下  
+the world is reduced to + 场景描述 整个世界彷佛只剩下  
 waistcoat 马甲  
-it's early days 现在为时尚早  
+it's early days 为时尚早  
 groan 呻吟，叹息  
 titter 窃笑，窃窃私语  
 hone one's craft/skill 打磨技术  
@@ -3852,5 +3860,568 @@ immaculate: spotless 洁净的，整洁的；完美的
 hospitality 贵宾席；好客  
 humdrum 乏味的，单调的，令人厌倦的 ~ reality/life/existence  
 brinkmanship 边缘策略  
-impresario （戏剧、音乐、舞蹈等公共娱乐演出的）主办人，经理
-cruise into semi-finals 轻松打入  
+impresario （戏剧、音乐、舞蹈等公共娱乐演出的）主办人，经理  
+cruise into semi-finals 轻松晋级半决赛  
+
+### CD Voice notes  
+
+-laden 满载的，充满的 a gold-laden campaign  
+it seems like business as usual 一如往常  
+China's table tennis squad
+mighty prowess 强大实力  
+early exit from the game 提前失利出局  
+a sense of urgency 紧迫感  
+best-of-five format 五局三胜  
+golden harvest  
+bag the mixed doubles title  
+seesaw battle 拉锯战  
+go harder at sb  
+cap off 完美收尾  
+
+### **Table Tennis Vocabulary & Notes**
+
+**Date**:  
+
+#### **1. Key Vocabulary**
+
+| Word/Phrase       | Part of Speech | Meaning (Chinese) | Example Sentence |  
+|--------------------|---------------|------------------|------------------|  
+| **Straight title** | Noun          | 连冠              | They won their **third straight title**. |  
+| **Surge**          | Noun/Verb     | 反扑/激增         | The opponents made a late **surge**. |  
+| **Cohesion**       | Noun          | 凝聚力            | Their **cohesion** and tactics were strong. |  
+| **Rival**          | Noun          | 对手              | The **rivals** posed a great threat. |  
+| **Determination**  | Noun          | 决心              | They shared the same **determination**. |  
+
+#### **2. Sports Terms**  
+
+* **Mixed doubles**: 混双  
+* **Seeds (2nd/16th-seeded)**: 种子选手（2号/16号种子）  
+* **Advance to the final**: 晋级决赛  
+* **Present the trophy**: 颁发奖杯  
+
+#### **3. Sentence Patterns**  
+
+1. **"Overcame a late surge"**  
+   * *Example*: They **overcame a late surge** to win the match.  
+2. **"Posed a great threat"**  
+   * *Example*: The team **posed a great threat** with their strategy.  
+3. **"Shared the same determination"**  
+   * *Example*: We **shared the same determination** to succeed.  
+
+#### **4. Grammar Focus**  
+
+* **Past Tense for Sports Reporting**:  
+  * *Won*, *defeated*, *overcame* (e.g., "They **won** 3*1").  
+* **Adverbs for Intensity**:  
+  * **"Consecutively"** (连续地): "They won **three titles consecutively**."  
+
+### **Public Health English Study Notes**  
+
+### 新冠疫情与流感防控英语学习笔记
+
+#### 1. 核心术语解析（中英对照）
+
+| 英文术语 | 中文释义 | 权威定义（英文） | 出处 |
+|---------|---------|------------------|------|
+| respiratory disease expert | 呼吸疾病专家 | A specialist in disorders of the lungs and breathing system | Oxford Medical Dictionary |
+| influenza-like illness (ILI) | 流感样病例 | A medical classification of fever ≥38°C with cough or sore throat | WHO Case Definitions |
+| positivity rate | 阳性率 | The proportion of positive results among total tests performed | CDC Surveillance Manual |
+| underlying health conditions | 基础疾病 | Chronic medical conditions that exist prior to new illness onset | NIH Medical Encyclopedia |
+| immunocompromised | 免疫功能低下 | Having an impaired immune system response | Merck Manual |
+| variant replacement | 毒株更替 | Process where new viral strains displace circulating variants | Nature Microbiology |
+| waning immunity | 免疫衰减 | Gradual decline in protective antibodies over time | The Lancet |
+
+#### 2. 重要句式分析
+
+(1) 公共卫生警告句式：
+"called on authorities to step up prevention and treatment efforts"（呼吁当局加强防控）
+→ 类似表达：urged health authorities to prioritize...
+
+(2) 数据描述句式：
+"rose from 7.5 percent to 16.2 percent between...and..."（从...上升至...）
+→ 注意：使用过去时态描述趋势变化
+
+(3) 专家建议句式：
+"should begin taking medication within the first 48 hours"（应在48小时内）
+→ 情态动词should表示强烈建议
+
+#### 3. 疫情报告常用表达
+
+• 流行程度描述：
+
+* remain at a high level 持续高位流行
+* sporadic outbreaks 散发疫情
+
+• 病毒特征：
+
+* continues to mutate 持续变异
+* circulating variant 流行变异株
+
+• 防控措施：
+
+* seek prompt care 及时就医
+* dynamic response mechanism 动态应对机制
+
+#### 4. 学术写作要点
+
+(1) 被动语态使用：
+"two new influenza drugs have recently been launched"（两款新药已上市）
+→ 突出动作承受者
+
+(2) 比较结构：
+"The greater...the less..."（越大...越...）
+→ 经典比较句型
+
+(3) 限定说明：
+"especially seniors with..."（尤其是有...的老年人）
+→ 使用破折号/括号补充信息
+
+### Is POTUS's 'Made in America' iPhone a fantasy
+
+fantasy
+pipe dream  
+wishful thinking  
+drag one's feet 不情愿而拖拉做，磨蹭  
+cut to the chase: get to the point 开门见山  
+go on the offensive against 先于某人发起攻击  
+call the shots 说了算，掌握话语权  
+make good on/deliver on 履行承诺等  
+prohibitively high cost/price etc.  
+heavily reliant on  
+put one's foot down 态度坚决  
+cut down on: reduce  
+irrelevant/inconsequential/trivial 无关紧要的  
+upside: plus  
+发表观点：sth would be…  
+recoup: recover investment etc. 收回，回本  
+leave a bad taste in one's mouth 体验不好  
+bespoke/tailor-made/customized/custom  
+put the screws on sb 强迫，施压  
+twist sb's arms 施压  
+nimble: agile 敏捷的 ~ fingers  
+miniature 描述精密部件 ~ sensors  
+on the condition of anonymity  
+brain drain 人才流失  
+undoing  
+have a deep bench of/a huge pool of （人才储备）丰富  
+basketball pitch 篮球场  
+football field 足球场  
+rev up 增大，扩大，加速  
+rise to prominence/emerge as 崛起  
+subassembly 分装  
+lego bricks/blocks 乐高积木  
+
+### Back at SpaceX, Musk says in interview DOGE became D.C.'s 'whipping boy'  
+
+muddy waters 浑水，情势不明朗
+whipping boy 替罪羊，背锅侠 scapegoat/fall guy  
+at an/a inflection/turning/tipping point 转折点  
+take a hit 遭受打击  
+a string of 一连串的 ~ failures  
+test flight （火箭）试飞等  
+intense criticism  
+lash out at sb 抨击某人  
+level sth(criticism/accusations) at sb 针对，矛头直指某人  
+a far cry from 相去甚远  
+it's open secret. 心照不宣的秘密  
+uphill battle: meaning sth challenging  
+to say the least 强调实际程度更深，往轻了说  
+get blamed for  
+dismay: to sb's dismay 诅丧，失望，灰心 disappointment/frustration  
+reputational hit 名誉受损  
+natural habitat 动物自然栖息地；引申：老本行，擅长领域，舒适区  
+searing: 灼热的，灼人的 ~ glare  
+lord over 控制，主导 have control over  
+sweltering summer/sun 炙热的 酷夏，炎炎烈日  
+remove from: far away from  
+war of words 口水战，唇枪舌战  
+D.C. Beltway 华盛顿特区  
+spawn: to trigger, to cause sth to happen  
+derision 嘲笑 deride  
+ignominious: shameful, embarrassing 狼狈的，可耻的，丢脸的  
+make an ignominious exit 狼狈离场  
+it is not rocket science/brain surgery. 这事不难  
+if not more/perhaps even more so  
+ahead of the curve 领先于时代，超前  
+maniacal 疯狂的 maniac  
+I'm wired/born that way. 生来如此  
+instill 灌输（理念等），注入  
+not cut out for/sb is not * material 不是那块料  
+chill/laid-back vibes 轻松氛围  
+grapple with/wrestle with/deal with 应对  
+entrenched/deep-rooted/deep-seated  
+single-handedly 凭一己之力  
+payloads 有效荷载，火箭上的人员/物资等  
+by a wide margin 大幅  
+watershed moment 分水岭  
+laser-focused on 高度专注于  
+get one's wish: wish comes true 愿望实现，如愿以偿  
+
+### Welcome t o the AI trough of disillusionment
+
+spend big on: burning cash/splurge on  
+come to oneself 意识到？  
+deep pocket  
+share a drink with sb 把酒言欢，应酬  
+quid pro quo 交换条件  
+a person of great promise 大有前途的人  
+vexation: irritation 烦恼，生气  
+make use of: harness  
+give way to sth: be replaced by  
+pilot episode 试播剧集  
+jump on the bandwagen 随大流  
+for one's part 就某人而言  
+at work/in the office  
+a broad swath(e) of 许多  
+slippery slope  
+hype cycle 技术成熟度曲线  
+hyperscaler 超大规模科技公司  
+pour vast sums into 斥巨资  
+be on course/trajectory to 将要  
+capital expenditures: capex 资本支出  
+ends and means  
+The ends justify the means.  
+justify sth  
+trove 宝藏 treasure  
+silo: isolated 孤立的，独立的  
+archaic/fuddy-duddy/outdated/old-fashioned 过时的  
+tarnish/smear 抹黑  
+tout/talk up 大肆吹捧  
+on full display 展现得淋漓尽致  
+be populate by 有大量某物；居住  
+nemesis 宿敌，老对手  
+booming: growing/surging ~ usage  
+via video link  
+flop  
+meagre: trivial, less than modest 微不足道的  
+magnitude 程度  
+bankroll 资助，扶持；一沓一沓钞票  
+in focus 关注点  
+sb argue/reckon/gather?/believe  
+weave/embed/integrate into 整合入，嵌入  
+C-suite 高管  CEO/COO etc
+suite of workplace app 工作套件  
+souped-up: updated 升级的，加强的  
+flub: bungle 搞砸了  
+-ridden 充满  
+bug-ridden 漏洞百出  
+sign up to 签订  
+sb's bet is that  
+overhang: too much of sth, surplus  
+
+### POTUS Administration says it is halting Harvard's ability to enroll international students
+
+take aim at 矛头直指 lash out at  
+point fingers at  
+back-and-forth/ping-pong/tug-of-war 拉锯战 negations 有来有回的  
+premier/elite school/uni 顶尖学府，精英学校  
+with knowledge of 知情  
+subvert: undermine, weaken  
+top-notch: top-of-the-line, top-tier  
+bottom line: 金融方面：财务状况，净收益  
+room and board 食宿  
+DUI: driving under intoxication 酒驾  
+unlawful: 违法但非刑事犯罪  
+illegal：涉及刑事犯罪  
+hail from: come from, originate from, stem from  
+immeasurably 不可估量地  
+vet: screen, scrutinize, carefully exam 核实  
+vet international students/vetting systems  
+have a strong case to do: have good reasons, have lots of evidence 有充分理由，（打官司）有胜算  
+in the midst（书面）/middle（口语） of  
+untenable: 难以为继的  
+onerous: cumbersome eg. red tape 繁琐的，繁重的  
+contend with: struggle dealing with 应付  
+a trove of 大量  
+unnerve: make sb sit on the edge of one's seat 使不安  
+meet halfway 各让一步  
+relay concerns/wishes to 传递  
+
+### For Indian students, Dreams of America are suddenly in doubt
+
+up in the air 悬而未决  
+in a state of limbo 进度两难，悬而未决  
+scrub  
+scrub the feeds 删除订阅内容/推送信息  
+focus span 注意力  
+be all the rage 风靡一时  
+war rooms 战情室  
+nepotism 裙带关系  
+cut one's losses before it's too late 及时止损  
+exit plan  
+bring sb to one's knees 让某人屈服 cave in, yield  
+expect the dust to settle 希望尘埃落定  
+let the dust settle  
+tenor 主旨，基调 tone  
+nerve-racking 紧张兮兮的  
+rack your brains 绞尽脑汁  
+spiritual succor 神灵慰藉/帮助  
+succor: help 援助  
+be fed up with 受够了 have enough of it  
+sb/sth etc. is a magnet for: appealing, attractive  
+the second in command 二把手  
+brand name school 名牌学校  
+give sb pause 使某人犹豫/停滞  
+keep sth dangling 悬而未决  
+keep sth on standby 使随时待命  
+
+### The Uber of the underworld
+
+glitzy 浮华的  
+a universe of 大量的  
+plug-and-play 即插即用  
+thwart: prevent  from /deter from  
+extortion 勒索，敲诈  
+unscramble  
+craft a picture/resume 精修图片；优化简历  
+divulge: reveal 泄露，透露  
+chat logs 聊天记录  
+add fuel to the fire 火上浇油  
+upend/reshape/transform 颠覆，重塑  
+arrest warrant 逮捕令  
+ransomware 勒索软件  
+dismantle 摧毁，拆解  
+draconian: extremely harsh/severe  
+dent: impair 凹痕；减少
+
+### How China caught up with Silicon Valley
+
+tech mogul 科技巨头/大亨  
+buy slices of stock  
+bet big on 重压  
+pull ahead/overtake/surpass/outpace 超车，赶超  
+brainpower 人才  
+unbridled/unchecked/unrestrained/uncontrolled 不受限制的，自由发展的，信马由缰的  
+imposition  
+that's such an imposition 这要求太过分了  
+a chorus of 异口同声  
+where does that leave sb/sth 何去何从  
+between a rock and hot place 口语，进退两难  
+plight  
+quagmire  
+unstable coalition: shaky partnership  
+chatter/patter/spill 喋喋不休  
+throw promises around 四处许诺  
+emblematic:symbolic  
+shares tanked. plummet 暴跌  
+double whammy 双重打击  
+worthy opponent 旗鼓相当的对手  
+at parity 势均力敌，平起平坐  
+neck and neck with sb 齐头并进  
+marvel at/be awed by  
+muck racking journalist 挖掘丑闻的记者  
+the grass is greener on the other side  
+idealize/romanticize 美化，理想化  
+slough off 丢弃，抛弃，弃之不顾 get rid of  
+lose one's steam 失去活力，顿时泄气  
+deign to 屈尊做  
+snooty: snobbish 势利的，自命不凡的  
+deep-rooted/ingrained/seated  
+cross path with 与……有交集  
+castigate: criticise sb harshly  
+burn the midnight oil 挑灯夜战  
+flinch from: avoid doing  
+to sb's dismay 令某人沮丧  
+obsolescence 过时 obsolete  
+world-beating 世界领先的  
+world-beater  
+
+## NCE  
+
+### Lesson 1 A Puma at Large
+
+#### spot
+
+spot of sth 有点  
+have a spot of bother 有点小麻烦  
+a scenic spot  
+A great many of ~ are being spoilt by the ill-behaved tourists.  
+a spot on one's reputation 名誉污点  
+on the spot 在现场  
+A  leopard never change its spots. 江山易改本性难移  
+
+#### evidence
+
+a piece of evidence  
+self-evident 不言自明的  
+go to court 打官司，上庭  
+settle sth. out of court 庭外和解，私了  
+
+#### accumulate
+
+accumulate knowledge/possessions 积累知识/财富  
+amass possessions  
+pile up  
+collect stamps  
+gather crops 收割庄稼  
+hoard 囤积  
+
+#### oblige
+
+感到必须做  
+be/feel obliged to do 强调责任/义务  
+be/feel compelled to do 强调迫于外界压力  
+be/feel impelled to do 强调由于内心动力  
+
+#### human being  
+
+人类  
+human being 可数，其余不可数
+man 人类含义不可数  
+mankind/humankind 口语常见  
+human race/humanity  
+
+alien being 外星人  
+intelligent being 智慧生物  
+
+#### somehow  
+
+somewhat 有点  
+somewhere around here 附近某个地方  
+
+#### at large 在逃的，未被捕获的，未被控制的
+
+The disease is still at large. 疾病仍未被控制住/仍在肆虐。  
+
+#### be found in 动植物存在于某地/某种物质产于某地  
+
+#### inanimate subject 无灵主语/物称主语  
+
+物称主语翻译时，转化成人称主语。
+
+1. come into one's mind/flash into one's mind  
+2. Business took him to the town. 他出城出差去了。  
+3. 对比：
+   He lost his confidence. vs. Confidence deserted him.  
+   I couldn't sleep that night. vs. That night sleep eluded (躲避) me.  
+   We only travelled half the distance at sunset. vs. Sunset met us halfway.  
+   The past few years witnessed the great influx of foreigners to China, for travelling, studies or business.  
+
+#### 三大从句
+
+名词性从句：主语/宾语/表语/同位语  
+状语从句（副词性从句）  
+定语从句（形容词性从句）  
+
+#### had been spotted/seen/found/observed 被发现
+
+#### 方位
+
+in the south of 内部  
+on the south of 外部，接壤  
+(to the) south of 外部，不接壤, to the 句子中可省略  
+
+#### take…seriously 重视，严肃对待；take…lightly 轻视
+
+#### 非谓语动词：充当主宾定状补成分
+
+doing：表主动  
+done：表被动  
+to do：表目的，未发生  
+
+eg.:The man leaning against the wall named George is my brother.  
+
+#### claim to have done (have done的动作发生于claim之前)；区别claim to do  
+
+claim to do 固定搭配用to，后面的动作发生于claim之前，故用have done形式  
+
+#### be extraordinarily similar/be particularly alike/have a lot in common/have considerble commonalities  
+
+Prison Break: T-bag: ……there is a certain commonality in our visages. 你我二人面容有一丝相似。visage：面容，尊容；文雅用法  
+
+#### hunt for 搜寻，寻找  
+
+hunt for a job  
+表示情感的词，后面带介词一般为for  
+
+#### prove (to be) + adj./n./ turn out to be  
+
+#### 疑问词+ever表示两层含义
+
+1. 表让步，= no matter + 疑问词  
+2. 表“到底”，用于疑问句，强调。注：whenever 可分开， when ever，中间也可插入其他词。eg.: When will you ever learn?  
+
+#### 句型仿写：Wherever he went, he left a trail of … behind him. (eg.: unpaid bills/broken hearts)  
+
+#### fur
+
+fur coat 裘皮衣  
+fur and feather 飞禽走兽(借代)  
+fin, fur and feather: all kinds of animals (借代，头韵)  
+The crown should not yield to the cross. 王权不应屈服于神权。  
+
+#### complain of / about sth./that 从句
+
+that引导的从句不用于介词之后，用which  
+
+#### on a business/honeymoon trip
+
+表示在……途中，路上，多用介词on  
+on a voyage/expedition/journey/tour  
+
+#### in the possession of sb./ in one's possession/ in possessiong of sth.
+
+charge 同理  
+
+#### It is … to think that …
+
+### L2 Thirteen equals one
+
+#### equal
+
+可表达最高级
+eg.:
+
+1. He equaled the world record.
+2. Nobody equals/matches him in strength.  
+3. In English she has no equal in her class.  
+
+be/stand head and shoulders above sb: be much better than others  
+
+#### raise vt.
+
+raise one's glass to sb. 向某人祝酒  
+raise one's hat to sb. 向某人致意  
+raise one's roof 发脾气，怒火万丈  
+
+#### rise vi. / raise vi./ arouse vt.
+
+arouse one's anger/pity  
+
+#### be always doing sth. 老是，总是（含抱怨，不满语气）
+
+be forever doing sth.  
+be constantly/continually doing sth.  
+keep (on) doing sth.  
+do sth. all the time  
+
+reflect on sb.: have a negative impact on sb.  
+stay off one's foot 卧床，不下地  
+wait on sb. 为某人服务，伺候  
+
+#### one …(n.) or another
+
+(for) one cause or another 各种各样的理由  
+one time or another 总是，时常  
+one way or another  
+
+#### one … after another 一个又一个
+
+#### have sth. done
+
+1. 请某人做某事: have one's hair cut  
+2. 遭遇某种不愉快的事情：have one's life work destroyed  
+
+#### used to do 过去常做
+
+习惯做某事  
+get/be/become used to n./doing sth.  
+be accustomed to doing 书面  
+
+#### strike the hours 钟打点报时
+
+strike twelve  
+
+#### ever since: adv./prep./conj. 从那以后，一直……(用完成时)
+
+It's been the same way ever since we were kids.  
