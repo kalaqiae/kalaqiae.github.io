@@ -1,0 +1,451 @@
+{{ define "title" }}文本差异对比工具 - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<!-- 引入 jsdiff 库 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.1.0/diff.min.js"></script>
+
+<div class="tool-container">
+    <div class="card-content">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+            <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+            </svg>
+            文本差异对比与合并
+        </h1>
+
+        <!-- 错误提示区 -->
+        <div id="messageBox" class="message-box"></div>
+
+        <!-- 控制栏 -->
+        <div class="flex flex-wrap items-center justify-between mb-4 gap-4">
+            <div class="flex items-center space-x-4">
+                <label class="font-semibold text-gray-700">对比模式:</label>
+                <select id="diffMode"
+                    class="form-select border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="lines">按行对比 (Line)</option>
+                    <option value="chars">按字符对比 (Char)</option>
+                    <option value="words">按单词对比 (Word)</option>
+                    <option value="json">JSON 对比</option>
+                </select>
+            </div>
+
+            <div class="flex space-x-2">
+                <button onclick="compareText()" class="tool-button bg-blue-600 text-white hover:bg-blue-700">
+                    ⚖️ 开始对比
+                </button>
+                <button onclick="clearAll()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
+                    🧹 清空
+                </button>
+            </div>
+        </div>
+
+        <!-- 输入区域 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <!-- 原文本 -->
+            <div class="flex flex-col">
+                <div class="flex justify-between items-center mb-2">
+                    <label for="oldText" class="font-semibold text-gray-700 text-lg">原始文本 (Original)</label>
+                    <button onclick="pasteTo('oldText')"
+                        class="text-xs text-blue-600 hover:underline cursor-pointer">粘贴</button>
+                </div>
+                <textarea id="oldText" class="input-area" placeholder="在此输入或粘贴原始文本..."></textarea>
+            </div>
+
+            <!-- 新文本 -->
+            <div class="flex flex-col">
+                <div class="flex justify-between items-center mb-2">
+                    <label for="newText" class="font-semibold text-gray-700 text-lg">新文本 (New)</label>
+                    <button onclick="pasteTo('newText')"
+                        class="text-xs text-blue-600 hover:underline cursor-pointer">粘贴</button>
+                </div>
+                <textarea id="newText" class="input-area" placeholder="在此输入或粘贴修改后的文本..."></textarea>
+            </div>
+        </div>
+
+        <!-- 结果展示区域 -->
+        <div class="result-section">
+            <div class="flex justify-between items-end mb-2 border-b pb-2">
+                <h2 class="text-xl font-bold text-gray-800">差异视图 (点击色块进行合并操作)</h2>
+                <div id="diffStats" class="text-sm text-gray-500 hidden">
+                    <span class="mr-4 text-green-600">新增: <span id="addCount">0</span></span>
+                    <span class="text-red-600">删除: <span id="delCount">0</span></span>
+                </div>
+            </div>
+
+            <div class="mb-2 text-xs text-gray-500 flex gap-4">
+                <span class="flex items-center"><span class="w-3 h-3 bg-green-200 mr-1 inline-block"></span> 绿色：新增
+                    (点击可拒绝)</span>
+                <span class="flex items-center"><span class="w-3 h-3 bg-red-200 mr-1 inline-block"></span> 红色：删除
+                    (点击可撤销)</span>
+            </div>
+
+            <!-- 差异显示容器 -->
+            <pre id="diffOutput" class="diff-container"></pre>
+        </div>
+
+        <!-- 合并结果区域 -->
+        <div id="mergeSection" class="mt-8 hidden">
+            <div class="flex justify-between items-center mb-2">
+                <h2 class="text-xl font-bold text-gray-800">合并结果 (Result)</h2>
+                <button onclick="copyResult()"
+                    class="tool-button bg-green-600 text-white hover:bg-green-700 py-1 px-3 text-sm">
+                    📋 复制结果
+                </button>
+            </div>
+            <textarea id="mergeOutput" class="input-area bg-gray-50 border-blue-200" readonly
+                placeholder="合并后的结果将显示在这里..."></textarea>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .tool-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .card-content {
+        background-color: var(--card-background-base);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid #E0E0E0;
+    }
+
+    /* 输入框样式 */
+    .input-area {
+        width: 100%;
+        height: 250px;
+        padding: 1rem;
+        border: 2px solid #E0E0E0;
+        border-radius: var(--border-radius);
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 0.9rem;
+        resize: vertical;
+        outline: none;
+        transition: border-color 0.2s;
+        background-color: #F8F9FA;
+        white-space: pre;
+        overflow-x: auto;
+    }
+
+    .input-area:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+    }
+
+    /* 按钮样式 */
+    .tool-button {
+        padding: 0.5rem 1.2rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .tool-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 结果展示区样式 */
+    .diff-container {
+        width: 100%;
+        min-height: 100px;
+        max-height: 500px;
+        overflow: auto;
+        background-color: #FFFFFF;
+        border: 1px solid #E5E7EB;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+
+    /* 差异高亮样式 (基础) */
+    .diff-chunk {
+        cursor: pointer;
+        transition: opacity 0.2s, background-color 0.2s;
+        border-radius: 2px;
+    }
+
+    .diff-chunk:hover {
+        filter: brightness(0.95);
+        outline: 1px dashed rgba(0, 0, 0, 0.2);
+    }
+
+    /* 状态：新增 */
+    .diff-added {
+        background-color: #D1FAE5;
+        /* Light Green */
+        color: #065F46;
+    }
+
+    /* 状态：新增被拒绝 (Exclude) */
+    .diff-added.excluded {
+        background-color: #F3F4F6;
+        /* Gray */
+        color: #9CA3AF;
+        text-decoration: line-through;
+    }
+
+    /* 状态：删除 */
+    .diff-removed {
+        background-color: #FEE2E2;
+        /* Light Red */
+        color: #991B1B;
+        text-decoration: line-through;
+    }
+
+    /* 状态：删除被撤销 (Include) */
+    .diff-removed.included {
+        background-color: #E0E7FF;
+        /* Light Blueish highlight to show it's kept */
+        color: #1F2937;
+        text-decoration: none;
+        border-bottom: 2px solid #6366F1;
+    }
+
+    .diff-neutral {
+        color: #374151;
+        cursor: default;
+    }
+
+    /* 行模式下的样式 */
+    .diff-line {
+        display: block;
+        padding: 0 4px;
+    }
+
+    /* 字符模式下的样式 */
+    .diff-char {
+        display: inline;
+    }
+
+    .diff-line.diff-added::before {
+        content: '+ ';
+        user-select: none;
+        opacity: 0.5;
+    }
+
+    .diff-line.diff-removed::before {
+        content: '- ';
+        user-select: none;
+        opacity: 0.5;
+    }
+
+    .diff-line.diff-neutral::before {
+        content: '  ';
+        user-select: none;
+        opacity: 0.5;
+    }
+
+    .message-box {
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 1rem;
+        font-weight: 500;
+        display: none;
+    }
+
+    .message-box.error {
+        background-color: #FEE2E2;
+        color: #EF4444;
+        border: 1px solid #FCA5A5;
+    }
+
+    .message-box.info {
+        background-color: #E3F2FD;
+        color: #1E88E5;
+        border: 1px solid #90CAF9;
+    }
+</style>
+
+<script>
+    const oldInput = document.getElementById('oldText');
+    const newInput = document.getElementById('newText');
+    const diffOutput = document.getElementById('diffOutput');
+    const mergeOutput = document.getElementById('mergeOutput');
+    const modeSelect = document.getElementById('diffMode');
+    const diffStats = document.getElementById('diffStats');
+    const addCountEl = document.getElementById('addCount');
+    const delCountEl = document.getElementById('delCount');
+    const messageBox = document.getElementById('messageBox');
+    const mergeSection = document.getElementById('mergeSection');
+
+    // 状态存储
+    let currentDiff = [];
+    let mergeState = []; // true: include in result, false: exclude
+
+    function showMessage(message, type = 'info') {
+        messageBox.textContent = message;
+        messageBox.className = 'message-box';
+        messageBox.classList.add(type);
+        messageBox.style.display = 'block';
+        setTimeout(() => messageBox.style.display = 'none', 3000);
+    }
+
+    async function pasteTo(id) {
+        try {
+            const text = await navigator.clipboard.readText();
+            document.getElementById(id).value = text;
+        } catch (err) {
+            showMessage('无法访问剪贴板，请手动粘贴', 'error');
+        }
+    }
+
+    function clearAll() {
+        oldInput.value = '';
+        newInput.value = '';
+        diffOutput.innerHTML = '';
+        mergeOutput.value = '';
+        diffStats.classList.add('hidden');
+        mergeSection.classList.add('hidden');
+        currentDiff = [];
+        mergeState = [];
+    }
+
+    function compareText() {
+        const oldText = oldInput.value;
+        const newText = newInput.value;
+        const mode = modeSelect.value;
+
+        if (!oldText && !newText) {
+            showMessage('请输入需要对比的文本', 'error');
+            return;
+        }
+
+        diffOutput.innerHTML = '';
+
+        try {
+            if (mode === 'lines') {
+                currentDiff = Diff.diffLines(oldText, newText);
+            } else if (mode === 'chars') {
+                currentDiff = Diff.diffChars(oldText, newText);
+            } else if (mode === 'words') {
+                currentDiff = Diff.diffWords(oldText, newText);
+            } else if (mode === 'json') {
+                let oldJson = oldText, newJson = newText;
+                try { oldJson = JSON.stringify(JSON.parse(oldText), null, 2); } catch (e) { }
+                try { newJson = JSON.stringify(JSON.parse(newText), null, 2); } catch (e) { }
+                currentDiff = Diff.diffLines(oldJson, newJson);
+            }
+        } catch (e) {
+            console.error(e);
+            showMessage('对比过程中发生错误，请检查输入内容', 'error');
+            return;
+        }
+
+        // 初始化合并状态
+        // Neutral: always included (true)
+        // Added: default included (true) -> User can reject (false)
+        // Removed: default excluded (false) -> User can keep (true)
+        mergeState = currentDiff.map(part => !part.removed);
+
+        renderDiff(mode);
+        generateResult();
+
+        // 更新统计
+        let added = 0, removed = 0;
+        currentDiff.forEach(part => {
+            if (part.added) added += part.count;
+            if (part.removed) removed += part.count;
+        });
+        addCountEl.innerText = added;
+        delCountEl.innerText = removed;
+        diffStats.classList.remove('hidden');
+        mergeSection.classList.remove('hidden');
+    }
+
+    function renderDiff(mode) {
+        const fragment = document.createDocumentFragment();
+        const isLineMode = mode === 'lines' || mode === 'json';
+
+        currentDiff.forEach((part, index) => {
+            const span = document.createElement('span');
+            const isIncluded = mergeState[index];
+
+            // 基础类名
+            let classes = ['diff-chunk'];
+            if (isLineMode) classes.push('diff-line');
+            else classes.push('diff-char');
+
+            // 状态类名
+            if (part.added) {
+                classes.push('diff-added');
+                if (!isIncluded) classes.push('excluded'); // 被拒绝的新增
+                span.title = "新增内容：点击拒绝 (不合并)";
+            } else if (part.removed) {
+                classes.push('diff-removed');
+                if (isIncluded) classes.push('included'); // 被保留的删除
+                span.title = "删除内容：点击保留 (撤销删除)";
+            } else {
+                classes.push('diff-neutral');
+            }
+
+            span.className = classes.join(' ');
+            span.appendChild(document.createTextNode(part.value));
+
+            // 绑定点击事件 (仅针对变动部分)
+            if (part.added || part.removed) {
+                span.onclick = () => toggleMerge(index, mode);
+            }
+
+            fragment.appendChild(span);
+        });
+
+        diffOutput.innerHTML = '';
+        diffOutput.appendChild(fragment);
+    }
+
+    function toggleMerge(index, mode) {
+        // 切换状态
+        mergeState[index] = !mergeState[index];
+        // 重新渲染以更新视觉效果
+        renderDiff(mode);
+        // 重新生成合并结果
+        generateResult();
+    }
+
+    function generateResult() {
+        let resultText = '';
+        currentDiff.forEach((part, index) => {
+            if (mergeState[index]) {
+                resultText += part.value;
+            }
+        });
+        mergeOutput.value = resultText;
+    }
+
+    function copyResult() {
+        if (!mergeOutput.value) return;
+        mergeOutput.select();
+        document.execCommand('copy');
+        showMessage('合并结果已复制到剪贴板', 'info');
+    }
+
+    // 监听快捷键
+    document.addEventListener('keydown', function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            compareText();
+        }
+    });
+
+    // 默认示例
+    window.onload = function () {
+        if (!oldInput.value) {
+            oldInput.value = "Hello World\nThis is a stable line.\nI will be removed.";
+            newInput.value = "Hello World!\nThis is a stable line.\nI am a new addition.";
+        }
+    }
+</script>
+{{ end }}

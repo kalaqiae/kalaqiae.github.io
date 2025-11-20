@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}zh-CN{{ end }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    
+    <!-- 添加 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 放置工具/游戏/首页的 CSS 变量和通用样式 -->
+    <style>
+        :root {
+            --primary-color: #1E88E5; 
+            --primary-hover-color: #42A5F5;
+            --secondary-color: #757575;
+            --text-color: #212121;
+            --card-background-base: rgba(255, 255, 255, 0.9);
+            --border-radius: 10px;
+            --transition-speed: 0.3s;
+            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding-top: 80px; 
+            line-height: 1.6;
+            min-height: 100vh;
+            text-rendering: optimizeLegibility;
+
+            /* !!! 整个网页背景图片设置 !!! */
+            background-image: url('/images/full-background.jpg'); /* 确保图片路径正确 */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            
+            /* 在图片上添加一个浅色蒙版，确保文字清晰 */
+            background-color: rgba(240, 240, 240, 0.85); 
+            background-blend-mode: lighten;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 覆盖 Tailwind 的默认颜色，使用 CSS 变量 */
+        .text-blue-600 { color: var(--primary-color); }
+        .bg-blue-600 { background-color: var(--primary-color); }
+        .hover\:bg-blue-700:hover { background-color: var(--primary-hover-color); }
+    </style>
+</head>
+<body>
+    
+    <!-- 调用新的导航栏 -->
+    {{ partial "my_new_header.html" . }}
+
+    <main>
+        {{ block "main" . }}
+        {{ end }}
+    </main>
+
+</body>
+</html>

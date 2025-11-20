@@ -1,0 +1,251 @@
+{{ define "title" }}文本格式转换工具 - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="tool-container">
+    <div class="card-content">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+            <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+                </path>
+            </svg>
+            文本格式转换工具
+        </h1>
+
+        <div id="messageBox" class="message-box"></div>
+
+        <div class="grid grid-cols-1 gap-6">
+            <!-- 输入区域 -->
+            <div>
+                <label for="inputText" class="block text-lg font-semibold mb-2 text-gray-700">输入文本:</label>
+                <textarea id="inputText" class="input-area" placeholder="在此输入需要转换的文本，例如: hello world"
+                    oninput="updateStats()"></textarea>
+                <div class="flex justify-between mt-2 text-sm text-gray-500">
+                    <span>统计: <span id="charCount" class="font-mono">0</span> 字符 | <span id="wordCount"
+                            class="font-mono">0</span> 单词 | <span id="lineCount" class="font-mono">0</span> 行</span>
+                    <button onclick="clearText()"
+                        class="text-red-500 hover:text-red-700 hover:underline transition-colors">清空</button>
+                </div>
+            </div>
+
+            <!-- 操作按钮组 -->
+            <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                <h3 class="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">常用格式</h3>
+                <div class="flex flex-wrap gap-3 mb-5">
+                    <button onclick="convert('uppercase')"
+                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">全大写 (UPPER)</button>
+                    <button onclick="convert('lowercase')"
+                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">全小写 (lower)</button>
+                    <button onclick="convert('capitalize')"
+                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">单词首大写 (Title Case)</button>
+                    <button onclick="convert('sentenceCase')"
+                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">句首大写 (Sentence)</button>
+                </div>
+
+                <h3 class="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">编程命名 & 其他</h3>
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="convert('camelCase')"
+                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">驼峰 (camelCase)</button>
+                    <button onclick="convert('pascalCase')"
+                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">大驼峰 (PascalCase)</button>
+                    <button onclick="convert('snakeCase')"
+                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">下划线 (snake_case)</button>
+                    <button onclick="convert('kebabCase')"
+                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">短横线 (kebab-case)</button>
+                    <button onclick="convert('alternatingCase')"
+                        class="tool-button bg-gray-600 text-white hover:bg-gray-700">乱序 (aLtErNaTiNg)</button>
+                </div>
+            </div>
+
+            <!-- 输出区域 -->
+            <div>
+                <label for="outputText" class="block text-lg font-semibold mb-2 text-gray-700">转换结果:</label>
+                <textarea id="outputText" class="input-area bg-gray-50" readonly
+                    placeholder="转换后的结果将显示在这里..."></textarea>
+            </div>
+
+            <div class="flex justify-end">
+                <button onclick="copyResult()"
+                    class="tool-button bg-green-600 text-white hover:bg-green-700 py-2 px-6 text-lg shadow-md">
+                    📋 复制结果
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tool-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .card-content {
+        background-color: var(--card-background-base);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid #E0E0E0;
+    }
+
+    .input-area {
+        width: 100%;
+        height: 150px;
+        padding: 1rem;
+        border: 2px solid #E0E0E0;
+        border-radius: 0.5rem;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 1rem;
+        resize: vertical;
+        outline: none;
+        transition: border-color 0.2s;
+        background-color: #FFFFFF;
+    }
+
+    .input-area:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+    }
+
+    .tool-button {
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        font-weight: 600;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+
+    .tool-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .message-box {
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 1rem;
+        font-weight: 500;
+        display: none;
+    }
+
+    .message-box.info {
+        background-color: #E3F2FD;
+        color: #1E88E5;
+        border: 1px solid #90CAF9;
+    }
+
+    .message-box.error {
+        background-color: #FEE2E2;
+        color: #EF4444;
+        border: 1px solid #FCA5A5;
+    }
+</style>
+
+<script>
+    const inputText = document.getElementById('inputText');
+    const outputText = document.getElementById('outputText');
+    const messageBox = document.getElementById('messageBox');
+
+    function showMessage(message, type = 'info') {
+        messageBox.textContent = message;
+        messageBox.className = 'message-box ' + type;
+        messageBox.style.display = 'block';
+        setTimeout(() => messageBox.style.display = 'none', 3000);
+    }
+
+    function updateStats() {
+        const text = inputText.value;
+        document.getElementById('charCount').innerText = text.length;
+        // 简单的单词计数：按空白字符分割并过滤空串
+        document.getElementById('wordCount').innerText = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+        document.getElementById('lineCount').innerText = text.trim() === '' ? 0 : text.split(/\n/).length;
+    }
+
+    function clearText() {
+        inputText.value = '';
+        outputText.value = '';
+        updateStats();
+    }
+
+    function copyResult() {
+        if (!outputText.value) {
+            showMessage('没有可复制的内容', 'error');
+            return;
+        }
+        outputText.select();
+        document.execCommand('copy');
+        showMessage('结果已复制到剪贴板', 'info');
+    }
+
+    // --- 转换逻辑核心 ---
+
+    // 将文本分割为单词数组，处理驼峰、下划线、连字符等
+    function toWords(str) {
+        if (!str) return [];
+        return str
+            // 在大写字母前添加空格 (处理 camelCase)
+            .replace(/([a-z])([A-Z])/g, '$1 $2')
+            // 将非字母数字替换为空格
+            .replace(/[^a-zA-Z0-9\u4e00-\u9fa5]+/g, ' ')
+            .trim()
+            .split(/\s+/);
+    }
+
+    function convert(mode) {
+        const text = inputText.value;
+        if (!text) {
+            showMessage('请输入文本', 'error');
+            return;
+        }
+
+        let result = '';
+
+        switch (mode) {
+            case 'uppercase':
+                result = text.toUpperCase();
+                break;
+            case 'lowercase':
+                result = text.toLowerCase();
+                break;
+            case 'capitalize':
+                // 每个单词首字母大写 (Title Case)
+                result = text.toLowerCase().replace(/(?:^|\s)\S/g, function (a) { return a.toUpperCase(); });
+                break;
+            case 'sentenceCase':
+                // 句首字母大写 (简单处理 . ! ? 后的字符)
+                result = text.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, c => c.toUpperCase());
+                break;
+            case 'camelCase':
+                const wordsCamel = toWords(text);
+                result = wordsCamel.map((word, index) => {
+                    if (index === 0) return word.toLowerCase();
+                    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                }).join('');
+                break;
+            case 'pascalCase':
+                const wordsPascal = toWords(text);
+                result = wordsPascal.map((word) => {
+                    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                }).join('');
+                break;
+            case 'snakeCase':
+                result = toWords(text).map(x => x.toLowerCase()).join('_');
+                break;
+            case 'kebabCase':
+                result = toWords(text).map(x => x.toLowerCase()).join('-');
+                break;
+            case 'alternatingCase':
+                // aLtErNaTiNg cAsE
+                result = text.split('').map((c, i) => i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()).join('');
+                break;
+        }
+
+        outputText.value = result;
+        showMessage('转换成功！', 'info');
+    }
+</script>
+{{ end }}

@@ -1,0 +1,264 @@
+{{ define "title" }}JSON 格式化工具 - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="tool-container">
+    <div class="card-content">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+            <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+            JSON 格式化与验证工具
+        </h1>
+
+        <!-- 错误和消息提示区 -->
+        <div id="messageBox" class="message-box"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- 左侧：输入区 -->
+            <div>
+                <label for="inputArea" class="block text-lg font-semibold mb-2 text-gray-700">输入 JSON/文本:</label>
+                <textarea id="inputArea" placeholder="在此粘贴 JSON 字符串或 JavaScript 对象..."></textarea>
+            </div>
+
+            <!-- 右侧：输出区 -->
+            <div>
+                <label for="outputArea" class="block text-lg font-semibold mb-2 text-gray-700">输出结果:</label>
+                <textarea id="outputArea" placeholder="处理后的 JSON 将显示在此..."></textarea>
+            </div>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="flex flex-wrap justify-center md:justify-start space-x-4 mt-6 col-span-1 lg:col-span-2">
+            <button onclick="formatJson()" class="tool-button bg-green-600 text-white hover:bg-green-700">
+                ✨ 格式化 (Format)
+            </button>
+            <button onclick="minifyJson()" class="tool-button bg-red-600 text-white hover:bg-red-700">
+                📦 压缩 (Minify)
+            </button>
+            <button onclick="validateJson()" class="tool-button bg-yellow-500 text-gray-800 hover:bg-yellow-600">
+                ✅ 验证 (Validate)
+            </button>
+            <button onclick="clearAll()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
+                🧹 清空
+            </button>
+            <button onclick="copyOutput()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
+                📋 复制结果
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tool-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    /* 文本输入框样式 */
+    textarea {
+        width: 100%;
+        height: 400px;
+        /* 增加高度以容纳更多 JSON */
+        padding: 1rem;
+        border: 2px solid #E0E0E0;
+        border-radius: var(--border-radius);
+        font-family: 'Consolas', 'Courier New', monospace;
+        /* 适合代码的字体 */
+        font-size: 0.95rem;
+        resize: vertical;
+        /* 允许垂直拖动 */
+        outline: none;
+        transition: border-color 0.2s;
+        background-color: #F8F9FA;
+    }
+
+    textarea:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+    }
+
+    .card-content {
+        background-color: var(--card-background-base);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid #E0E0E0;
+    }
+
+    /* 按钮动画 */
+    .tool-button {
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .tool-button:hover {
+        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.4);
+        transform: translateY(-1px);
+    }
+
+    /* 消息提示框 */
+    .message-box {
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 1rem;
+        font-weight: 500;
+        display: none;
+        /* 默认隐藏 */
+    }
+
+    .message-box.error {
+        background-color: #FEE2E2;
+        color: #EF4444;
+        border: 1px solid #FCA5A5;
+    }
+
+    .message-box.success {
+        background-color: #D1FAE5;
+        color: #059669;
+        border: 1px solid #34D399;
+    }
+
+    .message-box.info {
+        background-color: #E3F2FD;
+        color: #1E88E5;
+        border: 1px solid #90CAF9;
+    }
+</style>
+
+<script>
+    const inputArea = document.getElementById('inputArea');
+    const outputArea = document.getElementById('outputArea');
+    const messageBox = document.getElementById('messageBox');
+
+    /**
+     * 显示消息提示
+     */
+    function showMessage(message, type = 'info') {
+        messageBox.textContent = message;
+        messageBox.className = 'message-box'; // 重置类
+        messageBox.classList.add(type);
+        messageBox.style.display = 'block';
+
+        // 5秒后自动隐藏
+        setTimeout(() => {
+            messageBox.style.display = 'none';
+        }, 5000);
+    }
+
+    /**
+     * 核心函数：解析输入 JSON 文本
+     * @returns {object|null} 解析后的 JavaScript 对象，如果失败返回 null
+     */
+    function parseInput() {
+        messageBox.style.display = 'none';
+        const input = inputArea.value.trim();
+
+        if (!input) {
+            showMessage("输入内容不能为空。", 'error');
+            return null;
+        }
+
+        try {
+            // 尝试解析 JSON
+            return JSON.parse(input);
+        } catch (e) {
+            showMessage(`JSON 解析失败：${e.message.substring(0, 100)}...`, 'error');
+            outputArea.value = "";
+            return null;
+        }
+    }
+
+    /**
+     * 格式化 (Beautify) JSON
+     */
+    function formatJson() {
+        const obj = parseInput();
+        if (obj === null) return;
+
+        try {
+            // 使用 JSON.stringify 的第三个参数设置缩进 (2个空格)
+            const formatted = JSON.stringify(obj, null, 2);
+            outputArea.value = formatted;
+            showMessage("JSON 格式化成功！", 'success');
+        } catch (e) {
+            showMessage("格式化失败。", 'error');
+            outputArea.value = "";
+        }
+    }
+
+    /**
+     * 压缩 (Minify) JSON
+     */
+    function minifyJson() {
+        const obj = parseInput();
+        if (obj === null) return;
+
+        try {
+            // 不使用缩进 (null, 0 或不传参)
+            const minified = JSON.stringify(obj);
+            outputArea.value = minified;
+            showMessage("JSON 压缩成功！", 'success');
+        } catch (e) {
+            showMessage("压缩失败。", 'error');
+            outputArea.value = "";
+        }
+    }
+
+    /**
+     * 验证 (Validate) JSON
+     */
+    function validateJson() {
+        messageBox.style.display = 'none';
+        const input = inputArea.value.trim();
+
+        if (!input) {
+            showMessage("输入内容不能为空。", 'error');
+            return;
+        }
+
+        try {
+            JSON.parse(input);
+            showMessage("✅ JSON 语法有效！", 'success');
+        } catch (e) {
+            showMessage(`❌ JSON 验证失败：${e.message}`, 'error');
+        }
+        outputArea.value = ""; // 验证通常不需要改变输出框
+    }
+
+    /**
+     * 清空所有输入和输出
+     */
+    function clearAll() {
+        inputArea.value = "";
+        outputArea.value = "";
+        messageBox.style.display = 'none';
+        showMessage("已清空所有区域。", 'info');
+    }
+
+    /**
+     * 复制输出结果到剪贴板
+     */
+    function copyOutput() {
+        const output = outputArea.value;
+        if (!output) {
+            showMessage("输出结果为空，无法复制。", 'error');
+            return;
+        }
+
+        // 使用 document.execCommand('copy') 兼容性更好 (iframe 环境)
+        outputArea.select();
+        document.execCommand('copy');
+        outputArea.setSelectionRange(0, 0); // 取消选中
+
+        showMessage("结果已复制到剪贴板！", 'info');
+    }
+</script>
+{{ end }}

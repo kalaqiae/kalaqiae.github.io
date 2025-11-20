@@ -1,0 +1,224 @@
+{{ define "title" }}Base64 加解密工具 - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="tool-container">
+    <div class="card-content">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+            <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.879a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+                </path>
+            </svg>
+            Base64 加解密工具
+        </h1>
+
+        <!-- 错误和消息提示区 -->
+        <div id="messageBox" class="message-box"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- 左侧：输入区 -->
+            <div>
+                <label for="inputArea" class="block text-lg font-semibold mb-2 text-gray-700">输入文本或 Base64 字符串:</label>
+                <textarea id="inputArea" placeholder="在此输入需要处理的文本..."></textarea>
+            </div>
+
+            <!-- 右侧：输出区 -->
+            <div>
+                <label for="outputArea" class="block text-lg font-semibold mb-2 text-gray-700">输出结果:</label>
+                <textarea id="outputArea" placeholder="处理结果将显示在此..."></textarea>
+            </div>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="flex flex-wrap justify-center md:justify-start space-x-4 mt-6">
+            <button onclick="handleBase64(true)" class="tool-button bg-blue-600 text-white hover:bg-blue-700">
+                🚀 编码 (Encode)
+            </button>
+            <button onclick="handleBase64(false)" class="tool-button bg-gray-500 text-white hover:bg-gray-600">
+                🔏 解码 (Decode)
+            </button>
+            <button onclick="clearAll()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
+                🧹 清空
+            </button>
+            <button onclick="copyOutput()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
+                📋 复制结果
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tool-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    /* 文本输入框样式 */
+    textarea {
+        width: 100%;
+        height: 200px;
+        padding: 1rem;
+        border: 2px solid #E0E0E0;
+        border-radius: var(--border-radius);
+        font-family: monospace;
+        font-size: 0.95rem;
+        resize: none;
+        outline: none;
+        transition: border-color 0.2s;
+        background-color: #F8F9FA;
+    }
+
+    textarea:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+    }
+
+    .card-content {
+        background-color: var(--card-background-base);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid #E0E0E0;
+    }
+
+    /* 按钮动画 */
+    .tool-button {
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: all 0.2s;
+    }
+
+    .tool-button:hover {
+        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.4);
+        transform: translateY(-1px);
+    }
+
+    /* 消息提示框 */
+    .message-box {
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-top: 1rem;
+        font-weight: 500;
+        display: none;
+        /* 默认隐藏 */
+    }
+
+    .message-box.error {
+        background-color: #FEE2E2;
+        color: #EF4444;
+        border: 1px solid #FCA5A5;
+    }
+</style>
+
+<script>
+    const inputArea = document.getElementById('inputArea');
+    const outputArea = document.getElementById('outputArea');
+    const messageBox = document.getElementById('messageBox');
+
+    /**
+     * 显示消息提示
+     * @param {string} message - 提示内容
+     * @param {string} type - 消息类型 ('success', 'error', 'info')
+     */
+    function showMessage(message, type = 'info') {
+        messageBox.textContent = message;
+        messageBox.className = 'message-box'; // 重置类
+        messageBox.classList.add(type);
+        messageBox.style.display = 'block';
+
+        // 5秒后自动隐藏
+        setTimeout(() => {
+            messageBox.style.display = 'none';
+        }, 5000);
+    }
+
+    /**
+     * Base64 编码操作
+     * @param {string} text - 输入文本
+     * @returns {string} Base64 编码结果
+     */
+    function encodeBase64(text) {
+        // 先进行 URI 编码以支持中文和特殊字符 (UTF-8)
+        const utf8String = encodeURIComponent(text);
+        return btoa(utf8String);
+    }
+
+    /**
+     * Base64 解码操作
+     * @param {string} base64String - Base64 字符串
+     * @returns {string} 解码结果
+     */
+    function decodeBase64(base64String) {
+        // 移除 Base64 字符串末尾可能出现的填充字符或不规范的空白
+        base64String = base64String.trim();
+
+        // 尝试解码
+        const utf8String = atob(base64String);
+        // 进行 URI 解码，恢复中文和特殊字符
+        return decodeURIComponent(utf8String);
+    }
+
+    /**
+     * 处理 Base64 操作的入口函数
+     * @param {boolean} isEncode - true 表示编码，false 表示解码
+     */
+    function handleBase64(isEncode) {
+        messageBox.style.display = 'none';
+        const input = inputArea.value.trim();
+
+        if (!input) {
+            showMessage("输入内容不能为空！", 'error');
+            return;
+        }
+
+        try {
+            if (isEncode) {
+                const encoded = encodeBase64(input);
+                outputArea.value = encoded;
+                showMessage("编码成功！", 'info');
+            } else {
+                const decoded = decodeBase64(input);
+                outputArea.value = decoded;
+                showMessage("解码成功！", 'info');
+            }
+        } catch (e) {
+            // 捕获无效 Base64 字符或 URI 异常
+            showMessage("操作失败：输入的 Base64 格式无效或包含非 UTF-8 字符。", 'error');
+            console.error("Base64 Error:", e);
+            outputArea.value = "";
+        }
+    }
+
+    /**
+     * 清空所有输入和输出
+     */
+    function clearAll() {
+        inputArea.value = "";
+        outputArea.value = "";
+        messageBox.style.display = 'none';
+        showMessage("已清空所有区域。", 'info');
+    }
+
+    /**
+     * 复制输出结果到剪贴板
+     */
+    function copyOutput() {
+        const output = outputArea.value;
+        if (!output) {
+            showMessage("输出结果为空，无法复制。", 'error');
+            return;
+        }
+
+        // 使用 document.execCommand('copy') 兼容性更好 (iframe 环境)
+        outputArea.select();
+        document.execCommand('copy');
+        outputArea.setSelectionRange(0, 0); // 取消选中
+
+        showMessage("结果已复制到剪贴板！", 'info');
+    }
+</script>
+{{ end }}

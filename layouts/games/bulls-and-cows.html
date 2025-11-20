@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bulls & Cows 猜数字游戏</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --dark: #1e293b;
+      --darker: #0f172a;
+      --light: #f8fafc;
+      --muted: #94a3b8;
+      --glass: rgba(255, 255, 255, 0.05);
+      --glass-2: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: var(--light);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .game-container {
+      max-width: 1000px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background: rgba(30, 41, 59, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .game-content {
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .game-board-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .game-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .game-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .game-title h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .game-controls {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .control-group label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    select {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: var(--light);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #0da271;
+    }
+
+    .btn-warning {
+      background: var(--warning);
+      color: white;
+    }
+
+    .btn-warning:hover {
+      background: #e6950a;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .guess-input {
+      width: 220px;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--light);
+      font-size: 18px;
+      letter-spacing: 6px;
+      text-align: center;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+
+    .guess-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+
+    .guess-input::selection {
+      background: transparent;
+    }
+
+    .keypad {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+    .key {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px 20px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-weight: 700;
+      transition: all 0.2s ease;
+      font-size: 1.2rem;
+      min-width: 50px;
+    }
+
+    .key:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .key:active {
+      transform: scale(0.95);
+    }
+
+    .history {
+      max-height: 300px;
+      overflow: auto;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .hist-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .hist-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .instructions {
+      flex: 0 0 300px;
+      padding: 20px;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .instructions h3 {
+      margin-bottom: 15px;
+      color: #cbd5e1;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .instructions ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .instructions li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .instructions li:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .instructions i {
+      width: 20px;
+      text-align: center;
+    }
+
+    .records {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .record-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .small {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .game-stats {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .stat-box {
+      background: rgba(15, 23, 42, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      flex: 1;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--light);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 920px) {
+      .game-content {
+        flex-direction: column;
+      }
+
+      .instructions {
+        flex: none;
+        width: 100%;
+      }
+
+      .guess-input {
+        width: 180px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .game-container {
+        border-radius: 15px;
+      }
+
+      .game-stats {
+        flex-direction: column;
+      }
+
+      .input-area {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .guess-input {
+        width: 100%;
+      }
+
+      .btn {
+        flex: 1;
+        justify-content: center;
+      }
+
+      .keypad {
+        flex-wrap: wrap;
+      }
+
+      .key {
+        flex: 1;
+        min-width: 40px;
+        padding: 12px 15px;
+      }
+
+      .game-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .control-group {
+        justify-content: space-between;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="game-container">
+    <div class="game-content">
+      <!-- 主游戏区域 -->
+      <div class="game-board-container">
+        <div class="game-header">
+          <div class="game-title">
+            <div>
+              <h1>猜数字</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-stats">
+          <div class="stat-box">
+            <div class="stat-label">已用时间</div>
+            <div id="timer" class="stat-value">00:00</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="game-controls">
+            <div class="control-group">
+              <label for="digits">位数</label>
+              <select id="digits">
+                <option value="3">3 位</option>
+                <option value="4" selected>4 位</option>
+                <option value="5">5 位</option>
+                <option value="6">6 位</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <div class="checkbox-container">
+                <input type="checkbox" id="allowRepeat" />
+                <label for="allowRepeat">允许重复数字</label>
+              </div>
+            </div>
+
+            <button class="btn btn-secondary" id="copyAnswer">
+              <i class="fas fa-copy"></i> 复制答案
+            </button>
+            <button class="btn btn-primary" id="newGameBtn">
+              <i class="fas fa-play"></i> 新游戏
+            </button>
+          </div>
+
+          <div class="input-area">
+            <input id="guessInput" class="guess-input" inputmode="numeric" placeholder="输入你的猜测" maxlength="6" />
+            <button class="btn btn-success" id="submitGuess">
+              <i class="fas fa-paper-plane"></i> 提交
+            </button>
+            <button class="btn btn-warning" id="clearInput">
+              <i class="fas fa-eraser"></i> 清除
+            </button>
+          </div>
+
+          <div class="keypad" id="keypad">
+            <!-- JS will populate 0-9 -->
+          </div>
+
+          <div class="history" id="historyList" aria-live="polite">
+            <div class="small">开始提交你的第一次猜测吧。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧区域 -->
+      <div class="instructions">
+        <h3><i class="fas fa-trophy"></i> 最佳记录</h3>
+        <div class="small" style="text-align: center; margin-bottom: 15px;">(当前模式)</div>
+
+        <div class="records">
+          <div class="record-line">
+            <div>
+              <div class="small">最快时间</div>
+              <div id="bestTime" style="font-weight:700">—</div>
+            </div>
+            <div class="small" id="bestTimeMeta">—</div>
+          </div>
+
+          <div class="record-line">
+            <div>
+              <div class="small">最少猜次</div>
+              <div id="bestGuesses" style="font-weight:700">—</div>
+            </div>
+            <div class="small" id="bestGuessesMeta">—</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+          <h3><i class="fas fa-info-circle"></i> 游戏说明</h3>
+          <ul>
+            <li><i class="fas fa-cog"></i> 系统会生成一个长度为 N（3-6位）的数字组合</li>
+            <li><i class="fas fa-redo"></i> 根据"允许重复"规则决定是否可以有重复数字</li>
+            <li><i class="fas fa-check-circle"></i> 提交一个与你所选长度相同的数字串</li>
+            <li><i class="fas fa-bullseye"></i> A = 数字与位置都正确</li>
+            <li><i class="fas fa-crosshairs"></i> B = 数字正确但位置错误</li>
+            <li><i class="fas fa-history"></i> 提交后会在左侧显示历史记录</li>
+            <li><i class="fas fa-chart-line"></i> 游戏会记录最快猜中时间和最少猜次</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ======= 游戏逻辑实现 =======
+    (function () {
+      // DOM
+      const digitsSel = document.getElementById('digits');
+      const allowRepeatChk = document.getElementById('allowRepeat');
+      const guessInput = document.getElementById('guessInput');
+      const submitGuessBtn = document.getElementById('submitGuess');
+      const clearInputBtn = document.getElementById('clearInput');
+      const historyList = document.getElementById('historyList');
+      const timerEl = document.getElementById('timer');
+      const newGameBtn = document.getElementById('newGameBtn');
+      const copyAnswerBtn = document.getElementById('copyAnswer');
+      const keypad = document.getElementById('keypad');
+      const bestTimeEl = document.getElementById('bestTime');
+      const bestGuessesEl = document.getElementById('bestGuesses');
+      const bestTimeMeta = document.getElementById('bestTimeMeta');
+      const bestGuessesMeta = document.getElementById('bestGuessesMeta');
+
+      // state
+      let secret = '';
+      let digits = parseInt(digitsSel.value, 10);
+      let allowRepeat = allowRepeatChk.checked;
+      let attempts = [];
+      let timerInterval = null;
+      let startTime = null;
+      let elapsedSeconds = 0;
+      let gameOver = false;
+
+      // localStorage keys
+      const STORAGE_KEY = 'bulls_cows_records_v1';
+
+      // initialize
+      function init() {
+        populateKeypad();
+        attachEvents();
+        newGame();
+      }
+
+      // keypad digits 0-9
+      function populateKeypad() {
+        keypad.innerHTML = '';
+        for (let i = 0; i <= 9; i++) {
+          const el = document.createElement('div');
+          el.className = 'key';
+          el.textContent = String(i);
+          el.dataset.d = i;
+          keypad.appendChild(el);
+        }
+
+        // handle clicks
+        keypad.addEventListener('click', (e) => {
+          const k = e.target.closest('.key');
+          if (!k) return;
+          if (k.dataset.d !== undefined) {
+            appendDigit(k.dataset.d);
+          }
+        });
+      }
+
+      function appendDigit(d) {
+        if (gameOver) return;
+        const max = digits;
+        let val = guessInput.value || '';
+        if (val.length >= max) return;
+        // if non-repeat mode, prevent adding same digit twice
+        if (!allowRepeat && val.includes(String(d))) return;
+        guessInput.value = val + String(d);
+        guessInput.focus();
+      }
+
+      function clearInput() {
+        guessInput.value = '';
+        guessInput.focus();
+      }
+
+      // generate secret number according to mode
+      function generateSecret() {
+        const len = digits;
+        let s = '';
+        if (allowRepeat) {
+          for (let i = 0; i < len; i++) {
+            s += String(Math.floor(Math.random() * 10));
+          }
+        } else {
+          // choose unique digits
+          const pool = [...Array(10).keys()].map(String);
+          // shuffle
+          for (let i = pool.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [pool[i], pool[j]] = [pool[j], pool[i]];
+          }
+          s = pool.slice(0, len).join('');
+        }
+        return s;
+      }
+
+      // timer
+      function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        startTime = Date.now();
+        elapsedSeconds = 0;
+        updateTimerDisplay();
+        timerInterval = setInterval(() => {
+          elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+          updateTimerDisplay();
+        }, 500);
+      }
+      function stopTimer() {
+        if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+      }
+      function updateTimerDisplay() {
+        const s = elapsedSeconds;
+        const mm = String(Math.floor(s / 60)).padStart(2, '0');
+        const ss = String(s % 60).padStart(2, '0');
+        timerEl.textContent = mm + ':' + ss;
+      }
+
+      // calculate A/B
+      function calcAB(secret, guess) {
+        let A = 0, B = 0;
+        const sArr = secret.split('');
+        const gArr = guess.split('');
+        // count bulls
+        for (let i = 0; i < gArr.length; i++) {
+          if (gArr[i] === sArr[i]) {
+            A++;
+            sArr[i] = null;
+            gArr[i] = null;
+          }
+        }
+        // count cows: for remaining guess digits, if exists in sArr (non-null), count and remove one occurrence
+        for (let i = 0; i < gArr.length; i++) {
+          if (gArr[i] === null) continue;
+          const idx = sArr.indexOf(gArr[i]);
+          if (idx >= 0) {
+            B++;
+            sArr[idx] = null;
+          }
+        }
+        return { A, B };
+      }
+
+      // submit
+      function trySubmit() {
+        if (gameOver) return;
+        const g = (guessInput.value || '').trim();
+        if (!/^\d+$/.test(g)) {
+          alert('请输入数字。');
+          return;
+        }
+        if (g.length !== digits) {
+          alert('请输入 ' + digits + ' 位数字。');
+          return;
+        }
+        if (!allowRepeat) {
+          const set = new Set(g.split(''));
+          if (set.size !== g.length) {
+            alert('模式设置为"不可重复"，请输入不重复的数字。');
+            return;
+          }
+        }
+        // start timer at first attempt
+        if (attempts.length === 0 && !timerInterval) {
+          startTimer();
+        }
+        const { A, B } = calcAB(secret, g);
+        attempts.push({ guess: g, A, B, time: elapsedSeconds });
+        renderHistory();
+        guessInput.value = '';
+
+        // check win
+        if (A === digits) {
+          stopTimer();
+          gameOver = true;
+          // store record
+          saveRecord({
+            len: digits,
+            allowRepeat,
+            time: elapsedSeconds,
+            guesses: attempts.length,
+            secret,
+            date: new Date().toISOString()
+          });
+          // show win modal/alert
+          setTimeout(() => {
+            alert('恭喜你！猜对了\n答案：' + secret + '\n用时：' + formatTime(elapsedSeconds) + '，猜测次数：' + attempts.length);
+            renderRecords();
+          }, 50);
+        }
+      }
+
+      // reveal / copy
+      async function copyAnswer() {
+        try {
+          await navigator.clipboard.writeText(secret);
+          showToast('已复制答案到剪贴板：' + secret);
+        } catch (e) {
+          // fallback
+          const ta = document.createElement('textarea');
+          ta.value = secret; document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+          showToast('已复制答案到剪贴板（回退方法）：' + secret);
+        }
+      }
+
+      // show toast simple (temporary)
+      function showToast(msg) {
+        const t = document.createElement('div');
+        t.textContent = msg;
+        Object.assign(t.style, {
+          position: 'fixed', right: '20px', bottom: '20px', background: 'rgba(0,0,0,0.7)',
+          color: '#fff', padding: '10px 12px', borderRadius: '8px', zIndex: 9999
+        });
+        document.body.appendChild(t);
+        setTimeout(() => t.style.opacity = '0.0', 1600);
+        setTimeout(() => t.remove(), 2400);
+      }
+
+      // history rendering
+      function renderHistory() {
+        historyList.innerHTML = '';
+        if (attempts.length === 0) {
+          historyList.innerHTML = '<div class="small">开始新游戏并提交你的第一次猜测吧。</div>';
+          return;
+        }
+        for (let i = 0; i < attempts.length; i++) {
+          const it = attempts[i];
+          const div = document.createElement('div');
+          div.className = 'hist-item';
+          div.innerHTML = `<div><strong>第 ${i + 1} 次</strong> &nbsp; ${it.guess}</div><div><span style="font-weight:700">${it.A}A</span> <span style="opacity:.7">${it.B}B</span></div>`;
+          historyList.appendChild(div);
+        }
+      }
+
+      // new game
+      function newGame() {
+        digits = parseInt(digitsSel.value, 10);
+        allowRepeat = allowRepeatChk.checked;
+        attempts = [];
+        timerEl.textContent = '00:00';
+        elapsedSeconds = 0;
+        gameOver = false;
+        if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+        guessInput.value = '';
+        secret = generateSecret();
+        renderHistory();
+        renderRecords();
+        // update maxlength
+        guessInput.maxLength = digits;
+      }
+
+      // records management
+      function readRecords() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return {};
+          return JSON.parse(raw);
+        } catch (e) {
+          return {};
+        }
+      }
+      function writeRecords(r) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(r));
+      }
+      // key for mode
+      function modeKey(len, allow) {
+        return `${len}-${allow ? 1 : 0}`;
+      }
+
+      function saveRecord({ len, allowRepeat, time, guesses, secret, date }) {
+        const r = readRecords();
+        const key = modeKey(len, allowRepeat);
+        if (!r[key]) r[key] = { fastest: [], fewest: [] };
+        // push fastest
+        r[key].fastest.push({ time, guesses, date, secret });
+        r[key].fastest.sort((a, b) => a.time - b.time);
+        r[key].fastest = r[key].fastest.slice(0, 1);
+        // push fewest guesses
+        r[key].fewest.push({ guesses, time, date, secret });
+        r[key].fewest.sort((a, b) => a.guesses - b.guesses || a.time - b.time);
+        r[key].fewest = r[key].fewest.slice(0, 1);
+        writeRecords(r);
+      }
+
+      function renderRecords() {
+        const r = readRecords();
+        const key = modeKey(digits, allowRepeat);
+        const data = r[key];
+        if (!data) {
+          bestTimeEl.textContent = '—';
+          bestGuessesEl.textContent = '—';
+          bestTimeMeta.textContent = '';
+          bestGuessesMeta.textContent = '';
+          return;
+        }
+        if (data.fastest && data.fastest.length > 0) {
+          const best = data.fastest[0];
+          bestTimeEl.textContent = formatTime(best.time);
+          bestTimeMeta.textContent = `${best.guesses} 次 • ${new Date(best.date).toLocaleDateString()}`;
+        } else {
+          bestTimeEl.textContent = '—';
+          bestTimeMeta.textContent = '';
+        }
+        if (data.fewest && data.fewest.length > 0) {
+          const best = data.fewest[0];
+          bestGuessesEl.textContent = `${best.guesses} 次`;
+          bestGuessesMeta.textContent = `${formatTime(best.time)} • ${new Date(best.date).toLocaleDateString()}`;
+        } else {
+          bestGuessesEl.textContent = '—';
+          bestGuessesMeta.textContent = '';
+        }
+      }
+
+      // format time
+      function formatTime(sec) {
+        const mm = String(Math.floor(sec / 60)).padStart(2, '0');
+        const ss = String(sec % 60).padStart(2, '0');
+        return mm + ':' + ss;
+      }
+
+      // events wiring
+      function attachEvents() {
+        // controls
+        digitsSel.addEventListener('change', () => {
+          digits = parseInt(digitsSel.value, 10);
+          guessInput.maxLength = digits;
+          newGame();
+        });
+        allowRepeatChk.addEventListener('change', () => {
+          allowRepeat = allowRepeatChk.checked;
+          newGame();
+        });
+        newGameBtn.addEventListener('click', newGame);
+        submitGuessBtn.addEventListener('click', trySubmit);
+        clearInputBtn.addEventListener('click', clearInput);
+        copyAnswerBtn.addEventListener('click', copyAnswer);
+
+        // keyboard support
+        window.addEventListener('keydown', (e) => {
+          if (e.key >= '0' && e.key <= '9') {
+            appendDigit(e.key);
+            e.preventDefault();
+          } else if (e.key === 'Backspace') {
+            clearInput();
+            e.preventDefault();
+          } else if (e.key === 'Enter') {
+            trySubmit();
+            e.preventDefault();
+          }
+        });
+
+        // input restrictions: only digits allowed
+        guessInput.addEventListener('input', (e) => {
+          let v = guessInput.value.replace(/[^\d]/g, '');
+          if (!allowRepeat) {
+            // strip duplicate occurrences beyond first
+            const seen = new Set();
+            v = v.split('').filter(ch => {
+              if (seen.has(ch)) return false;
+              seen.add(ch);
+              return true;
+            }).join('');
+          }
+          if (v.length > digits) v = v.slice(0, digits);
+          guessInput.value = v;
+        });
+
+        // focus behavior - prevent text selection on focus
+        guessInput.addEventListener('focus', () => {
+          guessInput.selectionStart = guessInput.selectionEnd = guessInput.value.length;
+        });
+      }
+
+      // initial render
+      init();
+
+      // expose some helpers to console for debugging
+      window.bc = {
+        newGame: newGame,
+        getSecret: () => secret,
+        setSecret: (s) => { secret = String(s); showToast('已设置 secret（仅本地）'); }
+      };
+
+    })();
+  </script>
+</body>
+
+</html>

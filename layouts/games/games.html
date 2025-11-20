@@ -1,0 +1,114 @@
+{{ define "title" }}游戏中心 - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --primary-color: #3B82F6;
+        --background-color: #F8FAFC;
+        --card-background: #FFFFFF;
+        --border-radius: 12px;
+        --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --transition-speed: 0.3s;
+        --text-color: #1F2937;
+        --secondary-color: #6B7280;
+    }
+
+    /* 确保背景色覆盖 */
+    body {
+        background-color: var(--background-color);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .game-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .games-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .game-card {
+        background-color: var(--card-background);
+        padding: 30px 25px; /* 稍微增加上下内边距 */
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-light);
+        border: 1px solid #E5E7EB;
+        transition: all var(--transition-speed);
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .game-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .game-icon {
+        font-size: 3em; /* 图标稍微放大一点 */
+        margin-bottom: 15px;
+        display: block;
+        line-height: 1;
+    }
+
+    .game-card h2 {
+        font-size: 1.4em;
+        margin: 0 0 10px;
+        color: var(--text-color);
+        font-weight: 600;
+    }
+
+    .game-card p {
+        color: var(--secondary-color);
+        font-size: 0.95em;
+        margin: 0;
+        line-height: 1.5;
+    }
+</style>
+
+<div class="game-container">
+    <div class="games-grid">
+
+        <a href="{{ "games/snake" | relURL }}" class="game-card">
+            <span class="game-icon">🐍</span>
+            <h2>贪吃蛇</h2>
+            <p>经典街机游戏，挑战最高分</p>
+        </a>
+
+        <a href="{{ "games/game-2048" | relURL }}" class="game-card">
+            <span class="game-icon">🔢</span>
+            <h2>2048</h2>
+            <p>经典的数字叠加益智游戏，目标合成 2048</p>
+        </a>
+
+        <a href="{{ "games/flappy-bird" | relURL }}" class="game-card">
+            <span class="game-icon">🐦</span>
+            <h2>Flappy Bird</h2>
+            <p>控制小鸟穿越管道，飞飞飞</p>
+        </a>
+
+        <a href="{{ "games/sudoku" | relURL }}" class="game-card">
+            <span class="game-icon">🧩</span>
+            <h2>数独</h2>
+            <p>数字填充游戏，锻炼逻辑思维</p>
+        </a>
+
+        <a href="{{ "games/bulls-and-cows" | relURL }}" class="game-card">
+            <span class="game-icon">🐂🐄</span>
+            <h2>猜数字</h2>
+            <p>根据线索，推理出正确答案</p>
+        </a>
+    </div>
+</div>
+{{ end }}

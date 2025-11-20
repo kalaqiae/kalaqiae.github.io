@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird - 优化版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --sky: #70c5ce;
+            --ground: #ded895;
+            --pipe: #73bf2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .game-container {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .game-content {
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .game-board-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .stat-box {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #gameCanvas {
+            background: var(--sky);
+            border-radius: 10px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mobile-controls {
+            display: none;
+            margin-top: 20px;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .control-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.2);
+            border: 2px solid rgba(99, 102, 241, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .control-btn:active {
+            background: rgba(99, 102, 241, 0.5);
+            transform: scale(0.95);
+        }
+
+        .game-message {
+            text-align: center;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            min-height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .message-info {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .instructions {
+            flex: 0 0 300px;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .instructions h3 {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .instructions li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .instructions li:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .instructions i {
+            width: 20px;
+            text-align: center;
+        }
+
+        @media (max-width:768px) {
+            .game-content {
+                flex-direction: column;
+            }
+
+            .instructions {
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        @media (max-width:640px) {
+            .game-container {
+                border-radius: 15px;
+            }
+
+            .mobile-controls {
+                display: flex;
+            }
+
+            .control-btn {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width:480px) {
+            .game-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .stat-box {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="game-content">
+            <div class="game-board-container">
+                <div class="game-stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="score">0</div>
+                        <div class="stat-label">当前得分</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="bestScore">0</div>
+                        <div class="stat-label">最佳记录</div>
+                    </div>
+                </div>
+
+                <canvas id="gameCanvas" width="320" height="480"></canvas>
+
+                <div id="gameMessage" class="game-message message-info">点击屏幕开始游戏</div>
+
+                <div class="mobile-controls">
+                    <div class="control-btn" id="jumpBtn">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h3><i class="fas fa-info-circle"></i> 游戏说明</h3>
+                <ul>
+                    <li><i class="fas fa-keyboard"></i> 键盘控制: 空格键或上箭头</li>
+                    <li><i class="fas fa-mouse-pointer"></i> 鼠标控制: 点击屏幕跳跃</li>
+                    <li><i class="fas fa-route"></i> 通过管道间隙获得分数</li>
+                    <li><i class="fas fa-skull-crossbones"></i> 避免撞到管道或地面</li>
+                    <li><i class="fas fa-trophy"></i> 挑战最高分记录</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 游戏配置 ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreElement = document.getElementById('score');
+        const bestScoreElement = document.getElementById('bestScore');
+        const gameMessage = document.getElementById('gameMessage');
+
+        // 游戏状态变量
+        let frames = 0;
+        const DEGREE = Math.PI / 180;
+
+        // 游戏状态管理
+        const state = {
+            current: 0,
+            getReady: 0,
+            game: 1,
+            over: 2,
+            crashing: 3 // 新增：鸟正在掉落的状态
+        };
+
+        // 背景元素
+        const backgroundElements = {
+            clouds: [
+                { x: 50, y: 80, size: 25, speed: 0.5 },
+                { x: 200, y: 150, size: 30, speed: 0.4 },
+                { x: 100, y: 220, size: 28, speed: 0.3 },
+                { x: 280, y: 100, size: 22, speed: 0.6 },
+                { x: 150, y: 300, size: 26, speed: 0.45 }
+            ],
+            mountains: [
+                { x: 0, y: 350, width: 120, height: 130, speed: 0.8 },
+                { x: 100, y: 370, width: 100, height: 110, speed: 0.7 },
+                { x: 180, y: 360, width: 140, height: 120, speed: 0.9 }
+            ]
+        };
+
+        // 1. 鸟
+        const bird = {
+            x: 50,
+            y: 150,
+            w: 34,
+            h: 26,
+            radius: 12,
+            frame: 0,
+            speed: 0,
+            gravity: 0.25,
+            crashGravity: 0.8, // 掉落时的重力
+            jump: 4.6,
+            rotation: 0,
+            crashRotation: 0, // 掉落时的旋转
+            isCrashing: false, // 是否正在掉落
+
+            draw: function () {
+                let birdCenter = {
+                    x: this.x + this.w / 2,
+                    y: this.y + this.h / 2
+                };
+
+                ctx.save();
+                ctx.translate(birdCenter.x, birdCenter.y);
+
+                // 限制旋转角度
+                let rotation = this.rotation * DEGREE;
+                if (this.isCrashing) {
+                    rotation = this.crashRotation * DEGREE;
+                }
+                ctx.rotate(rotation);
+
+                // 绘制鸟的身体 (黄色矩形代替图片)
+                ctx.fillStyle = "#f4e605";
+                ctx.fillRect(-this.w / 2, -this.h / 2, this.w, this.h);
+
+                // 鸟的眼睛
+                ctx.fillStyle = "#fff";
+                ctx.beginPath();
+                ctx.arc(8, -8, 8, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.fillStyle = "#000";
+                ctx.beginPath();
+                ctx.arc(10, -8, 3, 0, 2 * Math.PI);
+                ctx.fill();
+
+                // 鸟的嘴巴
+                ctx.fillStyle = "#f77e0d";
+                ctx.fillRect(6, 4, 14, 8);
+
+                ctx.restore();
+            },
+
+            update: function () {
+                // 准备阶段，鸟只是上下浮动
+                if (state.current == state.getReady) {
+                    this.y = 150 + Math.sin(frames * 0.1) * 5;
+                    this.rotation = 0 * DEGREE;
+                    this.isCrashing = false;
+                }
+                // 游戏进行中
+                else if (state.current == state.game) {
+                    this.speed += this.gravity;
+                    this.y += this.speed;
+
+                    // 地面碰撞检测
+                    if (this.y + this.h / 2 >= canvas.height - fg.h) {
+                        this.y = canvas.height - fg.h - this.h / 2;
+                        if (state.current == state.game) {
+                            state.current = state.over;
+                            gameOver();
+                        }
+                    }
+
+                    // 优化旋转逻辑 - 更平滑的过渡
+                    if (this.speed > 0) {
+                        // 下落时逐渐低头
+                        this.rotation = Math.min(90, this.rotation + 2);
+                    } else {
+                        // 上升时逐渐抬头，但不要立即完全抬头
+                        this.rotation = Math.max(-25, this.rotation - 4);
+                    }
+                }
+                // 掉落状态
+                else if (state.current == state.crashing) {
+                    if (!this.isCrashing) {
+                        this.isCrashing = true;
+                        this.speed = 0; // 重置速度开始掉落
+                    }
+
+                    // 应用更大的重力
+                    this.speed += this.crashGravity;
+                    this.y += this.speed;
+
+                    // 增加旋转速度
+                    this.crashRotation = Math.min(180, this.crashRotation + 8);
+
+                    // 检查是否落到地面
+                    if (this.y + this.h / 2 >= canvas.height - fg.h) {
+                        this.y = canvas.height - fg.h - this.h / 2;
+                        state.current = state.over;
+                        gameOver();
+                    }
+                }
+            },
+
+            flap: function () {
+                this.speed = -this.jump;
+            },
+
+            startCrash: function () {
+                state.current = state.crashing;
+            },
+
+            reset: function () {
+                this.speed = 0;
+                this.rotation = 0;
+                this.crashRotation = 0;
+                this.y = 150;
+                this.isCrashing = false;
+            }
+        };
+
+        // 2. 地面
+        const fg = {
+            h: 80, // 减少地面高度
+            x: 0,
+            dx: 2,
+            grassOffset: 0,
+
+            draw: function () {
+                // 土地主体 - 纯色无纹理
+                ctx.fillStyle = "#d4c483";
+                ctx.fillRect(0, canvas.height - this.h, canvas.width, this.h);
+
+                // 草地 - 使用渐变过渡的条纹
+                const grassWidth = 80; // 浅绿段宽度
+                const darkGrassWidth = 40; // 深绿段宽度
+                const totalWidth = grassWidth + darkGrassWidth;
+
+                for (let i = -totalWidth; i < canvas.width + totalWidth; i += totalWidth) {
+                    // 浅绿色到深绿色的渐变段
+                    const lightGradient = ctx.createLinearGradient(i + this.grassOffset, 0, i + this.grassOffset + grassWidth, 0);
+                    lightGradient.addColorStop(0, "#8bc34a");
+                    lightGradient.addColorStop(1, "#73bf2e");
+                    ctx.fillStyle = lightGradient;
+                    ctx.fillRect(i + this.grassOffset, canvas.height - this.h, grassWidth, 12); // 减少草地高度
+
+                    // 深绿色到浅绿色的渐变段
+                    const darkGradient = ctx.createLinearGradient(i + this.grassOffset + grassWidth, 0, i + this.grassOffset + totalWidth, 0);
+                    darkGradient.addColorStop(0, "#5a9c23");
+                    darkGradient.addColorStop(1, "#73bf2e");
+                    ctx.fillStyle = darkGradient;
+                    ctx.fillRect(i + this.grassOffset + grassWidth, canvas.height - this.h, darkGrassWidth, 12);
+                }
+
+                // 草地阴影效果
+                ctx.fillStyle = "rgba(0,0,0,0.1)";
+                ctx.fillRect(0, canvas.height - this.h + 12, canvas.width, 2);
+            },
+
+            update: function () {
+                if (state.current == state.game) {
+                    this.x = (this.x - this.dx) % (canvas.width / 2);
+                    this.grassOffset = (this.grassOffset - 2) % 120; // 120 = 80 + 40
+                }
+            }
+        };
+
+        // 3. 背景 (渐变天空和动态元素)
+        const bg = {
+            draw: function () {
+                // 渐变天空
+                const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, "#87CEEB");
+                gradient.addColorStop(1, "#1E90FF");
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // 绘制山脉
+                ctx.fillStyle = "rgba(100, 120, 150, 0.6)";
+                backgroundElements.mountains.forEach(mountain => {
+                    ctx.beginPath();
+                    ctx.moveTo(mountain.x, canvas.height - fg.h);
+                    ctx.lineTo(mountain.x + mountain.width / 2, canvas.height - fg.h - mountain.height);
+                    ctx.lineTo(mountain.x + mountain.width, canvas.height - fg.h);
+                    ctx.closePath();
+                    ctx.fill();
+                });
+
+                // 绘制云朵
+                ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+                backgroundElements.clouds.forEach(cloud => {
+                    ctx.beginPath();
+                    ctx.arc(cloud.x, cloud.y, cloud.size * 0.8, 0, Math.PI * 2);
+                    ctx.arc(cloud.x + cloud.size * 0.6, cloud.y, cloud.size, 0, Math.PI * 2);
+                    ctx.arc(cloud.x + cloud.size * 1.2, cloud.y, cloud.size * 0.8, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+            },
+
+            update: function () {
+                // 只在游戏进行中更新背景
+                if (state.current == state.game) {
+                    // 更新云朵位置
+                    backgroundElements.clouds.forEach(cloud => {
+                        cloud.x -= cloud.speed;
+                        if (cloud.x + cloud.size * 1.5 < 0) {
+                            cloud.x = canvas.width + cloud.size;
+                            cloud.y = 50 + Math.random() * 200;
+                        }
+                    });
+
+                    // 更新山脉位置
+                    backgroundElements.mountains.forEach(mountain => {
+                        mountain.x -= mountain.speed;
+                        if (mountain.x + mountain.width < 0) {
+                            mountain.x = canvas.width;
+                            mountain.height = 100 + Math.random() * 50;
+                        }
+                    });
+                }
+            }
+        };
+
+        // 4. 管道
+        const pipes = {
+            position: [],
+            w: 52,
+            h: 400,
+            gap: 100,
+            dx: 2,
+            maxYPos: -150,
+
+            draw: function () {
+                for (let i = 0; i < this.position.length; i++) {
+                    let p = this.position[i];
+                    let topY = p.y;
+                    let bottomY = p.y + this.h + this.gap;
+
+                    // 绘制管道主体
+                    const pipeGradient = ctx.createLinearGradient(p.x, 0, p.x + this.w, 0);
+                    pipeGradient.addColorStop(0, "#4a8a1f");
+                    pipeGradient.addColorStop(0.3, "#5fa82e");
+                    pipeGradient.addColorStop(0.7, "#73bf2e");
+                    pipeGradient.addColorStop(1, "#5a9c23");
+                    ctx.fillStyle = pipeGradient;
+
+                    // 上管道
+                    ctx.fillRect(p.x, topY, this.w, this.h);
+
+                    // 上管道口 - 深绿色
+                    const pipeCapGradient = ctx.createLinearGradient(p.x - 3, 0, p.x + this.w + 3, 0);
+                    pipeCapGradient.addColorStop(0, "#3a6c13");
+                    pipeCapGradient.addColorStop(0.5, "#4a8a1f");
+                    pipeCapGradient.addColorStop(1, "#3a6c13");
+
+                    ctx.fillStyle = pipeCapGradient;
+                    ctx.fillRect(p.x - 3, topY + this.h - 25, this.w + 6, 25);
+
+                    // 管道口边框
+                    ctx.strokeStyle = "#2d5510";
+                    ctx.lineWidth = 2;
+                    ctx.strokeRect(p.x - 3, topY + this.h - 25, this.w + 6, 25);
+
+                    // 下管道
+                    ctx.fillStyle = pipeGradient;
+                    ctx.fillRect(p.x, bottomY, this.w, this.h);
+
+                    // 下管道口
+                    ctx.fillStyle = pipeCapGradient;
+                    ctx.fillRect(p.x - 3, bottomY, this.w + 6, 25);
+                    ctx.strokeStyle = "#2d5510";
+                    ctx.lineWidth = 2;
+                    ctx.strokeRect(p.x - 3, bottomY, this.w + 6, 25);
+                }
+            },
+
+            update: function () {
+                if (state.current !== state.game) return;
+
+                // 每100帧添加一个管道
+                if (frames % 100 == 0) {
+                    this.position.push({
+                        x: canvas.width,
+                        y: this.maxYPos * (Math.random() + 1)
+                    });
+                }
+
+                for (let i = 0; i < this.position.length; i++) {
+                    let p = this.position[i];
+
+                    p.x -= this.dx;
+
+                    // 移除屏幕外的管道
+                    if (p.x + this.w <= 0) {
+                        this.position.shift();
+                        score.value += 1;
+                        score.best = Math.max(score.value, score.best);
+                        localStorage.setItem("flappy_best", score.best);
+                        scoreElement.textContent = score.value;
+                        bestScoreElement.textContent = score.best;
+
+                        // 添加得分动画
+                        scoreElement.classList.add('pulse');
+                        setTimeout(() => {
+                            scoreElement.classList.remove('pulse');
+                        }, 300);
+                    }
+
+                    // 碰撞检测
+                    let birdLeft = bird.x - bird.w / 2 + 5;
+                    let birdRight = bird.x + bird.w / 2 - 5;
+                    let birdTop = bird.y - bird.h / 2 + 5;
+                    let birdBottom = bird.y + bird.h / 2 - 5;
+
+                    let pipeLeft = p.x;
+                    let pipeRight = p.x + this.w;
+                    let topPipeBottom = p.y + this.h;
+                    let bottomPipeTop = p.y + this.h + this.gap;
+
+                    if (birdRight > pipeLeft && birdLeft < pipeRight) {
+                        if (birdTop < topPipeBottom || birdBottom > bottomPipeTop) {
+                            // 撞到管道，开始掉落动画
+                            bird.startCrash();
+                        }
+                    }
+                }
+            },
+
+            reset: function () {
+                this.position = [];
+            }
+        };
+
+        // 5. 分数
+        const score = {
+            best: parseInt(localStorage.getItem("flappy_best")) || 0,
+            value: 0,
+
+            draw: function () {
+                ctx.fillStyle = "#FFF";
+                ctx.strokeStyle = "#000";
+
+                if (state.current == state.game || state.current == state.crashing) {
+                    ctx.lineWidth = 2;
+                    ctx.font = "35px 'Inter', sans-serif";
+                    ctx.fillText(this.value, canvas.width / 2 - 10, 50);
+                    ctx.strokeText(this.value, canvas.width / 2 - 10, 50);
+                }
+            },
+
+            reset: function () {
+                this.value = 0;
+                scoreElement.textContent = "0";
+            }
+        };
+
+        // --- 核心 UI 绘制 ---
+        function drawUI() {
+            if (state.current == state.getReady) {
+                // 开始界面
+                ctx.fillStyle = "rgba(0,0,0,0.5)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = "white";
+                ctx.font = "bold 30px 'Inter', sans-serif";
+                ctx.fillText("准备开始", 90, 180);
+
+                ctx.font = "18px 'Inter', sans-serif";
+                ctx.fillText("点击或按空格键开始", 70, 220);
+
+                if (Math.floor(frames / 30) % 2 === 0) {
+                    ctx.fillText("↓", canvas.width / 2 - 5, 260);
+                }
+            }
+
+            if (state.current == state.over) {
+                // 绘制半透明黑底
+                ctx.fillStyle = "rgba(0,0,0,0.7)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // 绘制现代化面板背景 - 深色主题
+                const panelWidth = 240;
+                const panelHeight = 180;
+                const panelX = (canvas.width - panelWidth) / 2;
+                const panelY = (canvas.height - panelHeight) / 2;
+
+                // 面板背景 - 深色毛玻璃效果
+                ctx.fillStyle = "rgba(30, 41, 59, 0.95)";
+                ctx.strokeStyle = "rgba(99, 102, 241, 0.5)";
+                ctx.lineWidth = 2;
+
+                // 圆角矩形
+                ctx.beginPath();
+                ctx.roundRect(panelX, panelY, panelWidth, panelHeight, 15);
+                ctx.fill();
+                ctx.stroke();
+
+                // 标题
+                ctx.fillStyle = "#60a5fa";
+                ctx.font = "bold 24px 'Inter', sans-serif";
+                ctx.textAlign = "center";
+                ctx.fillText("游戏结束", canvas.width / 2, panelY + 40);
+
+                // 分数信息
+                ctx.fillStyle = "#cbd5e1";
+                ctx.font = "16px 'Inter', sans-serif";
+                ctx.textAlign = "left";
+                ctx.fillText("当前得分:", panelX + 40, panelY + 80);
+                ctx.fillText("最佳记录:", panelX + 40, panelY + 110);
+
+                ctx.fillStyle = "#60a5fa";
+                ctx.font = "bold 18px 'Inter', sans-serif";
+                ctx.textAlign = "right";
+                ctx.fillText(score.value, panelX + panelWidth - 40, panelY + 80);
+                ctx.fillText(score.best, panelX + panelWidth - 40, panelY + 110);
+
+                // 绘制重新开始按钮
+                const buttonWidth = 120;
+                const buttonHeight = 40;
+                const buttonX = canvas.width / 2 - buttonWidth / 2;
+                const buttonY = panelY + panelHeight - 60;
+
+                const buttonGradient = ctx.createLinearGradient(buttonX, buttonY, buttonX, buttonY + buttonHeight);
+                buttonGradient.addColorStop(0, "#3b82f6");
+                buttonGradient.addColorStop(1, "#1d4ed8");
+
+                ctx.fillStyle = buttonGradient;
+                ctx.beginPath();
+                ctx.roundRect(buttonX, buttonY, buttonWidth, buttonHeight, 10);
+                ctx.fill();
+
+                // 按钮文字
+                ctx.fillStyle = "white";
+                ctx.font = "bold 16px 'Inter', sans-serif";
+                ctx.textAlign = "center";
+                ctx.fillText("重新开始", canvas.width / 2, buttonY + 25);
+
+                // 重置文本对齐方式
+                ctx.textAlign = "left";
+            }
+        }
+
+        // --- 游戏循环 ---
+        function draw() {
+            bg.draw();
+            pipes.draw();
+            fg.draw();
+            bird.draw();
+            score.draw();
+            drawUI();
+        }
+
+        function update() {
+            bg.update();
+            bird.update();
+            fg.update();
+            if (state.current === state.game) {
+                pipes.update();
+            }
+        }
+
+        function loop() {
+            update();
+            draw();
+            frames++;
+            requestAnimationFrame(loop);
+        }
+
+        // 游戏控制函数
+        function startGame() {
+            if (state.current === state.game) return;
+
+            state.current = state.game;
+            gameMessage.textContent = "游戏进行中";
+        }
+
+        function resetGame() {
+            pipes.reset();
+            bird.reset();
+            score.reset();
+            frames = 0;
+            state.current = state.getReady;
+            gameMessage.textContent = "点击屏幕开始游戏";
+            draw();
+        }
+
+        function gameOver() {
+            gameMessage.textContent = "游戏结束！点击屏幕重新开始";
+        }
+
+        // 统一的游戏控制处理
+        function handleGameControl() {
+            switch (state.current) {
+                case state.getReady:
+                    startGame();
+                    bird.flap();
+                    break;
+                case state.game:
+                    bird.flap();
+                    break;
+                case state.over:
+                    resetGame();
+                    break;
+            }
+        }
+
+        // --- 事件监听 ---
+
+        // 点击控制
+        canvas.addEventListener("click", function (evt) {
+            if (state.current === state.over) {
+                let rect = canvas.getBoundingClientRect();
+                let clickX = evt.clientX - rect.left;
+                let clickY = evt.clientY - rect.top;
+
+                // 检查是否点击了重新开始按钮
+                const panelWidth = 240;
+                const panelHeight = 180;
+                const panelX = (canvas.width - panelWidth) / 2;
+                const panelY = (canvas.height - panelHeight) / 2;
+                const buttonWidth = 120;
+                const buttonHeight = 40;
+                const buttonX = canvas.width / 2 - buttonWidth / 2;
+                const buttonY = panelY + panelHeight - 60;
+
+                if (clickX >= buttonX && clickX <= buttonX + buttonWidth &&
+                    clickY >= buttonY && clickY <= buttonY + buttonHeight) {
+                    resetGame();
+                }
+            } else {
+                handleGameControl();
+            }
+        });
+
+        // 移动端按钮控制
+        const jumpBtn = document.getElementById('jumpBtn');
+        jumpBtn.addEventListener("click", function () {
+            handleGameControl();
+        });
+
+        // 键盘控制
+        window.addEventListener("keydown", function (e) {
+            if (e.code === "Space" || e.key === "ArrowUp") {
+                handleGameControl();
+            }
+        });
+
+        // 初始化
+        function init() {
+            score.best = parseInt(localStorage.getItem("flappy_best")) || 0;
+            bestScoreElement.textContent = score.best;
+            loop();
+        }
+
+        init();
+    </script>
+</body>
+
+</html>

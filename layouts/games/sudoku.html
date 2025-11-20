@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>数独 - 纸墨时光</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* --- 自然配色：亚麻与纸张 --- */
+            --bg-base: #e6e2d3;
+            --bg-spotlight: #f5f3eb;
+
+            --paper-bg: #fffbf0;
+            --paper-shadow: rgba(80, 60, 50, 0.15);
+
+            --ink-color: #2c1e1a;
+            --grid-strong: #5d4037;
+            --grid-light: #d7ccc8;
+
+            --highlight-axis: #fff8e1;
+            --same-num-bg: #ffcc80;
+            --selected-bg: #8d6e63;
+            --selected-text: #ffffff;
+
+            --btn-default: #fdfbf7;
+            --correct-text: #388e3c;
+            --wrong-text: #d32f2f;
+            --wrong-bg: #ffcdd2;
+        }
+
+        body {
+            /* 应用 Architects Daughter */
+            font-family: 'Architects Daughter', cursive, sans-serif;
+
+            background: linear-gradient(135deg, #faf8ef 0%, #e9e6df 100%);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--ink-color);
+            user-select: none;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            width: 95%;
+            max-width: 420px;
+            margin-bottom: 15px;
+        }
+
+        .stat-card {
+            background: var(--paper-bg);
+            padding: 8px 4px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px var(--paper-shadow);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #795548;
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--ink-color);
+            line-height: 1.2;
+        }
+
+        #scoreValue {
+            color: #e65100;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 6px 18px;
+            border: 2px solid var(--grid-strong);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 18px;
+            /* 修改点 3: 按钮字体 */
+            font-family: 'Architects Daughter', cursive;
+            background-color: var(--paper-bg);
+            color: var(--grid-strong);
+            transition: all 0.2s;
+            box-shadow: 0 3px 0 rgba(93, 64, 55, 0.2);
+        }
+
+        button:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        button.active {
+            background-color: var(--grid-strong);
+            color: #fff;
+        }
+
+        #board {
+            display: grid;
+            grid-template-columns: repeat(9, 42px);
+            grid-template-rows: repeat(9, 42px);
+            border: 4px solid var(--grid-strong);
+            background-color: var(--paper-bg);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+
+        .cell {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            /* Architects Daughter 稍微大一点，字号微调 */
+            border: 1px solid var(--grid-light);
+            box-sizing: border-box;
+            color: #1e88e5;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.1s;
+            /* 数字也继承字体 */
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        .cell:nth-child(3n) {
+            border-right: 2px solid var(--grid-strong);
+        }
+
+        .cell:nth-child(9n) {
+            border-right: 1px solid var(--grid-light);
+        }
+
+        .cell:nth-child(9n):last-child {
+            border-right: none;
+        }
+
+        .cell:nth-child(n+19):nth-child(-n+27),
+        .cell:nth-child(n+46):nth-child(-n+54) {
+            border-bottom: 2px solid var(--grid-strong);
+        }
+
+        .cell.fixed {
+            background-color: rgba(0, 0, 0, 0.03);
+            color: var(--ink-color);
+            font-weight: bold;
+        }
+
+        .cell.highlight-axis {
+            background-color: var(--highlight-axis);
+        }
+
+        .cell.same-number {
+            background-color: var(--same-num-bg) !important;
+            border-radius: 50%;
+            transform: scale(0.85);
+        }
+
+        .cell.selected {
+            background-color: var(--selected-bg) !important;
+            color: var(--selected-text) !important;
+        }
+
+        .cell.is-correct {
+            color: var(--correct-text);
+            background-color: #e8f5e9;
+        }
+
+        .cell.is-wrong {
+            color: var(--wrong-text);
+            background-color: var(--wrong-bg);
+            text-decoration: line-through;
+        }
+
+        .numpad {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 6px;
+            width: 96%;
+            max-width: 500px;
+        }
+
+        .num-btn {
+            height: 50px;
+            border-radius: 6px;
+            background: #fff;
+            border: 1px solid #d7ccc8;
+            font-size: 24px;
+            /* Architects Daughter 比较宽，字号微调 */
+            font-family: 'Architects Daughter', cursive;
+            color: #5d4037;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 0 #bcaaa4;
+            transition: transform 0.1s;
+        }
+
+        .num-btn:active {
+            transform: translateY(3px);
+            box-shadow: none;
+        }
+
+        .num-btn.erase {
+            color: #d32f2f;
+            font-size: 22px;
+            border-color: #ef9a9a;
+            background: #ffebee;
+            box-shadow: 0 3px 0 #ef9a9a;
+        }
+
+        .score-popup {
+            position: absolute;
+            font-weight: bold;
+            font-size: 24px;
+            font-family: 'Architects Daughter', cursive;
+            animation: floatUp 1s forwards;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+        }
+
+        @media (max-width: 420px) {
+            #board {
+                grid-template-columns: repeat(9, 10.5vw);
+                grid-template-rows: repeat(9, 10.5vw);
+                border-width: 3px;
+            }
+
+            .cell {
+                width: 10.5vw;
+                height: 10.5vw;
+                font-size: 22px;
+                border-width: 0.5px;
+            }
+
+            .cell:nth-child(3n) {
+                border-right-width: 2px;
+            }
+
+            .cell:nth-child(n+19):nth-child(-n+27),
+            .cell:nth-child(n+46):nth-child(-n+54) {
+                border-bottom-width: 2px;
+            }
+
+            .numpad {
+                gap: 3px;
+                width: 98%;
+            }
+
+            .num-btn {
+                height: 45px;
+                font-size: 20px;
+                border-radius: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <div class="stat-card">
+            <span class="stat-label">时间</span>
+            <span class="stat-value" id="timer">00:00</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">得分</span>
+            <span class="stat-value" id="scoreValue">0</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label" id="highScoreLabel">最高分</span>
+            <span class="stat-value" id="highScore">0</span>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="btn-easy" onclick="initGame('easy')">简单</button>
+        <button id="btn-medium" onclick="initGame('medium')">中等</button>
+        <button id="btn-hard" onclick="initGame('hard')">困难</button>
+    </div>
+
+    <div id="board"></div>
+
+    <div class="numpad">
+        <div class="num-btn" onclick="inputNumber(1)">1</div>
+        <div class="num-btn" onclick="inputNumber(2)">2</div>
+        <div class="num-btn" onclick="inputNumber(3)">3</div>
+        <div class="num-btn" onclick="inputNumber(4)">4</div>
+        <div class="num-btn" onclick="inputNumber(5)">5</div>
+        <div class="num-btn" onclick="inputNumber(6)">6</div>
+        <div class="num-btn" onclick="inputNumber(7)">7</div>
+        <div class="num-btn" onclick="inputNumber(8)">8</div>
+        <div class="num-btn" onclick="inputNumber(9)">9</div>
+        <div class="num-btn erase" onclick="inputNumber(0)">⌫</div>
+    </div>
+
+    <script>
+        // --- 游戏逻辑 (完全保持不变) ---
+        let solutionBoard = [];
+        let currentBoard = [];
+        let fixedPositions = [];
+        let solvedPositions = [];
+        let selectedIndex = -1;
+
+        let score = 0;
+        let timer = 0;
+        let timerInterval;
+        let gameActive = false;
+        let currentDifficulty = 'easy';
+        let totalCellsToFill = 0;
+        let filledCount = 0;
+
+        const CONFIG = {
+            'easy': { base: 1000, penalty: 1500, label: '简单' },
+            'medium': { base: 2000, penalty: 3000, label: '中等' },
+            'hard': { base: 3000, penalty: 5000, label: '困难' }
+        };
+
+        const boardEl = document.getElementById('board');
+        const scoreEl = document.getElementById('scoreValue');
+        const timerEl = document.getElementById('timer');
+        const highScoreEl = document.getElementById('highScore');
+        const highScoreLabelEl = document.getElementById('highScoreLabel');
+
+        window.onload = () => initGame('easy');
+
+        function formatTime(totalSeconds) {
+            const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+            const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${seconds}`;
+        }
+
+        function initGame(difficulty) {
+            currentDifficulty = difficulty;
+            clearInterval(timerInterval);
+
+            document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+            document.getElementById('btn-' + difficulty).classList.add('active');
+
+            loadHighScore();
+
+            gameActive = true;
+            score = 0;
+            timer = 0;
+            selectedIndex = -1;
+            filledCount = 0;
+
+            updateScoreUI();
+            timerEl.textContent = formatTime(0);
+
+            generateBoard(difficulty);
+            renderBoard();
+
+            timerInterval = setInterval(() => {
+                if (gameActive) {
+                    timer++;
+                    timerEl.textContent = formatTime(timer);
+                }
+            }, 1000);
+        }
+
+        function loadHighScore() {
+            const key = `sudokuHigh_${currentDifficulty}`;
+            highScoreEl.textContent = localStorage.getItem(key) || 0;
+            highScoreLabelEl.textContent = `${CONFIG[currentDifficulty].label}纪录`;
+        }
+
+        function generateBoard(difficulty) {
+            let board = new Array(81).fill(0);
+            fill(board);
+            solutionBoard = [...board];
+            currentBoard = [...board];
+            let attempts = difficulty === 'easy' ? 30 : (difficulty === 'medium' ? 45 : 56);
+            while (attempts > 0) {
+                let idx = Math.floor(Math.random() * 81);
+                if (currentBoard[idx] !== 0) {
+                    currentBoard[idx] = 0;
+                    attempts--;
+                }
+            }
+            fixedPositions = [];
+            solvedPositions = [];
+            totalCellsToFill = 0;
+            for (let i = 0; i < 81; i++) {
+                if (currentBoard[i] !== 0) fixedPositions.push(i);
+                else totalCellsToFill++;
+            }
+        }
+        function fill(board) {
+            let idx = board.indexOf(0);
+            if (idx === -1) return true;
+            let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9].sort(() => Math.random() - 0.5);
+            let r = Math.floor(idx / 9), c = idx % 9;
+            for (let num of nums) {
+                if (checkValid(board, r, c, num)) {
+                    board[idx] = num;
+                    if (fill(board)) return true;
+                    board[idx] = 0;
+                }
+            }
+            return false;
+        }
+        function checkValid(board, r, c, num) {
+            for (let i = 0; i < 9; i++) {
+                if (board[r * 9 + i] === num) return false;
+                if (board[i * 9 + c] === num) return false;
+            }
+            let sr = Math.floor(r / 3) * 3, sc = Math.floor(c / 3) * 3;
+            for (let i = 0; i < 3; i++)
+                for (let j = 0; j < 3; j++)
+                    if (board[(sr + i) * 9 + sc + j] === num) return false;
+            return true;
+        }
+
+        function renderBoard() {
+            boardEl.innerHTML = '';
+            for (let i = 0; i < 81; i++) {
+                let div = document.createElement('div');
+                div.className = 'cell';
+                if (fixedPositions.includes(i)) {
+                    div.classList.add('fixed');
+                    div.textContent = currentBoard[i];
+                }
+                div.onclick = () => selectCell(i, div);
+                boardEl.appendChild(div);
+            }
+        }
+
+        function selectCell(idx, el) {
+            if (!gameActive) return;
+
+            document.querySelectorAll('.cell').forEach(c => c.classList.remove('selected', 'highlight-axis', 'same-number'));
+
+            const numValue = currentBoard[idx];
+            const r = Math.floor(idx / 9), c = idx % 9;
+
+            document.querySelectorAll('.cell').forEach((cell, i) => {
+                let cr = Math.floor(i / 9), cc = i % 9;
+                if (cr === r || cc === c) cell.classList.add('highlight-axis');
+                if (numValue !== 0 && currentBoard[i] === numValue) cell.classList.add('same-number');
+            });
+
+            if (fixedPositions.includes(idx) || solvedPositions.includes(idx)) {
+                selectedIndex = -1;
+            } else {
+                selectedIndex = idx;
+                el.classList.add('selected');
+            }
+        }
+
+        function inputNumber(num) {
+            if (!gameActive || selectedIndex === -1) return;
+            if (fixedPositions.includes(selectedIndex) || solvedPositions.includes(selectedIndex)) return;
+
+            let cell = boardEl.children[selectedIndex];
+
+            if (num === 0) {
+                currentBoard[selectedIndex] = 0;
+                cell.textContent = '';
+                cell.classList.remove('is-correct', 'is-wrong');
+                selectCell(selectedIndex, cell);
+                return;
+            }
+
+            currentBoard[selectedIndex] = num;
+            cell.textContent = num;
+            selectCell(selectedIndex, cell);
+
+            if (num === solutionBoard[selectedIndex]) {
+                handleCorrectMove(num, cell);
+            } else {
+                handleWrongMove(cell);
+            }
+        }
+
+        function handleCorrectMove(num, cell) {
+            cell.classList.remove('is-wrong');
+            cell.classList.add('is-correct');
+
+            solvedPositions.push(selectedIndex);
+
+            const cfg = CONFIG[currentDifficulty];
+            let timeFactor = Math.max(cfg.base * 0.1, cfg.base - (timer * 2));
+            let points = Math.floor(timeFactor * num);
+
+            score += points;
+            filledCount++;
+
+            showFloatingText(`+${points}`, cell, '#388e3c');
+            updateScoreUI();
+
+            cell.classList.remove('selected');
+            selectedIndex = -1;
+
+            if (filledCount === totalCellsToFill) gameOver();
+        }
+
+        function handleWrongMove(cell) {
+            cell.classList.add('is-wrong');
+
+            const penalty = CONFIG[currentDifficulty].penalty;
+            let deductedAmount = Math.min(score, penalty);
+            score = Math.max(0, score - penalty);
+
+            if (deductedAmount > 0) {
+                showFloatingText(`-${deductedAmount}`, cell, '#d32f2f');
+            }
+            updateScoreUI();
+        }
+
+        function showFloatingText(text, targetCell, color) {
+            let rect = targetCell.getBoundingClientRect();
+            let popup = document.createElement('div');
+            popup.className = 'score-popup';
+            popup.textContent = text;
+            popup.style.color = color;
+            popup.style.left = (rect.left + window.scrollX + 5) + 'px';
+            popup.style.top = (rect.top + window.scrollY - 10) + 'px';
+            document.body.appendChild(popup);
+            setTimeout(() => popup.remove(), 800);
+        }
+
+        function updateScoreUI() {
+            scoreEl.textContent = score;
+        }
+
+        function gameOver() {
+            gameActive = false;
+            clearInterval(timerInterval);
+
+            const key = `sudokuHigh_${currentDifficulty}`;
+            let currentHigh = parseInt(localStorage.getItem(key) || 0);
+
+            const timeStr = formatTime(timer);
+
+            let msg = `📜 游戏结束\n难度: ${CONFIG[currentDifficulty].label}\n得分: ${score}\n耗时: ${timeStr}`;
+
+            if (score > currentHigh) {
+                localStorage.setItem(key, score);
+                loadHighScore();
+                msg += `\n✨ 刷新了纪录！`;
+            }
+
+            setTimeout(() => alert(msg), 100);
+        }
+    </script>
+</body>
+
+</html>

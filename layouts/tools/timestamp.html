@@ -1,0 +1,419 @@
+{{ define "title" }}时间戳转换工具 - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="tool-container">
+    <div class="card-content">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+            <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            时间戳转换工具
+        </h1>
+
+        <!-- 错误和消息提示区 -->
+        <div id="messageBox" class="message-box"></div>
+
+        <!-- 实时时间部分 -->
+        <div class="mb-8 p-4 rounded-xl border-2 border-indigo-300 bg-indigo-50 shadow-inner">
+            <p class="text-base font-bold text-indigo-800 mb-1">当前系统时间 (本地时区):</p>
+            <!-- 显示包含毫秒的精确时间 -->
+            <div class="text-3xl font-mono text-indigo-900 break-words" id="currentTimeDisplay"></div>
+            <p class="text-sm text-indigo-600 mt-3">
+                当前秒级时间戳: <span id="currentTimestampSecond" class="font-mono font-extrabold text-xl mr-4"></span>
+                <button onclick="copyTimestamp('second')"
+                    class="tool-button-small bg-indigo-500 text-white hover:bg-indigo-600">
+                    📋 复制
+                </button>
+            </p>
+        </div>
+
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- 左侧：日期转时间戳 (区域强化) -->
+            <div class="conversion-panel bg-white border border-green-200 shadow-lg">
+                <h2 class="panel-title bg-green-50 text-green-800">日期/时间 → Unix 时间戳</h2>
+                <div class="panel-body">
+                    <!-- 解决精度问题，使用文本输入框 -->
+                    <label for="dateTimeInput" class="block text-sm font-medium mb-1 text-gray-700">输入日期时间 (格式:
+                        YYYY-MM-DD HH:MM:SS.ms):</label>
+                    <input type="text" id="dateTimeInput" placeholder="例如: 2025-10-24 15:30:45.123"
+                        class="input-field mb-3" />
+
+                    <div class="flex space-x-2 mb-4">
+                        <button onclick="getCurrentTime()"
+                            class="tool-button-small flex-1 bg-green-600 text-white hover:bg-green-700">
+                            📅 填充当前完整时间
+                        </button>
+                    </div>
+
+                    <p class="text-gray-700 mb-2 mt-4 font-medium">选择转换精度:</p>
+                    <div class="flex space-x-4 mb-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="precision" value="second" checked
+                                class="form-radio text-blue-600">
+                            <span class="ml-2 text-gray-700">秒级 (10位)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="precision" value="millisecond" class="form-radio text-blue-600">
+                            <span class="ml-2 text-gray-700">毫秒级 (13位)</span>
+                        </label>
+                    </div>
+
+                    <button onclick="convertToTimestamp()"
+                        class="tool-button bg-blue-600 text-white hover:bg-blue-700 w-full mb-4">
+                        🚀 转换为时间戳
+                    </button>
+
+                    <label for="timestampOutput" class="block text-sm font-medium mb-1 text-gray-500">时间戳结果:</label>
+                    <input type="text" id="timestampOutput" readonly placeholder="在此显示时间戳..."
+                        class="input-field font-mono" />
+                    <button onclick="copyTimestamp('output')"
+                        class="tool-button-small bg-gray-200 text-gray-800 hover:bg-gray-300 w-full mt-2">
+                        📋 复制结果
+                    </button>
+                </div>
+            </div>
+
+            <!-- 右侧：时间戳转日期 (区域强化) -->
+            <div class="conversion-panel bg-white border border-red-200 shadow-lg">
+                <h2 class="panel-title bg-red-50 text-red-800">Unix 时间戳 → 日期/时间</h2>
+                <div class="panel-body">
+                    <label for="timestampInput" class="block text-sm font-medium mb-1 text-gray-700">输入 10 位或 13
+                        位时间戳:</label>
+                    <input type="text" id="timestampInput" placeholder="例如: 1678886400000"
+                        class="input-field mb-4 font-mono" />
+
+                    <button onclick="convertToDateTime()"
+                        class="tool-button bg-gray-500 text-white hover:bg-gray-600 w-full mb-4">
+                        🔏 转换为日期/时间
+                    </button>
+
+                    <label for="dateTimeOutput" class="block text-sm font-medium mb-1 text-gray-500">日期/时间结果
+                        (本地时区，精确到毫秒):</label>
+                    <input type="text" id="dateTimeOutput" readonly placeholder="在此显示日期时间..." class="input-field" />
+                </div>
+            </div>
+        </div>
+
+        <!-- 清空按钮 -->
+        <div class="flex justify-center mt-8">
+            <button onclick="clearAll()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
+                🧹 清空所有区域
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tool-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .card-content {
+        background-color: var(--card-background-base);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid #E0E0E0;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #E0E0E0;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s;
+        background-color: #F8F9FA;
+    }
+
+    .input-field:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+    }
+
+    /* 按钮样式 */
+    .tool-button,
+    .tool-button-small {
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tool-button-small {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .tool-button:hover,
+    .tool-button-small:hover {
+        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.4);
+        transform: translateY(-1px);
+    }
+
+    /* 消息提示框 */
+    .message-box {
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 1rem;
+        font-weight: 500;
+        display: none;
+    }
+
+    .message-box.error {
+        background-color: #FEE2E2;
+        color: #EF4444;
+        border: 1px solid #FCA5A5;
+    }
+
+    .message-box.info {
+        background-color: #E3F2FD;
+        color: #1E88E5;
+        border: 1px solid #90CAF9;
+    }
+
+    /* 区域优化样式 */
+    .conversion-panel {
+        padding: 0;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+    }
+
+    .panel-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 1rem 1.5rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    /* 新增：为区域内部内容提供统一的内边距，解决贴边问题 */
+    .panel-body {
+        padding: 1.5rem;
+        padding-top: 1rem;
+        /* 稍微减少顶部与标题的距离 */
+    }
+
+    .conversion-panel .input-field {
+        margin-bottom: 1rem;
+    }
+</style>
+
+<script>
+    const dateTimeInput = document.getElementById('dateTimeInput');
+    const timestampInput = document.getElementById('timestampInput');
+    const timestampOutput = document.getElementById('timestampOutput');
+    const dateTimeOutput = document.getElementById('dateTimeOutput');
+    const currentTimeDisplay = document.getElementById('currentTimeDisplay');
+    const currentTimestampSecond = document.getElementById('currentTimestampSecond');
+    const messageBox = document.getElementById('messageBox');
+
+    // Utility function to display messages
+    function showMessage(message, type = 'info') {
+        messageBox.textContent = message;
+        messageBox.className = 'message-box';
+        messageBox.classList.add(type);
+        messageBox.style.display = 'block';
+
+        setTimeout(() => {
+            messageBox.style.display = 'none';
+        }, 5000);
+    }
+
+    // --- 实时时间更新 ---
+    function getTimezoneString() {
+        const offset = new Date().getTimezoneOffset(); // returns minutes
+        const sign = offset > 0 ? '-' : '+';
+        const absOffset = Math.abs(offset);
+        const hours = String(Math.floor(absOffset / 60)).padStart(2, '0');
+        const minutes = String(absOffset % 60).padStart(2, '0');
+        return `(UTC${sign}${hours}:${minutes})`;
+    }
+
+    // 格式化本地时间为 YYYY-MM-DD HH:MM:SS.ms 格式
+    function formatLocalTime(date) {
+        const Y = date.getFullYear();
+        const M = String(date.getMonth() + 1).padStart(2, '0');
+        const D = String(date.getDate()).padStart(2, '0');
+        const h = String(date.getHours()).padStart(2, '0');
+        const m = String(date.getMinutes()).padStart(2, '0');
+        const s = String(date.getSeconds()).padStart(2, '0');
+        const ms = String(date.getMilliseconds()).padStart(3, '0');
+        return `${Y}-${M}-${D} ${h}:${m}:${s}.${ms}`;
+    }
+
+    function updateCurrentTime() {
+        const now = new Date();
+
+        // 格式化日期时间，包含毫秒
+        currentTimeDisplay.textContent = formatLocalTime(now) + ' ' + getTimezoneString();
+
+        // 显示秒级时间戳
+        currentTimestampSecond.textContent = Math.floor(now.getTime() / 1000);
+    }
+
+    // 每 100ms 更新一次实时时间
+    setInterval(updateCurrentTime, 100);
+    updateCurrentTime(); // 立即执行一次
+
+    // --- 日期转时间戳 ---
+
+    // 核心修复：手动解析 'YYYY-MM-DD HH:MM:SS.ms' 字符串，以确保本地时间和毫秒精度
+    function parseLocalTime(str) {
+        // 匹配组件: YYYY-MM-DD HH:MM:SS.ms，毫秒可选
+        const match = str.match(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})\.?(\d{0,3})?/);
+        if (!match) return null;
+
+        // 解构匹配到的数字（需要转换为数字类型）
+        // match[1] = YYYY, match[2] = MM, ..., match[7] = ms
+        const components = match.slice(1, 7).map(Number);
+        const millisecond = match[7] ? Number(match[7].padEnd(3, '0')) : 0; // 确保毫秒是 3 位
+
+        // 使用本地时间构造函数 (月份是 0-based，所以需要减 1)
+        // new Date(year, monthIndex, day, hour, minute, second, millisecond)
+        return new Date(
+            components[0], components[1] - 1, components[2],
+            components[3], components[4], components[5], millisecond
+        );
+    }
+
+    function convertToTimestamp() {
+        messageBox.style.display = 'none';
+        const input = dateTimeInput.value.trim();
+
+        if (!input) {
+            showMessage("输入内容不能为空，请使用 YYYY-MM-DD HH:MM:SS.ms 格式。", 'error');
+            timestampOutput.value = "";
+            return;
+        }
+
+        try {
+            const date = parseLocalTime(input);
+
+            if (!date || isNaN(date.getTime())) {
+                showMessage("日期格式无效，请检查格式是否为 YYYY-MM-DD HH:MM:SS.ms", 'error');
+                timestampOutput.value = "";
+                return;
+            }
+
+            const precision = document.querySelector('input[name="precision"]:checked').value;
+            let timestamp;
+
+            if (precision === 'second') {
+                // 转换为秒级 (10位)
+                timestamp = Math.floor(date.getTime() / 1000);
+            } else {
+                // 转换为毫秒级 (13位)
+                timestamp = date.getTime();
+            }
+
+            timestampOutput.value = timestamp.toString();
+            showMessage(`转换成功！已输出${precision === 'second' ? '秒级' : '毫秒级'}时间戳。`);
+
+        } catch (e) {
+            showMessage("转换过程中发生错误。", 'error');
+            console.error("Conversion Error:", e);
+        }
+    }
+
+    // --- 时间戳转日期 ---
+    function convertToDateTime() {
+        messageBox.style.display = 'none';
+        let input = timestampInput.value.trim();
+
+        if (!input) {
+            showMessage("请先输入时间戳。", 'error');
+            dateTimeOutput.value = "";
+            return;
+        }
+
+        // 移除所有非数字字符
+        input = input.replace(/\D/g, '');
+
+        if (input.length !== 10 && input.length !== 13) {
+            showMessage("时间戳长度必须是 10 位 (秒) 或 13 位 (毫秒)。", 'error');
+            dateTimeOutput.value = "";
+            return;
+        }
+
+        let timestamp = parseInt(input, 10);
+        let date;
+
+        if (input.length === 10) {
+            // 10位秒级时间戳，乘以 1000 转换为毫秒
+            date = new Date(timestamp * 1000);
+            showMessage("按秒级 (10位) 时间戳进行转换。");
+        } else {
+            // 13位毫秒级时间戳
+            date = new Date(timestamp);
+            showMessage("按毫秒级 (13位) 时间戳进行转换。");
+        }
+
+        if (isNaN(date.getTime())) {
+            showMessage("时间戳无效，无法转换为有效日期。", 'error');
+            dateTimeOutput.value = "";
+            return;
+        }
+
+        // 格式化输出 (本地时区，精确到毫秒)
+        dateTimeOutput.value = formatLocalTime(date);
+    }
+
+    // --- 辅助功能 ---
+
+    // 填充当前完整时间到输入框
+    function getCurrentTime() {
+        const now = new Date();
+        dateTimeInput.value = formatLocalTime(now);
+        showMessage("已将当前完整时间 (包含毫秒) 填充到输入框。", 'info');
+    }
+
+    // 复制时间戳
+    function copyTimestamp(type) {
+        let copyText;
+        if (type === 'second') {
+            copyText = currentTimestampSecond.textContent;
+        } else { // 'output'
+            copyText = timestampOutput.value;
+        }
+
+        if (!copyText) {
+            showMessage("时间戳为空，无法复制。", 'error');
+            return;
+        }
+
+        // 使用 document.execCommand('copy') 兼容性更好 (iframe 环境)
+        const tempInput = document.createElement('input');
+        tempInput.value = copyText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        showMessage("时间戳已复制到剪贴板！", 'info');
+    }
+
+    // 清空所有
+    function clearAll() {
+        dateTimeInput.value = "";
+        timestampInput.value = "";
+        timestampOutput.value = "";
+        dateTimeOutput.value = "";
+        messageBox.style.display = 'none';
+        showMessage("已清空所有区域。", 'info');
+    }
+</script>
+{{ end }}

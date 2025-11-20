@@ -1,0 +1,138 @@
+{{ define "title" }}实用工具箱 - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --primary-color: #3B82F6;
+        --background-color: #F8FAFC;
+        --card-background: #FFFFFF;
+        --border-radius: 12px;
+        --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --transition-speed: 0.3s;
+        --text-color: #1F2937;
+        --secondary-color: #6B7280;
+    }
+
+    body {
+        background-color: var(--background-color);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .tool-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .tool-card {
+        background-color: var(--card-background);
+        padding: 30px 25px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-light);
+        border: 1px solid #E5E7EB;
+        transition: all var(--transition-speed);
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tool-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .tool-card h2 {
+        font-size: 1.4em;
+        margin: 0 0 10px;
+        color: var(--text-color);
+        font-weight: 600;
+    }
+
+    .tool-card p {
+        color: var(--secondary-color);
+        font-size: 0.95em;
+        margin: 0;
+        line-height: 1.5;
+    }
+    
+    .tool-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+        display: block;
+        line-height: 1;
+    }
+</style>
+
+<div class="tool-container">
+    <div class="tools-grid">
+        
+        <a href="{{ "tools/base64" | relURL }}" class="tool-card">
+            <span class="tool-icon">🔐</span>
+            <h2>Base64 加解密</h2>
+            <p>快速将文本编码为 Base64 或将 Base64 字符串解码回文本。</p>
+        </a>
+
+        <a href="{{ "tools/timestamp" | relURL }}" class="tool-card">
+            <span class="tool-icon">⏱️</span>
+            <h2>时间戳转换</h2>
+            <p>Unix 时间戳与日期时间一键互转。</p>
+        </a>
+
+        <a href="{{ "tools/json-formatter" | relURL }}" class="tool-card">
+            <span class="tool-icon">🎨</span>
+            <h2>JSON 格式化</h2>
+            <p>美化、压缩和验证 JSON 数据结构。</p>
+        </a>
+
+        <a href="{{ "tools/url-encoder-decoder" | relURL }}" class="tool-card">
+            <span class="tool-icon">🔗</span>
+            <h2>URL 编/解码</h2>
+            <p>处理 URL 查询参数中的特殊字符，进行编码和解码。</p>
+        </a>
+        
+        <a href="{{ "tools/hash-generator" | relURL }}" class="tool-card">
+            <span class="tool-icon">🛡️</span>
+            <h2>哈希值生成器</h2>
+            <p>计算文本的 MD5, SHA-1, SHA-256 和 SHA-512 哈希值。</p>
+        </a>
+
+        <a href="{{ "tools/qrcode-generator" | relURL }}" class="tool-card">
+            <span class="tool-icon">📱</span>
+            <h2>QR 码生成器</h2>
+            <p>将文本或链接转换为可下载的 SVG/PNG 格式 QR 码。</p>
+        </a>
+
+        <a href="{{ "tools/color-converter" | relURL }}" class="tool-card">
+            <span class="tool-icon">🌈</span>
+            <h2>颜色转换器</h2>
+            <p>HEX, RGB, HSL 格式互相转换，支持实时预览。</p>
+        </a>
+
+        <a href="{{ "tools/diff-viewer" | relURL }}" class="tool-card">
+            <span class="tool-icon">⚖️</span>
+            <h2>文本差异对比</h2>
+            <p>比较两段文本的差异，支持行级、字符级和 JSON 对比。</p>
+        </a>
+
+        <a href="{{ "tools/text-converter" | relURL }}" class="tool-card">
+            <span class="tool-icon">📝</span>
+            <h2>文本格式转换</h2>
+            <p>大小写转换、驼峰命名、下划线命名等文字格式化工具。</p>
+        </a>
+        
+    </div>
+</div>
+{{ end }}
