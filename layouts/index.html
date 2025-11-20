@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}zh-CN{{ end }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{{ .Site.Title }}</title>
+
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #3B82F6;
+      --primary-hover-color: #2563EB;
+      --secondary-color: #6B7280;
+      --text-color: #1F2937;
+      
+      --section-bg: rgba(255, 255, 255, 0.9); 
+      
+      --card-bg: #FFFFFF;
+      --border-radius: 12px;
+      --transition: 0.3s ease;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-color);
+      margin: 0;
+      padding-top: 70px;
+      background: #F8FAFC;
+      background-blend-mode: lighten;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: color var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-hover-color);
+    }
+
+    .custom-homepage {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .section-block {
+      background: var(--section-bg);
+      padding: 35px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 50px;
+      backdrop-filter: blur(8px);
+    }
+
+    .section-block h3 {
+      font-size: 1.6em;
+      margin: 0 0 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #E5E7EB;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-color);
+    }
+
+    .item-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .item-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      border: 1px solid #E5E7EB;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 居中对齐，配合图标 */
+      text-align: center;  /* 文字居中 */
+      color: inherit; /* 移除默认链接颜色 */
+    }
+
+    .item-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary-color);
+    }
+
+    .card-icon {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .item-card h4 {
+      font-size: 1.25em;
+      margin: 0 0 10px;
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    .item-card p {
+      color: var(--secondary-color);
+      font-size: 0.95em;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .view-all-link {
+      display: block;
+      text-align: right;
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    .post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .post-list li {
+      padding: 15px 0;
+      border-bottom: 1px dashed #E5E7EB;
+    }
+
+    .post-list li:last-child {
+      border-bottom: none;
+    }
+
+    .post-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.05em;
+      color: var(--text-color);
+      transition: color var(--transition);
+    }
+
+    .post-link:hover {
+      color: var(--primary-color);
+    }
+
+    .post-date {
+      color: var(--secondary-color);
+      font-size: 0.9em;
+      font-family: monospace;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: 90px;
+      }
+      .section-block {
+        padding: 20px;
+      }
+      .post-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  {{ partial "my_new_header.html" . }}
+
+  <main class="custom-homepage">
+
+    <section class="section-block game-section">
+      <h3>🎮 游戏精选</h3>
+      <div class="item-grid">
+        <a href="{{ "games/snake" | relURL }}" class="item-card">
+          <span class="card-icon">🐍</span>
+          <h4>贪吃蛇</h4>
+          <p>经典街机游戏，挑战最高分</p>
+        </a>
+
+        <a href="{{ "games/game-2048" | relURL }}" class="item-card">
+          <span class="card-icon">🔢</span>
+          <h4>2048</h4>
+          <p>经典的数字叠加益智游戏，目标合成 2048</p>
+        </a>
+
+        <a href="{{ "games/flappy-bird" | relURL }}" class="item-card">
+          <span class="card-icon">🐦</span>
+          <h4>Flappy Bird</h4>
+          <p>控制小鸟穿越管道，飞飞飞</p>
+        </a>
+      </div>
+      <a href="{{ "games/" | relURL }}" class="view-all-link">查看所有游戏 &rarr;</a>
+    </section>
+
+    <section class="section-block tools-section">
+      <h3>🛠️ 实用工具</h3>
+      <div class="item-grid">
+        <a href="{{ "tools/json-formatter" | relURL }}" class="item-card">
+          <span class="card-icon">🎨</span>
+          <h4>JSON 格式化</h4>
+          <p>美化、压缩、验证 JSON 数据结构</p>
+        </a>
+
+        <a href="{{ "tools/timestamp" | relURL }}" class="item-card">
+          <span class="card-icon">⏱️</span>
+          <h4>时间戳转换</h4>
+          <p>Unix 时间戳与日期时间一键互转</p>
+        </a>
+
+        <a href="{{ "tools/base64" | relURL }}" class="item-card">
+          <span class="card-icon">🔗</span>
+          <h4>Base64 加解密</h4>
+          <p>文本与 Base64 编码之间的快速转换</p>
+        </a>
+      </div>
+      <a href="{{ "tools/" | relURL }}" class="view-all-link">查看所有工具 &rarr;</a>
+    </section>
+
+    <section class="section-block latest-posts-section">
+      <h3>📝 最新发布</h3>
+      <ul class="post-list">
+        {{ range first 3 (where .Site.RegularPages "Type" "post") }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="post-link">
+            <span class="post-title">{{ .Title }}</span>
+            <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      <a href="/blog/" class="view-all-link">查看所有文章 &rarr;</a>
+    </section>
+
+  </main>
+</body>
+
+</html>

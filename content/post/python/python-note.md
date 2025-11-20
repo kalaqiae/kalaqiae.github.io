@@ -12,6 +12,13 @@ categories: ["Python"]
 
 <!--more-->
 
+## 命令
+
+```shell
+# python3 查看版本
+python3 --version
+```
+
 ## 数据类型
 
 ### 数值类型
