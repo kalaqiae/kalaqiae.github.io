@@ -12,6 +12,7 @@ weight: 50
 [kalaqiae](https://ooooooooooooooooooooooo.ooo/ooooοооoοᴏοoοᴏοoοᴏooοᴏoᴏoᴏооoоᴏᴏoоᴏᴏοооᴏοоoοοоᴏoοоoοοᴏoοοооοοоoοοоοοoоᴏоοоoᴏοоᴏᴏοоᴏοoоᴏᴏ)
 
 kalaqiae 要什么自行车。使用 Hugo 博客框架搭建，even 主题
+<!-- hugo new post/android/android-adb.md -->
 
 ## 联系方式
 

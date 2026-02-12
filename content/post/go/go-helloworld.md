@@ -1,7 +1,7 @@
 ---
 title: "Go 的 HelloWorld"
 date: 2021-03-14T15:50:03+08:00
-draft: false
+draft: true
 tags: ["hello world"]
 categories: ["go"]
 ---

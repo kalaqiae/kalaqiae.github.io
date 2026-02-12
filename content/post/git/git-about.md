@@ -88,6 +88,7 @@ git stash show -p stash@{0}：查看某个stash中详细的修改信息
 
 生成 ssh  
 ssh-keygen -t ed25519 -C "your_email@example.com"
+<!-- ssh-keygen -t ed25519 -C "352733536@11com" -->
 
 查看用户名,邮箱等信息  
 git config --global --list
@@ -124,3 +125,42 @@ build
 
 <!-- <https://developer.aliyun.com/article/652579>  
 <https://www.zhihu.com/question/36509119> -->
+
+## 初次提交项目到 gitlab
+
+1.gitlab 上创建空项目  
+注意不要勾选 Initialize repository with a README ，不勾选就是个空的项目，勾选了会创建个readme，完成git init和一次提交。
+
+2.本地项目环境检查
+
+* 确认 SSH 连通性,看到 "Welcome to GitLab" 即代表 SSH 配置成功。
+
+```bash
+ssh -T git@gitlab.com
+```
+
+* 配置 .gitignore：确保根目录下有该文件
+
+3.在安卓项目路径下执行以下 git 命令
+
+```bash
+//如果你的项目文件夹里还没有 .git 文件夹（即还没用过 Git），先初始化：
+git init
+
+//添加文件到暂存区
+git add .
+
+//提交更改
+git commit -m "Initial commit: push my android project"
+
+//关联 远程仓库 git@gitlab.com:你的用户名/你的项目名.git 要替换掉
+git remote add origin git@gitlab.com:你的用户名/你的项目名.git
+
+# 确认本地分支名为 main
+git branch -M main
+
+# 推送到远程仓库
+git push -u origin main
+
+提示 Are you sure you want to continue connecting (yes/no/[fingerprint])? 输入 yes
+```
