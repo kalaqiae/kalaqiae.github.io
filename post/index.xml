@@ -179,5 +179,4 @@ adb shell dumpsys activity | findstr &amp;ldquo;mResumedActivity&amp;rdquo;&lt;/
 %f （表示浮点数）&lt;br>
 %s （表示字符串）&lt;/p></description></item><item><title>Activity 的生命周期</title><link>https://kalaqiae.com/post/android/android-activity-lifecycle/</link><pubDate>Wed, 31 Mar 2021 22:34:15 +0800</pubDate><guid>https://kalaqiae.com/post/android/android-activity-lifecycle/</guid><description>&lt;h3 id="生命周期简介">生命周期简介&lt;/h3>
 &lt;p>先上图&lt;/p>
-&lt;p>&lt;img src="https://developer.android.google.cn/guide/components/images/activity_lifecycle.png" alt="Lifecycle">&lt;/p></description></item><item><title>Go 的 HelloWorld</title><link>https://kalaqiae.com/post/go/go-helloworld/</link><pubDate>Sun, 14 Mar 2021 15:50:03 +0800</pubDate><guid>https://kalaqiae.com/post/go/go-helloworld/</guid><description>&lt;h3 id="下载-go">下载 Go&lt;/h3>
-&lt;p>下载地址： &lt;a href="https://golang.google.cn/dl/">https://golang.google.cn/dl/&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://developer.android.google.cn/guide/components/images/activity_lifecycle.png" alt="Lifecycle">&lt;/p></description></item></channel></rss>
