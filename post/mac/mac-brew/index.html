@@ -1,0 +1,124 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Mac Brew - KALAQIAE</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Kalaqiae"><meta name=description content="概述 Homebrew 更适合用来装“系统级、全局通用、基本只需要最新版”的基础工具；但它不是万能软件下载器，也不是所有开发环境的最佳安装方式。
+最主要收益：可脚本化（Brewfile），换新 Mac 时更容易一键还原；同时减少手动处理依赖的成本。
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.108.0 with theme even"><link rel=canonical href=https://kalaqiae.com/post/mac/mac-brew/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link href=/sass/main.min.64cde2c5850b06d3c56f0c74b725d4bdf393df50c9a92b98ffd59a4d5eefab93.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Mac Brew"><meta property="og:description" content="概述
+Homebrew 更适合用来装“系统级、全局通用、基本只需要最新版”的基础工具；但它不是万能软件下载器，也不是所有开发环境的最佳安装方式。
+最主要收益：可脚本化（Brewfile），换新 Mac 时更容易一键还原；同时减少手动处理依赖的成本。"><meta property="og:type" content="article"><meta property="og:url" content="https://kalaqiae.com/post/mac/mac-brew/"><meta property="article:section" content="post"><meta property="article:published_time" content="2026-02-09T15:36:46+08:00"><meta property="article:modified_time" content="2026-02-09T15:36:46+08:00"><meta itemprop=name content="Mac Brew"><meta itemprop=description content="概述
+Homebrew 更适合用来装“系统级、全局通用、基本只需要最新版”的基础工具；但它不是万能软件下载器，也不是所有开发环境的最佳安装方式。
+最主要收益：可脚本化（Brewfile），换新 Mac 时更容易一键还原；同时减少手动处理依赖的成本。"><meta itemprop=datePublished content="2026-02-09T15:36:46+08:00"><meta itemprop=dateModified content="2026-02-09T15:36:46+08:00"><meta itemprop=wordCount content="2306"><meta itemprop=keywords content="Mac,brew,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Mac Brew"><meta name=twitter:description content="概述
+Homebrew 更适合用来装“系统级、全局通用、基本只需要最新版”的基础工具；但它不是万能软件下载器，也不是所有开发环境的最佳安装方式。
+最主要收益：可脚本化（Brewfile），换新 Mac 时更容易一键还原；同时减少手动处理依赖的成本。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script data-ad-client=ca-pub-6216241935841265 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Kalaqiae</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a><a href=/tools/><li class=mobile-menu-item>工具</li></a><a href=/games/><li class=mobile-menu-item>游戏</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Kalaqiae</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li><li class=menu-item><a class=menu-item-link href=/tools/>工具</a></li><li class=menu-item><a class=menu-item-link href=/games/>游戏</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Mac Brew</h1><div class=post-meta><span class=post-time>2026-02-09</span><div class=post-category><a href=/categories/mac/>Mac</a></div><span id=busuanzi_container_page_pv class=more-meta><span id=busuanzi_value_page_pv><img src=/img/spinner.svg alt=spinner.svg></span> 次阅读</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#概述>概述</a></li><li><a href=#基本原则>基本原则</a></li><li><a href=#适用场景>适用场景</a></li><li><a href=#开发语言版本版本管理器优先>开发语言版本（版本管理器优先）</a></li><li><a href=#安装>安装</a><ul><li><a href=#替换镜像>替换镜像</a></li></ul></li><li><a href=#相关概念>相关概念</a><ul><li><a href=#formula--cask--tap>Formula / Cask / Tap</a></li><li><a href=#link--unlink--keg-only>link / unlink / keg-only</a></li></ul></li><li><a href=#常用命令速查>常用命令（速查）</a></li><li><a href=#更新策略>更新策略</a></li><li><a href=#依赖与排错>依赖与排错</a></li><li><a href=#推荐清单按需>推荐清单（按需）</a></li></ul></li></ul></nav></div></div><div class=post-content><h2 id=概述>概述</h2><p>Homebrew 更适合用来装“系统级、全局通用、基本只需要最新版”的基础工具；但它不是万能软件下载器，也不是所有开发环境的最佳安装方式。</p><p>最主要收益：可脚本化（Brewfile），换新 Mac 时更容易一键还原；同时减少手动处理依赖的成本。</p><p>使用前先想清楚这些常见坑点：</p><ul><li>依赖容易越装越多</li><li>自动升级带来不确定性（尤其是 CI/团队协作时）</li><li>可能和 Python/Node 等其他工具链冲突（PATH、动态库、头文件）</li><li>版本可控能力有限（通常偏向最新版；Cask 基本无法锁版本）</li><li>卸载不一定干净（残留文件/配置）</li></ul><h2 id=基本原则>基本原则</h2><ul><li>永远不要对 brew 命令使用 sudo</li><li>先看清楚再装：<code>brew info &lt;name></code>，重点关注 caveats（PATH、keg-only、服务）</li><li>不要盲目 <code>brew upgrade</code> 全局升级：优先 <code>brew outdated</code>，再按需 <code>brew upgrade &lt;name></code></li><li>用 Brewfile 管理安装清单，避免“手工散装”导致难以迁移与回滚</li><li>别把 brew 当“万能软件下载器”或“语言版本管理器”</li></ul><h2 id=适用场景>适用场景</h2><ul><li>推荐用 brew：通用 CLI 工具、系统级小工具、不在意固定版本的 GUI 应用</li><li>谨慎用 brew：会强影响 PATH/动态库的工具链（Python/Node/Java）、数据库/缓存服务、对 ABI 敏感的依赖</li><li>不建议用 brew：项目强依赖特定版本且需要长期锁定、团队需要严格可复现（优先用版本管理器、容器或项目自带安装方式）</li></ul><h2 id=开发语言版本版本管理器优先>开发语言版本（版本管理器优先）</h2><p>Python/Node/Java 这类语言版本建议交给版本管理器；brew 更适合只负责安装这些管理器本身，减少与项目工具链冲突。</p><ul><li>Python：pyenv（可用 brew 安装 pyenv，再用 pyenv 安装/切换 Python）</li><li>Node.js：fnm 或 nvm（项目需要切版本时）</li><li>Java：sdkman</li></ul><h2 id=安装>安装</h2><p>安装 Command Line Tools（如果已安装会提示无需重复安装）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>xcode-select --install
+</span></span></code></pre></td></tr></table></div></div><p>安装 Homebrew：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>/bin/bash -c <span class=s2>&#34;</span><span class=k>$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class=k>)</span><span class=s2>&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>安装后把 Homebrew 写入 PATH（zsh，推荐写到 <code>~/.zprofile</code>）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Apple Silicon </span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s1>&#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39;</span> &gt;&gt; ~/.zprofile
+</span></span><span class=line><span class=cl><span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>/opt/homebrew/bin/brew shellenv<span class=k>)</span><span class=s2>&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Apple Silicon 默认前缀是 <code>/opt/homebrew</code>，Intel 默认前缀是 <code>/usr/local</code>。通常写到 <code>~/.zprofile</code>（登录 shell）即可，避免在 <code>~/.zshrc</code> 里每次启动都重复执行。</p><p>安装完成后验证：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew --version
+</span></span><span class=line><span class=cl><span class=nb>command</span> -v brew
+</span></span><span class=line><span class=cl>brew --prefix
+</span></span><span class=line><span class=cl>brew doctor
+</span></span></code></pre></td></tr></table></div></div><p><code>brew --prefix</code> 会输出 Homebrew 的安装前缀目录；<code>brew doctor</code> 有提示时按建议处理即可。</p><h3 id=替换镜像>替换镜像</h3><p>如果你在国内网络环境下拉取很慢，可以用镜像加速瓶装包（bottles）和 API 元数据。</p><p>临时替换（仅当前终端）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_BOTTLE_DOMAIN</span><span class=o>=</span><span class=s2>&#34;https://mirrors.ustc.edu.cn/homebrew-bottles&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_API_DOMAIN</span><span class=o>=</span><span class=s2>&#34;https://mirrors.ustc.edu.cn/homebrew-bottles/api&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>永久替换（写入 zsh 配置）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>echo</span> <span class=s1>&#39;export HOMEBREW_BOTTLE_DOMAIN=&#34;https://mirrors.ustc.edu.cn/homebrew-bottles&#34;&#39;</span> &gt;&gt; ~/.zprofile
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s1>&#39;export HOMEBREW_API_DOMAIN=&#34;https://mirrors.ustc.edu.cn/homebrew-bottles/api&#34;&#39;</span> &gt;&gt; ~/.zprofile
+</span></span></code></pre></td></tr></table></div></div><p>说明：</p><ul><li><code>HOMEBREW_BOTTLE_DOMAIN</code>：只影响 bottle（二进制预编译包）下载地址</li><li><code>HOMEBREW_API_DOMAIN</code>：只影响公式/仓库元数据拉取（如 <code>brew search/info/outdated</code>）</li></ul><p>更多镜像与说明：</p><ul><li>USTC：<a href=https://mirrors.ustc.edu.cn/help/homebrew-bottles.html>https://mirrors.ustc.edu.cn/help/homebrew-bottles.html</a></li><li>TUNA：<a href=https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/>https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/</a></li></ul><h2 id=相关概念>相关概念</h2><h3 id=formula--cask--tap>Formula / Cask / Tap</h3><ul><li>Formula：命令行工具与库（大多数 <code>brew install xxx</code>）</li><li>Cask：GUI 应用（<code>brew install --cask xxx</code>）</li><li>Tap：额外的软件源（相当于“增加仓库”）</li></ul><p>例子：</p><ul><li>Formula：git、curl、openssl、tree、jq、wget、ripgrep</li><li>Cask：google-chrome、iterm2、visual-studio-code、docker、raycast</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install git tree jq
+</span></span><span class=line><span class=cl>brew install --cask iterm2 visual-studio-code
+</span></span><span class=line><span class=cl>brew tap homebrew/cask-fonts
+</span></span></code></pre></td></tr></table></div></div><h3 id=link--unlink--keg-only>link / unlink / keg-only</h3><p>“keg-only” 常见含义：安装了，但默认不把可执行文件/库链接进 PATH。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew info openssl@3
+</span></span><span class=line><span class=cl>brew link openssl@3
+</span></span><span class=line><span class=cl>brew unlink openssl@3
+</span></span></code></pre></td></tr></table></div></div><h2 id=常用命令速查>常用命令（速查）</h2><p>搜索与确认：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew search &lt;name&gt;
+</span></span><span class=line><span class=cl>brew info &lt;name&gt;
+</span></span></code></pre></td></tr></table></div></div><p>安装与检查：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install &lt;formula&gt;
+</span></span><span class=line><span class=cl>brew install --cask &lt;cask&gt;
+</span></span><span class=line><span class=cl>brew list
+</span></span><span class=line><span class=cl>brew list --cask
+</span></span></code></pre></td></tr></table></div></div><p>卸载：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew uninstall &lt;formula&gt;
+</span></span><span class=line><span class=cl>brew uninstall --cask &lt;cask&gt;
+</span></span></code></pre></td></tr></table></div></div><p>可选：同时删除应用配置/缓存（谨慎使用）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew uninstall --cask --zap &lt;cask&gt;
+</span></span></code></pre></td></tr></table></div></div><p><code>--zap</code> 可能会删除用户配置/缓存，执行前先看 <code>brew info --cask &lt;cask></code> 的提示内容。</p><p>清理：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew autoremove
+</span></span><span class=line><span class=cl>brew cleanup -n
+</span></span><span class=line><span class=cl>brew cleanup
+</span></span></code></pre></td></tr></table></div></div><p>Homebrew 默认会保留旧版本与下载缓存，建议定期运行 <code>brew cleanup</code>。其中 <code>-n</code> 表示先预演（只打印将要删除的内容）。</p><p>复现与脚本化（装机/迁移）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew bundle dump --describe --force
+</span></span><span class=line><span class=cl>brew bundle
+</span></span></code></pre></td></tr></table></div></div><p>其中 <code>brew bundle dump</code> 会生成 <code>Brewfile</code>；<code>brew bundle</code> 会按 <code>Brewfile</code> 一键安装。需要指定路径时：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew bundle dump --file ~/.Brewfile --describe --force
+</span></span><span class=line><span class=cl>brew bundle --file ~/.Brewfile
+</span></span></code></pre></td></tr></table></div></div><p>排错与环境信息：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew doctor
+</span></span><span class=line><span class=cl>brew config
+</span></span></code></pre></td></tr></table></div></div><h2 id=更新策略>更新策略</h2><p>最常见的更新套路：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew update
+</span></span><span class=line><span class=cl>brew outdated
+</span></span><span class=line><span class=cl>brew upgrade &lt;formula&gt;
+</span></span><span class=line><span class=cl>brew upgrade --cask &lt;cask&gt;
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>brew update</code>：更新 Homebrew 的公式/仓库元数据（让 brew 知道“有哪些新版本”）</li><li><code>brew outdated</code>：列出当前可升级的条目</li><li><code>brew upgrade</code>：升级已安装的 formula/cask</li></ul><p>关于 <code>brew update</code>：常见建议是“安装前先 update”，但 <code>brew install</code> 通常也会触发必要的更新；是否每次手动执行取决于你的使用习惯与网络环境。</p><p>关掉自动升级（按需使用）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_NO_AUTO_UPDATE</span><span class=o>=</span><span class=m>1</span>
+</span></span></code></pre></td></tr></table></div></div><p>锁版本（Formula 可用）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew pin git
+</span></span><span class=line><span class=cl>brew list --pinned
+</span></span><span class=line><span class=cl>brew unpin git
+</span></span></code></pre></td></tr></table></div></div><p>关于 Cask：</p><ul><li>Cask 没有“pin”的等价能力，升级更多靠你控制 <code>brew upgrade --cask ...</code> 的时机</li><li>某些 Cask 默认不提示升级，可用 <code>--greedy</code> 覆盖（只在你明确要强制检查时用）</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew outdated --cask --greedy
+</span></span><span class=line><span class=cl>brew upgrade --cask --greedy
+</span></span></code></pre></td></tr></table></div></div><h2 id=依赖与排错>依赖与排错</h2><p>依赖树（看“为什么会装这么多”）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew deps --tree &lt;formula&gt;
+</span></span><span class=line><span class=cl>brew uses --installed &lt;formula&gt;
+</span></span></code></pre></td></tr></table></div></div><p>常见概念：</p><ul><li>孤儿依赖（Orphaned dependencies）：当初为了 A 装的依赖，现在 A 已经没了，但依赖还在</li><li>未链接 keg（Unlinked keg）：包安装了，但没有链接进 PATH（常见于 keg-only）</li></ul><p>查看“我主动装了哪些”（叶子包）：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew leaves
+</span></span></code></pre></td></tr></table></div></div><p>清理相关命令见上面的“清理”。</p><h2 id=推荐清单按需>推荐清单（按需）</h2><p>基础工具（Formula）：</p><ul><li>git、curl、openssl、tree、jq、wget、ripgrep</li></ul><p>常用应用（Cask）：</p><ul><li>iterm2、visual-studio-code、google-chrome、docker、raycast</li></ul></div><footer class=post-footer><nav class=post-nav><a class=next href=/post/android/android-note/><span class="next-text nav-default">Android Note</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><script src=https://utteranc.es/client.js repo=kalaqiae/kalaqiae.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script><noscript>Please enable JavaScript to view the <a href=https://github.com/utterance>comments powered by utterances.</a></noscript></div></main><footer id=footer class=footer><div class=social-links></div><div class=copyright><span class=power-by></span><span class=theme-info></span><div class=busuanzi-footer></div><span class=copyright-year>&copy;
+2026
+<span>|</span>
+<span>Kalaqiae</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script>
+<script type=text/javascript src=https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js></script>
+<script src=https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js></script>
+<script>var jsonModel=["https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json"];L2Dwidget.init({model:{jsonPath:jsonModel[Math.floor(Math.random()*jsonModel.length)],scale:1},display:{position:"left",width:66,height:90,hOffset:10,vOffset:0},mobile:{show:!1}})</script></body></html>
