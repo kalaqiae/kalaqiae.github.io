@@ -1,0 +1,666 @@
+- id: home.section.games
+  translation: "Featured Games"
+- id: home.games.snake.title
+  translation: "Snake"
+- id: home.games.snake.desc
+  translation: "Classic arcade game, chase a high score"
+- id: home.games.2048.title
+  translation: "2048"
+- id: home.games.2048.desc
+  translation: "Combine tiles to reach 2048"
+- id: home.games.flappy.title
+  translation: "Flappy Bird"
+- id: home.games.flappy.desc
+  translation: "Guide the bird through the pipes"
+- id: home.viewAllGames
+  translation: "View all games"
+- id: home.section.tools
+  translation: "Tools"
+- id: home.tools.json.title
+  translation: "JSON Formatter"
+- id: home.tools.json.desc
+  translation: "Format, compress, and validate JSON data"
+- id: home.tools.timestamp.title
+  translation: "Timestamp Converter"
+- id: home.tools.timestamp.desc
+  translation: "Convert between Unix timestamps and dates"
+- id: home.tools.base64.title
+  translation: "Base64 Encoder/Decoder"
+- id: home.tools.base64.desc
+  translation: "Quickly convert text and Base64 strings"
+- id: home.viewAllTools
+  translation: "View all tools"
+- id: home.section.latest
+  translation: "Latest Posts"
+- id: home.viewAllPosts
+  translation: "View all posts"
+- id: flappy.title
+  translation: "Flappy Bird - Enhanced"
+- id: flappy.score.current
+  translation: "Score"
+- id: flappy.score.best
+  translation: "Best"
+- id: flappy.message.tapToStart
+  translation: "Tap to start"
+- id: flappy.instructions.title
+  translation: "How to Play"
+- id: flappy.instructions.keyboard
+  translation: "Keyboard: Space or Arrow Up"
+- id: flappy.instructions.mouse
+  translation: "Mouse: Click to jump"
+- id: flappy.instructions.score
+  translation: "Pass through pipes to score"
+- id: flappy.instructions.avoid
+  translation: "Avoid pipes and the ground"
+- id: flappy.instructions.challenge
+  translation: "Beat your best score"
+- id: flappy.ui.ready
+  translation: "Get Ready"
+- id: flappy.ui.readyHint
+  translation: "Click or press Space to start"
+- id: flappy.ui.gameOver
+  translation: "Game Over"
+- id: flappy.ui.currentScoreLabel
+  translation: "Score:"
+- id: flappy.ui.bestScoreLabel
+  translation: "Best:"
+- id: flappy.ui.restart
+  translation: "Restart"
+- id: flappy.message.running
+  translation: "Playing"
+- id: flappy.message.overRestart
+  translation: "Game over! Tap to restart"
+- id: snake.title
+  translation: "Snake"
+- id: snake.stat.score
+  translation: "Score"
+- id: snake.stat.highScore
+  translation: "Best"
+- id: snake.stat.level
+  translation: "Level"
+- id: snake.message.startHint
+  translation: "Click \"Start Game\" to begin"
+- id: snake.button.start
+  translation: "Start Game"
+- id: snake.button.pause
+  translation: "Pause"
+- id: snake.button.reset
+  translation: "Reset"
+- id: snake.button.restart
+  translation: "Restart"
+- id: snake.button.resume
+  translation: "Resume"
+- id: snake.instructions.title
+  translation: "How to Play"
+- id: snake.instructions.keyboard
+  translation: "Keyboard: Arrow keys or WASD"
+- id: snake.instructions.pause
+  translation: "Space: Pause/Resume"
+- id: snake.instructions.food
+  translation: "Eat food to grow and score"
+- id: snake.instructions.avoid
+  translation: "Avoid walls and your body"
+- id: snake.instructions.challenge
+  translation: "Chase the high score"
+- id: snake.message.levelUp
+  translation: "Level up! Current level: {level}"
+- id: snake.message.gameOver
+  translation: "Game over! Final score: {score}"
+- id: snake.message.started
+  translation: "Game started! Guide the snake to eat food"
+- id: snake.message.paused
+  translation: "Game paused"
+- id: snake.message.resumed
+  translation: "Game resumed"
+- id: snake.message.reset
+  translation: "Game reset. Click \"Start Game\" to begin"
+- id: games.page.title
+  translation: "Games"
+- id: games.card.snake.title
+  translation: "Snake"
+- id: games.card.snake.desc
+  translation: "Classic arcade game, chase a high score"
+- id: games.card.2048.title
+  translation: "2048"
+- id: games.card.2048.desc
+  translation: "Combine tiles to reach 2048"
+- id: games.card.flappy.title
+  translation: "Flappy Bird"
+- id: games.card.flappy.desc
+  translation: "Guide the bird through the pipes"
+- id: games.card.sudoku.title
+  translation: "Sudoku"
+- id: games.card.sudoku.desc
+  translation: "Fill the grid and train your logic"
+- id: games.card.bulls.title
+  translation: "Bulls and Cows"
+- id: games.card.bulls.desc
+  translation: "Deduce the answer from the clues"
+- id: tools.page.title
+  translation: "Tools"
+- id: tools.card.base64.title
+  translation: "Base64 Encoder/Decoder"
+- id: tools.card.base64.desc
+  translation: "Encode text to Base64 or decode it back"
+- id: tools.card.timestamp.title
+  translation: "Timestamp Converter"
+- id: tools.card.timestamp.desc
+  translation: "Convert between Unix timestamps and dates"
+- id: tools.card.json.title
+  translation: "JSON Formatter"
+- id: tools.card.json.desc
+  translation: "Beautify, compress, and validate JSON data"
+- id: tools.card.url.title
+  translation: "URL Encoder/Decoder"
+- id: tools.card.url.desc
+  translation: "Encode or decode URL query characters"
+- id: tools.card.hash.title
+  translation: "Hash Generator"
+- id: tools.card.hash.desc
+  translation: "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes"
+- id: tools.card.qrcode.title
+  translation: "QR Code Generator"
+- id: tools.card.qrcode.desc
+  translation: "Convert text or links into SVG/PNG QR codes"
+- id: tools.card.color.title
+  translation: "Color Converter"
+- id: tools.card.color.desc
+  translation: "Convert between HEX, RGB, and HSL with preview"
+- id: tools.card.diff.title
+  translation: "Text Diff Viewer"
+- id: tools.card.diff.desc
+  translation: "Compare text with line, character, and JSON diff modes"
+- id: tools.card.text.title
+  translation: "Text Converter"
+- id: tools.card.text.desc
+  translation: "Case, camel, and snake text transformations"
+- id: game2048.title
+  translation: "2048"
+- id: game2048.scoreLabel
+  translation: "Score"
+- id: game2048.bestLabel
+  translation: "Best"
+- id: game2048.newGame
+  translation: "New Game"
+- id: game2048.rulesLabel
+  translation: "How to Play:"
+- id: game2048.rulesText
+  translation: "Use the arrow keys or swipe to move tiles. When two tiles with the same number touch, they merge into one with double the value."
+- id: game2048.alert.gameOver
+  translation: "Game Over"
+- id: game2048.alert.win
+  translation: "You reached 2048! 🎉"
+- id: sudoku.pageTitle
+  translation: "Sudoku - 纸墨时光"
+- id: sudoku.stat.time
+  translation: "Time"
+- id: sudoku.stat.score
+  translation: "Score"
+- id: sudoku.stat.highScore
+  translation: "High Score"
+- id: sudoku.difficulty.easy
+  translation: "Easy"
+- id: sudoku.difficulty.medium
+  translation: "Medium"
+- id: sudoku.difficulty.hard
+  translation: "Hard"
+- id: sudoku.recordSuffix
+  translation: " Record"
+- id: sudoku.gameOver.title
+  translation: "📜 Game Over"
+- id: sudoku.gameOver.difficulty
+  translation: "Difficulty"
+- id: sudoku.gameOver.score
+  translation: "Score"
+- id: sudoku.gameOver.time
+  translation: "Time"
+- id: sudoku.gameOver.newRecord
+  translation: "✨ New record!"
+- id: bullsAndCows.pageTitle
+  translation: "Bulls & Cows - Guess the Number"
+- id: bullsAndCows.title
+  translation: "Bulls and Cows"
+- id: bullsAndCows.stat.time
+  translation: "Time"
+- id: bullsAndCows.digits.label
+  translation: "Digits"
+- id: bullsAndCows.digits.unit
+  translation: "digits"
+- id: bullsAndCows.allowRepeat
+  translation: "Allow repeated digits"
+- id: bullsAndCows.copyAnswer
+  translation: "Copy Answer"
+- id: bullsAndCows.newGame
+  translation: "New Game"
+- id: bullsAndCows.guess.placeholder
+  translation: "Enter your guess"
+- id: bullsAndCows.submit
+  translation: "Submit"
+- id: bullsAndCows.clear
+  translation: "Clear"
+- id: bullsAndCows.history.emptyStart
+  translation: "Submit your first guess to begin."
+- id: bullsAndCows.history.emptyNewGame
+  translation: "Start a new game and submit your first guess."
+- id: bullsAndCows.records.title
+  translation: "Best Records"
+- id: bullsAndCows.records.mode
+  translation: "(Current mode)"
+- id: bullsAndCows.records.bestTime
+  translation: "Fastest Time"
+- id: bullsAndCows.records.bestGuesses
+  translation: "Fewest Guesses"
+- id: bullsAndCows.rules.title
+  translation: "How to Play"
+- id: bullsAndCows.rules.item1
+  translation: "The system generates a number with N digits (3-6)."
+- id: bullsAndCows.rules.item2
+  translation: "Allow repeats determines whether digits can repeat."
+- id: bullsAndCows.rules.item3
+  translation: "Submit a number with the selected length."
+- id: bullsAndCows.rules.item4
+  translation: "A = correct digit and correct position"
+- id: bullsAndCows.rules.item5
+  translation: "B = correct digit but wrong position"
+- id: bullsAndCows.rules.item6
+  translation: "Each submission appears in the history on the left"
+- id: bullsAndCows.rules.item7
+  translation: "The game records fastest time and fewest guesses"
+- id: bullsAndCows.alert.digitsOnly
+  translation: "Please enter numbers."
+- id: bullsAndCows.alert.digitsLength
+  translation: "Please enter a {digits}-digit number."
+- id: bullsAndCows.alert.noRepeat
+  translation: "Repeats are not allowed. Enter non-repeating digits."
+- id: bullsAndCows.alert.win
+  translation: "You got it!\nAnswer: {secret}\nTime: {time}, Guesses: {count}"
+- id: bullsAndCows.toast.copySuccess
+  translation: "Copied answer to clipboard: {secret}"
+- id: bullsAndCows.toast.copyFallback
+  translation: "Copied answer to clipboard (fallback): {secret}"
+- id: bullsAndCows.history.attempt
+  translation: "Guess {count}"
+- id: bullsAndCows.records.metaGuessDate
+  translation: "{count} guesses • {date}"
+- id: bullsAndCows.records.metaTimeDate
+  translation: "{time} • {date}"
+- id: bullsAndCows.records.guessCount
+  translation: "{count} guesses"
+- id: bullsAndCows.debug.setSecret
+  translation: "Secret set (local only)"
+- id: base64.pageTitle
+  translation: "Base64 Encoder/Decoder"
+- id: base64.title
+  translation: "Base64 Encoder/Decoder"
+- id: base64.input.label
+  translation: "Input text or Base64 string:"
+- id: base64.input.placeholder
+  translation: "Enter text to process..."
+- id: base64.output.label
+  translation: "Output:"
+- id: base64.output.placeholder
+  translation: "Results will appear here..."
+- id: base64.action.encode
+  translation: "Encode"
+- id: base64.action.decode
+  translation: "Decode"
+- id: base64.action.clear
+  translation: "Clear"
+- id: base64.action.copy
+  translation: "Copy Result"
+- id: base64.message.emptyInput
+  translation: "Input cannot be empty!"
+- id: base64.message.encodeSuccess
+  translation: "Encoded successfully!"
+- id: base64.message.decodeSuccess
+  translation: "Decoded successfully!"
+- id: base64.message.invalidBase64
+  translation: "Operation failed: invalid Base64 input or non-UTF-8 characters."
+- id: base64.message.cleared
+  translation: "All fields cleared."
+- id: base64.message.copyEmpty
+  translation: "Nothing to copy."
+- id: base64.message.copySuccess
+  translation: "Copied to clipboard!"
+- id: json.pageTitle
+  translation: "JSON Formatter"
+- id: json.title
+  translation: "JSON Formatter"
+- id: json.input.label
+  translation: "Input JSON:"
+- id: json.input.placeholder
+  translation: "Paste JSON here..."
+- id: json.output.label
+  translation: "Output:"
+- id: json.output.placeholder
+  translation: "Formatted output will appear here..."
+- id: json.action.format
+  translation: "Format"
+- id: json.action.minify
+  translation: "Minify"
+- id: json.action.validate
+  translation: "Validate"
+- id: json.action.clear
+  translation: "Clear"
+- id: json.action.copy
+  translation: "Copy Output"
+- id: json.message.emptyInput
+  translation: "Input cannot be empty."
+- id: json.message.parseFailed
+  translation: "Parse failed: "
+- id: json.message.formatSuccess
+  translation: "Formatted successfully."
+- id: json.message.formatFailed
+  translation: "Format failed."
+- id: json.message.minifySuccess
+  translation: "Minified successfully."
+- id: json.message.minifyFailed
+  translation: "Minify failed."
+- id: json.message.validateSuccess
+  translation: "JSON is valid."
+- id: json.message.validateFailed
+  translation: "Invalid JSON: "
+- id: json.message.cleared
+  translation: "Cleared."
+- id: json.message.copyEmpty
+  translation: "Nothing to copy."
+- id: json.message.copySuccess
+  translation: "Copied to clipboard."
+- id: url.pageTitle
+  translation: "URL Encoder/Decoder"
+- id: url.title
+  translation: "URL Encoder/Decoder"
+- id: url.input.label
+  translation: "Input:"
+- id: url.input.placeholder
+  translation: "Enter URL text to encode or decode..."
+- id: url.output.label
+  translation: "Output:"
+- id: url.output.placeholder
+  translation: "Result will appear here..."
+- id: url.action.encode
+  translation: "Encode"
+- id: url.action.decode
+  translation: "Decode"
+- id: url.action.clear
+  translation: "Clear"
+- id: url.action.copy
+  translation: "Copy Output"
+- id: url.notice.title
+  translation: "Tip"
+- id: url.notice.item1
+  translation: "Encode preserves query characters for safe URLs."
+- id: url.notice.item2
+  translation: "Decode converts %xx back to readable text."
+- id: url.message.emptyInput
+  translation: "Input cannot be empty."
+- id: url.message.encodeSuccess
+  translation: "Encoded successfully."
+- id: url.message.decodeSuccess
+  translation: "Decoded successfully."
+- id: url.message.invalidInput
+  translation: "Invalid input."
+- id: url.message.cleared
+  translation: "Cleared."
+- id: url.message.copyEmpty
+  translation: "Nothing to copy."
+- id: url.message.copySuccess
+  translation: "Copied to clipboard."
+- id: timestamp.pageTitle
+  translation: "Timestamp Converter"
+- id: timestamp.title
+  translation: "Timestamp Converter"
+- id: timestamp.currentTime.label
+  translation: "Current Local Time"
+- id: timestamp.currentTime.currentSecondLabel
+  translation: "Current Unix Timestamp (s):"
+- id: timestamp.action.copy
+  translation: "Copy"
+- id: timestamp.section.dateToTimestamp
+  translation: "Date/Time → Unix Timestamp"
+- id: timestamp.input.datetime.label
+  translation: "Date/Time:"
+- id: timestamp.input.datetime.placeholder
+  translation: "YYYY-MM-DD HH:mm:ss"
+- id: timestamp.action.fillCurrent
+  translation: "Use Current Time"
+- id: timestamp.precision.label
+  translation: "Precision:"
+- id: timestamp.precision.second
+  translation: "Seconds"
+- id: timestamp.precision.millisecond
+  translation: "Milliseconds"
+- id: timestamp.action.toTimestamp
+  translation: "Convert to Timestamp"
+- id: timestamp.output.timestamp.label
+  translation: "Timestamp Result"
+- id: timestamp.output.timestamp.placeholder
+  translation: "Timestamp will appear here..."
+- id: timestamp.action.copyResult
+  translation: "Copy Result"
+- id: timestamp.section.timestampToDate
+  translation: "Unix Timestamp → Date/Time"
+- id: timestamp.input.timestamp.label
+  translation: "Timestamp:"
+- id: timestamp.input.timestamp.placeholder
+  translation: "Enter 10 or 13 digit timestamp"
+- id: timestamp.action.toDatetime
+  translation: "Convert to Date/Time"
+- id: timestamp.output.datetime.label
+  translation: "Date/Time Result"
+- id: timestamp.output.datetime.placeholder
+  translation: "Date/time will appear here..."
+- id: timestamp.action.clearAll
+  translation: "Clear All"
+- id: timestamp.message.emptyDatetime
+  translation: "Please enter a date/time."
+- id: timestamp.message.invalidDatetime
+  translation: "Invalid date/time format."
+- id: timestamp.message.convertError
+  translation: "Conversion failed."
+- id: timestamp.message.emptyTimestamp
+  translation: "Please enter a timestamp."
+- id: timestamp.message.invalidTimestampLength
+  translation: "Timestamp must be 10 or 13 digits."
+- id: timestamp.message.convertedSecond
+  translation: "Detected seconds timestamp."
+- id: timestamp.message.convertedMillisecond
+  translation: "Detected milliseconds timestamp."
+- id: timestamp.message.invalidTimestamp
+  translation: "Invalid timestamp."
+- id: timestamp.message.filledCurrent
+  translation: "Filled with current time."
+- id: timestamp.message.emptyCopy
+  translation: "Nothing to copy."
+- id: timestamp.message.copied
+  translation: "Copied to clipboard."
+- id: timestamp.message.cleared
+  translation: "Cleared."
+- id: timestamp.message.convertSuccessSecond
+  translation: "Converted to seconds timestamp."
+- id: timestamp.message.convertSuccessMillisecond
+  translation: "Converted to milliseconds timestamp."
+- id: hash.pageTitle
+  translation: "Hash Generator"
+- id: hash.title
+  translation: "Hash Generator (MD5 / SHA)"
+- id: hash.input.label
+  translation: "Input text:"
+- id: hash.input.placeholder
+  translation: "Enter text to hash..."
+- id: hash.input.lengthLabel
+  translation: "Length:"
+- id: hash.input.lengthUnit
+  translation: "chars"
+- id: hash.status.computing
+  translation: "🔄 Computing..."
+- id: hash.action.clear
+  translation: "Clear Input"
+- id: hash.result.title
+  translation: "Hash Results"
+- id: hash.result.placeholder
+  translation: "Auto-calculated after input"
+- id: hash.message.cryptoUnsupported
+  translation: "Web Crypto API is not supported."
+- id: hash.message.computeError
+  translation: "An error occurred during calculation."
+- id: hash.message.cleared
+  translation: "Input cleared."
+- id: hash.message.copyEmpty
+  translation: "Nothing to copy."
+- id: hash.message.copySuccessPrefix
+  translation: ""
+- id: hash.message.copySuccessSuffix
+  translation: " copied to clipboard!"
+- id: hash.message.errorPrefix
+  translation: "Error: "
+- id: hash.message.errorSuffix
+  translation: " failed"
+- id: qrcode.pageTitle
+  translation: "QR Code Generator"
+- id: qrcode.title
+  translation: "QR Code Generator"
+- id: qrcode.input.label
+  translation: "Input:"
+- id: qrcode.input.placeholder
+  translation: "Enter text or link"
+- id: qrcode.input.countLabel
+  translation: "Characters: "
+- id: qrcode.action.generate
+  translation: "Generate QR Code"
+- id: qrcode.result.label
+  translation: "Result:"
+- id: qrcode.message.emptyInput
+  translation: "Please enter content before generating."
+- id: qrcode.message.generated
+  translation: "QR code generated ✔"
+- id: qrcode.message.idle
+  translation: "Enter content and click “Generate QR Code”"
+- id: color.pageTitle
+  translation: "Color Converter"
+- id: color.title
+  translation: "Color Converter (HEX / RGB / HSL)"
+- id: color.preview.label
+  translation: "Color Preview"
+- id: color.preview.hint
+  translation: "Click the swatch or picker to choose a color"
+- id: color.rgb.label
+  translation: "RGB (Red, Green, Blue)"
+- id: color.hsl.label
+  translation: "HSL (Hue, Saturation, Lightness)"
+- id: color.message.copiedPrefix
+  translation: "Copied: "
+- id: diff.pageTitle
+  translation: "Text Diff Viewer"
+- id: diff.title
+  translation: "Text Diff & Merge"
+- id: diff.mode.label
+  translation: "Diff mode:"
+- id: diff.mode.lines
+  translation: "Line"
+- id: diff.mode.chars
+  translation: "Character"
+- id: diff.mode.words
+  translation: "Word"
+- id: diff.mode.json
+  translation: "JSON"
+- id: diff.action.compare
+  translation: "Compare"
+- id: diff.action.clear
+  translation: "Clear"
+- id: diff.input.oldLabel
+  translation: "Original"
+- id: diff.input.newLabel
+  translation: "Modified"
+- id: diff.action.paste
+  translation: "Paste"
+- id: diff.input.oldPlaceholder
+  translation: "Enter or paste original text..."
+- id: diff.input.newPlaceholder
+  translation: "Enter or paste modified text..."
+- id: diff.result.title
+  translation: "Diff View (click blocks to merge)"
+- id: diff.result.added
+  translation: "Added:"
+- id: diff.result.removed
+  translation: "Removed:"
+- id: diff.legend.added
+  translation: "Green: added (click to reject)"
+- id: diff.legend.removed
+  translation: "Red: removed (click to undo)"
+- id: diff.merge.title
+  translation: "Merge Result"
+- id: diff.action.copyResult
+  translation: "Copy Result"
+- id: diff.merge.placeholder
+  translation: "Merged result will appear here..."
+- id: diff.message.pasteError
+  translation: "Clipboard access failed. Paste manually."
+- id: diff.message.emptyInput
+  translation: "Please enter text to compare."
+- id: diff.message.compareError
+  translation: "Comparison failed. Check your input."
+- id: diff.message.copySuccess
+  translation: "Merged result copied to clipboard."
+- id: diff.title.added
+  translation: "Added content: click to reject (do not merge)"
+- id: diff.title.removed
+  translation: "Removed content: click to keep (undo removal)"
+- id: diff.sample.old
+  translation: "Hello World\nThis is a stable line.\nI will be removed."
+- id: diff.sample.new
+  translation: "Hello World!\nThis is a stable line.\nI am a new addition."
+- id: text.pageTitle
+  translation: "Text Converter"
+- id: text.title
+  translation: "Text Converter"
+- id: text.input.label
+  translation: "Input text:"
+- id: text.input.placeholder
+  translation: "Enter text to convert, e.g. hello world"
+- id: text.stats.label
+  translation: "Stats:"
+- id: text.stats.chars
+  translation: "chars"
+- id: text.stats.words
+  translation: "words"
+- id: text.stats.lines
+  translation: "lines"
+- id: text.action.clear
+  translation: "Clear"
+- id: text.section.common
+  translation: "Common formats"
+- id: text.action.uppercase
+  translation: "UPPERCASE"
+- id: text.action.lowercase
+  translation: "lowercase"
+- id: text.action.capitalize
+  translation: "Title Case"
+- id: text.action.sentenceCase
+  translation: "Sentence case"
+- id: text.section.programming
+  translation: "Programming & Others"
+- id: text.action.camelCase
+  translation: "camelCase"
+- id: text.action.pascalCase
+  translation: "PascalCase"
+- id: text.action.snakeCase
+  translation: "snake_case"
+- id: text.action.kebabCase
+  translation: "kebab-case"
+- id: text.action.alternatingCase
+  translation: "aLtErNaTiNg"
+- id: text.output.label
+  translation: "Output:"
+- id: text.output.placeholder
+  translation: "Converted result will appear here..."
+- id: text.action.copy
+  translation: "Copy Result"
+- id: text.message.copyEmpty
+  translation: "Nothing to copy."
+- id: text.message.copySuccess
+  translation: "Result copied to clipboard."
+- id: text.message.emptyInput
+  translation: "Please enter text."
+- id: text.message.convertSuccess
+  translation: "Conversion completed."

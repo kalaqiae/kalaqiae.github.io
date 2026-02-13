@@ -1,4 +1,4 @@
-{{ define "title" }}JSON 格式化工具 - {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ T "json.pageTitle" }} - {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
 <div class="tool-container">
@@ -9,7 +9,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
             </svg>
-            JSON 格式化与验证工具
+            {{ T "json.title" }}
         </h1>
 
         <!-- 错误和消息提示区 -->
@@ -18,33 +18,33 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <!-- 左侧：输入区 -->
             <div>
-                <label for="inputArea" class="block text-lg font-semibold mb-2 text-gray-700">输入 JSON/文本:</label>
-                <textarea id="inputArea" placeholder="在此粘贴 JSON 字符串或 JavaScript 对象..."></textarea>
+                <label for="inputArea" class="block text-lg font-semibold mb-2 text-gray-700">{{ T "json.input.label" }}</label>
+                <textarea id="inputArea" placeholder="{{ T "json.input.placeholder" }}"></textarea>
             </div>
 
             <!-- 右侧：输出区 -->
             <div>
-                <label for="outputArea" class="block text-lg font-semibold mb-2 text-gray-700">输出结果:</label>
-                <textarea id="outputArea" placeholder="处理后的 JSON 将显示在此..."></textarea>
+                <label for="outputArea" class="block text-lg font-semibold mb-2 text-gray-700">{{ T "json.output.label" }}</label>
+                <textarea id="outputArea" placeholder="{{ T "json.output.placeholder" }}"></textarea>
             </div>
         </div>
 
         <!-- 操作按钮 -->
         <div class="flex flex-wrap justify-center md:justify-start space-x-4 mt-6 col-span-1 lg:col-span-2">
             <button onclick="formatJson()" class="tool-button bg-green-600 text-white hover:bg-green-700">
-                ✨ 格式化 (Format)
+                ✨ {{ T "json.action.format" }}
             </button>
             <button onclick="minifyJson()" class="tool-button bg-red-600 text-white hover:bg-red-700">
-                📦 压缩 (Minify)
+                📦 {{ T "json.action.minify" }}
             </button>
             <button onclick="validateJson()" class="tool-button bg-yellow-500 text-gray-800 hover:bg-yellow-600">
-                ✅ 验证 (Validate)
+                ✅ {{ T "json.action.validate" }}
             </button>
             <button onclick="clearAll()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
-                🧹 清空
+                🧹 {{ T "json.action.clear" }}
             </button>
             <button onclick="copyOutput()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
-                📋 复制结果
+                📋 {{ T "json.action.copy" }}
             </button>
         </div>
     </div>
@@ -134,6 +134,20 @@
 </style>
 
 <script>
+    const i18n = {
+        emptyInput: '{{ T "json.message.emptyInput" }}',
+        parseFailed: '{{ T "json.message.parseFailed" }}',
+        formatSuccess: '{{ T "json.message.formatSuccess" }}',
+        formatFailed: '{{ T "json.message.formatFailed" }}',
+        minifySuccess: '{{ T "json.message.minifySuccess" }}',
+        minifyFailed: '{{ T "json.message.minifyFailed" }}',
+        validateSuccess: '{{ T "json.message.validateSuccess" }}',
+        validateFailed: '{{ T "json.message.validateFailed" }}',
+        cleared: '{{ T "json.message.cleared" }}',
+        copyEmpty: '{{ T "json.message.copyEmpty" }}',
+        copySuccess: '{{ T "json.message.copySuccess" }}'
+    };
+
     const inputArea = document.getElementById('inputArea');
     const outputArea = document.getElementById('outputArea');
     const messageBox = document.getElementById('messageBox');
@@ -162,7 +176,7 @@
         const input = inputArea.value.trim();
 
         if (!input) {
-            showMessage("输入内容不能为空。", 'error');
+            showMessage(i18n.emptyInput, 'error');
             return null;
         }
 
@@ -170,7 +184,7 @@
             // 尝试解析 JSON
             return JSON.parse(input);
         } catch (e) {
-            showMessage(`JSON 解析失败：${e.message.substring(0, 100)}...`, 'error');
+            showMessage(`${i18n.parseFailed}${e.message.substring(0, 100)}...`, 'error');
             outputArea.value = "";
             return null;
         }
@@ -187,9 +201,9 @@
             // 使用 JSON.stringify 的第三个参数设置缩进 (2个空格)
             const formatted = JSON.stringify(obj, null, 2);
             outputArea.value = formatted;
-            showMessage("JSON 格式化成功！", 'success');
+            showMessage(i18n.formatSuccess, 'success');
         } catch (e) {
-            showMessage("格式化失败。", 'error');
+            showMessage(i18n.formatFailed, 'error');
             outputArea.value = "";
         }
     }
@@ -205,9 +219,9 @@
             // 不使用缩进 (null, 0 或不传参)
             const minified = JSON.stringify(obj);
             outputArea.value = minified;
-            showMessage("JSON 压缩成功！", 'success');
+            showMessage(i18n.minifySuccess, 'success');
         } catch (e) {
-            showMessage("压缩失败。", 'error');
+            showMessage(i18n.minifyFailed, 'error');
             outputArea.value = "";
         }
     }
@@ -220,15 +234,15 @@
         const input = inputArea.value.trim();
 
         if (!input) {
-            showMessage("输入内容不能为空。", 'error');
+            showMessage(i18n.emptyInput, 'error');
             return;
         }
 
         try {
             JSON.parse(input);
-            showMessage("✅ JSON 语法有效！", 'success');
+            showMessage(i18n.validateSuccess, 'success');
         } catch (e) {
-            showMessage(`❌ JSON 验证失败：${e.message}`, 'error');
+            showMessage(`${i18n.validateFailed}${e.message}`, 'error');
         }
         outputArea.value = ""; // 验证通常不需要改变输出框
     }
@@ -240,7 +254,7 @@
         inputArea.value = "";
         outputArea.value = "";
         messageBox.style.display = 'none';
-        showMessage("已清空所有区域。", 'info');
+        showMessage(i18n.cleared, 'info');
     }
 
     /**
@@ -249,7 +263,7 @@
     function copyOutput() {
         const output = outputArea.value;
         if (!output) {
-            showMessage("输出结果为空，无法复制。", 'error');
+            showMessage(i18n.copyEmpty, 'error');
             return;
         }
 
@@ -258,7 +272,7 @@
         document.execCommand('copy');
         outputArea.setSelectionRange(0, 0); // 取消选中
 
-        showMessage("结果已复制到剪贴板！", 'info');
+        showMessage(i18n.copySuccess, 'info');
     }
 </script>
 {{ end }}

@@ -1,0 +1,666 @@
+- id: home.section.games
+  translation: "游戏精选"
+- id: home.games.snake.title
+  translation: "贪吃蛇"
+- id: home.games.snake.desc
+  translation: "经典街机游戏，挑战最高分"
+- id: home.games.2048.title
+  translation: "2048"
+- id: home.games.2048.desc
+  translation: "经典的数字叠加益智游戏，目标合成 2048"
+- id: home.games.flappy.title
+  translation: "Flappy Bird"
+- id: home.games.flappy.desc
+  translation: "控制小鸟穿越管道，飞飞飞"
+- id: home.viewAllGames
+  translation: "查看所有游戏"
+- id: home.section.tools
+  translation: "实用工具"
+- id: home.tools.json.title
+  translation: "JSON 格式化"
+- id: home.tools.json.desc
+  translation: "美化、压缩、验证 JSON 数据结构"
+- id: home.tools.timestamp.title
+  translation: "时间戳转换"
+- id: home.tools.timestamp.desc
+  translation: "Unix 时间戳与日期时间一键互转"
+- id: home.tools.base64.title
+  translation: "Base64 加解密"
+- id: home.tools.base64.desc
+  translation: "文本与 Base64 编码之间的快速转换"
+- id: home.viewAllTools
+  translation: "查看所有工具"
+- id: home.section.latest
+  translation: "最新发布"
+- id: home.viewAllPosts
+  translation: "查看所有文章"
+- id: flappy.title
+  translation: "Flappy Bird - 优化版"
+- id: flappy.score.current
+  translation: "当前得分"
+- id: flappy.score.best
+  translation: "最佳记录"
+- id: flappy.message.tapToStart
+  translation: "点击屏幕开始游戏"
+- id: flappy.instructions.title
+  translation: "游戏说明"
+- id: flappy.instructions.keyboard
+  translation: "键盘控制: 空格键或上箭头"
+- id: flappy.instructions.mouse
+  translation: "鼠标控制: 点击屏幕跳跃"
+- id: flappy.instructions.score
+  translation: "通过管道间隙获得分数"
+- id: flappy.instructions.avoid
+  translation: "避免撞到管道或地面"
+- id: flappy.instructions.challenge
+  translation: "挑战最高分记录"
+- id: flappy.ui.ready
+  translation: "准备开始"
+- id: flappy.ui.readyHint
+  translation: "点击或按空格键开始"
+- id: flappy.ui.gameOver
+  translation: "游戏结束"
+- id: flappy.ui.currentScoreLabel
+  translation: "当前得分:"
+- id: flappy.ui.bestScoreLabel
+  translation: "最佳记录:"
+- id: flappy.ui.restart
+  translation: "重新开始"
+- id: flappy.message.running
+  translation: "游戏进行中"
+- id: flappy.message.overRestart
+  translation: "游戏结束！点击屏幕重新开始"
+- id: snake.title
+  translation: "贪吃蛇"
+- id: snake.stat.score
+  translation: "当前得分"
+- id: snake.stat.highScore
+  translation: "最高记录"
+- id: snake.stat.level
+  translation: "游戏等级"
+- id: snake.message.startHint
+  translation: "点击“开始游戏”开始"
+- id: snake.button.start
+  translation: "开始游戏"
+- id: snake.button.pause
+  translation: "暂停游戏"
+- id: snake.button.reset
+  translation: "重新开始"
+- id: snake.button.restart
+  translation: "重新开始"
+- id: snake.button.resume
+  translation: "继续游戏"
+- id: snake.instructions.title
+  translation: "游戏说明"
+- id: snake.instructions.keyboard
+  translation: "键盘控制: 方向键或 WASD"
+- id: snake.instructions.pause
+  translation: "空格键: 暂停/继续游戏"
+- id: snake.instructions.food
+  translation: "吃到食物增加长度和得分"
+- id: snake.instructions.avoid
+  translation: "避免撞墙或自己的身体"
+- id: snake.instructions.challenge
+  translation: "挑战最高分记录"
+- id: snake.message.levelUp
+  translation: "恭喜升级！当前等级: {level}"
+- id: snake.message.gameOver
+  translation: "游戏结束！最终得分: {score}"
+- id: snake.message.started
+  translation: "游戏开始！控制小蛇吃掉食物"
+- id: snake.message.paused
+  translation: "游戏已暂停"
+- id: snake.message.resumed
+  translation: "游戏继续"
+- id: snake.message.reset
+  translation: "游戏已重置，点击“开始游戏”开始"
+- id: games.page.title
+  translation: "游戏中心"
+- id: games.card.snake.title
+  translation: "贪吃蛇"
+- id: games.card.snake.desc
+  translation: "经典街机游戏，挑战最高分"
+- id: games.card.2048.title
+  translation: "2048"
+- id: games.card.2048.desc
+  translation: "经典的数字叠加益智游戏，目标合成 2048"
+- id: games.card.flappy.title
+  translation: "Flappy Bird"
+- id: games.card.flappy.desc
+  translation: "控制小鸟穿越管道，飞飞飞"
+- id: games.card.sudoku.title
+  translation: "数独"
+- id: games.card.sudoku.desc
+  translation: "数字填充游戏，锻炼逻辑思维"
+- id: games.card.bulls.title
+  translation: "猜数字"
+- id: games.card.bulls.desc
+  translation: "根据线索，推理出正确答案"
+- id: tools.page.title
+  translation: "实用工具箱"
+- id: tools.card.base64.title
+  translation: "Base64 加解密"
+- id: tools.card.base64.desc
+  translation: "快速将文本编码为 Base64 或将 Base64 字符串解码回文本。"
+- id: tools.card.timestamp.title
+  translation: "时间戳转换"
+- id: tools.card.timestamp.desc
+  translation: "Unix 时间戳与日期时间一键互转。"
+- id: tools.card.json.title
+  translation: "JSON 格式化"
+- id: tools.card.json.desc
+  translation: "美化、压缩和验证 JSON 数据结构。"
+- id: tools.card.url.title
+  translation: "URL 编/解码"
+- id: tools.card.url.desc
+  translation: "处理 URL 查询参数中的特殊字符，进行编码和解码。"
+- id: tools.card.hash.title
+  translation: "哈希值生成器"
+- id: tools.card.hash.desc
+  translation: "计算文本的 MD5, SHA-1, SHA-256 和 SHA-512 哈希值。"
+- id: tools.card.qrcode.title
+  translation: "QR 码生成器"
+- id: tools.card.qrcode.desc
+  translation: "将文本或链接转换为可下载的 SVG/PNG 格式 QR 码。"
+- id: tools.card.color.title
+  translation: "颜色转换器"
+- id: tools.card.color.desc
+  translation: "HEX, RGB, HSL 格式互相转换，支持实时预览。"
+- id: tools.card.diff.title
+  translation: "文本差异对比"
+- id: tools.card.diff.desc
+  translation: "比较两段文本的差异，支持行级、字符级和 JSON 对比。"
+- id: tools.card.text.title
+  translation: "文本格式转换"
+- id: tools.card.text.desc
+  translation: "大小写转换、驼峰命名、下划线命名等文字格式化工具。"
+- id: game2048.title
+  translation: "2048"
+- id: game2048.scoreLabel
+  translation: "分数"
+- id: game2048.bestLabel
+  translation: "最高"
+- id: game2048.newGame
+  translation: "新游戏"
+- id: game2048.rulesLabel
+  translation: "游戏规则："
+- id: game2048.rulesText
+  translation: "使用方向键或滑动屏幕移动方块。当两个相同数字的方块碰撞时，它们会合并成一个数字翻倍的方块。"
+- id: game2048.alert.gameOver
+  translation: "游戏结束"
+- id: game2048.alert.win
+  translation: "恭喜！你获得了2048！🎉"
+- id: sudoku.pageTitle
+  translation: "数独 - 纸墨时光"
+- id: sudoku.stat.time
+  translation: "时间"
+- id: sudoku.stat.score
+  translation: "得分"
+- id: sudoku.stat.highScore
+  translation: "最高分"
+- id: sudoku.difficulty.easy
+  translation: "简单"
+- id: sudoku.difficulty.medium
+  translation: "中等"
+- id: sudoku.difficulty.hard
+  translation: "困难"
+- id: sudoku.recordSuffix
+  translation: "纪录"
+- id: sudoku.gameOver.title
+  translation: "📜 游戏结束"
+- id: sudoku.gameOver.difficulty
+  translation: "难度"
+- id: sudoku.gameOver.score
+  translation: "得分"
+- id: sudoku.gameOver.time
+  translation: "耗时"
+- id: sudoku.gameOver.newRecord
+  translation: "✨ 刷新了纪录！"
+- id: bullsAndCows.pageTitle
+  translation: "Bulls & Cows 猜数字游戏"
+- id: bullsAndCows.title
+  translation: "猜数字"
+- id: bullsAndCows.stat.time
+  translation: "已用时间"
+- id: bullsAndCows.digits.label
+  translation: "位数"
+- id: bullsAndCows.digits.unit
+  translation: "位"
+- id: bullsAndCows.allowRepeat
+  translation: "允许重复数字"
+- id: bullsAndCows.copyAnswer
+  translation: "复制答案"
+- id: bullsAndCows.newGame
+  translation: "新游戏"
+- id: bullsAndCows.guess.placeholder
+  translation: "输入你的猜测"
+- id: bullsAndCows.submit
+  translation: "提交"
+- id: bullsAndCows.clear
+  translation: "清除"
+- id: bullsAndCows.history.emptyStart
+  translation: "开始提交你的第一次猜测吧。"
+- id: bullsAndCows.history.emptyNewGame
+  translation: "开始新游戏并提交你的第一次猜测吧。"
+- id: bullsAndCows.records.title
+  translation: "最佳记录"
+- id: bullsAndCows.records.mode
+  translation: "(当前模式)"
+- id: bullsAndCows.records.bestTime
+  translation: "最快时间"
+- id: bullsAndCows.records.bestGuesses
+  translation: "最少猜次"
+- id: bullsAndCows.rules.title
+  translation: "游戏说明"
+- id: bullsAndCows.rules.item1
+  translation: "系统会生成一个长度为 N（3-6位）的数字组合"
+- id: bullsAndCows.rules.item2
+  translation: "根据\"允许重复\"规则决定是否可以有重复数字"
+- id: bullsAndCows.rules.item3
+  translation: "提交一个与你所选长度相同的数字串"
+- id: bullsAndCows.rules.item4
+  translation: "A = 数字与位置都正确"
+- id: bullsAndCows.rules.item5
+  translation: "B = 数字正确但位置错误"
+- id: bullsAndCows.rules.item6
+  translation: "提交后会在左侧显示历史记录"
+- id: bullsAndCows.rules.item7
+  translation: "游戏会记录最快猜中时间和最少猜次"
+- id: bullsAndCows.alert.digitsOnly
+  translation: "请输入数字。"
+- id: bullsAndCows.alert.digitsLength
+  translation: "请输入 {digits} 位数字。"
+- id: bullsAndCows.alert.noRepeat
+  translation: "模式设置为\"不可重复\"，请输入不重复的数字。"
+- id: bullsAndCows.alert.win
+  translation: "恭喜你！猜对了\n答案：{secret}\n用时：{time}，猜测次数：{count}"
+- id: bullsAndCows.toast.copySuccess
+  translation: "已复制答案到剪贴板：{secret}"
+- id: bullsAndCows.toast.copyFallback
+  translation: "已复制答案到剪贴板（回退方法）：{secret}"
+- id: bullsAndCows.history.attempt
+  translation: "第 {count} 次"
+- id: bullsAndCows.records.metaGuessDate
+  translation: "{count} 次 • {date}"
+- id: bullsAndCows.records.metaTimeDate
+  translation: "{time} • {date}"
+- id: bullsAndCows.records.guessCount
+  translation: "{count} 次"
+- id: bullsAndCows.debug.setSecret
+  translation: "已设置 secret（仅本地）"
+- id: base64.pageTitle
+  translation: "Base64 加解密工具"
+- id: base64.title
+  translation: "Base64 加解密工具"
+- id: base64.input.label
+  translation: "输入文本或 Base64 字符串:"
+- id: base64.input.placeholder
+  translation: "在此输入需要处理的文本..."
+- id: base64.output.label
+  translation: "输出结果:"
+- id: base64.output.placeholder
+  translation: "处理结果将显示在此..."
+- id: base64.action.encode
+  translation: "编码 (Encode)"
+- id: base64.action.decode
+  translation: "解码 (Decode)"
+- id: base64.action.clear
+  translation: "清空"
+- id: base64.action.copy
+  translation: "复制结果"
+- id: base64.message.emptyInput
+  translation: "输入内容不能为空！"
+- id: base64.message.encodeSuccess
+  translation: "编码成功！"
+- id: base64.message.decodeSuccess
+  translation: "解码成功！"
+- id: base64.message.invalidBase64
+  translation: "操作失败：输入的 Base64 格式无效或包含非 UTF-8 字符。"
+- id: base64.message.cleared
+  translation: "已清空所有区域。"
+- id: base64.message.copyEmpty
+  translation: "输出结果为空，无法复制。"
+- id: base64.message.copySuccess
+  translation: "结果已复制到剪贴板！"
+- id: json.pageTitle
+  translation: "JSON 格式化"
+- id: json.title
+  translation: "JSON 格式化"
+- id: json.input.label
+  translation: "输入 JSON："
+- id: json.input.placeholder
+  translation: "在此粘贴 JSON..."
+- id: json.output.label
+  translation: "输出结果："
+- id: json.output.placeholder
+  translation: "格式化结果显示在这里..."
+- id: json.action.format
+  translation: "格式化"
+- id: json.action.minify
+  translation: "压缩"
+- id: json.action.validate
+  translation: "校验"
+- id: json.action.clear
+  translation: "清空"
+- id: json.action.copy
+  translation: "复制结果"
+- id: json.message.emptyInput
+  translation: "输入内容不能为空。"
+- id: json.message.parseFailed
+  translation: "解析失败："
+- id: json.message.formatSuccess
+  translation: "格式化成功。"
+- id: json.message.formatFailed
+  translation: "格式化失败。"
+- id: json.message.minifySuccess
+  translation: "压缩成功。"
+- id: json.message.minifyFailed
+  translation: "压缩失败。"
+- id: json.message.validateSuccess
+  translation: "JSON 合法。"
+- id: json.message.validateFailed
+  translation: "JSON 无效："
+- id: json.message.cleared
+  translation: "已清空。"
+- id: json.message.copyEmpty
+  translation: "没有可复制内容。"
+- id: json.message.copySuccess
+  translation: "已复制到剪贴板。"
+- id: url.pageTitle
+  translation: "URL 编码与解码工具"
+- id: url.title
+  translation: "URL 编码与解码工具"
+- id: url.input.label
+  translation: "输入内容："
+- id: url.input.placeholder
+  translation: "请输入要编码或解码的 URL 文本..."
+- id: url.output.label
+  translation: "输出结果："
+- id: url.output.placeholder
+  translation: "结果将显示在这里..."
+- id: url.action.encode
+  translation: "编码"
+- id: url.action.decode
+  translation: "解码"
+- id: url.action.clear
+  translation: "清空"
+- id: url.action.copy
+  translation: "复制结果"
+- id: url.notice.title
+  translation: "提示"
+- id: url.notice.item1
+  translation: "编码可保留查询字符，避免 URL 出错。"
+- id: url.notice.item2
+  translation: "解码会将 %xx 还原为可读文本。"
+- id: url.message.emptyInput
+  translation: "输入内容不能为空。"
+- id: url.message.encodeSuccess
+  translation: "编码成功。"
+- id: url.message.decodeSuccess
+  translation: "解码成功。"
+- id: url.message.invalidInput
+  translation: "输入内容无效。"
+- id: url.message.cleared
+  translation: "已清空。"
+- id: url.message.copyEmpty
+  translation: "输出结果为空。"
+- id: url.message.copySuccess
+  translation: "已复制到剪贴板。"
+- id: timestamp.pageTitle
+  translation: "时间戳转换工具"
+- id: timestamp.title
+  translation: "时间戳转换工具"
+- id: timestamp.currentTime.label
+  translation: "当前本地时间"
+- id: timestamp.currentTime.currentSecondLabel
+  translation: "当前 Unix 时间戳（秒）："
+- id: timestamp.action.copy
+  translation: "复制"
+- id: timestamp.section.dateToTimestamp
+  translation: "日期/时间 → Unix 时间戳"
+- id: timestamp.input.datetime.label
+  translation: "日期/时间："
+- id: timestamp.input.datetime.placeholder
+  translation: "YYYY-MM-DD HH:mm:ss"
+- id: timestamp.action.fillCurrent
+  translation: "填入当前时间"
+- id: timestamp.precision.label
+  translation: "精度："
+- id: timestamp.precision.second
+  translation: "秒"
+- id: timestamp.precision.millisecond
+  translation: "毫秒"
+- id: timestamp.action.toTimestamp
+  translation: "转换为时间戳"
+- id: timestamp.output.timestamp.label
+  translation: "时间戳结果"
+- id: timestamp.output.timestamp.placeholder
+  translation: "时间戳结果将显示在此..."
+- id: timestamp.action.copyResult
+  translation: "复制结果"
+- id: timestamp.section.timestampToDate
+  translation: "Unix 时间戳 → 日期/时间"
+- id: timestamp.input.timestamp.label
+  translation: "时间戳："
+- id: timestamp.input.timestamp.placeholder
+  translation: "请输入 10 或 13 位时间戳"
+- id: timestamp.action.toDatetime
+  translation: "转换为日期时间"
+- id: timestamp.output.datetime.label
+  translation: "日期时间结果"
+- id: timestamp.output.datetime.placeholder
+  translation: "日期时间结果将显示在此..."
+- id: timestamp.action.clearAll
+  translation: "清空全部"
+- id: timestamp.message.emptyDatetime
+  translation: "请输入日期时间。"
+- id: timestamp.message.invalidDatetime
+  translation: "日期时间格式无效。"
+- id: timestamp.message.convertError
+  translation: "转换失败。"
+- id: timestamp.message.emptyTimestamp
+  translation: "请输入时间戳。"
+- id: timestamp.message.invalidTimestampLength
+  translation: "时间戳必须是 10 或 13 位。"
+- id: timestamp.message.convertedSecond
+  translation: "已识别为秒级时间戳。"
+- id: timestamp.message.convertedMillisecond
+  translation: "已识别为毫秒级时间戳。"
+- id: timestamp.message.invalidTimestamp
+  translation: "时间戳无效。"
+- id: timestamp.message.filledCurrent
+  translation: "已填入当前时间。"
+- id: timestamp.message.emptyCopy
+  translation: "没有可复制内容。"
+- id: timestamp.message.copied
+  translation: "已复制到剪贴板。"
+- id: timestamp.message.cleared
+  translation: "已清空。"
+- id: timestamp.message.convertSuccessSecond
+  translation: "已转换为秒级时间戳。"
+- id: timestamp.message.convertSuccessMillisecond
+  translation: "已转换为毫秒级时间戳。"
+- id: hash.pageTitle
+  translation: "哈希值生成器"
+- id: hash.title
+  translation: "哈希值生成器 (MD5 / SHA)"
+- id: hash.input.label
+  translation: "输入文本："
+- id: hash.input.placeholder
+  translation: "在此输入需要计算哈希的文本..."
+- id: hash.input.lengthLabel
+  translation: "当前输入长度："
+- id: hash.input.lengthUnit
+  translation: "字符"
+- id: hash.status.computing
+  translation: "🔄 计算中..."
+- id: hash.action.clear
+  translation: "清空输入"
+- id: hash.result.title
+  translation: "哈希计算结果"
+- id: hash.result.placeholder
+  translation: "输入文本后自动计算"
+- id: hash.message.cryptoUnsupported
+  translation: "浏览器不支持 Web Crypto API。"
+- id: hash.message.computeError
+  translation: "计算过程中出现错误，请重试。"
+- id: hash.message.cleared
+  translation: "已清空输入区域。"
+- id: hash.message.copyEmpty
+  translation: "结果为空或计算失败，无法复制。"
+- id: hash.message.copySuccessPrefix
+  translation: ""
+- id: hash.message.copySuccessSuffix
+  translation: " 已复制到剪贴板！"
+- id: hash.message.errorPrefix
+  translation: "Error: "
+- id: hash.message.errorSuffix
+  translation: " 计算失败"
+- id: qrcode.pageTitle
+  translation: "QR 码生成器"
+- id: qrcode.title
+  translation: "QR 码生成器"
+- id: qrcode.input.label
+  translation: "输入内容："
+- id: qrcode.input.placeholder
+  translation: "请输入文字或链接"
+- id: qrcode.input.countLabel
+  translation: "字符数："
+- id: qrcode.action.generate
+  translation: "生成 QR 码"
+- id: qrcode.result.label
+  translation: "生成结果："
+- id: qrcode.message.emptyInput
+  translation: "请输入内容后再点击生成。"
+- id: qrcode.message.generated
+  translation: "QR 码已生成 ✔"
+- id: qrcode.message.idle
+  translation: "请输入内容并点击“生成 QR 码”"
+- id: color.pageTitle
+  translation: "颜色转换工具"
+- id: color.title
+  translation: "颜色转换工具 (HEX / RGB / HSL)"
+- id: color.preview.label
+  translation: "颜色预览"
+- id: color.preview.hint
+  translation: "点击色块或下方条形选择颜色"
+- id: color.rgb.label
+  translation: "RGB（红、绿、蓝）"
+- id: color.hsl.label
+  translation: "HSL（色相、饱和度、亮度）"
+- id: color.message.copiedPrefix
+  translation: "已复制："
+- id: diff.pageTitle
+  translation: "文本差异对比工具"
+- id: diff.title
+  translation: "文本差异对比与合并"
+- id: diff.mode.label
+  translation: "对比模式："
+- id: diff.mode.lines
+  translation: "按行对比 (Line)"
+- id: diff.mode.chars
+  translation: "按字符对比 (Char)"
+- id: diff.mode.words
+  translation: "按单词对比 (Word)"
+- id: diff.mode.json
+  translation: "JSON 对比"
+- id: diff.action.compare
+  translation: "开始对比"
+- id: diff.action.clear
+  translation: "清空"
+- id: diff.input.oldLabel
+  translation: "原始文本 (Original)"
+- id: diff.input.newLabel
+  translation: "新文本 (New)"
+- id: diff.action.paste
+  translation: "粘贴"
+- id: diff.input.oldPlaceholder
+  translation: "在此输入或粘贴原始文本..."
+- id: diff.input.newPlaceholder
+  translation: "在此输入或粘贴修改后的文本..."
+- id: diff.result.title
+  translation: "差异视图 (点击色块进行合并操作)"
+- id: diff.result.added
+  translation: "新增:"
+- id: diff.result.removed
+  translation: "删除:"
+- id: diff.legend.added
+  translation: "绿色：新增 (点击可拒绝)"
+- id: diff.legend.removed
+  translation: "红色：删除 (点击可撤销)"
+- id: diff.merge.title
+  translation: "合并结果 (Result)"
+- id: diff.action.copyResult
+  translation: "复制结果"
+- id: diff.merge.placeholder
+  translation: "合并后的结果将显示在这里..."
+- id: diff.message.pasteError
+  translation: "无法访问剪贴板，请手动粘贴"
+- id: diff.message.emptyInput
+  translation: "请输入需要对比的文本"
+- id: diff.message.compareError
+  translation: "对比过程中发生错误，请检查输入内容"
+- id: diff.message.copySuccess
+  translation: "合并结果已复制到剪贴板"
+- id: diff.title.added
+  translation: "新增内容：点击拒绝 (不合并)"
+- id: diff.title.removed
+  translation: "删除内容：点击保留 (撤销删除)"
+- id: diff.sample.old
+  translation: "Hello World\nThis is a stable line.\nI will be removed."
+- id: diff.sample.new
+  translation: "Hello World!\nThis is a stable line.\nI am a new addition."
+- id: text.pageTitle
+  translation: "文本格式转换工具"
+- id: text.title
+  translation: "文本格式转换工具"
+- id: text.input.label
+  translation: "输入文本："
+- id: text.input.placeholder
+  translation: "在此输入需要转换的文本，例如：hello world"
+- id: text.stats.label
+  translation: "统计:"
+- id: text.stats.chars
+  translation: "字符"
+- id: text.stats.words
+  translation: "单词"
+- id: text.stats.lines
+  translation: "行"
+- id: text.action.clear
+  translation: "清空"
+- id: text.section.common
+  translation: "常用格式"
+- id: text.action.uppercase
+  translation: "全大写 (UPPER)"
+- id: text.action.lowercase
+  translation: "全小写 (lower)"
+- id: text.action.capitalize
+  translation: "单词首大写 (Title Case)"
+- id: text.action.sentenceCase
+  translation: "句首大写 (Sentence)"
+- id: text.section.programming
+  translation: "编程命名 & 其他"
+- id: text.action.camelCase
+  translation: "驼峰 (camelCase)"
+- id: text.action.pascalCase
+  translation: "大驼峰 (PascalCase)"
+- id: text.action.snakeCase
+  translation: "下划线 (snake_case)"
+- id: text.action.kebabCase
+  translation: "短横线 (kebab-case)"
+- id: text.action.alternatingCase
+  translation: "乱序 (aLtErNaTiNg)"
+- id: text.output.label
+  translation: "转换结果："
+- id: text.output.placeholder
+  translation: "转换后的结果将显示在这里..."
+- id: text.action.copy
+  translation: "复制结果"
+- id: text.message.copyEmpty
+  translation: "没有可复制的内容"
+- id: text.message.copySuccess
+  translation: "结果已复制到剪贴板"
+- id: text.message.emptyInput
+  translation: "请输入文本"
+- id: text.message.convertSuccess
+  translation: "转换成功！"

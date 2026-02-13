@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}zh-CN{{ end }}">
+<html lang="{{ with .Site.Language.Lang }}{{ . }}{{ else }}zh-CN{{ end }}">
 
 <head>
   <meta charset="utf-8">
@@ -183,57 +183,65 @@
   <main class="custom-homepage">
 
     <section class="section-block game-section">
-      <h3>🎮 游戏精选</h3>
+      <h3>🎮 {{ T "home.section.games" }}</h3>
       <div class="item-grid">
-        <a href="{{ "games/snake" | relURL }}" class="item-card">
+        <a href="{{ "games/snake" | relLangURL }}" class="item-card">
           <span class="card-icon">🐍</span>
-          <h4>贪吃蛇</h4>
-          <p>经典街机游戏，挑战最高分</p>
+          <h4>{{ T "home.games.snake.title" }}</h4>
+          <p>{{ T "home.games.snake.desc" }}</p>
         </a>
 
-        <a href="{{ "games/game-2048" | relURL }}" class="item-card">
+        <a href="{{ "games/game-2048" | relLangURL }}" class="item-card">
           <span class="card-icon">🔢</span>
-          <h4>2048</h4>
-          <p>经典的数字叠加益智游戏，目标合成 2048</p>
+          <h4>{{ T "home.games.2048.title" }}</h4>
+          <p>{{ T "home.games.2048.desc" }}</p>
         </a>
 
-        <a href="{{ "games/flappy-bird" | relURL }}" class="item-card">
+        <a href="{{ "games/flappy-bird" | relLangURL }}" class="item-card">
           <span class="card-icon">🐦</span>
-          <h4>Flappy Bird</h4>
-          <p>控制小鸟穿越管道，飞飞飞</p>
+          <h4>{{ T "home.games.flappy.title" }}</h4>
+          <p>{{ T "home.games.flappy.desc" }}</p>
         </a>
       </div>
-      <a href="{{ "games/" | relURL }}" class="view-all-link">查看所有游戏 &rarr;</a>
+      <a href="{{ "games/" | relLangURL }}" class="view-all-link">{{ T "home.viewAllGames" }} &rarr;</a>
     </section>
 
     <section class="section-block tools-section">
-      <h3>🛠️ 实用工具</h3>
+      <h3>🛠️ {{ T "home.section.tools" }}</h3>
       <div class="item-grid">
-        <a href="{{ "tools/json-formatter" | relURL }}" class="item-card">
+        <a href="{{ "tools/json-formatter" | relLangURL }}" class="item-card">
           <span class="card-icon">🎨</span>
-          <h4>JSON 格式化</h4>
-          <p>美化、压缩、验证 JSON 数据结构</p>
+          <h4>{{ T "home.tools.json.title" }}</h4>
+          <p>{{ T "home.tools.json.desc" }}</p>
         </a>
 
-        <a href="{{ "tools/timestamp" | relURL }}" class="item-card">
+        <a href="{{ "tools/timestamp" | relLangURL }}" class="item-card">
           <span class="card-icon">⏱️</span>
-          <h4>时间戳转换</h4>
-          <p>Unix 时间戳与日期时间一键互转</p>
+          <h4>{{ T "home.tools.timestamp.title" }}</h4>
+          <p>{{ T "home.tools.timestamp.desc" }}</p>
         </a>
 
-        <a href="{{ "tools/base64" | relURL }}" class="item-card">
+        <a href="{{ "tools/base64" | relLangURL }}" class="item-card">
           <span class="card-icon">🔗</span>
-          <h4>Base64 加解密</h4>
-          <p>文本与 Base64 编码之间的快速转换</p>
+          <h4>{{ T "home.tools.base64.title" }}</h4>
+          <p>{{ T "home.tools.base64.desc" }}</p>
         </a>
       </div>
-      <a href="{{ "tools/" | relURL }}" class="view-all-link">查看所有工具 &rarr;</a>
+      <a href="{{ "tools/" | relLangURL }}" class="view-all-link">{{ T "home.viewAllTools" }} &rarr;</a>
     </section>
 
+    {{ $latestPages := where .Site.RegularPages "Type" "post" }}
+    {{ if and (eq (len $latestPages) 0) (ne .Site.Language.Lang "zh-cn") }}
+      {{ $fallbackSites := where .Sites "Language.Lang" "zh-cn" }}
+      {{ if gt (len $fallbackSites) 0 }}
+        {{ $fallbackSite := index $fallbackSites 0 }}
+        {{ $latestPages = where $fallbackSite.RegularPages "Type" "post" }}
+      {{ end }}
+    {{ end }}
     <section class="section-block latest-posts-section">
-      <h3>📝 最新发布</h3>
+      <h3>📝 {{ T "home.section.latest" }}</h3>
       <ul class="post-list">
-        {{ range first 3 (where .Site.RegularPages "Type" "post") }}
+        {{ range first 3 $latestPages }}
         <li>
           <a href="{{ .RelPermalink }}" class="post-link">
             <span class="post-title">{{ .Title }}</span>
@@ -242,7 +250,7 @@
         </li>
         {{ end }}
       </ul>
-      <a href="/blog/" class="view-all-link">查看所有文章 &rarr;</a>
+      <a href="{{ "blog/" | relLangURL }}" class="view-all-link">{{ T "home.viewAllPosts" }} &rarr;</a>
     </section>
 
   </main>

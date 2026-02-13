@@ -1,4 +1,4 @@
-{{ define "title" }}URL 编码与解码工具 - {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ T "url.pageTitle" }} - {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
 <div class="tool-container">
@@ -10,7 +10,7 @@
                     d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.879a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
                 </path>
             </svg>
-            URL 编码与解码工具
+            {{ T "url.title" }}
         </h1>
 
         <!-- 错误和消息提示区 -->
@@ -19,38 +19,38 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- 左侧：输入区 -->
             <div>
-                <label for="inputArea" class="block text-lg font-semibold mb-2 text-gray-700">输入 URL 或查询字符串:</label>
-                <textarea id="inputArea" placeholder="例如: https://example.com/search?q=中文搜索"></textarea>
+                <label for="inputArea" class="block text-lg font-semibold mb-2 text-gray-700">{{ T "url.input.label" }}</label>
+                <textarea id="inputArea" placeholder="{{ T "url.input.placeholder" }}"></textarea>
             </div>
 
             <!-- 右侧：输出区 -->
             <div>
-                <label for="outputArea" class="block text-lg font-semibold mb-2 text-gray-700">输出结果:</label>
-                <textarea id="outputArea" placeholder="处理结果将显示在此..."></textarea>
+                <label for="outputArea" class="block text-lg font-semibold mb-2 text-gray-700">{{ T "url.output.label" }}</label>
+                <textarea id="outputArea" placeholder="{{ T "url.output.placeholder" }}"></textarea>
             </div>
         </div>
 
         <!-- 操作按钮 -->
         <div class="flex flex-wrap justify-center md:justify-start space-x-4 mt-6">
             <button onclick="handleUrl(true)" class="tool-button bg-blue-600 text-white hover:bg-blue-700">
-                🚀 编码 (Encode)
+                🚀 {{ T "url.action.encode" }}
             </button>
             <button onclick="handleUrl(false)" class="tool-button bg-gray-500 text-white hover:bg-gray-600">
-                🔏 解码 (Decode)
+                🔏 {{ T "url.action.decode" }}
             </button>
             <button onclick="clearAll()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
-                🧹 清空
+                🧹 {{ T "url.action.clear" }}
             </button>
             <button onclick="copyOutput()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
-                📋 复制结果
+                📋 {{ T "url.action.copy" }}
             </button>
         </div>
 
         <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-            <p class="font-bold mb-1">💡 注意事项:</p>
+            <p class="font-bold mb-1">💡 {{ T "url.notice.title" }}</p>
             <ul class="list-disc list-inside">
-                <li>本工具使用 `encodeURIComponent` 和 `decodeURIComponent` 处理 URL 中**非结构部分**（如查询参数值、路径段）。</li>
-                <li>它不会编码 `/`、`?`、`=` 等 URL 结构符号。</li>
+                <li>{{ T "url.notice.item1" }}</li>
+                <li>{{ T "url.notice.item2" }}</li>
             </ul>
         </div>
     </div>
@@ -128,6 +128,16 @@
 </style>
 
 <script>
+    const i18n = {
+        emptyInput: '{{ T "url.message.emptyInput" }}',
+        encodeSuccess: '{{ T "url.message.encodeSuccess" }}',
+        decodeSuccess: '{{ T "url.message.decodeSuccess" }}',
+        invalidInput: '{{ T "url.message.invalidInput" }}',
+        cleared: '{{ T "url.message.cleared" }}',
+        copyEmpty: '{{ T "url.message.copyEmpty" }}',
+        copySuccess: '{{ T "url.message.copySuccess" }}'
+    };
+
     const inputArea = document.getElementById('inputArea');
     const outputArea = document.getElementById('outputArea');
     const messageBox = document.getElementById('messageBox');
@@ -155,7 +165,7 @@
         const input = inputArea.value.trim();
 
         if (!input) {
-            showMessage("输入内容不能为空！", 'error');
+            showMessage(i18n.emptyInput, 'error');
             return;
         }
 
@@ -164,17 +174,17 @@
             if (isEncode) {
                 // 使用 encodeURIComponent 处理查询参数或路径段
                 result = encodeURIComponent(input);
-                showMessage("URL 编码成功！", 'info');
+                showMessage(i18n.encodeSuccess, 'info');
             } else {
                 // 使用 decodeURIComponent 解码
                 result = decodeURIComponent(input);
-                showMessage("URL 解码成功！", 'info');
+                showMessage(i18n.decodeSuccess, 'info');
             }
             outputArea.value = result;
 
         } catch (e) {
             // 捕获无效 URL 编码字符或 URI 异常
-            showMessage("操作失败：输入的字符串格式无效或包含无法解码的字符。", 'error');
+            showMessage(i18n.invalidInput, 'error');
             console.error("URL Encoding/Decoding Error:", e);
             outputArea.value = "";
         }
@@ -187,7 +197,7 @@
         inputArea.value = "";
         outputArea.value = "";
         messageBox.style.display = 'none';
-        showMessage("已清空所有区域。", 'info');
+        showMessage(i18n.cleared, 'info');
     }
 
     /**
@@ -196,7 +206,7 @@
     function copyOutput() {
         const output = outputArea.value;
         if (!output) {
-            showMessage("输出结果为空，无法复制。", 'error');
+            showMessage(i18n.copyEmpty, 'error');
             return;
         }
 
@@ -205,7 +215,7 @@
         document.execCommand('copy');
         outputArea.setSelectionRange(0, 0); // 取消选中
 
-        showMessage("结果已复制到剪贴板！", 'info');
+        showMessage(i18n.copySuccess, 'info');
     }
 </script>
 {{ end }}

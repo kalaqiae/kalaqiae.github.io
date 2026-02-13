@@ -219,17 +219,17 @@ button:hover {
 <body>
 <div class="card">
 <div class="header">
-<h1 class="title">2048</h1>
+<h1 class="title">{{ T "game2048.title" }}</h1>
 <div class="controls">
 <div class="score-box">
-<div class="score-label">分数</div>
+<div class="score-label">{{ T "game2048.scoreLabel" }}</div>
 <div class="score-value" id="score">0</div>
 </div>
 <div class="score-box">
-<div class="score-label">最高</div>
+<div class="score-label">{{ T "game2048.bestLabel" }}</div>
 <div class="score-value" id="best">0</div>
 </div>
-<button id="newBtn">新游戏</button>
+<button id="newBtn">{{ T "game2048.newGame" }}</button>
 </div>
 </div>
 <div class="board-wrap">
@@ -238,11 +238,15 @@ button:hover {
 </div>
 </div>
 <div class="game-explanation">
-<p><strong>游戏规则：</strong>使用方向键或滑动屏幕移动方块。当两个相同数字的方块碰撞时，它们会合并成一个数字翻倍的方块。</p>
+<p><strong>{{ T "game2048.rulesLabel" }}</strong>{{ T "game2048.rulesText" }}</p>
 </div>
 </div>
 <script>
 (function () {
+  const i18n = {
+    gameOver: '{{ T "game2048.alert.gameOver" }}',
+    win: '{{ T "game2048.alert.win" }}'
+  };
   const SIZE = 4, boardEl = document.getElementById('board'), tilesEl = document.getElementById('tiles');
   const scoreEl = document.getElementById('score'), bestEl = document.getElementById('best'), newBtn = document.getElementById('newBtn');
   let grid = [], score = 0, best = parseInt(localStorage.getItem('2048-best') || '0', 10);
@@ -318,8 +322,8 @@ button:hover {
         addRandom();
         setScore(score);
         renderFull();
-        if (!canMove()) setTimeout(() => alert('游戏结束'), 80);
-        if (!hasWon && checkWin()) { hasWon = true; setTimeout(() => alert('恭喜！你获得了2048！🎉'), 80); }
+        if (!canMove()) setTimeout(() => alert(i18n.gameOver), 80);
+        if (!hasWon && checkWin()) { hasWon = true; setTimeout(() => alert(i18n.win), 80); }
       }, 250);
     }
   }

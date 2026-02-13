@@ -1,18 +1,18 @@
 ---
 title: "Mac Brew"
 date: 2026-02-09T15:36:46+08:00
-draft: true
+draft: false
 tags: ["Mac","brew"]
 categories: ["Mac"]
 ---
-
-相关：[Mac Note](/post/mac/mac-note/)
 
 ## 概述
 
 Homebrew 更适合用来装“系统级、全局通用、基本只需要最新版”的基础工具；但它不是万能软件下载器，也不是所有开发环境的最佳安装方式。
 
 最主要收益：可脚本化（Brewfile），换新 Mac 时更容易一键还原；同时减少手动处理依赖的成本。
+
+<!--more-->
 
 使用前先想清楚这些常见坑点：
 

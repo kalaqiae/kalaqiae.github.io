@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>数独 - 纸墨时光</title>
+    <title>{{ T "sudoku.pageTitle" }}</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 
@@ -296,23 +296,23 @@
 
     <div class="dashboard">
         <div class="stat-card">
-            <span class="stat-label">时间</span>
+            <span class="stat-label">{{ T "sudoku.stat.time" }}</span>
             <span class="stat-value" id="timer">00:00</span>
         </div>
         <div class="stat-card">
-            <span class="stat-label">得分</span>
+            <span class="stat-label">{{ T "sudoku.stat.score" }}</span>
             <span class="stat-value" id="scoreValue">0</span>
         </div>
         <div class="stat-card">
-            <span class="stat-label" id="highScoreLabel">最高分</span>
+            <span class="stat-label" id="highScoreLabel">{{ T "sudoku.stat.highScore" }}</span>
             <span class="stat-value" id="highScore">0</span>
         </div>
     </div>
 
     <div class="controls">
-        <button id="btn-easy" onclick="initGame('easy')">简单</button>
-        <button id="btn-medium" onclick="initGame('medium')">中等</button>
-        <button id="btn-hard" onclick="initGame('hard')">困难</button>
+        <button id="btn-easy" onclick="initGame('easy')">{{ T "sudoku.difficulty.easy" }}</button>
+        <button id="btn-medium" onclick="initGame('medium')">{{ T "sudoku.difficulty.medium" }}</button>
+        <button id="btn-hard" onclick="initGame('hard')">{{ T "sudoku.difficulty.hard" }}</button>
     </div>
 
     <div id="board"></div>
@@ -346,10 +346,22 @@
         let totalCellsToFill = 0;
         let filledCount = 0;
 
+        const i18n = {
+            difficultyEasy: '{{ T "sudoku.difficulty.easy" }}',
+            difficultyMedium: '{{ T "sudoku.difficulty.medium" }}',
+            difficultyHard: '{{ T "sudoku.difficulty.hard" }}',
+            recordSuffix: '{{ T "sudoku.recordSuffix" }}',
+            gameOverTitle: '{{ T "sudoku.gameOver.title" }}',
+            labelDifficulty: '{{ T "sudoku.gameOver.difficulty" }}',
+            labelScore: '{{ T "sudoku.gameOver.score" }}',
+            labelTime: '{{ T "sudoku.gameOver.time" }}',
+            newRecord: '{{ T "sudoku.gameOver.newRecord" }}'
+        };
+
         const CONFIG = {
-            'easy': { base: 1000, penalty: 1500, label: '简单' },
-            'medium': { base: 2000, penalty: 3000, label: '中等' },
-            'hard': { base: 3000, penalty: 5000, label: '困难' }
+            'easy': { base: 1000, penalty: 1500, label: i18n.difficultyEasy },
+            'medium': { base: 2000, penalty: 3000, label: i18n.difficultyMedium },
+            'hard': { base: 3000, penalty: 5000, label: i18n.difficultyHard }
         };
 
         const boardEl = document.getElementById('board');
@@ -398,7 +410,7 @@
         function loadHighScore() {
             const key = `sudokuHigh_${currentDifficulty}`;
             highScoreEl.textContent = localStorage.getItem(key) || 0;
-            highScoreLabelEl.textContent = `${CONFIG[currentDifficulty].label}纪录`;
+            highScoreLabelEl.textContent = `${CONFIG[currentDifficulty].label}${i18n.recordSuffix}`;
         }
 
         function generateBoard(difficulty) {
@@ -569,12 +581,12 @@
 
             const timeStr = formatTime(timer);
 
-            let msg = `📜 游戏结束\n难度: ${CONFIG[currentDifficulty].label}\n得分: ${score}\n耗时: ${timeStr}`;
+            let msg = `${i18n.gameOverTitle}\n${i18n.labelDifficulty}: ${CONFIG[currentDifficulty].label}\n${i18n.labelScore}: ${score}\n${i18n.labelTime}: ${timeStr}`;
 
             if (score > currentHigh) {
                 localStorage.setItem(key, score);
                 loadHighScore();
-                msg += `\n✨ 刷新了纪录！`;
+                msg += `\n${i18n.newRecord}`;
             }
 
             setTimeout(() => alert(msg), 100);

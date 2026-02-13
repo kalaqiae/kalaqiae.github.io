@@ -1,4 +1,4 @@
-{{ define "title" }}QR 码生成器 - {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ T "qrcode.pageTitle" }} - {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
 <div class="tool-container">
@@ -10,29 +10,29 @@
           d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
         </path>
       </svg>
-      QR 码生成器
+      {{ T "qrcode.title" }}
     </h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- 输入区 -->
       <div class="space-y-6">
         <div>
-          <label for="qrInput" class="block text-lg font-semibold mb-2 text-gray-700">输入内容：</label>
-          <textarea id="qrInput" rows="5" placeholder="请输入文字或链接" class="input-box"></textarea>
-          <p class="text-sm text-gray-500 mt-1">字符数：<span id="charCount">0</span></p>
+          <label for="qrInput" class="block text-lg font-semibold mb-2 text-gray-700">{{ T "qrcode.input.label" }}</label>
+          <textarea id="qrInput" rows="5" placeholder="{{ T "qrcode.input.placeholder" }}" class="input-box"></textarea>
+          <p class="text-sm text-gray-500 mt-1">{{ T "qrcode.input.countLabel" }}<span id="charCount">0</span></p>
         </div>
 
         <button id="generateBtn" class="tool-button w-full bg-blue-600 text-white hover:bg-blue-700">
-          ⚙️ 生成 QR 码
+          ⚙️ {{ T "qrcode.action.generate" }}
         </button>
       </div>
 
       <!-- 显示区 -->
       <div
         class="flex flex-col items-center justify-center p-4 bg-gray-50 border border-gray-200 rounded-xl shadow-inner min-h-[300px]">
-        <label class="text-lg font-semibold mb-4 text-gray-700">生成结果：</label>
+        <label class="text-lg font-semibold mb-4 text-gray-700">{{ T "qrcode.result.label" }}</label>
         <div id="qrcode" class="bg-white p-2 rounded shadow-lg"></div>
-        <p id="qrStatus" class="mt-4 text-gray-500 text-sm">请输入内容并点击“生成 QR 码”</p>
+        <p id="qrStatus" class="mt-4 text-gray-500 text-sm"></p>
       </div>
     </div>
   </div>
@@ -85,6 +85,12 @@
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
 <script>
+  const i18n = {
+    emptyInput: '{{ T "qrcode.message.emptyInput" }}',
+    generated: '{{ T "qrcode.message.generated" }}',
+    idle: '{{ T "qrcode.message.idle" }}'
+  };
+
   const qrInput = document.getElementById("qrInput");
   const charCountSpan = document.getElementById("charCount");
   const qrcodeContainer = document.getElementById("qrcode");
@@ -104,7 +110,7 @@
 
     if (!text) {
       qrcodeContainer.innerHTML = "";
-      qrStatus.textContent = "请输入内容后再点击生成。";
+      qrStatus.textContent = i18n.emptyInput;
       return;
     }
 
@@ -119,12 +125,12 @@
       correctLevel: QRCode.CorrectLevel.M,
     });
 
-    qrStatus.textContent = "QR 码已生成 ✔";
+    qrStatus.textContent = i18n.generated;
   });
 
   // 页面加载默认状态
   document.addEventListener("DOMContentLoaded", () => {
-    qrStatus.textContent = "请输入内容并点击“生成 QR 码”";
+    qrStatus.textContent = i18n.idle;
   });
 </script>
 {{ end }}

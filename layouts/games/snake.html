@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{{ .Site.Language.Lang }}">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>贪吃蛇</title>
+    <title>{{ T "snake.title" }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -370,31 +370,31 @@
                 <div class="game-stats">
                     <div class="stat-box">
                         <div class="stat-value" id="score">0</div>
-                        <div class="stat-label">当前得分</div>
+                        <div class="stat-label">{{ T "snake.stat.score" }}</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-value" id="highScore">0</div>
-                        <div class="stat-label">最高记录</div>
+                        <div class="stat-label">{{ T "snake.stat.highScore" }}</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-value" id="level">1</div>
-                        <div class="stat-label">游戏等级</div>
+                        <div class="stat-label">{{ T "snake.stat.level" }}</div>
                     </div>
                 </div>
 
                 <canvas id="gameCanvas" width="400" height="400"></canvas>
 
-                <div id="gameMessage" class="game-message message-info">点击"开始游戏"开始</div>
+                <div id="gameMessage" class="game-message message-info">{{ T "snake.message.startHint" }}</div>
 
                 <div class="game-controls">
                     <button id="startBtn" class="btn btn-success">
-                        <i class="fas fa-play"></i> 开始游戏
+                        <i class="fas fa-play"></i> {{ T "snake.button.start" }}
                     </button>
                     <button id="pauseBtn" class="btn btn-primary" disabled>
-                        <i class="fas fa-pause"></i> 暂停游戏
+                        <i class="fas fa-pause"></i> {{ T "snake.button.pause" }}
                     </button>
                     <button id="resetBtn" class="btn btn-danger">
-                        <i class="fas fa-redo"></i> 重新开始
+                        <i class="fas fa-redo"></i> {{ T "snake.button.reset" }}
                     </button>
                 </div>
 
@@ -411,19 +411,34 @@
             </div>
 
             <div class="instructions">
-                <h3><i class="fas fa-info-circle"></i> 游戏说明</h3>
+                <h3><i class="fas fa-info-circle"></i> {{ T "snake.instructions.title" }}</h3>
                 <ul>
-                    <li><i class="fas fa-keyboard"></i> 键盘控制: 方向键或WASD</li>
-                    <li><i class="fas fa-pause"></i> 空格键: 暂停/继续游戏</li>
-                    <li><i class="fas fa-apple-alt"></i> 吃到食物增加长度和得分</li>
-                    <li><i class="fas fa-skull-crossbones"></i> 避免撞墙或自己的身体</li>
-                    <li><i class="fas fa-trophy"></i> 挑战最高分记录</li>
+                    <li><i class="fas fa-keyboard"></i> {{ T "snake.instructions.keyboard" }}</li>
+                    <li><i class="fas fa-pause"></i> {{ T "snake.instructions.pause" }}</li>
+                    <li><i class="fas fa-apple-alt"></i> {{ T "snake.instructions.food" }}</li>
+                    <li><i class="fas fa-skull-crossbones"></i> {{ T "snake.instructions.avoid" }}</li>
+                    <li><i class="fas fa-trophy"></i> {{ T "snake.instructions.challenge" }}</li>
                 </ul>
             </div>
         </div>
     </div>
 
+    <script type="application/json" id="snake-i18n">
+        {{ dict
+            "levelUp" (T "snake.message.levelUp")
+            "gameOver" (T "snake.message.gameOver")
+            "started" (T "snake.message.started")
+            "paused" (T "snake.message.paused")
+            "resumed" (T "snake.message.resumed")
+            "reset" (T "snake.message.reset")
+            "buttonStart" (T "snake.button.start")
+            "buttonPause" (T "snake.button.pause")
+            "buttonRestart" (T "snake.button.restart")
+            "buttonResume" (T "snake.button.resume")
+        | jsonify }}
+    </script>
     <script>
+        const snakeI18n = JSON.parse(document.getElementById('snake-i18n').textContent);
         // 配置
         const config = {
             gridSize: 20,
@@ -699,7 +714,7 @@
                     // 重新设置游戏循环（清理旧的）
                     clearInterval(state.gameLoop);
                     state.gameLoop = setInterval(updateGame, state.gameSpeed);
-                    showMessage(`恭喜升级！当前等级: ${state.level}`, 'success');
+                    showMessage(snakeI18n.levelUp.replace('{level}', state.level), 'success');
                 }
 
                 // 生成新食物
@@ -728,10 +743,10 @@
             clearInterval(state.gameLoop);
             state.gameLoop = null;
 
-            showMessage(`游戏结束！最终得分: ${state.score}`, 'error');
+            showMessage(snakeI18n.gameOver.replace('{score}', state.score), 'error');
 
             startBtn.disabled = false;
-            startBtn.innerHTML = '<i class="fas fa-play"></i> 重新开始';
+            startBtn.innerHTML = `<i class="fas fa-play"></i> ${snakeI18n.buttonRestart}`;
             pauseBtn.disabled = true;
 
             gameMessage.classList.add('pulse');
@@ -764,7 +779,7 @@
             state.gameLoop = setInterval(updateGame, state.gameSpeed);
 
             updateUI();
-            showMessage('游戏开始！控制小蛇吃掉食物', 'success');
+            showMessage(snakeI18n.started, 'success');
 
             startBtn.disabled = true;
             pauseBtn.disabled = false;
@@ -778,13 +793,13 @@
             if (state.isPaused) {
                 clearInterval(state.gameLoop);
                 state.gameLoop = null;
-                showMessage('游戏已暂停', 'warning');
-                pauseBtn.innerHTML = '<i class="fas fa-play"></i> 继续游戏';
+                showMessage(snakeI18n.paused, 'warning');
+                pauseBtn.innerHTML = `<i class="fas fa-play"></i> ${snakeI18n.buttonResume}`;
             } else {
                 // 继续游戏时恢复计时器（使用当前 gameSpeed）
                 state.gameLoop = setInterval(updateGame, state.gameSpeed);
-                showMessage('游戏继续', 'success');
-                pauseBtn.innerHTML = '<i class="fas fa-pause"></i> 暂停游戏';
+                showMessage(snakeI18n.resumed, 'success');
+                pauseBtn.innerHTML = `<i class="fas fa-pause"></i> ${snakeI18n.buttonPause}`;
             }
         }
 
@@ -810,12 +825,12 @@
 
             generateFood();
             updateUI();
-            showMessage('游戏已重置，点击"开始游戏"开始', 'info');
+            showMessage(snakeI18n.reset, 'info');
 
             startBtn.disabled = false;
-            startBtn.innerHTML = '<i class="fas fa-play"></i> 开始游戏';
+            startBtn.innerHTML = `<i class="fas fa-play"></i> ${snakeI18n.buttonStart}`;
             pauseBtn.disabled = true;
-            pauseBtn.innerHTML = '<i class="fas fa-pause"></i> 暂停游戏';
+            pauseBtn.innerHTML = `<i class="fas fa-pause"></i> ${snakeI18n.buttonPause}`;
 
             drawGame();
         }

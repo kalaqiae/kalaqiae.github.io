@@ -1,4 +1,4 @@
-{{ define "title" }}Base64 加解密工具 - {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ T "base64.pageTitle" }} - {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
 <div class="tool-container">
@@ -10,7 +10,7 @@
                     d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.879a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
                 </path>
             </svg>
-            Base64 加解密工具
+            {{ T "base64.title" }}
         </h1>
 
         <!-- 错误和消息提示区 -->
@@ -19,30 +19,30 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- 左侧：输入区 -->
             <div>
-                <label for="inputArea" class="block text-lg font-semibold mb-2 text-gray-700">输入文本或 Base64 字符串:</label>
-                <textarea id="inputArea" placeholder="在此输入需要处理的文本..."></textarea>
+                <label for="inputArea" class="block text-lg font-semibold mb-2 text-gray-700">{{ T "base64.input.label" }}</label>
+                <textarea id="inputArea" placeholder="{{ T "base64.input.placeholder" }}"></textarea>
             </div>
 
             <!-- 右侧：输出区 -->
             <div>
-                <label for="outputArea" class="block text-lg font-semibold mb-2 text-gray-700">输出结果:</label>
-                <textarea id="outputArea" placeholder="处理结果将显示在此..."></textarea>
+                <label for="outputArea" class="block text-lg font-semibold mb-2 text-gray-700">{{ T "base64.output.label" }}</label>
+                <textarea id="outputArea" placeholder="{{ T "base64.output.placeholder" }}"></textarea>
             </div>
         </div>
 
         <!-- 操作按钮 -->
         <div class="flex flex-wrap justify-center md:justify-start space-x-4 mt-6">
             <button onclick="handleBase64(true)" class="tool-button bg-blue-600 text-white hover:bg-blue-700">
-                🚀 编码 (Encode)
+                🚀 {{ T "base64.action.encode" }}
             </button>
             <button onclick="handleBase64(false)" class="tool-button bg-gray-500 text-white hover:bg-gray-600">
-                🔏 解码 (Decode)
+                🔏 {{ T "base64.action.decode" }}
             </button>
             <button onclick="clearAll()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
-                🧹 清空
+                🧹 {{ T "base64.action.clear" }}
             </button>
             <button onclick="copyOutput()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
-                📋 复制结果
+                📋 {{ T "base64.action.copy" }}
             </button>
         </div>
     </div>
@@ -115,6 +115,16 @@
 </style>
 
 <script>
+    const i18n = {
+        emptyInput: '{{ T "base64.message.emptyInput" }}',
+        encodeSuccess: '{{ T "base64.message.encodeSuccess" }}',
+        decodeSuccess: '{{ T "base64.message.decodeSuccess" }}',
+        invalidBase64: '{{ T "base64.message.invalidBase64" }}',
+        cleared: '{{ T "base64.message.cleared" }}',
+        copyEmpty: '{{ T "base64.message.copyEmpty" }}',
+        copySuccess: '{{ T "base64.message.copySuccess" }}'
+    };
+
     const inputArea = document.getElementById('inputArea');
     const outputArea = document.getElementById('outputArea');
     const messageBox = document.getElementById('messageBox');
@@ -171,7 +181,7 @@
         const input = inputArea.value.trim();
 
         if (!input) {
-            showMessage("输入内容不能为空！", 'error');
+            showMessage(i18n.emptyInput, 'error');
             return;
         }
 
@@ -179,15 +189,15 @@
             if (isEncode) {
                 const encoded = encodeBase64(input);
                 outputArea.value = encoded;
-                showMessage("编码成功！", 'info');
+                showMessage(i18n.encodeSuccess, 'info');
             } else {
                 const decoded = decodeBase64(input);
                 outputArea.value = decoded;
-                showMessage("解码成功！", 'info');
+                showMessage(i18n.decodeSuccess, 'info');
             }
         } catch (e) {
             // 捕获无效 Base64 字符或 URI 异常
-            showMessage("操作失败：输入的 Base64 格式无效或包含非 UTF-8 字符。", 'error');
+            showMessage(i18n.invalidBase64, 'error');
             console.error("Base64 Error:", e);
             outputArea.value = "";
         }
@@ -200,7 +210,7 @@
         inputArea.value = "";
         outputArea.value = "";
         messageBox.style.display = 'none';
-        showMessage("已清空所有区域。", 'info');
+        showMessage(i18n.cleared, 'info');
     }
 
     /**
@@ -209,7 +219,7 @@
     function copyOutput() {
         const output = outputArea.value;
         if (!output) {
-            showMessage("输出结果为空，无法复制。", 'error');
+            showMessage(i18n.copyEmpty, 'error');
             return;
         }
 
@@ -218,7 +228,7 @@
         document.execCommand('copy');
         outputArea.setSelectionRange(0, 0); // 取消选中
 
-        showMessage("结果已复制到剪贴板！", 'info');
+        showMessage(i18n.copySuccess, 'info');
     }
 </script>
 {{ end }}

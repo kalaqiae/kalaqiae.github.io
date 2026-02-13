@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bulls & Cows 猜数字游戏</title>
+  <title>{{ T "bullsAndCows.pageTitle" }}</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -469,14 +469,14 @@
         <div class="game-header">
           <div class="game-title">
             <div>
-              <h1>猜数字</h1>
+              <h1>{{ T "bullsAndCows.title" }}</h1>
             </div>
           </div>
         </div>
 
         <div class="game-stats">
           <div class="stat-box">
-            <div class="stat-label">已用时间</div>
+            <div class="stat-label">{{ T "bullsAndCows.stat.time" }}</div>
             <div id="timer" class="stat-value">00:00</div>
           </div>
         </div>
@@ -484,37 +484,37 @@
         <div class="card">
           <div class="game-controls">
             <div class="control-group">
-              <label for="digits">位数</label>
+              <label for="digits">{{ T "bullsAndCows.digits.label" }}</label>
               <select id="digits">
-                <option value="3">3 位</option>
-                <option value="4" selected>4 位</option>
-                <option value="5">5 位</option>
-                <option value="6">6 位</option>
+                <option value="3">3 {{ T "bullsAndCows.digits.unit" }}</option>
+                <option value="4" selected>4 {{ T "bullsAndCows.digits.unit" }}</option>
+                <option value="5">5 {{ T "bullsAndCows.digits.unit" }}</option>
+                <option value="6">6 {{ T "bullsAndCows.digits.unit" }}</option>
               </select>
             </div>
 
             <div class="control-group">
               <div class="checkbox-container">
                 <input type="checkbox" id="allowRepeat" />
-                <label for="allowRepeat">允许重复数字</label>
+                <label for="allowRepeat">{{ T "bullsAndCows.allowRepeat" }}</label>
               </div>
             </div>
 
             <button class="btn btn-secondary" id="copyAnswer">
-              <i class="fas fa-copy"></i> 复制答案
+              <i class="fas fa-copy"></i> {{ T "bullsAndCows.copyAnswer" }}
             </button>
             <button class="btn btn-primary" id="newGameBtn">
-              <i class="fas fa-play"></i> 新游戏
+              <i class="fas fa-play"></i> {{ T "bullsAndCows.newGame" }}
             </button>
           </div>
 
           <div class="input-area">
-            <input id="guessInput" class="guess-input" inputmode="numeric" placeholder="输入你的猜测" maxlength="6" />
+            <input id="guessInput" class="guess-input" inputmode="numeric" placeholder="{{ T "bullsAndCows.guess.placeholder" }}" maxlength="6" />
             <button class="btn btn-success" id="submitGuess">
-              <i class="fas fa-paper-plane"></i> 提交
+              <i class="fas fa-paper-plane"></i> {{ T "bullsAndCows.submit" }}
             </button>
             <button class="btn btn-warning" id="clearInput">
-              <i class="fas fa-eraser"></i> 清除
+              <i class="fas fa-eraser"></i> {{ T "bullsAndCows.clear" }}
             </button>
           </div>
 
@@ -523,20 +523,20 @@
           </div>
 
           <div class="history" id="historyList" aria-live="polite">
-            <div class="small">开始提交你的第一次猜测吧。</div>
+            <div class="small">{{ T "bullsAndCows.history.emptyStart" }}</div>
           </div>
         </div>
       </div>
 
       <!-- 右侧区域 -->
       <div class="instructions">
-        <h3><i class="fas fa-trophy"></i> 最佳记录</h3>
-        <div class="small" style="text-align: center; margin-bottom: 15px;">(当前模式)</div>
+        <h3><i class="fas fa-trophy"></i> {{ T "bullsAndCows.records.title" }}</h3>
+        <div class="small" style="text-align: center; margin-bottom: 15px;">{{ T "bullsAndCows.records.mode" }}</div>
 
         <div class="records">
           <div class="record-line">
             <div>
-              <div class="small">最快时间</div>
+              <div class="small">{{ T "bullsAndCows.records.bestTime" }}</div>
               <div id="bestTime" style="font-weight:700">—</div>
             </div>
             <div class="small" id="bestTimeMeta">—</div>
@@ -544,7 +544,7 @@
 
           <div class="record-line">
             <div>
-              <div class="small">最少猜次</div>
+              <div class="small">{{ T "bullsAndCows.records.bestGuesses" }}</div>
               <div id="bestGuesses" style="font-weight:700">—</div>
             </div>
             <div class="small" id="bestGuessesMeta">—</div>
@@ -552,15 +552,15 @@
         </div>
 
         <div style="margin-top: 20px;">
-          <h3><i class="fas fa-info-circle"></i> 游戏说明</h3>
+          <h3><i class="fas fa-info-circle"></i> {{ T "bullsAndCows.rules.title" }}</h3>
           <ul>
-            <li><i class="fas fa-cog"></i> 系统会生成一个长度为 N（3-6位）的数字组合</li>
-            <li><i class="fas fa-redo"></i> 根据"允许重复"规则决定是否可以有重复数字</li>
-            <li><i class="fas fa-check-circle"></i> 提交一个与你所选长度相同的数字串</li>
-            <li><i class="fas fa-bullseye"></i> A = 数字与位置都正确</li>
-            <li><i class="fas fa-crosshairs"></i> B = 数字正确但位置错误</li>
-            <li><i class="fas fa-history"></i> 提交后会在左侧显示历史记录</li>
-            <li><i class="fas fa-chart-line"></i> 游戏会记录最快猜中时间和最少猜次</li>
+            <li><i class="fas fa-cog"></i> {{ T "bullsAndCows.rules.item1" }}</li>
+            <li><i class="fas fa-redo"></i> {{ T "bullsAndCows.rules.item2" }}</li>
+            <li><i class="fas fa-check-circle"></i> {{ T "bullsAndCows.rules.item3" }}</li>
+            <li><i class="fas fa-bullseye"></i> {{ T "bullsAndCows.rules.item4" }}</li>
+            <li><i class="fas fa-crosshairs"></i> {{ T "bullsAndCows.rules.item5" }}</li>
+            <li><i class="fas fa-history"></i> {{ T "bullsAndCows.rules.item6" }}</li>
+            <li><i class="fas fa-chart-line"></i> {{ T "bullsAndCows.rules.item7" }}</li>
           </ul>
         </div>
       </div>
@@ -570,6 +570,27 @@
   <script>
     // ======= 游戏逻辑实现 =======
     (function () {
+      const i18n = {
+        alertDigitsOnly: '{{ T "bullsAndCows.alert.digitsOnly" }}',
+        alertDigitsLength: '{{ T "bullsAndCows.alert.digitsLength" }}',
+        alertNoRepeat: '{{ T "bullsAndCows.alert.noRepeat" }}',
+        winMessage: '{{ T "bullsAndCows.alert.win" }}',
+        copySuccess: '{{ T "bullsAndCows.toast.copySuccess" }}',
+        copyFallback: '{{ T "bullsAndCows.toast.copyFallback" }}',
+        historyEmptyNewGame: '{{ T "bullsAndCows.history.emptyNewGame" }}',
+        historyAttempt: '{{ T "bullsAndCows.history.attempt" }}',
+        recordMetaGuessDate: '{{ T "bullsAndCows.records.metaGuessDate" }}',
+        recordMetaTimeDate: '{{ T "bullsAndCows.records.metaTimeDate" }}',
+        recordGuessCount: '{{ T "bullsAndCows.records.guessCount" }}',
+        debugSetSecret: '{{ T "bullsAndCows.debug.setSecret" }}'
+      };
+
+      function format(str, vars) {
+        return str.replace(/\{(\w+)\}/g, (_, key) => {
+          if (Object.prototype.hasOwnProperty.call(vars, key)) return vars[key];
+          return '';
+        });
+      }
       // DOM
       const digitsSel = document.getElementById('digits');
       const allowRepeatChk = document.getElementById('allowRepeat');
@@ -715,17 +736,17 @@
         if (gameOver) return;
         const g = (guessInput.value || '').trim();
         if (!/^\d+$/.test(g)) {
-          alert('请输入数字。');
+          alert(i18n.alertDigitsOnly);
           return;
         }
         if (g.length !== digits) {
-          alert('请输入 ' + digits + ' 位数字。');
+          alert(format(i18n.alertDigitsLength, { digits }));
           return;
         }
         if (!allowRepeat) {
           const set = new Set(g.split(''));
           if (set.size !== g.length) {
-            alert('模式设置为"不可重复"，请输入不重复的数字。');
+            alert(i18n.alertNoRepeat);
             return;
           }
         }
@@ -753,7 +774,7 @@
           });
           // show win modal/alert
           setTimeout(() => {
-            alert('恭喜你！猜对了\n答案：' + secret + '\n用时：' + formatTime(elapsedSeconds) + '，猜测次数：' + attempts.length);
+            alert(format(i18n.winMessage, { secret, time: formatTime(elapsedSeconds), count: attempts.length }));
             renderRecords();
           }, 50);
         }
@@ -763,7 +784,7 @@
       async function copyAnswer() {
         try {
           await navigator.clipboard.writeText(secret);
-          showToast('已复制答案到剪贴板：' + secret);
+          showToast(format(i18n.copySuccess, { secret }));
         } catch (e) {
           // fallback
           const ta = document.createElement('textarea');
@@ -771,7 +792,7 @@
           ta.select();
           document.execCommand('copy');
           ta.remove();
-          showToast('已复制答案到剪贴板（回退方法）：' + secret);
+          showToast(format(i18n.copyFallback, { secret }));
         }
       }
 
@@ -792,14 +813,14 @@
       function renderHistory() {
         historyList.innerHTML = '';
         if (attempts.length === 0) {
-          historyList.innerHTML = '<div class="small">开始新游戏并提交你的第一次猜测吧。</div>';
+          historyList.innerHTML = '<div class="small">' + i18n.historyEmptyNewGame + '</div>';
           return;
         }
         for (let i = 0; i < attempts.length; i++) {
           const it = attempts[i];
           const div = document.createElement('div');
           div.className = 'hist-item';
-          div.innerHTML = `<div><strong>第 ${i + 1} 次</strong> &nbsp; ${it.guess}</div><div><span style="font-weight:700">${it.A}A</span> <span style="opacity:.7">${it.B}B</span></div>`;
+          div.innerHTML = `<div><strong>${format(i18n.historyAttempt, { count: i + 1 })}</strong> &nbsp; ${it.guess}</div><div><span style="font-weight:700">${it.A}A</span> <span style="opacity:.7">${it.B}B</span></div>`;
           historyList.appendChild(div);
         }
       }
@@ -868,15 +889,15 @@
         if (data.fastest && data.fastest.length > 0) {
           const best = data.fastest[0];
           bestTimeEl.textContent = formatTime(best.time);
-          bestTimeMeta.textContent = `${best.guesses} 次 • ${new Date(best.date).toLocaleDateString()}`;
+          bestTimeMeta.textContent = format(i18n.recordMetaGuessDate, { count: best.guesses, date: new Date(best.date).toLocaleDateString() });
         } else {
           bestTimeEl.textContent = '—';
           bestTimeMeta.textContent = '';
         }
         if (data.fewest && data.fewest.length > 0) {
           const best = data.fewest[0];
-          bestGuessesEl.textContent = `${best.guesses} 次`;
-          bestGuessesMeta.textContent = `${formatTime(best.time)} • ${new Date(best.date).toLocaleDateString()}`;
+          bestGuessesEl.textContent = format(i18n.recordGuessCount, { count: best.guesses });
+          bestGuessesMeta.textContent = format(i18n.recordMetaTimeDate, { time: formatTime(best.time), date: new Date(best.date).toLocaleDateString() });
         } else {
           bestGuessesEl.textContent = '—';
           bestGuessesMeta.textContent = '';
@@ -950,7 +971,7 @@
       window.bc = {
         newGame: newGame,
         getSecret: () => secret,
-        setSecret: (s) => { secret = String(s); showToast('已设置 secret（仅本地）'); }
+        setSecret: (s) => { secret = String(s); showToast(i18n.debugSetSecret); }
       };
 
     })();

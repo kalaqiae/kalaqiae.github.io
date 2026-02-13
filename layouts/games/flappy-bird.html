@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{{ with .Site.Language.Lang }}{{ . }}{{ else }}zh-CN{{ end }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flappy Bird - 优化版</title>
+    <title>{{ T "flappy.title" }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -268,17 +268,17 @@
                 <div class="game-stats">
                     <div class="stat-box">
                         <div class="stat-value" id="score">0</div>
-                        <div class="stat-label">当前得分</div>
+                        <div class="stat-label">{{ T "flappy.score.current" }}</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-value" id="bestScore">0</div>
-                        <div class="stat-label">最佳记录</div>
+                        <div class="stat-label">{{ T "flappy.score.best" }}</div>
                     </div>
                 </div>
 
                 <canvas id="gameCanvas" width="320" height="480"></canvas>
 
-                <div id="gameMessage" class="game-message message-info">点击屏幕开始游戏</div>
+                <div id="gameMessage" class="game-message message-info">{{ T "flappy.message.tapToStart" }}</div>
 
                 <div class="mobile-controls">
                     <div class="control-btn" id="jumpBtn">
@@ -288,13 +288,13 @@
             </div>
 
             <div class="instructions">
-                <h3><i class="fas fa-info-circle"></i> 游戏说明</h3>
+                <h3><i class="fas fa-info-circle"></i> {{ T "flappy.instructions.title" }}</h3>
                 <ul>
-                    <li><i class="fas fa-keyboard"></i> 键盘控制: 空格键或上箭头</li>
-                    <li><i class="fas fa-mouse-pointer"></i> 鼠标控制: 点击屏幕跳跃</li>
-                    <li><i class="fas fa-route"></i> 通过管道间隙获得分数</li>
-                    <li><i class="fas fa-skull-crossbones"></i> 避免撞到管道或地面</li>
-                    <li><i class="fas fa-trophy"></i> 挑战最高分记录</li>
+                    <li><i class="fas fa-keyboard"></i> {{ T "flappy.instructions.keyboard" }}</li>
+                    <li><i class="fas fa-mouse-pointer"></i> {{ T "flappy.instructions.mouse" }}</li>
+                    <li><i class="fas fa-route"></i> {{ T "flappy.instructions.score" }}</li>
+                    <li><i class="fas fa-skull-crossbones"></i> {{ T "flappy.instructions.avoid" }}</li>
+                    <li><i class="fas fa-trophy"></i> {{ T "flappy.instructions.challenge" }}</li>
                 </ul>
             </div>
         </div>
@@ -307,6 +307,17 @@
         const scoreElement = document.getElementById('score');
         const bestScoreElement = document.getElementById('bestScore');
         const gameMessage = document.getElementById('gameMessage');
+        const i18n = {
+            ready: '{{ T "flappy.ui.ready" }}',
+            readyHint: '{{ T "flappy.ui.readyHint" }}',
+            gameOver: '{{ T "flappy.ui.gameOver" }}',
+            currentScoreLabel: '{{ T "flappy.ui.currentScoreLabel" }}',
+            bestScoreLabel: '{{ T "flappy.ui.bestScoreLabel" }}',
+            restart: '{{ T "flappy.ui.restart" }}',
+            running: '{{ T "flappy.message.running" }}',
+            tapToStart: '{{ T "flappy.message.tapToStart" }}',
+            overRestart: '{{ T "flappy.message.overRestart" }}'
+        };
 
         // 游戏状态变量
         let frames = 0;
@@ -704,10 +715,10 @@
 
                 ctx.fillStyle = "white";
                 ctx.font = "bold 30px 'Inter', sans-serif";
-                ctx.fillText("准备开始", 90, 180);
+                ctx.fillText(i18n.ready, 90, 180);
 
                 ctx.font = "18px 'Inter', sans-serif";
-                ctx.fillText("点击或按空格键开始", 70, 220);
+                ctx.fillText(i18n.readyHint, 70, 220);
 
                 if (Math.floor(frames / 30) % 2 === 0) {
                     ctx.fillText("↓", canvas.width / 2 - 5, 260);
@@ -740,14 +751,14 @@
                 ctx.fillStyle = "#60a5fa";
                 ctx.font = "bold 24px 'Inter', sans-serif";
                 ctx.textAlign = "center";
-                ctx.fillText("游戏结束", canvas.width / 2, panelY + 40);
+                ctx.fillText(i18n.gameOver, canvas.width / 2, panelY + 40);
 
                 // 分数信息
                 ctx.fillStyle = "#cbd5e1";
                 ctx.font = "16px 'Inter', sans-serif";
                 ctx.textAlign = "left";
-                ctx.fillText("当前得分:", panelX + 40, panelY + 80);
-                ctx.fillText("最佳记录:", panelX + 40, panelY + 110);
+                ctx.fillText(i18n.currentScoreLabel, panelX + 40, panelY + 80);
+                ctx.fillText(i18n.bestScoreLabel, panelX + 40, panelY + 110);
 
                 ctx.fillStyle = "#60a5fa";
                 ctx.font = "bold 18px 'Inter', sans-serif";
@@ -774,7 +785,7 @@
                 ctx.fillStyle = "white";
                 ctx.font = "bold 16px 'Inter', sans-serif";
                 ctx.textAlign = "center";
-                ctx.fillText("重新开始", canvas.width / 2, buttonY + 25);
+                ctx.fillText(i18n.restart, canvas.width / 2, buttonY + 25);
 
                 // 重置文本对齐方式
                 ctx.textAlign = "left";
@@ -812,7 +823,7 @@
             if (state.current === state.game) return;
 
             state.current = state.game;
-            gameMessage.textContent = "游戏进行中";
+            gameMessage.textContent = i18n.running;
         }
 
         function resetGame() {
@@ -821,12 +832,12 @@
             score.reset();
             frames = 0;
             state.current = state.getReady;
-            gameMessage.textContent = "点击屏幕开始游戏";
+            gameMessage.textContent = i18n.tapToStart;
             draw();
         }
 
         function gameOver() {
-            gameMessage.textContent = "游戏结束！点击屏幕重新开始";
+            gameMessage.textContent = i18n.overRestart;
         }
 
         // 统一的游戏控制处理

@@ -1,4 +1,4 @@
-{{ define "title" }}文本格式转换工具 - {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ T "text.pageTitle" }} - {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
 <div class="tool-container">
@@ -10,7 +10,7 @@
                     d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
                 </path>
             </svg>
-            文本格式转换工具
+            {{ T "text.title" }}
         </h1>
 
         <div id="messageBox" class="message-box"></div>
@@ -18,57 +18,57 @@
         <div class="grid grid-cols-1 gap-6">
             <!-- 输入区域 -->
             <div>
-                <label for="inputText" class="block text-lg font-semibold mb-2 text-gray-700">输入文本:</label>
-                <textarea id="inputText" class="input-area" placeholder="在此输入需要转换的文本，例如: hello world"
+                <label for="inputText" class="block text-lg font-semibold mb-2 text-gray-700">{{ T "text.input.label" }}</label>
+                <textarea id="inputText" class="input-area" placeholder="{{ T "text.input.placeholder" }}"
                     oninput="updateStats()"></textarea>
                 <div class="flex justify-between mt-2 text-sm text-gray-500">
-                    <span>统计: <span id="charCount" class="font-mono">0</span> 字符 | <span id="wordCount"
-                            class="font-mono">0</span> 单词 | <span id="lineCount" class="font-mono">0</span> 行</span>
+                    <span>{{ T "text.stats.label" }} <span id="charCount" class="font-mono">0</span> {{ T "text.stats.chars" }} | <span id="wordCount"
+                            class="font-mono">0</span> {{ T "text.stats.words" }} | <span id="lineCount" class="font-mono">0</span> {{ T "text.stats.lines" }}</span>
                     <button onclick="clearText()"
-                        class="text-red-500 hover:text-red-700 hover:underline transition-colors">清空</button>
+                        class="text-red-500 hover:text-red-700 hover:underline transition-colors">{{ T "text.action.clear" }}</button>
                 </div>
             </div>
 
             <!-- 操作按钮组 -->
             <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
-                <h3 class="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">常用格式</h3>
+                <h3 class="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">{{ T "text.section.common" }}</h3>
                 <div class="flex flex-wrap gap-3 mb-5">
                     <button onclick="convert('uppercase')"
-                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">全大写 (UPPER)</button>
+                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">{{ T "text.action.uppercase" }}</button>
                     <button onclick="convert('lowercase')"
-                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">全小写 (lower)</button>
+                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">{{ T "text.action.lowercase" }}</button>
                     <button onclick="convert('capitalize')"
-                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">单词首大写 (Title Case)</button>
+                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">{{ T "text.action.capitalize" }}</button>
                     <button onclick="convert('sentenceCase')"
-                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">句首大写 (Sentence)</button>
+                        class="tool-button bg-blue-600 text-white hover:bg-blue-700">{{ T "text.action.sentenceCase" }}</button>
                 </div>
 
-                <h3 class="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">编程命名 & 其他</h3>
+                <h3 class="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">{{ T "text.section.programming" }}</h3>
                 <div class="flex flex-wrap gap-3">
                     <button onclick="convert('camelCase')"
-                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">驼峰 (camelCase)</button>
+                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">{{ T "text.action.camelCase" }}</button>
                     <button onclick="convert('pascalCase')"
-                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">大驼峰 (PascalCase)</button>
+                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">{{ T "text.action.pascalCase" }}</button>
                     <button onclick="convert('snakeCase')"
-                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">下划线 (snake_case)</button>
+                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">{{ T "text.action.snakeCase" }}</button>
                     <button onclick="convert('kebabCase')"
-                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">短横线 (kebab-case)</button>
+                        class="tool-button bg-indigo-600 text-white hover:bg-indigo-700">{{ T "text.action.kebabCase" }}</button>
                     <button onclick="convert('alternatingCase')"
-                        class="tool-button bg-gray-600 text-white hover:bg-gray-700">乱序 (aLtErNaTiNg)</button>
+                        class="tool-button bg-gray-600 text-white hover:bg-gray-700">{{ T "text.action.alternatingCase" }}</button>
                 </div>
             </div>
 
             <!-- 输出区域 -->
             <div>
-                <label for="outputText" class="block text-lg font-semibold mb-2 text-gray-700">转换结果:</label>
+                <label for="outputText" class="block text-lg font-semibold mb-2 text-gray-700">{{ T "text.output.label" }}</label>
                 <textarea id="outputText" class="input-area bg-gray-50" readonly
-                    placeholder="转换后的结果将显示在这里..."></textarea>
+                    placeholder="{{ T "text.output.placeholder" }}"></textarea>
             </div>
 
             <div class="flex justify-end">
                 <button onclick="copyResult()"
                     class="tool-button bg-green-600 text-white hover:bg-green-700 py-2 px-6 text-lg shadow-md">
-                    📋 复制结果
+                    📋 {{ T "text.action.copy" }}
                 </button>
             </div>
         </div>
@@ -146,6 +146,13 @@
 </style>
 
 <script>
+    const i18n = {
+        copyEmpty: '{{ T "text.message.copyEmpty" }}',
+        copySuccess: '{{ T "text.message.copySuccess" }}',
+        emptyInput: '{{ T "text.message.emptyInput" }}',
+        convertSuccess: '{{ T "text.message.convertSuccess" }}'
+    };
+
     const inputText = document.getElementById('inputText');
     const outputText = document.getElementById('outputText');
     const messageBox = document.getElementById('messageBox');
@@ -173,12 +180,12 @@
 
     function copyResult() {
         if (!outputText.value) {
-            showMessage('没有可复制的内容', 'error');
+            showMessage(i18n.copyEmpty, 'error');
             return;
         }
         outputText.select();
         document.execCommand('copy');
-        showMessage('结果已复制到剪贴板', 'info');
+        showMessage(i18n.copySuccess, 'info');
     }
 
     // --- 转换逻辑核心 ---
@@ -198,7 +205,7 @@
     function convert(mode) {
         const text = inputText.value;
         if (!text) {
-            showMessage('请输入文本', 'error');
+            showMessage(i18n.emptyInput, 'error');
             return;
         }
 
@@ -245,7 +252,7 @@
         }
 
         outputText.value = result;
-        showMessage('转换成功！', 'info');
+        showMessage(i18n.convertSuccess, 'info');
     }
 </script>
 {{ end }}

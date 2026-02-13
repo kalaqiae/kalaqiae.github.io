@@ -1,7 +1,8 @@
 # baseURL = "http://localhost:1313/"
 baseURL = "https://kalaqiae.com/"
-languageCode = "en"
-defaultContentLanguage = "zh-cn"                             # en / zh-cn / ... (This field determines which i18n file to use)
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+defaultContentLanguageInSubdir = false
 title = "KALAQIAE"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
@@ -29,36 +30,133 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   priority = 0.5
   filename = "sitemap.xml"
 
-[[menu.main]]             # config your menu              # 配置目录
-  name = "首页"
-  weight = 10
-  identifier = "home"
-  url = "/"
-[[menu.main]]
-  name = "归档"
-  weight = 20
-  identifier = "archives"
-  url = "/post/"
-[[menu.main]]
-  name = "标签"
-  weight = 30
-  identifier = "tags"
-  url = "/tags/"
-[[menu.main]]
-  name = "分类"
-  weight = 40
-  identifier = "categories"
-  url = "/categories/"
-[[menu.main]]
-  name = "工具"
-  weight = 50
-  identifier = "tools"
-  url = "/tools/"
-[[menu.main]]
-  name = "游戏"
-  weight = 60
-  identifier = "games"
-  url = "/games/"
+[languages]
+  [languages.zh-cn]
+    languageName = "中文"
+    weight = 1
+    [[languages.zh-cn.menu.main]]
+      name = "首页"
+      weight = 10
+      identifier = "home"
+      pageRef = "/"
+    [[languages.zh-cn.menu.main]]
+      name = "归档"
+      weight = 20
+      identifier = "archives"
+      pageRef = "post"
+    [[languages.zh-cn.menu.main]]
+      name = "标签"
+      weight = 30
+      identifier = "tags"
+      pageRef = "tags"
+    [[languages.zh-cn.menu.main]]
+      name = "分类"
+      weight = 40
+      identifier = "categories"
+      pageRef = "categories"
+    [[languages.zh-cn.menu.main]]
+      name = "工具"
+      weight = 50
+      identifier = "tools"
+      pageRef = "tools"
+    [[languages.zh-cn.menu.main]]
+      name = "游戏"
+      weight = 60
+      identifier = "games"
+      pageRef = "games"
+    [[languages.zh-cn.menu.main]]
+      name = "关于"
+      weight = 70
+      identifier = "about"
+      pageRef = "about"
+    [[languages.zh-cn.menu.top]]
+      name = "首页"
+      weight = 10
+      identifier = "home"
+      pageRef = "/"
+    [[languages.zh-cn.menu.top]]
+      name = "博客"
+      weight = 20
+      identifier = "blog"
+      pageRef = "blog"
+    [[languages.zh-cn.menu.top]]
+      name = "游戏"
+      weight = 30
+      identifier = "games"
+      pageRef = "games"
+    [[languages.zh-cn.menu.top]]
+      name = "工具"
+      weight = 40
+      identifier = "tools"
+      pageRef = "tools"
+    [[languages.zh-cn.menu.top]]
+      name = "关于"
+      weight = 50
+      identifier = "about"
+      pageRef = "about"
+  [languages.en]
+    languageName = "EN"
+    weight = 2
+    [[languages.en.menu.main]]
+      name = "Home"
+      weight = 10
+      identifier = "home"
+      pageRef = "/"
+    [[languages.en.menu.main]]
+      name = "Archives"
+      weight = 20
+      identifier = "archives"
+      pageRef = "post"
+    [[languages.en.menu.main]]
+      name = "Tags"
+      weight = 30
+      identifier = "tags"
+      pageRef = "tags"
+    [[languages.en.menu.main]]
+      name = "Categories"
+      weight = 40
+      identifier = "categories"
+      pageRef = "categories"
+    [[languages.en.menu.main]]
+      name = "Tools"
+      weight = 50
+      identifier = "tools"
+      pageRef = "tools"
+    [[languages.en.menu.main]]
+      name = "Games"
+      weight = 60
+      identifier = "games"
+      pageRef = "games"
+    [[languages.en.menu.main]]
+      name = "About"
+      weight = 70
+      identifier = "about"
+      pageRef = "about"
+    [[languages.en.menu.top]]
+      name = "Home"
+      weight = 10
+      identifier = "home"
+      pageRef = "/"
+    [[languages.en.menu.top]]
+      name = "Blog"
+      weight = 20
+      identifier = "blog"
+      pageRef = "blog"
+    [[languages.en.menu.top]]
+      name = "Games"
+      weight = 30
+      identifier = "games"
+      pageRef = "games"
+    [[languages.en.menu.top]]
+      name = "Tools"
+      weight = 40
+      identifier = "tools"
+      pageRef = "tools"
+    [[languages.en.menu.top]]
+      name = "About"
+      weight = 50
+      identifier = "about"
+      pageRef = "about"
 
 [params]
   version = "4.x"           # Used to give a friendly message when you have an incompatible update

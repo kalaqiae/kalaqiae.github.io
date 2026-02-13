@@ -1,4 +1,4 @@
-{{ define "title" }}时间戳转换工具 - {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ T "timestamp.pageTitle" }} - {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
 <div class="tool-container">
@@ -9,7 +9,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            时间戳转换工具
+            {{ T "timestamp.title" }}
         </h1>
 
         <!-- 错误和消息提示区 -->
@@ -17,14 +17,14 @@
 
         <!-- 实时时间部分 -->
         <div class="mb-8 p-4 rounded-xl border-2 border-indigo-300 bg-indigo-50 shadow-inner">
-            <p class="text-base font-bold text-indigo-800 mb-1">当前系统时间 (本地时区):</p>
+            <p class="text-base font-bold text-indigo-800 mb-1">{{ T "timestamp.currentTime.label" }}</p>
             <!-- 显示包含毫秒的精确时间 -->
             <div class="text-3xl font-mono text-indigo-900 break-words" id="currentTimeDisplay"></div>
             <p class="text-sm text-indigo-600 mt-3">
-                当前秒级时间戳: <span id="currentTimestampSecond" class="font-mono font-extrabold text-xl mr-4"></span>
+                {{ T "timestamp.currentTime.currentSecondLabel" }} <span id="currentTimestampSecond" class="font-mono font-extrabold text-xl mr-4"></span>
                 <button onclick="copyTimestamp('second')"
                     class="tool-button-small bg-indigo-500 text-white hover:bg-indigo-600">
-                    📋 复制
+                    📋 {{ T "timestamp.action.copy" }}
                 </button>
             </p>
         </div>
@@ -34,66 +34,63 @@
 
             <!-- 左侧：日期转时间戳 (区域强化) -->
             <div class="conversion-panel bg-white border border-green-200 shadow-lg">
-                <h2 class="panel-title bg-green-50 text-green-800">日期/时间 → Unix 时间戳</h2>
+                <h2 class="panel-title bg-green-50 text-green-800">{{ T "timestamp.section.dateToTimestamp" }}</h2>
                 <div class="panel-body">
                     <!-- 解决精度问题，使用文本输入框 -->
-                    <label for="dateTimeInput" class="block text-sm font-medium mb-1 text-gray-700">输入日期时间 (格式:
-                        YYYY-MM-DD HH:MM:SS.ms):</label>
-                    <input type="text" id="dateTimeInput" placeholder="例如: 2025-10-24 15:30:45.123"
+                    <label for="dateTimeInput" class="block text-sm font-medium mb-1 text-gray-700">{{ T "timestamp.input.datetime.label" }}</label>
+                    <input type="text" id="dateTimeInput" placeholder="{{ T "timestamp.input.datetime.placeholder" }}"
                         class="input-field mb-3" />
 
                     <div class="flex space-x-2 mb-4">
                         <button onclick="getCurrentTime()"
                             class="tool-button-small flex-1 bg-green-600 text-white hover:bg-green-700">
-                            📅 填充当前完整时间
+                            📅 {{ T "timestamp.action.fillCurrent" }}
                         </button>
                     </div>
 
-                    <p class="text-gray-700 mb-2 mt-4 font-medium">选择转换精度:</p>
+                    <p class="text-gray-700 mb-2 mt-4 font-medium">{{ T "timestamp.precision.label" }}</p>
                     <div class="flex space-x-4 mb-4">
                         <label class="flex items-center">
                             <input type="radio" name="precision" value="second" checked
                                 class="form-radio text-blue-600">
-                            <span class="ml-2 text-gray-700">秒级 (10位)</span>
+                            <span class="ml-2 text-gray-700">{{ T "timestamp.precision.second" }}</span>
                         </label>
                         <label class="flex items-center">
                             <input type="radio" name="precision" value="millisecond" class="form-radio text-blue-600">
-                            <span class="ml-2 text-gray-700">毫秒级 (13位)</span>
+                            <span class="ml-2 text-gray-700">{{ T "timestamp.precision.millisecond" }}</span>
                         </label>
                     </div>
 
                     <button onclick="convertToTimestamp()"
                         class="tool-button bg-blue-600 text-white hover:bg-blue-700 w-full mb-4">
-                        🚀 转换为时间戳
+                        🚀 {{ T "timestamp.action.toTimestamp" }}
                     </button>
 
-                    <label for="timestampOutput" class="block text-sm font-medium mb-1 text-gray-500">时间戳结果:</label>
-                    <input type="text" id="timestampOutput" readonly placeholder="在此显示时间戳..."
+                    <label for="timestampOutput" class="block text-sm font-medium mb-1 text-gray-500">{{ T "timestamp.output.timestamp.label" }}</label>
+                    <input type="text" id="timestampOutput" readonly placeholder="{{ T "timestamp.output.timestamp.placeholder" }}"
                         class="input-field font-mono" />
                     <button onclick="copyTimestamp('output')"
                         class="tool-button-small bg-gray-200 text-gray-800 hover:bg-gray-300 w-full mt-2">
-                        📋 复制结果
+                        📋 {{ T "timestamp.action.copyResult" }}
                     </button>
                 </div>
             </div>
 
             <!-- 右侧：时间戳转日期 (区域强化) -->
             <div class="conversion-panel bg-white border border-red-200 shadow-lg">
-                <h2 class="panel-title bg-red-50 text-red-800">Unix 时间戳 → 日期/时间</h2>
+                <h2 class="panel-title bg-red-50 text-red-800">{{ T "timestamp.section.timestampToDate" }}</h2>
                 <div class="panel-body">
-                    <label for="timestampInput" class="block text-sm font-medium mb-1 text-gray-700">输入 10 位或 13
-                        位时间戳:</label>
-                    <input type="text" id="timestampInput" placeholder="例如: 1678886400000"
+                    <label for="timestampInput" class="block text-sm font-medium mb-1 text-gray-700">{{ T "timestamp.input.timestamp.label" }}</label>
+                    <input type="text" id="timestampInput" placeholder="{{ T "timestamp.input.timestamp.placeholder" }}"
                         class="input-field mb-4 font-mono" />
 
                     <button onclick="convertToDateTime()"
                         class="tool-button bg-gray-500 text-white hover:bg-gray-600 w-full mb-4">
-                        🔏 转换为日期/时间
+                        🔏 {{ T "timestamp.action.toDatetime" }}
                     </button>
 
-                    <label for="dateTimeOutput" class="block text-sm font-medium mb-1 text-gray-500">日期/时间结果
-                        (本地时区，精确到毫秒):</label>
-                    <input type="text" id="dateTimeOutput" readonly placeholder="在此显示日期时间..." class="input-field" />
+                    <label for="dateTimeOutput" class="block text-sm font-medium mb-1 text-gray-500">{{ T "timestamp.output.datetime.label" }}</label>
+                    <input type="text" id="dateTimeOutput" readonly placeholder="{{ T "timestamp.output.datetime.placeholder" }}" class="input-field" />
                 </div>
             </div>
         </div>
@@ -101,7 +98,7 @@
         <!-- 清空按钮 -->
         <div class="flex justify-center mt-8">
             <button onclick="clearAll()" class="tool-button bg-gray-200 text-gray-800 hover:bg-gray-300">
-                🧹 清空所有区域
+                🧹 {{ T "timestamp.action.clearAll" }}
             </button>
         </div>
     </div>
@@ -213,6 +210,23 @@
 </style>
 
 <script>
+    const i18n = {
+        emptyDatetime: '{{ T "timestamp.message.emptyDatetime" }}',
+        invalidDatetime: '{{ T "timestamp.message.invalidDatetime" }}',
+        convertError: '{{ T "timestamp.message.convertError" }}',
+        emptyTimestamp: '{{ T "timestamp.message.emptyTimestamp" }}',
+        invalidTimestampLength: '{{ T "timestamp.message.invalidTimestampLength" }}',
+        convertedSecond: '{{ T "timestamp.message.convertedSecond" }}',
+        convertedMillisecond: '{{ T "timestamp.message.convertedMillisecond" }}',
+        invalidTimestamp: '{{ T "timestamp.message.invalidTimestamp" }}',
+        filledCurrent: '{{ T "timestamp.message.filledCurrent" }}',
+        emptyCopy: '{{ T "timestamp.message.emptyCopy" }}',
+        copied: '{{ T "timestamp.message.copied" }}',
+        cleared: '{{ T "timestamp.message.cleared" }}',
+        convertSuccessSecond: '{{ T "timestamp.message.convertSuccessSecond" }}',
+        convertSuccessMillisecond: '{{ T "timestamp.message.convertSuccessMillisecond" }}'
+    };
+
     const dateTimeInput = document.getElementById('dateTimeInput');
     const timestampInput = document.getElementById('timestampInput');
     const timestampOutput = document.getElementById('timestampOutput');
@@ -295,7 +309,7 @@
         const input = dateTimeInput.value.trim();
 
         if (!input) {
-            showMessage("输入内容不能为空，请使用 YYYY-MM-DD HH:MM:SS.ms 格式。", 'error');
+            showMessage(i18n.emptyDatetime, 'error');
             timestampOutput.value = "";
             return;
         }
@@ -304,7 +318,7 @@
             const date = parseLocalTime(input);
 
             if (!date || isNaN(date.getTime())) {
-                showMessage("日期格式无效，请检查格式是否为 YYYY-MM-DD HH:MM:SS.ms", 'error');
+                showMessage(i18n.invalidDatetime, 'error');
                 timestampOutput.value = "";
                 return;
             }
@@ -321,10 +335,10 @@
             }
 
             timestampOutput.value = timestamp.toString();
-            showMessage(`转换成功！已输出${precision === 'second' ? '秒级' : '毫秒级'}时间戳。`);
+            showMessage(precision === 'second' ? i18n.convertSuccessSecond : i18n.convertSuccessMillisecond);
 
         } catch (e) {
-            showMessage("转换过程中发生错误。", 'error');
+            showMessage(i18n.convertError, 'error');
             console.error("Conversion Error:", e);
         }
     }
@@ -335,7 +349,7 @@
         let input = timestampInput.value.trim();
 
         if (!input) {
-            showMessage("请先输入时间戳。", 'error');
+            showMessage(i18n.emptyTimestamp, 'error');
             dateTimeOutput.value = "";
             return;
         }
@@ -344,7 +358,7 @@
         input = input.replace(/\D/g, '');
 
         if (input.length !== 10 && input.length !== 13) {
-            showMessage("时间戳长度必须是 10 位 (秒) 或 13 位 (毫秒)。", 'error');
+            showMessage(i18n.invalidTimestampLength, 'error');
             dateTimeOutput.value = "";
             return;
         }
@@ -355,15 +369,15 @@
         if (input.length === 10) {
             // 10位秒级时间戳，乘以 1000 转换为毫秒
             date = new Date(timestamp * 1000);
-            showMessage("按秒级 (10位) 时间戳进行转换。");
+            showMessage(i18n.convertedSecond);
         } else {
             // 13位毫秒级时间戳
             date = new Date(timestamp);
-            showMessage("按毫秒级 (13位) 时间戳进行转换。");
+            showMessage(i18n.convertedMillisecond);
         }
 
         if (isNaN(date.getTime())) {
-            showMessage("时间戳无效，无法转换为有效日期。", 'error');
+            showMessage(i18n.invalidTimestamp, 'error');
             dateTimeOutput.value = "";
             return;
         }
@@ -378,7 +392,7 @@
     function getCurrentTime() {
         const now = new Date();
         dateTimeInput.value = formatLocalTime(now);
-        showMessage("已将当前完整时间 (包含毫秒) 填充到输入框。", 'info');
+        showMessage(i18n.filledCurrent, 'info');
     }
 
     // 复制时间戳
@@ -391,7 +405,7 @@
         }
 
         if (!copyText) {
-            showMessage("时间戳为空，无法复制。", 'error');
+            showMessage(i18n.emptyCopy, 'error');
             return;
         }
 
@@ -403,7 +417,7 @@
         document.execCommand('copy');
         document.body.removeChild(tempInput);
 
-        showMessage("时间戳已复制到剪贴板！", 'info');
+        showMessage(i18n.copied, 'info');
     }
 
     // 清空所有
@@ -413,7 +427,7 @@
         timestampOutput.value = "";
         dateTimeOutput.value = "";
         messageBox.style.display = 'none';
-        showMessage("已清空所有区域。", 'info');
+        showMessage(i18n.cleared, 'info');
     }
 </script>
 {{ end }}
