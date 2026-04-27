@@ -1,7 +1,7 @@
 ---
 title: "Note"
 date: 2021-07-10T22:07:28+08:00
-draft: falase
+draft: false
 tags: ["Java","Android","note"]
 categories: ["Undefined"]
 ---

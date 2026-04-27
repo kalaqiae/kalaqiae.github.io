@@ -48,8 +48,9 @@ categories: ["Mac"]
 ### 截图与录屏
 
 > **Command + Shift + 3**：截取全屏  
-> **Command + Shift + 4**：截取选定区域  
+> **Command + Shift + 4**：截取选定区域,保存在桌面  
 > **Command + Shift + 5**：打开截图/录屏工具栏
+> **Command + Shift + control + 4**：截取选定区域并保存在剪切板
 
 ### 浏览器 (Chrome/Safari)
 
@@ -59,6 +60,7 @@ categories: ["Mac"]
 > **Command + Option + R**：强制刷新
 > **Command + 左右箭头**：页面前进/后退  
 > **Command + Option + 左右箭头**：切换 Tab 标签  
+> **Cmd + Shift + T**：恢复刚关闭标签页
 
 ---
 
@@ -87,6 +89,12 @@ categories: ["Mac"]
 
 ---
 
+## 设置
+
+### 键盘导航
+
+键盘导航未开启时，系统弹窗（如“彻底删除”）无法通过 Tab 键选择“删除”按钮
+
 ## 工具
 
 ### 数码测色计
@@ -109,6 +117,10 @@ categories: ["Mac"]
 IINA 基于mpv
 
 ---
+
+### 输入法
+
+[Mac input method](/post/mac/mac-input-method/)
 
 ## 开发环境配置 (Shell & Dev)
 

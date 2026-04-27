@@ -129,7 +129,7 @@ build
 ## 初次提交项目到 gitlab
 
 1.gitlab 上创建空项目  
-注意不要勾选 Initialize repository with a README ，不勾选就是个空的项目，勾选了会创建个readme，完成git init和一次提交。
+注意**不要勾选 Initialize repository with a README** ，不勾选就是个空的项目，勾选了会创建个readme，完成git init和一次提交。
 
 2.本地项目环境检查
 
