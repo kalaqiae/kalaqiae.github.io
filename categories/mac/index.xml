@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on KALAQIAE</title><link>https://kalaqiae.com/categories/mac/</link><description>Recent content in Mac on KALAQIAE</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 09 Feb 2026 15:36:46 +0800</lastBuildDate><atom:link href="https://kalaqiae.com/categories/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Mac Brew</title><link>https://kalaqiae.com/post/mac/mac-brew/</link><pubDate>Mon, 09 Feb 2026 15:36:46 +0800</pubDate><guid>https://kalaqiae.com/post/mac/mac-brew/</guid><description>&lt;h2 id="概述">概述&lt;/h2>
 &lt;p>Homebrew 更适合用来装“系统级、全局通用、基本只需要最新版”的基础工具；但它不是万能软件下载器，也不是所有开发环境的最佳安装方式。&lt;/p>
-&lt;p>最主要收益：可脚本化（Brewfile），换新 Mac 时更容易一键还原；同时减少手动处理依赖的成本。&lt;/p></description></item></channel></rss>
+&lt;p>最主要收益：可脚本化（Brewfile），换新 Mac 时更容易一键还原；同时减少手动处理依赖的成本。&lt;/p>
+&lt;h2 id="适用场景快速判断">适用场景（快速判断）&lt;/h2>
+&lt;p>CLI 大多优先考虑 brew；GUI 主要看是否需要长期锁版本，以及偏好升级方式是 App Store/官方安装器/应用自带更新还是 Cask 管理。&lt;/p>
+&lt;ul>
+&lt;li>推荐用 brew：通用 CLI 工具、系统级小工具；以及“不需要长期锁版本、允许跟随升级”的常见 GUI 应用（Cask）&lt;/li>
+&lt;li>谨慎用 brew：会强影响 PATH/动态库的工具链（Python/Node/Java）、数据库/缓存服务、对 ABI 敏感的依赖&lt;/li>
+&lt;li>不建议用 brew：项目强依赖特定版本且需要长期锁定、团队需要严格可复现（优先用版本管理器、容器或项目自带安装方式）&lt;/li>
+&lt;/ul></description></item></channel></rss>
